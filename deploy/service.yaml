@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: docusaurus
+  namespace: docusaurus
+  labels:
+    app.kubernetes.io/name: docusaurus
+    app.kubernetes.io/instance: poc
+spec:
+  ports:
+    - protocol: TCP
+      name: web
+      port: 80
+  selector:
+    app.kubernetes.io/name: docusaurus
