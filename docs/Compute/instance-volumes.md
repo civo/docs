@@ -8,7 +8,7 @@ Volumes are flexible-size additional storage for instances. By creating a volume
 Volumes take disk space on your account's quota, and can only be created up to this quota limit. For more information, see [Quota](../account/quota).
 
 :::note
-Volumes are region and network-specific. If you create a volume in one [private network](../Networking/private-networks.md), it can only be mounted and used by instances in that network.
+Volumes are region and network-specific. If you create a volume in one [private network](../networking/private-networks.md), it can only be mounted and used by instances in that network.
 :::
 
 <Tabs groupId="create-volumes">
@@ -24,7 +24,7 @@ Then, click on "Create a volume":
 
 ![Volume creation options](./volume_creation_options.png)
 
-You will be able to give your volume a name, select a [network](../Networking/networking-introduction.md) if you have created any in the region, and see the pricing for your chosen size.
+You will be able to give your volume a name, select a [network](../networking/networking-introduction.md) if you have created any in the region, and see the pricing for your chosen size.
 
 Click "Create". The volume will be created in your account.
 
@@ -43,7 +43,7 @@ $ civo volume create CLI-demo-volume --size 25
 Created a volume called CLI-demo-volume with ID 59076ec8-edba-4071-80d0-e9cfcce37b12
 ```
 
-By default, the volume is created in the `default` network in your currently-selected region. You can use the switch `--network NETWORK_ID` to specify a [private network](../Networking/private-networks.md) in which to create the volume.
+By default, the volume is created in the `default` network in your currently-selected region. You can use the switch `--network NETWORK_ID` to specify a [private network](../networking/private-networks.md) in which to create the volume.
 
 You can see all available options for volume creation on the CLI by running `civo volume create --help`.
 
