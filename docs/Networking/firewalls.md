@@ -39,7 +39,7 @@ $ civo firewall list
 
 Click "Create a firewall" at the top of the [firewalls listing page](https://dashboard.civo.com/firewalls).
 
-Enter a name for the firewall, and choose the network it belongs to. You can either choose the Default network or one of the networks created over in the [network section](https://dashboard.civo.com/networks). ([Read more about networks](./private_networks.md)).
+Enter a name for the firewall, and choose the network it belongs to. You can either choose the Default network or one of the networks created over in the [network section](https://dashboard.civo.com/networks). ([Read more about networks](./private-networks.md)).
 
 ![Entering a name for a new firewall](./create_new_firewall.png)
 

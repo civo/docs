@@ -53,8 +53,8 @@ If you use the `brew` package manager, you can use it as shown in the MacOS sect
 You can also install by downloading the specific release version (detailed on the [GitHub releases page](https://github.com/civo/cli/releases)) using `wget`:
 
 ```bash
-wget https://github.com/civo/cli/releases/download/v1.0.30/civo-1.0.30-linux-arm64.tar.gz
-tar -xvf civo-1.0.30-linux-amd64.tar.gz
+wget https://github.com/civo/cli/releases/download/v1.0.30/civo-1.0.40-linux-arm64.tar.gz
+tar -xvf civo-1.0.40-linux-amd64.tar.gz
 chmod +x civo
 mv ./civo /usr/local/bin/
 ```
@@ -74,7 +74,7 @@ export PATH="$HOME/cli:$PATH"
 
 ### Add an API key to Civo CLI
 
-You will need to associate an [API key](../Account/api_keys.md) from your account to Civo CLI in order to authenticate you to the Civo API. You can do this by running the command `civo apikey save`. The command will prompt you for a memorable name (in this case `docs-demo`) and to paste in the API key of your choice. This will not be displayed for security reasons.
+You will need to associate an [API key](../account/api-keys.md) from your account to Civo CLI in order to authenticate you to the Civo API. You can do this by running the command `civo apikey save`. The command will prompt you for a memorable name (in this case `docs-demo`) and to paste in the API key of your choice. This will not be displayed for security reasons.
 
 ```bash
 $ civo apikey save
@@ -111,6 +111,6 @@ Civo CLI is under active development. You can update the version of Civo CLI you
 ```bash
 $ civo update
 [================================================] 100%
-Updated to v1.0.30
+Updated to v1.0.40
 ```
 

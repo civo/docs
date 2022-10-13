@@ -21,7 +21,7 @@ You will be taken to the pool creation page:
 
 ![Adding a new node pool options](create_new_node_pool.png)
 
-In this section, you can select the number of nodes to create in this new pool, and the specifications/size of the nodes to create. You can choose from the same sizes as when [creating a cluster](create_a_cluster.md).
+In this section, you can select the number of nodes to create in this new pool, and the specifications/size of the nodes to create. You can choose from the same sizes as when [creating a cluster](create-a-cluster.md).
 
 The cost per node of each type is displayed.
 

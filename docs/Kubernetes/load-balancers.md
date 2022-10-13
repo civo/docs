@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 On Civo, Kubernetes cluster `LoadBalancer` objects are external to your cluster, but created and managed as part of your cluster's service definitions. In other words, you create them like other `Service` objects in Kubernetes as part of your cluster definition, but their state is handled by the Cloud Controller Manager that speaks to the Civo API. This allows you to have a service that routes traffic into your cluster externally, balancing the traffic between the nodes.
 
-Civo Kubernetes load balancers are a managed implementation of the Kubernetes [External Load Balancer](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/). This means if you create a `Service` object of type `LoadBalancer` the Civo API will detect this, and on assigning the load balancer a public IP address will start to account for its usage as part of your [billing](../Account/billing.md) and [quota](../Account/quota.md).
+Civo Kubernetes load balancers are a managed implementation of the Kubernetes [External Load Balancer](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/). This means if you create a `Service` object of type `LoadBalancer` the Civo API will detect this, and on assigning the load balancer a public IP address will start to account for its usage as part of your [billing](../account/billing.md) and [quota](../account/quota.md).
 
 Kubernetes load balancers, like all Civo resources, are billed hourly according to the [current pricing](https://www.civo.com/pricing).
 

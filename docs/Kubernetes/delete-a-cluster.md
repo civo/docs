@@ -5,7 +5,7 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-Kubernetes clusters on Civo will remain in your account until you delete them. Clusters in your account are [billed hourly](../Account/billing.md) for each node and count towards your [account quota](../Account/quota.md). If you no longer need Kubernetes cluster, you can delete it in the following ways.
+Kubernetes clusters on Civo will remain in your account until you delete them. Clusters in your account are [billed hourly](../account/billing.md) for each node and count towards your [account quota](../account/quota.md). If you no longer need Kubernetes cluster, you can delete it in the following ways.
 
 :::danger
 

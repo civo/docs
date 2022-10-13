@@ -18,7 +18,7 @@ The file should contain the provider information from the [Civo Terraform Provid
 
 ![Terraform provider page with highlighted sections to use the Civo provider](https://civo-com-assets.ams3.digitaloceanspaces.com/content_images/1494.blog.png?1631514181)
 
-In your editor, replace the `# Configuration options` line with `token = "<YOUR_CIVO_API_KEY>"`. The `<YOUR_CIVO_API_KEY>` block should be the [API key](../Account/api_keys.md) for the account you wish to manage using Terraform.
+In your editor, replace the `# Configuration options` line with `token = "<YOUR_CIVO_API_KEY>"`. The `<YOUR_CIVO_API_KEY>` block should be the [API key](../account/api-keys.md) for the account you wish to manage using Terraform.
 
 As an example, the file may look like the following
 

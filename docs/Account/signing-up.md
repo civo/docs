@@ -22,7 +22,7 @@ First, you will need to declare whether you're using Civo as an individual or as
 
 The address details you enter should match the billing address registered for the card you are using with your bank or financial institution, and will be used for verification.
 
-See the Civo [Billing documentation](./billing.md) for more information.
+See the Civo [Billing documentation](./billing) for more information.
 
 ### Card details
 
