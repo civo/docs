@@ -132,6 +132,17 @@ metadata:
    kubernetes.civo.com/loadbalancer-enable-proxy-protocol: send-proxy
 ```
 
+### Reserved IP address
+
+If you have [reserved a public IP address](https://dashboard.civo.com/reserved-ips) you can assign it to a Kubernetes load balancer to ensure public routing into a service remains constant. The annotation for your service definition is as follows:
+
+```yaml
+metadata:
+  annotations:
+    kubernetes.civo.com/ipv4-address: "value of reserved IP address"
+```
+
+
 :::tip
 You can update any of the configuration options detailed above in your service definition and re-apply it to your cluster without having to remove and re-create the load balancer.
 :::
