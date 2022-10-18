@@ -47,6 +47,15 @@ Reserved IP called docs-demo with ID 4828b05a-3ee2-4e3f-bb5d-108345ac6ba5
 If you do not provide the `-n <label>` argument, the Civo API will assign the address value as the name for the reserved IP:
 
 ```bash
+$ civo ip reserve
+Reserved IP with ID 0f9518f0-7d43-41a5-b81e-59ce56c8d8c2
+
+$ civo ip ls
++--------------------------------------+-------------------+--------------+-------------------+
+| ID                                   | Name              | Address      | Assigned To(type) |
++--------------------------------------+-------------------+--------------+-------------------+
+| 0f9518f0-7d43-41a5-b81e-59ce56c8d8c2 | 74.220.24.88      | 74.220.24.88 | No resource       |
++--------------------------------------+-------------------+--------------+-------------------+
 ```
 
 </TabItem>

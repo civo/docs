@@ -5,7 +5,7 @@ import TabItem from '@theme/TabItem';
 
 Networks provide isolation for your instances and Kubernetes clusters, separating groups of instances used for different purposes. When you create a resource such as a Kubernetes cluster, you can assign it to a specific network.
 
-Networks are region-specific: if you create a network in one Civo region it will not be visible in another. Networks also count toward your [quota](../Account/quota.md).
+Networks are region-specific: if you create a network in one Civo region it will not be visible in another. Networks also count toward your [quota](../account/quota.md).
 
 :::note
 Network assignment is permanent. If you create a resource in one network, you cannot move it to another network. You would need to re-create the resource in the network of your choice.
@@ -52,7 +52,7 @@ Once you do, you will be able to give your new network a name:
 
 ![Network naming on creation](images/create-network.png)
 
-After the network is created you can create resources that share the network, and can route to each other internally. You will be able to choose the network in the [instance creation](../Compute/create-an-instance.md) or [cluster creation](../Kubernetes/create-a-cluster.md) step like in the image below:
+After the network is created you can create resources that share the network, and can route to each other internally. You will be able to choose the network in the [instance creation](../compute/create-an-instance.md) or [cluster creation](../kubernetes/create-a-cluster.md) step like in the image below:
 
 ![Selecting a network called "Demo" on instance creation](images/choose-network.png)
 
@@ -67,7 +67,7 @@ civo network create cli-demo
 Created a network called cli-demo with ID 1c93d0ca-d733-4ffe-8a31-2c0bcd565885
 ```
 
-After the network is created you can create resources that share the network, and can route to each other internally. You will be able to choose the network in the [instance creation](../Compute/create-an-instance.md) or [cluster creation](../Kubernetes/create-a-cluster.md) process.
+After the network is created you can create resources that share the network, and can route to each other internally. You will be able to choose the network in the [instance creation](../compute/create-an-instance.md) or [cluster creation](../kubernetes/create-a-cluster.md) process.
 
 </TabItem>
 
