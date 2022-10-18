@@ -74,38 +74,122 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Civo',
         logo: {
           alt: 'Civo Logo',
           src: 'img/logo.svg',
-          srcDark: 'img/logo-dark.svg',
         },
         items: [
           {
-            href: 'https://github.com/civo',
-            label: 'GitHub',
+            to: 'https://github.com/civo/docs',
             position: 'right',
+            className: 'navbar-github-link',
           },
         ],
       },
       footer: {
-        style: 'dark',
         links: [
           {
-            title: 'Community',
+            title: 'Company',
             items: [
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/CivoCloud',
+                label: 'About',
+                to: 'https://www.civo.com/about',
+              },
+              {
+                label: 'Partners',
+                to: 'https://www.civo.com/partners',
+              },
+              {
+                label: 'Legal',
+                to: 'https://www.civo.com/legal',
+              },
+              {
+                label: 'Newsroom',
+                to: 'https://www.civo.com/newsroom',
+              },
+              {
+                label: 'Careers',
+                to: 'https://www.civo.com/careers',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Products',
             items: [
               {
+                label: 'Kubernetes',
+                to: 'https://www.civo.com/kubernetes',
+              },
+              {
+                label: 'Compute',
+                to: 'https://www.civo.com/compute',
+              },
+              {
+                label: 'Pricing',
+                to: 'https://www.civo.com/pricing',
+              },
+              {
+                label: 'Load balancers',
+                to: 'https://www.civo.com/load-balancers',
+              },
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'Academy',
+                to: 'https://www.civo.com/academy',
+              },
+              {
+                label: 'API',
+                to: 'https://www.civo.com/api',
+              },
+              {
+                label: 'Tutorials',
+                to: 'https://www.civo.com/learn',
+              },
+              {
+                label: 'Blog',
+                to: 'https://www.civo.com/blog',
+              },
+            ],
+          },
+          {
+            title: 'Contact',
+            items: [
+              {
+                label: 'Support',
+                to: 'https://www.civo.com/contact',
+              },
+              {
+                label: 'Sales',
+                to: 'https://www.civo.com/sales',
+              },
+              {
+                label: 'Status',
+                to: 'https://status.civo.com',
+              },
+            ],
+          },
+          {
+            title: 'Socials',
+            items: [
+              {
+                label: 'LinkedIn',
+                to: 'https://il.linkedin.com/company/civocloud',
+              },
+              {
+                label: 'Facebook',
+                to: 'https://www.facebook.com/civocloud',
+              },
+              {
+                label: 'Twitter',
+                to: 'https://twitter.com/CivoCloud',
+              },
+              {
                 label: 'GitHub',
-                href: 'https://github.com/civo',
+                to: 'https://github.com/civo',
               },
             ],
           },
