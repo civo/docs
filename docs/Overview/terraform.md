@@ -16,9 +16,9 @@ To create a provider file for Terraform to read, create a file called `provider.
 
 The file should contain the provider information from the [Civo Terraform Provider page](https://registry.terraform.io/providers/civo/civo/latest) that you get when you select "Use Provider":
 
-![Terraform provider page with highlighted sections to use the Civo provider](https://civo-com-assets.ams3.digitaloceanspaces.com/content_images/1494.blog.png?1631514181)
+![Terraform provider page with highlighted sections to use the Civo provider](images/terraform-1.png)
 
-In your editor, replace the `# Configuration options` line with `token = "<YOUR_CIVO_API_KEY>"`. The `<YOUR_CIVO_API_KEY>` block should be the [API key](../account/api-keys.md) for the account you wish to manage using Terraform.
+In your editor, replace the `# Configuration options` line with `token = "<YOUR_CIVO_API_KEY>"`. The `<YOUR_CIVO_API_KEY>` block should be the [API key](../Account/api-keys.md) for the account you wish to manage using Terraform.
 
 As an example, the file may look like the following
 
@@ -51,7 +51,7 @@ terraform init
 
 This should output a success message:
 
-![Terraform project initialized](https://civo-com-assets.ams3.digitaloceanspaces.com/content_images/1499.blog.png?1631515679)
+![Terraform project initialized](images/terraform-2.png)
 
 Congratulations! You now have a working Terraform project. You can use this setup to manage cloud resources on Civo according to the product and service-specific documentation.
 

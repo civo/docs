@@ -10,7 +10,7 @@ This documentation is designed to offer a product and service-focused reference 
 
 The documentation covers sections around the following, among other things:
 
-- Your [account](../account/signing-up.md), its administration, [billing](../account/billing.md) and teams management
-- [Kubernetes clusters](../kubernetes/kubernetes-introduction) and associated services such as load balancers
-- [Virtual machine instances](../compute/instances-introduction.md)
+- Your [account](../Account/signing-up.md), its administration, [billing](../Account/billing.md) and teams management
+- [Kubernetes clusters](../Kubernetes/kubernetes-introduction) and associated services such as load balancers
+- [Virtual machine instances](../Compute/instances-introduction.md)
 - Networking, firewalls and DNS (Domain Name Services)

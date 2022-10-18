@@ -41,15 +41,15 @@ Click "Create a firewall" at the top of the [firewalls listing page](https://das
 
 Enter a name for the firewall, and choose the network it belongs to. You can either choose the Default network or one of the networks created over in the [network section](https://dashboard.civo.com/networks). ([Read more about networks](./private-networks.md)).
 
-![Entering a name for a new firewall](./create_new_firewall.png)
+![Entering a name for a new firewall](images/create-new-firewall.png)
 
 Once the firewall is created, you can customise the inbound and outbound traffic rules. You can do so by dropping down the "Actions" menu and selecting "Rules":
 
-![Firewall actions menu](./firewall_actions_rules.png)
+![Firewall actions menu](images/firewall-actions-rules.png)
 
 This will allow you to specify a single port, or a port range, the protocol, direction and whether the rule is to allow or deny traffic:
 
-![Firewall rules panel](./firewall_rules.png)
+![Firewall rules panel](images/firewall-rules.png)
 
 Resources that are created or already running in the same network as the firewall can then be configured to use that firewall to control network traffic.
 
@@ -99,7 +99,7 @@ You cannot delete a firewall if an instance, cluster or other type of resource i
 
 On the web, you can delete a firewall from the [firewalls listing page](https://dashboard.civo.com/firewalls), using the Actions menu on the row of the firewall you want to delete.
 
-![Firewall actions menu](./firewall_actions_rules.png)
+![Firewall actions menu](images/firewall-actions-rules.png)
 
 The system will prompt you to confirm the name of the firewall to delete. When you confirm the firewall name, the system will proceed to delete it immediately.
 

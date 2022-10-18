@@ -5,10 +5,10 @@ import TabItem from '@theme/TabItem';
 
 Volumes are flexible-size additional storage for instances. By creating a volume and associating it with an instance, an additional virtual disk will be made available for backups or database files that can then moved to another instance, or used as extra storage space.
 
-Volumes take disk space on your account's quota, and can only be created up to this quota limit. For more information, see [Quota](../account/quota).
+Volumes take disk space on your account's quota, and can only be created up to this quota limit. For more information, see [Quota](../Account/quota).
 
 :::note
-Volumes are region and network-specific. If you create a volume in one [private network](../networking/private-networks.md), it can only be mounted and used by instances in that network.
+Volumes are region and network-specific. If you create a volume in one [private network](../Networking/private-networks.md), it can only be mounted and used by instances in that network.
 :::
 
 <Tabs groupId="create-volumes">
@@ -18,13 +18,13 @@ Volumes are region and network-specific. If you create a volume in one [private 
 
 Navigate to the [Volumes section](https://dashboard.civo.com/volumes) of your account dashboard.
 
-![Dashboard page showing volume creation options](./volume_page.png)
+![Dashboard page showing volume creation options](images/volume-page.png)
 
 Then, click on "Create a volume":
 
-![Volume creation options](./volume_creation_options.png)
+![Volume creation options](images/volume-creation-options.png)
 
-You will be able to give your volume a name, select a [network](../networking/networking-introduction.md) if you have created any in the region, and see the pricing for your chosen size.
+You will be able to give your volume a name, select a [network](../Networking/networking-introduction.md) if you have created any in the region, and see the pricing for your chosen size.
 
 Click "Create". The volume will be created in your account.
 
@@ -43,7 +43,7 @@ $ civo volume create CLI-demo-volume --size 25
 Created a volume called CLI-demo-volume with ID 59076ec8-edba-4071-80d0-e9cfcce37b12
 ```
 
-By default, the volume is created in the `default` network in your currently-selected region. You can use the switch `--network NETWORK_ID` to specify a [private network](../networking/private-networks.md) in which to create the volume.
+By default, the volume is created in the `default` network in your currently-selected region. You can use the switch `--network NETWORK_ID` to specify a [private network](../Networking/private-networks.md) in which to create the volume.
 
 You can see all available options for volume creation on the CLI by running `civo volume create --help`.
 
@@ -56,7 +56,7 @@ $ civo volume attach CLI-demo-volume api-demo.test
 The volume called CLI-demo-volume with ID 59076ec8-edba-4071-80d0-e9cfcce37b12 was attached to the instance api-demo.test
 ```
 
-If this is a newly-created volume, you would need to partition, format and mount the volume. For more information, see "Preparing and using your volumes in instances" below. 
+If this is a newly-created volume, you would need to partition, format and mount the volume. For more information, see "Preparing and using your volumes in instances" below.
 
 :::note
 You can only attach a volume to one instance at a time.
@@ -315,13 +315,13 @@ Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
 
 Now, if you refresh Civo web UI, you will see there's new compute instance created for you:
 
-![](https://civo-com-assets.ams3.digitaloceanspaces.com/content_images/1526.blog.png?1632108141)
+![](images/instance-index.png)
 
 And, a new volume, attached to your compute instance:
 
-![Your Alt Text](https://civo-com-assets.ams3.digitaloceanspaces.com/content_images/1678.blog.png?1649142539)
-![Your Alt Text](https://civo-com-assets.ams3.digitaloceanspaces.com/content_images/1679.blog.png?1649142776)
-You can see the volume got created and got attached to the the instance as well. 
+![](images/volumes-index.png)
+![](images/volumes-linked.png)
+You can see the volume got created and got attached to the the instance as well.
 
 If you notice, there will be a new file named `terraform.tfstate` get created for you in your local project directory. And, if you print its content, it will look like:
 

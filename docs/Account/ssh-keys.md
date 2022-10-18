@@ -14,7 +14,7 @@ If you do not yet have an SSH key, you can use the `ssh-keygen` command on your 
 
 When running the command and entering the desired filename and passphrase, it should output something like the following:
 
-![SSH Keygen result with fingerprint details and RSA randomart](https://civo-com-assets.ams3.digitaloceanspaces.com/content_images/1476.blog.png?1630513656).
+![SSH Keygen result with fingerprint details and RSA randomart](images/ssh-keygen-example.png).
 
 You are now ready to add your new key to your Civo account.
 
@@ -24,12 +24,12 @@ Once you have a generated key, you can copy the **public key** to add to your Ci
 
 The dialog will prompt you for a memorable name and have space to paste the entirety of the public key.
 
-![Entering a new SSH key on Civo, called "Demo"](https://civo-com-assets.ams3.digitaloceanspaces.com/content_images/1477.blog.png?1630514034)
+![Entering a new SSH key on Civo, called "Demo"](images/new-ssh-key.png)
 
 Be sure to include the `ssh-rsa` and any trailing information, these are also part of the key.
 
 Once you click *Create*, the key will be then stored with the name you chose in your account:
 
-![Stored SSH Key showing the name, a fingerprint and a button to delete it from Civo](https://civo-com-assets.ams3.digitaloceanspaces.com/content_images/1478.blog.png?1630514081).
+![Stored SSH Key showing the name, a fingerprint and a button to delete it from Civo](images/ssh-key-summary.png)
 
 You can now launch virtual machine instances and automatically associate your created key with them, allowing you to log in without a password. Learn more about instance creation here.

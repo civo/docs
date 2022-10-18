@@ -10,13 +10,13 @@ When you [sign up](https://dashboard.civo.com/signup) to Civo, the system will r
 
 Civo services are billable. If you do not add a valid payment type to your account, you will see a banner stating you need to do so, and will not be able to create Kubernetes clusters, virtual machine instances, or the like.
 
-![Payment method missing banner](payment_method_missing.png)
+![Payment method missing banner](images/payment_method_missing.png)
 
 You will need to add a payment method to each account. You can do this on the [billing page](https://dashboard.civo.com/billing) of your account. Valid payment methods are credit and debit cards. Civo does not support prepaid or "virtual" cards as payment types.
 
 ### Billing address
 
-![Billing address entry screen](billing_address.png)
+![Billing address entry screen](images/billing_address.png)
 
 First, you will need to declare whether you're using Civo as an individual or as a business, followed with the cardholder's address details.
 
@@ -26,7 +26,7 @@ See the Civo [Billing documentation](./billing) for more information.
 
 ### Card details
 
-![Card entry screen](card_details.png)
+![Card entry screen](images/card_details.png)
 
 Once you enter your address you will be taken to a page that lets you enter the card details. These include the cardholder name as written on the card, as well as the card number, expiry date, and security code (CVV).
 

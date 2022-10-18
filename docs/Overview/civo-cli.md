@@ -74,12 +74,12 @@ export PATH="$HOME/cli:$PATH"
 
 ### Add an API key to Civo CLI
 
-You will need to associate an [API key](../account/api-keys.md) from your account to Civo CLI in order to authenticate you to the Civo API. You can do this by running the command `civo apikey save`. The command will prompt you for a memorable name (in this case `docs-demo`) and to paste in the API key of your choice. This will not be displayed for security reasons.
+You will need to associate an [API key](../Account/api-keys.md) from your account to Civo CLI in order to authenticate you to the Civo API. You can do this by running the command `civo apikey save`. The command will prompt you for a memorable name (in this case `docs-demo`) and to paste in the API key of your choice. This will not be displayed for security reasons.
 
 ```bash
 $ civo apikey save
 Enter a nice name for this account/API Key: docs-demo
-Enter the API key: 
+Enter the API key:
 Saved the API Key docs-demo
 ```
 
