@@ -8,15 +8,15 @@ You can scale the number of nodes in a cluster's node pool up or down without ha
 
 On a running cluster, you can scale each node pool of the cluster separately. You will find the scale button next to each node pool you are running:
 
-![Node pools information](node_pools.png)
+![Node pools information](images/node-pools.png)
 
 When you click **Scale Up/Down**, you will be shown a page allowing you to specify the number of nodes, along with being shown the change to the cluster's billing that results:
 
-![Node pool scale slider page](node_pool_scale.png)
+![Node pool scale slider page](images/node-pool-scale.png)
 
 Once you click "scale pool" you will be taken to the cluster information page and see the new amount of nodes:
 
-![Added nodes](added_nodes.png)
+![Added nodes](images/added-nodes.png)
 
 If you scaled the node pool up, these nodes will take a minute or so to become available. If you scaled the pool down, the nodes are deleted immediately.
 

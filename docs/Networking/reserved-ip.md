@@ -19,7 +19,7 @@ You can claim reserved IPs subject to your [quota allowance](../account/quota). 
 
 The [Reserved IP section](https://dashboard.civo.com/reserved-ips) of your account allows you to claim a new IP address, or view addresses you have reserved.
 
-![Reserved IPs menu](reserved_ips_menu.png)
+![Reserved IPs menu](images/reserved-ips-menu.png)
 
 Begin by clicking "Create a reserved IP".
 
@@ -27,7 +27,7 @@ The pop-up will ask you to give a name for your reserved IP. This is a label to 
 
 When you confirm this name, you will see the newly-reserved IP details on the dashboard. This will also show the address is not assigned to a resource.
 
-![Unassigned reserved IP](./reserved_ip_unassigned.png)
+![Unassigned reserved IP](images/reserved-ip-unassigned.png)
 
 The *Actions* menu for each address you reserve will allow you to either *Assign* the address to a running Civo instance, or *Delete* the address to stop it counting toward your quota and billing.
 

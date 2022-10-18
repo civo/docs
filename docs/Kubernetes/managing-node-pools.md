@@ -15,11 +15,11 @@ You can group a cluster's worker nodes into *node pools*. The nodes in each pool
 
 You can add a new node pool to a running cluster by clicking on "**Create new pool**" on your cluster's information page.
 
-![Cluster node pool information](node_pools_section.png)
+![Cluster node pool information](images/node-pools-section.png)
 
 You will be taken to the pool creation page:
 
-![Adding a new node pool options](create_new_node_pool.png)
+![Adding a new node pool options](images/create-new-node-pool.png)
 
 In this section, you can select the number of nodes to create in this new pool, and the specifications/size of the nodes to create. You can choose from the same sizes as when [creating a cluster](create-a-cluster.md).
 
@@ -27,7 +27,7 @@ The cost per node of each type is displayed.
 
 When you click "**Create new pool**" you will be taken back to the cluster information page and the new pool will be displayed as creating:
 
-![New node pool is being created](new_node_pool_created.png)
+![New node pool is being created](images/new-node-pool-created.png)
 
 You can then specify specific tasks within your cluster to run on a specific pool's nodes, optimizing your cluster.
 
@@ -53,11 +53,11 @@ The `--size` or `-s` parameter is followed by the code of the type of Kubernetes
 
 You can delete a node pool entirely by clicking on the "**Delete**" button next to the node pool information.
 
-![Node pools information](node_pools_section.png)
+![Node pools information](images/node-pools-section.png)
 
 A popup will appear asking you to confirm that you want to delete the node pool by entering its name:
 
-![Delete node pool popup](delete_node_pool.png)
+![Delete node pool popup](images/delete-node-pool.png)
 
 The pool will be deleted as soon as you click "**Delete**" and is irreversible. All workloads in that pool will be destroyed and re-allocated in your cluster.
 

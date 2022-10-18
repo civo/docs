@@ -2,7 +2,7 @@
 
 Each account on Civo has a quota based on a combined allocation of instances/Kubernetes nodes, CPUs, RAM usage, and other resources that can be allocated to an account. All customers start on a basic quota level, like in the screenshot below:
 
-![Default Civo user quota on a new account shown as graphs](https://civo-com-assets.ams3.digitaloceanspaces.com/content_images/1487.blog.png?1630926163)
+![Default Civo user quota on a new account shown as graphs](images/usage-graphs.png)
 
 If you reach your quota limit on CPUs for example, you will not be able to create more instances or Kubernetes nodes until your usage comes down or your quota is increased.
 
@@ -14,11 +14,11 @@ If you remove resources by, for example, deleting a Kubernetes node pool, this s
 
 To request a quota increase, navigate to the [Quota page](https://dashboard.civo.com/quota) in your account and click on "Request quota increase" in the top right:
 
-![Request quota increase button](https://civo-com-assets.ams3.digitaloceanspaces.com/content_images/1488.blog.png?1630926205)
+![Request quota increase button](images/quota-increase.png)
 
 In order for us to expedite the quota increase, please provide as much detail as you are able teo in the explanation field. This field is optional if you have already paid a bill (excluding any credit) on Civo, but helps us in adjusting your quota to a size that will work for you:
 
-![Quota increase form](https://civo-com-assets.ams3.digitaloceanspaces.com/content_images/1489.blog.png?1630926238)
+![Quota increase form](images/quota-increase-form.png)
 
 ## If your quota does not appear correct
 

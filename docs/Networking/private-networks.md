@@ -5,7 +5,7 @@ import TabItem from '@theme/TabItem';
 
 Networks provide isolation for your instances and Kubernetes clusters, separating groups of instances used for different purposes. When you create a resource such as a Kubernetes cluster, you can assign it to a specific network.
 
-Networks are region-specific: if you create a network in one Civo region it will not be visible in another. Networks also count toward your [quota](../account/quota.md).
+Networks are region-specific: if you create a network in one Civo region it will not be visible in another. Networks also count toward your [quota](../Account/quota.md).
 
 :::note
 Network assignment is permanent. If you create a resource in one network, you cannot move it to another network. You would need to re-create the resource in the network of your choice.
@@ -20,7 +20,7 @@ You can find the [networks management section](https://dashboard.civo.com/networ
 
 Each region will have a `Default` network created automatically. When creating resources, unless you specify a network, they will be assigned to this Default network. If you have created other networks, they will be displayed with a set of options to manage them. You can also rename a network in this view.
 
-![Listing networks on the Civo dashboard](./dashboard_list_networks.png)
+![Listing networks on the Civo dashboard](images/dashboard-list-networks.png)
 </TabItem>
 
 <TabItem value="cli" label="Civo CLI">
@@ -50,11 +50,11 @@ To create a network, click on the "Create a network" button on top of the [netwo
 
 Once you do, you will be able to give your new network a name:
 
-![Network naming on creation](./create_network.png)
+![Network naming on creation](images/create-network.png)
 
-After the network is created you can create resources that share the network, and can route to each other internally. You will be able to choose the network in the [instance creation](../compute/create-an-instance.md) or [cluster creation](../kubernetes/create-a-cluster.md) step like in the image below:
+After the network is created you can create resources that share the network, and can route to each other internally. You will be able to choose the network in the [instance creation](../Compute/create-an-instance.md) or [cluster creation](../Kubernetes/create-a-cluster.md) step like in the image below:
 
-![Selecting a network called "Demo" on instance creation](./choose_network.png)
+![Selecting a network called "Demo" on instance creation](images/choose-network.png)
 
 </TabItem>
 
@@ -67,7 +67,7 @@ civo network create cli-demo
 Created a network called cli-demo with ID 1c93d0ca-d733-4ffe-8a31-2c0bcd565885
 ```
 
-After the network is created you can create resources that share the network, and can route to each other internally. You will be able to choose the network in the [instance creation](../compute/create-an-instance.md) or [cluster creation](../kubernetes/create-a-cluster.md) process.
+After the network is created you can create resources that share the network, and can route to each other internally. You will be able to choose the network in the [instance creation](../Compute/create-an-instance.md) or [cluster creation](../Kubernetes/create-a-cluster.md) process.
 
 </TabItem>
 
@@ -85,11 +85,11 @@ Once you have removed any resources running in a network, you will be able to de
 
 From the Networks listing page, click on the Actions menu item for the network you wish to delete, and click "Delete":
 
-![Delete network menu option shown for a private network](./delete-network-menu.png)
+![Delete network menu option shown for a private network](images/delete-network-menu.png)
 
 You will need to input the name of the network to delete as a confirmation. Once you do, the network can be deleted:
 
-![Confirming the name of the network to be deleted](./delete_network_confirmation.png)
+![Confirming the name of the network to be deleted](images/delete-network-confirmation.png)
 
 </TabItem>
 

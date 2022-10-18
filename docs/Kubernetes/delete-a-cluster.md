@@ -5,7 +5,7 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-Kubernetes clusters on Civo will remain in your account until you delete them. Clusters in your account are [billed hourly](../account/billing.md) for each node and count towards your [account quota](../account/quota.md). If you no longer need Kubernetes cluster, you can delete it in the following ways.
+Kubernetes clusters on Civo will remain in your account until you delete them. Clusters in your account are [billed hourly](../Account/billing.md) for each node and count towards your [account quota](../Account/quota.md). If you no longer need Kubernetes cluster, you can delete it in the following ways.
 
 :::danger
 
@@ -21,7 +21,7 @@ Cluster deletion is immediate and irreversible. Make sure you have retrieved any
 
 You can delete an instance from the instance's dashboard page by clicking the "Delete" button on the top right of the page, also shown below:
 
-![Delete an instance from the dashboard](./dashboard_delete_cluster.png)
+![Delete an instance from the dashboard](images/dashboard-delete-cluster.png)
 
 As a precaution, the system will ask you to confirm the name of the cluster you are looking to delete.
 

@@ -14,11 +14,11 @@ Creating a managed Kubernetes cluster on Civo provides you with options, from a 
 
 Begin by selecting the Civo Region you are operating in. You can do so in the lower left of your [Dashboard page](https://dashboard.civo.com):
 
-![Region selection menu](../region_select.png)
+![Region selection menu](images/region-select.png)
 
 Then, navigate to the [Kubernetes cluster creation page](https://dashboard.civo.com/kubernetes/new):
 
-![Overview of the cluster creation page on Civo](create_kubernetes_cluster_page.png)
+![Overview of the cluster creation page on Civo](images/create-kubernetes-cluster-page.png)
 
 The numbered sections give you options for the specifications of your cluster.
 
@@ -46,7 +46,7 @@ Sizes or configurations may not be available due to quota on your account or the
 
 Depending on the applications you want to run on your cluster, you may need to select larger nodes.
 
-![Advanced options and marketplace](create_kubernetes_cluster_page_2.png)
+![Advanced options and marketplace](images/create-kubernetes-cluster-page-2.png)
 
 ### 6. Advanced options
 
@@ -60,11 +60,11 @@ You can remove applications to prevent them from being installed by default, or 
 
 When you are satisfied with your initial cluster configuration, you can click "**Create cluster**" and be directed to the cluster's dashboard page. It will take a moment to become active, and you will be shown the status throughout.
 
-![Cluster building](cluster_building.png)
+![Cluster building](images/cluster-building.png)
 
 Once running, you can use `kubectl` and the downloaded `kubeconfig` file from the cluster's page to interact with your cluster. You will find the `kubeconfig` file for download in the "Cluster information" section:
 
-![Cluster information showing Kubeconfig download](cluster_info.png)
+![Cluster information showing Kubeconfig download](images/cluster-info.png)
 
 </TabItem>
 
@@ -145,7 +145,7 @@ After specifying the fields for your Kubernetes cluster, run `terraform plan` to
 
 Lastly, we can create our cluster by running `terraform apply`. You should see an output similar to the following:
 
-![Cluster resource creation complete](https://i.imgur.com/OWw2OeC.png)
+![Cluster resource creation complete](images/cluster-resource-creation-complete.png)
 
 </TabItem>
 </Tabs>

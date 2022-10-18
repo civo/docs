@@ -5,7 +5,7 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-Instances on Civo will remain in your account until you delete them. Instances that are in your account, even if switched off, [remain billable](../account/billing.md) and count towards your [account quota](../account/quota.md). If you no longer need an instance, you can delete it in the following ways.
+Instances on Civo will remain in your account until you delete them. Instances that are in your account, even if switched off, [remain billable](../Account/billing.md) and count towards your [account quota](../Account/quota.md). If you no longer need an instance, you can delete it in the following ways.
 
 :::danger
 
@@ -21,7 +21,7 @@ Instance deletion is immediate and irreversible. Make sure you have retrieved an
 
 You can delete an instance from the instance's dashboard page by clicking the "Delete" button on the top right of the page, also shown below:
 
-![Delete an instance from the dashboard](./dashboard_delete_instance.png)
+![Delete an instance from the dashboard](images/dashboard-delete-instance.png)
 
 As a precaution, the system will ask you to confirm the hostname of the instance you are looking to delete.
 

@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 On Civo, Kubernetes cluster `LoadBalancer` objects are external to your cluster, but created and managed as part of your cluster's service definitions. In other words, you create them like other `Service` objects in Kubernetes as part of your cluster definition, but their state is handled by the Cloud Controller Manager that speaks to the Civo API. This allows you to have a service that routes traffic into your cluster externally, balancing the traffic between the nodes.
 
-Civo Kubernetes load balancers are a managed implementation of the Kubernetes [External Load Balancer](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/). This means if you create a `Service` object of type `LoadBalancer` the Civo API will detect this, and on assigning the load balancer a public IP address will start to account for its usage as part of your [billing](../account/billing.md) and [quota](../account/quota.md).
+Civo Kubernetes load balancers are a managed implementation of the Kubernetes [External Load Balancer](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/). This means if you create a `Service` object of type `LoadBalancer` the Civo API will detect this, and on assigning the load balancer a public IP address will start to account for its usage as part of your [billing](../Account/billing.md) and [quota](../Account/quota.md).
 
 Kubernetes load balancers, like all Civo resources, are billed hourly according to the [current pricing](https://www.civo.com/pricing).
 
@@ -39,7 +39,7 @@ This should be applied to your cluster with `kubectl apply -f loadbalancer.yaml`
 
 As mentioned above, creating a load balancer relies on the Civo Cloud Controller Manager sending the appropriate request to the Civo API to handle the creation and configuration of the Load Balancer according to your specification. This system means that if you create any `Service` with type `LoadBalancer`, it will be picked up by the Civo API and as part of the [Load balancers listing](https://dashboard.civo.com/loadbalancers) as well as on the cluster's dashboard page in your account:
 
-![Kubernetes load balancer as displayed on the Civo dashboard](./loadbalancers_list.png)
+![Kubernetes load balancer as displayed on the Civo dashboard](images/loadbalancers-list.png)
 
 There are several available configuration options for Kubernetes load balancers, detailed below.
 
@@ -154,7 +154,7 @@ You can update any of the configuration options detailed above in your service d
 
 You can view the current configuration of any load balancers both on the [load balancers listing page](https://dashboard.civo.com/loadbalancers), as well as on the page of the cluster where the load balancer is configured:
 
-![Kubernetes load balancer as displayed on the Civo dashboard](./loadbalancers_list.png)
+![Kubernetes load balancer as displayed on the Civo dashboard](images/loadbalancers-list.png)
 
 You can also view more specific details of a particular load balancer by dropping down the "Actions" menu and selecting "View".
 

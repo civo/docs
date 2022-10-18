@@ -6,7 +6,7 @@ Civo services are chargeable, which is why you need a valid payment method on fi
 
 ## Charges
 
-![Civo charges summary](https://civo-com-assets.ams3.digitaloceanspaces.com/content_images/1484.blog.png?1630925528)
+![Civo charges summary](images/charges-summary.png)
 
 At any time you can see your current month's charge summary from your [Dashboard](https://dashboard.civo.com) and from there drill down into a [detailed listing of current charges](https://dashboard.civo.com/billing/usage). Services are billed hourly and at the rates listed on our [Pricing page](https://www.civo.com/pricing). As with almost all cloud hosting providers, the hourly pricing is worked out by dividing a monthly fee by 28 days (and of course 24 hours in each day).
 

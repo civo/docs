@@ -15,11 +15,11 @@ Creating an instance on Civo requires a few specified parameters, whether you ar
 
 Begin by selecting the Civo Region you are operating in. You can do so in the lower left of your [Dashboard page](https://dashboard.civo.com):
 
-![Region selection menu](../region_select.png)
+![Region selection menu](images/region-select.png)
 
 Then, navigate to the [instance creation page](https://dashboard.civo.com/instances/new):
 
-![Instance creation page overview](https://civo-com-assets.ams3.digitaloceanspaces.com/content_images/1456.blog.png?1630487852)
+![Instance creation page overview](images/create-instance.png)
 
 The numbered sections give you options for the specifications of your compute instances.
 
@@ -31,15 +31,15 @@ Hostnames can only contain letters, numbers, dashes and full stops. Hostnames mu
 
 ### 2. How many instances?
 
-You can create one or more instances in one operation, subject to the limitations of your [quota](../account/quota.md). Each instance created will have the same parameters, only the hostname and IP addresses will be different.
+You can create one or more instances in one operation, subject to the limitations of your [quota](../Account/quota.md). Each instance created will have the same parameters, only the hostname and IP addresses will be different.
 
 ### 3. Select size
 
 You can select the size and instance hardware specifications based on the task you want to accomplish. You can view the available sizing options [here](https://www.civo.com/compute-pricing).
 
-Sizing options may be restricted depending on your account quota and how many resources are already running in your account. See the [quota documentation](../account/quota.md) for more information.
+Sizing options may be restricted depending on your account quota and how many resources are already running in your account. See the [quota documentation](../Account/quota.md) for more information.
 
-The hourly/monthly slider for the pricing is purely to show the pricing equivalent at different time scales. All Civo resources are billed hourly. [Read more about billing](../account/billing.md).
+The hourly/monthly slider for the pricing is purely to show the pricing equivalent at different time scales. All Civo resources are billed hourly. [Read more about billing](../Account/billing.md).
 
 ### 4. Select image
 
@@ -53,11 +53,11 @@ The initial user to create for the created instance(s). This is the username to 
 
 ### 6. Network
 
-The [private network](../networking/private-networks.md) for the instance to be situated in. You can choose from the default network for your account, or if you have created networks prior to creating this instance, you can choose from one of them.
+The [private network](../Networking/private-networks.md) for the instance to be situated in. You can choose from the default network for your account, or if you have created networks prior to creating this instance, you can choose from one of them.
 
 ### 7. Public IP address
 
-Select *create* if you would want the instance to have a public IP address and therefore be routable from the wider internet. If you do not choose to create the instance with a public IP address, it will only be accessible from within your chosen [network](../networking/private-networks.md).
+Select *create* if you would want the instance to have a public IP address and therefore be routable from the wider internet. If you do not choose to create the instance with a public IP address, it will only be accessible from within your chosen [network](../Networking/private-networks.md).
 
 ### 8. Firewall
 
@@ -65,7 +65,7 @@ You can create a new firewall along with creating this instance, or choose from 
 
 ### 9. SSH Key
 
-You can choose a random password for logging in to the instance, or use a [previously-uploaded key](../account/ssh-keys.md).
+You can choose a random password for logging in to the instance, or use a [previously-uploaded key](../Account/ssh-keys.md).
 
 ### 10. Initialisation script
 
@@ -79,16 +79,16 @@ You can tag instances for administrative and organisation reasons by adding tags
 
 When you are satisfied with your initial instance configuration, you can click "**Create**" and be directed to the instance's dashboard page. It will take a moment to become active, and you will be shown the status throughout as it builds:
 
-![A Civo instance in the process of being built](instance_building.png)
+![A Civo instance in the process of being built](images/instance-building.png)
 
 ### Accessing your instance with SSH
 
-Once your instance is running, you will be able to connect to it using SSH. If you chose to use an [uploaded SSH key](../account/ssh-keys.md), you will be able to connect without a password. If you chose to use a random password, you can copy it to your clipboard by clicking on the "*View SSH information* dropdown at the top of the instance's page.
+Once your instance is running, you will be able to connect to it using SSH. If you chose to use an [uploaded SSH key](../Account/ssh-keys.md), you will be able to connect without a password. If you chose to use a random password, you can copy it to your clipboard by clicking on the "*View SSH information* dropdown at the top of the instance's page.
 
 Assuming you had a public IP address assigned to the instance, you will be able to access it with the command format `ssh username@instanceIP`. The IP address information is also displayed at the top of the instance details page.
 
 </TabItem>
-  
+
 <TabItem value="cli" label="Civo CLI">
 
 ## Creating an instance using the Civo CLI
