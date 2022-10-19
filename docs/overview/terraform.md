@@ -57,9 +57,9 @@ Congratulations! You now have a working Terraform project. You can use this setu
 
 As some examples, you can do all of the following with Terraform:
 
-- Create a Kubernetes cluster
-- Create private networks
-- Manage virtual machine instances
+- Create a [Kubernetes cluster](../kubernetes/create-a-cluster.md)
+- Create [private networks](../networking/private-networks.md)
+- Manage [virtual machine instances](../compute/create-an-instance.md)
 
 ## Upgrading the Terraform provider
 
