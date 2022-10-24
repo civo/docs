@@ -36,7 +36,7 @@ If your account gets suspended or we are not able to take payment from you, [con
 
 Within two weeks of suspension, if there's still no contact from you or attempt to pay for the services, we’ll completely delete all services including Kubernetes clusters, instances, snapshots, persistent volumes, etc. and will commence debt recovery.
 
-## Accepted Payument types
+## Accepted Payment types
 
 We accept all major credit/debit card brands supported by Stripe (American Express, MasterCard, Visa). We do not support using a "virtual" or pre-paid card as a payment type.
 
