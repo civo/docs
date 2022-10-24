@@ -32,4 +32,4 @@ Once you click *Create*, the key will be then stored with the name you chose in 
 
 ![Stored SSH Key showing the name, a fingerprint and a button to delete it from Civo](images/ssh-key-summary.png)
 
-You can now launch virtual machine instances and automatically associate your created key with them, allowing you to log in without a password. Learn more about instance creation here.
+You can now [launch virtual machine instances](../compute/create-an-instance.md) and automatically associate your created key with them, allowing you to log in without a password.
