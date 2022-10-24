@@ -11,6 +11,7 @@ This documentation is designed to offer a product and service-focused reference 
 The documentation covers sections around the following, among other things:
 
 - Your [account](../account/signing-up.md), its administration, [billing](../account/billing.md) and teams management
-- [Kubernetes clusters](../kubernetes/kubernetes-introduction) and associated services such as load balancers
+- Civo [tooling](../overview/tools-overview.md) such as the [command-line interface](../overview/civo-cli.md) and [Terraform](../overview/terraform.md)
+- [Kubernetes clusters](../kubernetes/kubernetes-introduction) and associated services such as [load balancers](../kubernetes/load-balancers.md)
 - [Virtual machine instances](../compute/instances-introduction.md)
 - [Networking](../networking/networking-introduction.md), [firewalls](../networking/firewalls.md) and DNS (Domain Name Services)
