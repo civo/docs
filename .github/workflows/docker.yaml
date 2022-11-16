@@ -32,8 +32,6 @@ jobs:
         run: |
           mkdir ${HOME}/.kube
           echo ${{ secrets.KUBECONFIG }} | base64 --decode > ${HOME}/.kube/config
-      - name: Switch to deployment cluster
-        run: kubectl config use-context ${{ secrets.CLUSTER_NAME }}
       - name: update and deploy to k8s 
         uses: swdotcom/update-and-apply-kubernetes-configs@v1
         with:
