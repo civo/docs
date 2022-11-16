@@ -5,6 +5,7 @@ metadata:
     app.kubernetes.io/name: civo-docs
     app.kubernetes.io/instance: poc
   name: civo-docs
+  namespace: civo-production
 spec:
   replicas: 2
   selector:
@@ -16,7 +17,7 @@ spec:
         app.kubernetes.io/name: civo-docs
     spec:
       containers:
-      - image: civobot/civo-docs:${IMAGE_TAG}
+      - image: civobot/civo-docusaurus:${IMAGE_TAG}
         name: docusaurus
         livenessProbe:
           httpGet:
@@ -32,3 +33,18 @@ spec:
             memory: 64Mi
       imagePullSecrets:
       - name: docker-regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: civo-docs
+  namespace: civo-production
+  labels:
+    app.kubernetes.io/name: civo-docs
+spec:
+  ports:
+    - protocol: TCP
+      name: web
+      port: 80
+  selector:
+    app.kubernetes.io/name: civo-docs
