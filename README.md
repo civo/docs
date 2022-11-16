@@ -2,13 +2,6 @@
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-### JLD Notes
-
-Currently deploys to a [tenant cluster](https://3439bd42-d622-41f7-8c82-85b142d2a30d.lb.civo.com/).
-
-Uses ArgoCD under the hood to pull from Git and NPM is always really slow to build, so you may have to give it 5 mins after committing before seeing your changes on the above link.
-
-
 ### Installation
 
 You will need Yarn installed, which in turn requires npm and Node. On a Mac using homebrew, you can run `brew install node`.
