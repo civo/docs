@@ -16,7 +16,7 @@ spec:
         app.kubernetes.io/name: civo-docs
     spec:
       containers:
-      - image: civobot/civo-docs:${IMAGE_TAG}
+      - image: civobot/civo-docusaurus:${IMAGE_TAG}
         name: docusaurus
         livenessProbe:
           httpGet:
