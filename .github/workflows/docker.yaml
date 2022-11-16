@@ -1,9 +1,10 @@
 name: Civo docs deployment
 
 on:
+  workflow_dispatch:
   push:
     branches:
-      - 'master'
+      - 'main'
 
 jobs:
   docker:
@@ -26,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: civobot/civo-docusaurous:${{ steps.vars.outputs.tag }}
+          tags: civobot/civo-docusaurus:${{ steps.vars.outputs.tag }}
       - name: Generate kubeconfig 
         run: |
           mkdir ${HOME}/.kube
