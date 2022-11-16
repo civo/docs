@@ -36,8 +36,8 @@ jobs:
         uses: swdotcom/update-and-apply-kubernetes-configs@v1
         with:
           k8-config-file-paths: |
-            .github/workflows/deploy/deployment.yaml
-            .github/workflows/deploy/service.yaml
+            .github/workflows/deploy/staging.yaml
+            .github/workflows/deploy/production.yaml
           replacement-method: defined
         env:
           IMAGE_TAG: ${{ github.sha }}
