@@ -532,7 +532,7 @@ $ cat terraform.tfstate
 }
 ```
 
-That's the [Terraform state file](https://www.terraform.io/docs/language/state/index.html) that was created after you create the compute instance, volume and volume attachment just now.
+That's the [Terraform state file](https://developer.hashicorp.com/terraform/language/state) that was created after you create the compute instance, volume and volume attachment just now.
 
 When you update your `main.tf` file and run `terraform apply` again, Terraform will refresh the state file, try to understand what you want to update and update your compute instance/volume/volume attachment.
 

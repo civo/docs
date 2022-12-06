@@ -434,7 +434,7 @@ $ cat terraform.tfstate
 }
 ```
 
-This is the [Terraform State File](https://www.terraform.io/language/state) which is created when the configuration is applied.
+This is the [Terraform State File](https://developer.hashicorp.com/terraform/language/state) which is created when the configuration is applied.
 
 If you update your `main.tf` file and run `terraform apply` again, Terraform will refresh the state file, try to understand what you want to update and update your compute instance accordingly. You may want to update components such as the firewall id to choose another [firewall](../networking/firewalls.md) or add a tag, for example.
 

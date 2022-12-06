@@ -10,7 +10,7 @@ You must have an existing SSH key in order to add one to your Civo account. The 
 
 ## Generating a new SSH key
 
-If you do not yet have an SSH key, you can use the `ssh-keygen` command on your system to generate an SSH key pair. This command is automatically present in Linux and MacOS systems; for Windows, please see [this documentation](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse).
+If you do not yet have an SSH key, you can use the `ssh-keygen` command on your system to generate an SSH key pair. This command is automatically present in Linux and MacOS systems; for Windows, please see [this documentation](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui).
 
 When running the command and entering the desired filename and passphrase, it should output something like the following:
 

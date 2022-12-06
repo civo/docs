@@ -12,24 +12,11 @@ const allDocHomesPaths = [
 const config = {
   title: 'Civo Documentation',
   tagline: 'The Cloud Native Service Provider',
-  url: 'https://3439bd42-d622-41f7-8c82-85b142d2a30d.lb.civo.com',
+  url: 'https://www.civo.com',
   baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  // organizationName: 'civo', // Usually your GitHub org/user name.
-  // projectName: 'documentation', // Usually your repo name.
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
 
   plugins: [
     [
@@ -57,8 +44,6 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/civo/docs/tree/main/',
         },

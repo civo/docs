@@ -12,7 +12,7 @@ Your account on Civo, and resources running within your account, can be managed 
 
 The Civo CLI is a command-line interface that allows you to create, manage and delete resources such as Kubernetes clusters and instances through the Civo API programmatically through your terminal. Civo CLI is open-source.
 
-See [this further documentation on the installation and set-up of the Civo CLI](civo-cli.md), or you can find the [Civo/CLI](https://www.github.com/civo/cli) repository on GitHub.
+See [this further documentation on the installation and set-up of the Civo CLI](civo-cli.md), or you can find the [Civo/CLI](https://github.com/civo/cli) repository on GitHub.
 
 To quickly install the latest version of the CLI you can run:
 

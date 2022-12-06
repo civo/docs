@@ -1,6 +1,6 @@
 # API Keys
 
-Services in your Civo account can be administered using the Civo API. To authenticate the account for the [API](https://api.civo.com) or tools that use it such as the Civo [command-line interface](../overview/civo-cli.md), you will need to provide an API key that is unique to your account.
+Services in your Civo account can be administered using the Civo API. To authenticate the account for the [API](https://www.civo.com/api) or tools that use it such as the Civo [command-line interface](../overview/civo-cli.md), you will need to provide an API key that is unique to your account.
 
 ## Retrieving your API key
 
@@ -12,7 +12,7 @@ You will be shown an API key like the following:
 
 ![API key shown on the Civo dashboard](images/api_key.png)
 
-This API key is unique to your account, and used to authenticate you for tools that interact with the Civo API. For details about the Civo API, refer to the [API documentation](https://api.civo.com).
+This API key is unique to your account, and used to authenticate you for tools that interact with the Civo API. For details about the Civo API, refer to the [API documentation](https://www.civo.com/api).
 
 If your account belongs to an Organization, you may see multiple API keys on the page. Each one is tied to a specific account.
 
