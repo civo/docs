@@ -99,21 +99,39 @@ html[data-theme='dark'] .navbar-github-link:before {
 
 /* Footer */
 .footer {
-  padding-bottom: 2rem;
+  padding: 3.125rem 0;
 }
 
 .footer__links {
   margin-bottom: 50px;
 }
 
+.footer__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
 .footer__link-item {
-  transition: color 0.2s ease
+  font-size: 0.875rem;
+  line-height: 2.0;
+  transition: color 0.2s ease;
 }
 
 .footer__link-item:hover {
   text-decoration: none;
 }
 
-/* Mobile Styles */
+/* Tablet Styles */
 @media screen and (max-width: 996px) {
+  .footer__col {
+    flex-basis: 0;
+  }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 426px) {
+  .footer__col {
+    flex-basis: 50%;
+  }
 }
