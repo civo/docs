@@ -82,6 +82,14 @@ const config = {
                 to: 'https://www.civo.com/about',
               },
               {
+                label: 'Case studies',
+                to: 'https://www.civo.com/case-studies',
+              },
+              {
+                label: 'White papers',
+                to: 'https://www.civo.com/white-papers',
+              },
+              {
                 label: 'Partners',
                 to: 'https://www.civo.com/partners',
               },
@@ -92,6 +100,10 @@ const config = {
               {
                 label: 'Newsroom',
                 to: 'https://www.civo.com/newsroom',
+              },
+              {
+                label: 'Brand assets',
+                to: 'https://www.civo.com/brand-assets',
               },
               {
                 label: 'Careers',
@@ -121,23 +133,84 @@ const config = {
             ],
           },
           {
+            title: 'Solutions',
+            items: [
+              {
+                label: 'Startup solutions',
+                to: 'https://www.civo.com/startups',
+              },
+              {
+                label: 'Startup program',
+                to: 'https://www.civo.com/startup-program',
+              },
+              {
+                label: 'Small and mid-market',
+                to: 'https://www.civo.com/small-mid-market',
+              },
+              {
+                label: 'SaaS companies',
+                to: 'https://www.civo.com/saas',
+              },
+              {
+                label: 'CI/CD and testing',
+                to: 'https://www.civo.com/ci-testing',
+              },
+              {
+                label: 'Move to Kubernetes',
+                to: 'https://www.civo.com/move-to-kubernetes',
+              },
+              {
+                label: 'Consultancy',
+                to: 'https://www.civo.com/kubernetes-consultancy',
+              },
+            ],
+          },
+          {
             title: 'Community',
             items: [
               {
-                label: 'Academy',
-                to: 'https://www.civo.com/academy',
-              },
-              {
-                label: 'API',
-                to: 'https://www.civo.com/api',
+                label: 'Docs',
+                to: 'https://www.civo.com/docs',
               },
               {
                 label: 'Tutorials',
                 to: 'https://www.civo.com/learn',
               },
               {
+                label: 'API',
+                to: 'https://www.civo.com/api',
+              },
+              {
+                label: 'Academy',
+                to: 'https://www.civo.com/academy',
+              },
+              {
+                label: 'Developers',
+                to: 'https://www.civo.com/developers',
+              },
+              {
+                label: 'Meetups',
+                to: 'https://www.civo.com/meetups',
+              },
+              {
                 label: 'Blog',
                 to: 'https://www.civo.com/blog',
+              },
+              {
+                label: 'Ambassadors',
+                to: 'https://www.civo.com/ambassadors',
+              },
+              {
+                label: 'KubeQuest',
+                to: 'https://www.civo.com/kubequest',
+              },
+              {
+                label: 'Write for us',
+                to: 'https://www.civo.com/write-for-us',
+              },
+              {
+                label: 'Developer demo program',
+                to: 'https://www.civo.com/demo-program',
               },
             ],
           },
@@ -155,27 +228,6 @@ const config = {
               {
                 label: 'Status',
                 to: 'https://status.civo.com',
-              },
-            ],
-          },
-          {
-            title: 'Socials',
-            items: [
-              {
-                label: 'LinkedIn',
-                to: 'https://il.linkedin.com/company/civocloud',
-              },
-              {
-                label: 'Facebook',
-                to: 'https://www.facebook.com/civocloud',
-              },
-              {
-                label: 'Twitter',
-                to: 'https://twitter.com/CivoCloud',
-              },
-              {
-                label: 'GitHub',
-                to: 'https://github.com/civo',
               },
             ],
           },
