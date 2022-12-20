@@ -9,7 +9,7 @@ Instances on Civo will remain in your account until you delete them. Instances t
 
 :::danger
 
-Instance deletion is immediate and irreversible. Make sure you have retrieved any data you may need from an instance before deleting it.
+Instance deletion is immediate and irreversible. Make sure you have retrieved all data you may need from an instance before deleting it.
 
 :::
 
