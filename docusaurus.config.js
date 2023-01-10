@@ -4,10 +4,6 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-const allDocHomesPaths = [
-  '/docs/',
-];
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Civo Documentation',
@@ -17,24 +13,6 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
-
-  plugins: [
-    [
-      'client-redirects',
-      /** @type {import('@docusaurus/plugin-client-redirects').Options} */
-      ({
-        fromExtensions: ['html'],
-        createRedirects(routePath) {
-          // Redirect to /docs from /docs/introduction, as introduction has been
-          // made the home doc
-          if (allDocHomesPaths.includes(routePath)) {
-            return [`${routePath}/intro`];
-          }
-          return [];
-        }
-      }),
-    ],
-  ],
 
   presets: [
     [

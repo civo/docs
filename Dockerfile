@@ -7,5 +7,6 @@ RUN npm run build
 
 FROM nginx:1.23.1-alpine
 COPY nginx.conf /etc/nginx
+RUN nginx -t
 COPY --from=builder /app/build /usr/share/nginx/html/docs
 RUN touch /usr/share/nginx/html/index.html
