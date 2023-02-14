@@ -71,6 +71,77 @@ After the network is created you can create resources that share the network, an
 
 </TabItem>
 
+<TabItem value="terraform" label="Terraform">
+
+Once you have configured the [Civo Terraform provider](../overview/terraform.md), you can define a new private network in Terraform as follows.
+
+### Prepare the configuration file
+
+The configuration for creating a new network in Terraform is defined by
+
+```terraform
+# Create a network
+resource "civo_network" "custom_net" {
+    region = "LON1"
+    label = "my-network"
+}
+```
+
+
+This uses the [civo_network](https://registry.terraform.io/providers/civo/civo/latest/docs/resources/network) resource to create a new network, in this case with the label `my-network` which will be visible in your account dashboard. This network can then be referred to as `civo_network.custom_net` in other Terraform resources, if needed. For example, you can [create an instance](../compute/create-an-instance.md) or [create a new firewall](../networking/firewalls.md) in a particular network.
+
+If you save the above configuration in a file called `main.tf`, you will be able to apply this configuration to your account.
+### Plan
+
+With the above configuration saved, you can run `terraform plan` to see the resources to be created:
+
+```console
+$ terraform plan
+Terraform used the selected providers to generate the following execution plan. Resource actions
+are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # civo_network.custom_net will be created
+  + resource "civo_network" "my-network" {
+      + region               = "LON1"
+      + id                   = (known after apply)
+      + name                 = "my-network"
+      + network_id           = (known after apply)
+    }
+```
+
+### Apply the configuration
+
+To apply the configuration and allow Terraform to create the resources, run `terraform apply` and type `yes` when asked for confirmation:
+
+```console
+$ terraform apply
+Terraform used the selected providers to generate the following execution plan. Resource actions
+are indicated with the following symbols:
+  + create
+
+  # civo_network.custom_net will be created
+  + resource "civo_network" "custom_net" {
+      + default = (known after apply)
+      + id      = (known after apply)
+      + label   = "my-network"
+      + name    = (known after apply)
+    }
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+(...)
+```
+
+When the creation completes, refresh your Civo web dashboard. You should see the new network on the [Networks page](https://dashboard.civo.com/networks).
+</TabItem>
+
 </Tabs>
 
 ## Deleting a private network

@@ -108,7 +108,7 @@ Once running, you can use `kubectl` and the *kubeconfig* file from the cluster t
 
 ### Defining a Kubernetes resource in Terraform
 
-Once you have configured the Civo Terraform provider, you can define a Civo Kubernetes resource in Terraform:
+Once you have configured the [Civo Terraform provider](../overview/terraform.md), you can define a Civo Kubernetes resource in Terraform:
 
 ```terraform
 resource "civo_kubernetes_cluster" "cluster" {
