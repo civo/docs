@@ -4,7 +4,7 @@ During Civo [compute instance creation](../compute/create-an-instance.md) there 
 
 In this example we will set up `containerd`, `kubeadm`, `kubectl` and `kubelet` on an instance. The use case for this can be that you can create 4 instances and have them all execute the install script on creation. After that you would need to just run `kubeadm init` and `kubeadm join` commands to set up a Kubernetes (K8s) cluster.
 
-Although the simpler way to run your Kubernetes workloads is to just run a [Civo Kubernetes cluster](../kubernetes/kubernetes-introduction.md) this is intended to demonstrate how to use the installation script in a real-world scenario.
+Although the simpler way to run your Kubernetes workloads is to just run a [Civo Kubernetes cluster](../kubernetes/) this is intended to demonstrate how to use the installation script in a real-world scenario.
 
 On the [instance creation page](https://dashboard.civo.com/instances/new), choose `Ubuntu` as your operating system for a Medium size instance, and paste the below code in the *installation script* section:
 
