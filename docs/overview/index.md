@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Service Overview
+# Overview
 
 Civo is a cloud-native service provider. We run state-of-the-art cloud computing hardware in data centres around the world that can be used by our users through the services we offer.
 
