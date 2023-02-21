@@ -24,6 +24,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/civo/docs/tree/main/',
+          showLastUpdateTime: true,
         },
         blog: false,
         theme: {
