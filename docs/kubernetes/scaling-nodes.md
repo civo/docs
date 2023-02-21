@@ -1,5 +1,5 @@
 ---
-description: Scaling Civo Kubernetes cluster node pools
+description: Learn how to scale your Civo Kubernetes nodes to improve the performance and capacity of your applications. Click for more information.
 ---
 
 import Tabs from '@theme/Tabs';

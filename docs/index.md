@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-description: Find how to make the most of Civo services by browsing our documentation here
+description: Get started with Civo by browsing our documentation. Find answers to your questions and learn more about Civo services in the Account section.
 ---
 
 # Civo Documentation

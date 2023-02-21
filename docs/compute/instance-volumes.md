@@ -1,5 +1,5 @@
 ---
-description: Managing block storage volumes for instances on Civo
+description: Learn how to manage and attach volumes to your Civo Compute instances to expand your storage capacity and improve the performance of your applications. 
 ---
 
 import Tabs from '@theme/Tabs';

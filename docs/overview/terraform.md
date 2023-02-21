@@ -1,5 +1,5 @@
 ---
-description: Setting up and managing the Civo Terraform infrastructure as code provider
+description: Learn how to use Terraform to manage your Civo resources. Find out how to automate the creation and management of your Civo infrastructure.
 ---
 # Civo Terraform provider
 

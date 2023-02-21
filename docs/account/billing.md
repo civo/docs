@@ -1,5 +1,5 @@
 ---
-description: This document details how charges are calculated and how we bill you for usage on Civo.
+description: Learn how Civo calculates charges for services and usage, and find out how to manage your billing information. Visit Civo.com/docs for more information.
 ---
 
 # Billing

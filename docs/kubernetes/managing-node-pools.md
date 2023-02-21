@@ -1,5 +1,5 @@
 ---
-description: Managing Civo cluster node pools
+description: Learn how to manage and scale your Civo Kubernetes clusters by creating, managing and optimizing your node pools. Click for more information.
 ---
 
 import Tabs from '@theme/Tabs';

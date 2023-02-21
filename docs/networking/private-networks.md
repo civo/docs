@@ -1,5 +1,5 @@
 ---
-description: Networks provide isolation for your instances and Kubernetes clusters, separating groups of instances used for different purposes.
+description: Learn how to use private networks with Civo. Find out how to create and manage your private network resources to improve your app's security and performance.
 ---
 
 import Tabs from '@theme/Tabs';

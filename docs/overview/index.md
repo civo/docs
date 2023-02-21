@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-description: The Civo documentation is a reference to the services and tooling offered by Civo
+description: Learn how to get started with Civo. Find out how to access & manage your Civo resources, incl. instances, Kubernetes clusters, and networking resources.
 ---
 
 # Overview

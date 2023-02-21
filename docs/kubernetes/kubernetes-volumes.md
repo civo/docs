@@ -1,5 +1,5 @@
 ---
-description: Civo Kubernetes clusters provide a native storage class that you can use for your persistent workloads and applications
+description: Learn how to manage and attach volumes to your Civo Kubernetes clusters, find out how to use them and improve the performance of your applications. 
 ---
 
 import Tabs from '@theme/Tabs';
