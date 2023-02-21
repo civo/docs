@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: Find how to make the most of Civo services by browsing our documentation here
 ---
 
 # Civo Documentation

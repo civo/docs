@@ -1,3 +1,7 @@
+---
+description: Managing Civo cluster node pools
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

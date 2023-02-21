@@ -1,3 +1,7 @@
+---
+description: Defining and managing Kubernetes load balancers on Civo
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

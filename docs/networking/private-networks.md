@@ -1,3 +1,7 @@
+---
+description: Networks provide isolation for your instances and Kubernetes clusters, separating groups of instances used for different purposes.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

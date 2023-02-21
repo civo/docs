@@ -1,3 +1,7 @@
+---
+description: How to create a Civo compute instance using various tools and options
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

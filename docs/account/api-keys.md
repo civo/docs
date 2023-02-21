@@ -1,3 +1,7 @@
+---
+description: Acquiring and managing a Civo account's API key
+---
+
 # API Keys
 
 Services in your Civo account can be administered using the Civo API. To authenticate the account for the [API](https://www.civo.com/api) or tools that use it such as the Civo [command-line interface](../overview/civo-cli.md), you will need to provide an API key that is unique to your account.

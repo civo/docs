@@ -1,3 +1,7 @@
+---
+description: How to automatically apply an installation / cloud-init script to Civo compute instances
+---
+
 # Install / cloud-init script usage
 
 During Civo [compute instance creation](../compute/create-an-instance.md) there is a section where you can provide an installation script. This can prove to be very useful when you want to install certain tooling on the instance or run scripts for initial setup.

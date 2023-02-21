@@ -1,3 +1,7 @@
+---
+description: You can add your SSH keys to your Civo account and use them to log in to Civo instances that have the key associated with them.
+---
+
 # SSH Key management and use
 
 You can add your SSH keys to your Civo account and use them to log in to Civo instances that have the key associated with them.

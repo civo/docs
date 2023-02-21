@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: Managed Kubernetes is one of the core Civo services, and is fully-compatible with the wider cloud-native ecosystem as well as certified CNCF conformant.
 ---
 # Kubernetes 
 

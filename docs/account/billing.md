@@ -1,3 +1,7 @@
+---
+description: This document details how charges are calculated and how we bill you for usage on Civo.
+---
+
 # Billing
 
 ## Overview

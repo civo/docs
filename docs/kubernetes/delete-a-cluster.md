@@ -1,3 +1,7 @@
+---
+description: Documentation on deleting a Kubernetes cluster on Civo using a variety of tools
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

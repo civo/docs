@@ -1,3 +1,6 @@
+---
+description: How account quotas are managed and adjusted on Civo
+---
 # Account quota
 
 Each account on Civo has a quota based on a combined allocation of instances/Kubernetes nodes, CPUs, RAM usage, and other resources that can be allocated to an account. All customers start on a basic quota level, like in the screenshot below:

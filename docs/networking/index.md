@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: Documentation for Civo services related to networking
 ---
 # Networking 
 

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: This section describes features of your Civo account
 ---
 
 # Account

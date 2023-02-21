@@ -1,3 +1,6 @@
+---
+description: Setting up and managing the Civo Terraform infrastructure as code provider
+---
 # Civo Terraform provider
 
 ## Overview

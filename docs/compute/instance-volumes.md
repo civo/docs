@@ -1,3 +1,7 @@
+---
+description: Managing block storage volumes for instances on Civo
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

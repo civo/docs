@@ -1,3 +1,7 @@
+---
+description: Scaling Civo Kubernetes cluster node pools
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: Compute instances are virtual machines that run on the Civo platform
 ---
 
 # Compute

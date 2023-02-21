@@ -1,3 +1,7 @@
+---
+description: Managing firewalls and firewall rules on Civo
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

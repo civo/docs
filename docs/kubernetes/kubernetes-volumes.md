@@ -1,3 +1,7 @@
+---
+description: Civo Kubernetes clusters provide a native storage class that you can use for your persistent workloads and applications
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

@@ -1,3 +1,6 @@
+---
+description: Documentation on creating a Kubernetes cluster on Civo using a variety of tools and options.
+---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
