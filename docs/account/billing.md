@@ -1,3 +1,7 @@
+---
+description: Learn how Civo calculates charges for services and usage, and find out how to manage your billing information. Visit Civo.com/docs for more information.
+---
+
 # Billing
 
 ## Overview

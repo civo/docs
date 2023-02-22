@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: Your account on Civo, and resources running within your account, can be managed with a variety of tools such as the Civo CLI and infrastructure-as-code tools such as Terraform
 ---
 
 # Civo tools

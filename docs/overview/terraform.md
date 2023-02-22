@@ -1,3 +1,6 @@
+---
+description: Learn how to use Terraform to manage your Civo resources. Find out how to automate the creation and management of your Civo infrastructure.
+---
 # Civo Terraform provider
 
 ## Overview

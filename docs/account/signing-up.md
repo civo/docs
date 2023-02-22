@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: Signing up for a Civo account
 ---
 
 # Signing up

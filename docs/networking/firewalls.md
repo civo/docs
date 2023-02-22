@@ -1,3 +1,7 @@
+---
+description: Learn how to use firewalls to protect your Civo networking resources, and find out how to customize your firewall rules to meet your specific needs. 
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

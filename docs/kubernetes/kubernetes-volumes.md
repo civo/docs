@@ -1,3 +1,7 @@
+---
+description: Learn how to manage and attach volumes to your Civo Kubernetes clusters, find out how to use them and improve the performance of your applications. 
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

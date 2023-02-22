@@ -1,3 +1,7 @@
+---
+description: Learn how to use private networks with Civo. Find out how to create and manage your private network resources to improve your app's security and performance.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

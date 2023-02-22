@@ -1,8 +1,11 @@
 ---
 sidebar_position: 1
+description: Compute instances are virtual machines that run on the Civo platform
 ---
 
-# Instances introduction
+# Compute
+
+## Introduction to Compute Instances
 
 Civo is a cloud computing platform. As part of the compute services offered, users can launch virtual machines in all available regions. On Civo, these virtual machines are called Instances.
 

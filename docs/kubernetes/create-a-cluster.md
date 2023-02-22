@@ -1,3 +1,6 @@
+---
+description: Learn how to create a Kubernetes cluster on Civo, and find out how to customize and manage your cluster to meet your specific needs. Click for more information.
+---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

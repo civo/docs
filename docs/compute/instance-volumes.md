@@ -1,3 +1,7 @@
+---
+description: Learn how to manage and attach volumes to your Civo Compute instances to expand your storage capacity and improve the performance of your applications. 
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -24,7 +28,7 @@ Then, click on "Create a volume":
 
 ![Volume creation options](images/volume-creation-options.png)
 
-You will be able to give your volume a name, select a [network](../networking/networking-introduction.md) if you have created any in the region, and see the pricing for your chosen size.
+You will be able to give your volume a name, select a [network](../networking/) if you have created any in the region, and see the pricing for your chosen size.
 
 Click "Create". The volume will be created in your account.
 

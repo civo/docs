@@ -1,3 +1,7 @@
+---
+description: Learn how to manage and secure your SSH keys on Civo, and find out how to use them to access your Civo account and services. Click for more information.
+---
+
 # SSH Key management and use
 
 You can add your SSH keys to your Civo account and use them to log in to Civo instances that have the key associated with them.

@@ -1,3 +1,7 @@
+---
+description: Reserving IP addresses for instances and load balancers allows you to ensure continued service.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

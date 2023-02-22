@@ -1,3 +1,7 @@
+---
+description: Learn how to create a Civo Compute instance, and find out how to customize your instance to meet your specific needs. Click for more information.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
