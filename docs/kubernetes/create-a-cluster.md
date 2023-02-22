@@ -53,7 +53,19 @@ Depending on the applications you want to run on your cluster, you may need to s
 
 ### 6. Advanced options
 
-This section allows you to optionally configure an alternative Container Networking Interface (CNI) for your cluster.
+This section allows you to optionally configure advanced options. 
+
+#### Container Networking Interface (CNI)
+
+The default CNI on Civo is Flannel. However, you can choose Cilium as an alternative Container Networking Interface (CNI) for your cluster.
+
+Please note that the Cilium CNI is not compatible with Talos clusters. If you choose Cilium as your CNI and set Talos as your cluster type, the system will default to using Flannel.
+
+#### Cluster type
+
+The Cluster type selector allows you to choose between K3s or Talos Linux. The underlying operating system on K3s clusters is an Alpine Linux image. Talos Linux is an immutable Kubernetes-oriented Linux operating system.
+
+As noted above, please note that the Cilium CNI is not compatible with Talos clusters and Flannel will be used instead.
 
 ### 7. Marketplace
 
@@ -85,9 +97,9 @@ If you run `civo kubernetes create` on its own, it will create a cluster in the 
 
 The CLI allows you to specify any number of options for your cluster, from the size of the nodes in the initial node pool to the firewall rules to set up, the version of Kubernetes to use, and more. A full list of options for cluster creation can be found by running `civo kubernetes create --help`.
 
-As an example, the following command will create a 4-node cluster called "civo-cluster" of *g4s.kube.medium* nodes, with a custom firewall with only port 6443 open, in the LON1 region, and wait for the cluster to become live before saving the *kubeconfig* alongside your current `~/.kube/config` file.
+As an example, the following command will create a 4-node K3s cluster called "civo-cluster" of *g4s.kube.medium* nodes, with a custom firewall with only port 6443 open, in the LON1 region, and wait for the cluster to become live before saving the *kubeconfig* alongside your current `~/.kube/config` file.
 
-`civo kubernetes create civo-cluster -n 4 -s g4s.kube.medium --create-firewall --firewall-rules "6443" --region LON1 --wait --save --merge --switch`
+`civo kubernetes create civo-cluster -n 4 -s g4s.kube.medium --cluster-type k3s --create-firewall --firewall-rules "6443" --region LON1 --wait --save --merge --switch`
 
 When you run the above, the Civo CLI will show you the completion time and confirm your *kubeconfig* has been merged in, and the current context has been switched to the new cluster:
 
@@ -116,10 +128,11 @@ Once you have configured the [Civo Terraform provider](../overview/terraform.md)
 ```terraform
 resource "civo_kubernetes_cluster" "cluster" {
   name              = "<name you want to give your cluster>"
+  cluster_type      = "k3s" # Your choice of cluster type, can be k3s or talos
   applications      = ""
   num_target_nodes  = 3
   target_nodes_size = element(data.civo_instances_size.small.sizes, 0).name
-  region            = "NYC1"
+  region            = "NYC1" # Your choice of Civo region
 }
 
 data "civo_kubernetes_cluster" "cluster" {
