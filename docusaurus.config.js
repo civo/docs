@@ -9,10 +9,11 @@ const config = {
   title: 'Civo Documentation',
   tagline: 'The Cloud Native Service Provider',
   url: 'https://www.civo.com',
-  baseUrl: '/docs/',
+  baseUrl: '/docs',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
+  trailingSlash: false,
 
   presets: [
     [
