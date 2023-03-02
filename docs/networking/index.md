@@ -6,4 +6,4 @@ description: Documentation for Civo services related to networking
 
 ## Introduction
 
-This section of the Civo documentation covers functionality around networking and Civo resources. It has sections on [private networks](./private-networks), [firewalls](./firewalls), domain name service (DNS) records, and [reserved IP addresses](reserved-ip.md).
+This section of the Civo documentation covers functionality around networking and Civo resources. It has sections on [private networks](private-networks.md), [firewalls](firewalls.md), domain name service (DNS) records, and [reserved IP addresses](reserved-ip.md).

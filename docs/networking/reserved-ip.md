@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Reserved IP addresses
 
-While resources that are accessible from the public internet, such as [instances](../compute/instances-introduction) and Kubernetes cluster [load balancers](../kubernetes/load-balancers.md), get assigned public IP addresses when they are created, there are times you may wish to ensure that the IP address gets reserved to you. This allows you to change these publicly routable resources without changing their IP addresses. Reserving a [static IP address](https://dashboard.civo.com/reserved-ips) allows you to reassign the address from one instance to another to build resiliency.
+While resources that are accessible from the public internet, such as [instances](../compute/) and Kubernetes cluster [load balancers](../kubernetes/load-balancers.md), get assigned public IP addresses when they are created, there are times you may wish to ensure that the IP address gets reserved to you. This allows you to change these publicly routable resources without changing their IP addresses. Reserving a [static IP address](https://dashboard.civo.com/reserved-ips) allows you to reassign the address from one instance to another to build resiliency.
 
 If you create a new instance or load balancer, you will be able to attach a reserved IP address in your account. If you select an address that is already assigned to a resource, it will be moved to the new one immediately.
 
