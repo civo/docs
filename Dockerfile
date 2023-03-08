@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
+ARG GTAG_MANAGER_ID
 RUN npm run build
 
 FROM nginx:1.23.1-alpine
