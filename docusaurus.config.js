@@ -28,6 +28,9 @@ const config = {
           showLastUpdateTime: true,
         },
         blog: false,
+        googleTagManager: {
+          containerId: process.env.GTAG_MANAGER_ID || "undefined",
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
