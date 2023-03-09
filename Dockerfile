@@ -7,6 +7,8 @@ COPY . .
 ARG GTAG_MANAGER_ID
 RUN npm run build
 WORKDIR /app/build
+
+# Move the built assets to a /docusaurus directory & update references to avoid conflicts with existing assets
 RUN grep -rl "assets/" . | xargs sed -i 's;assets/;docusaurus/;g'
 RUN cp -r assets/* docusaurus/ && rm -rf assets
 
