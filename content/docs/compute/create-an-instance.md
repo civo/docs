@@ -39,7 +39,7 @@ You can create one or more instances in one operation, subject to the limitation
 
 ### 3. Select size
 
-You can select the size and instance hardware specifications based on the task you want to accomplish. You can view the available sizing options [here](https://www.civo.com/compute-pricing).
+You can select the size and instance hardware specifications based on the task you want to accomplish. You can view the available sizing options [here](https://www.civo.com/pricing).
 
 Sizing options may be restricted depending on your account quota and how many resources are already running in your account. See the [quota documentation](../account/quota.md) for more information.
 
