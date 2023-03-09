@@ -6,6 +6,9 @@ RUN npm install
 COPY . .
 ARG GTAG_MANAGER_ID
 RUN npm run build
+WORKDIR /app/build
+RUN grep -rl "/docs/\"" . | xargs sed -i 's;/docs/";/docs";g'
+
 
 FROM nginx:1.23.1-alpine
 COPY nginx.conf /etc/nginx
