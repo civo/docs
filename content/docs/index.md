@@ -5,7 +5,7 @@ description: Get started with Civo by browsing our documentation. Find answers t
 
 # Civo Documentation
 
-Find the answers you need by browsing our documentation here. To begin, check out the [Getting Started](./overview/) section to learn more about accessing the [services that Civo provides](./overview/).
+Find the answers you need by browsing our documentation here. To begin, check out the [Getting Started](./overview/index.md) section to learn more about accessing the [services that Civo provides](./overview/index.md).
 
 The Civo API documentation can be found at [https://www.civo.com/api](https://www.civo.com/api).
 
