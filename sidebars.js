@@ -9,7 +9,7 @@ const sidebars = {
     {
       type: 'link',
       label: 'Civo API documentation',
-      href: 'https://civo.com/api',
+      href: 'https://www.civo.com/api',
     }
   ],
 };
