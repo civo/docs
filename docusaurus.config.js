@@ -9,10 +9,10 @@ const config = {
   title: 'Civo Documentation',
   tagline: 'The Cloud Native Service Provider',
   url: 'https://www.civo.com',
-  baseUrl: '/docs',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
-  favicon: 'img/favicon.ico',
+  favicon: 'docusaurus/img/favicon.ico',
   trailingSlash: false,
 
   presets: [
@@ -21,6 +21,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          path: 'content',
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
@@ -44,7 +45,7 @@ const config = {
       navbar: {
         logo: {
           alt: 'Civo Logo',
-          src: 'img/logo.svg',
+          src: 'docusaurus/img/logo.svg',
           href: 'https://www.civo.com/'
         },
         items: [

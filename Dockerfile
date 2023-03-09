@@ -7,11 +7,12 @@ COPY . .
 ARG GTAG_MANAGER_ID
 RUN npm run build
 WORKDIR /app/build
-RUN grep -rl "/docs/\"" . | xargs sed -i 's;/docs/";/docs";g'
 
+# Move the built assets to a /docusaurus directory & update references to avoid conflicts with existing assets
+RUN grep -rl "assets/" . | xargs sed -i 's;assets/;docusaurus/;g'
+RUN cp -r assets/* docusaurus/ && rm -rf assets
 
 FROM nginx:1.23.1-alpine
 COPY nginx.conf /etc/nginx
 RUN nginx -t
-COPY --from=builder /app/build /usr/share/nginx/html/docs
-RUN touch /usr/share/nginx/html/index.html
+COPY --from=builder /app/build /usr/share/nginx/html
