@@ -19,7 +19,7 @@ Begin by selecting the Civo Region you are operating in. You can do so in the lo
 
 ![Region selection menu](../kubernetes/images/region-select.png)
 
-Then, navigate to the [Object store credentials page](https://dashboard.civo.com/object-stores/credentials):
+Then, navigate to the [object store credentials page](https://dashboard.civo.com/object-stores/credentials):
 
 ![Object store credentials page](images/credentials-creation-1.png)
 
@@ -34,7 +34,7 @@ You can now proceed to [create an object store](./create-an-object-store).
 
 <TabItem value="cli" label="Civo CLI">
 
-To create a new Object store credential with your chosen name, you can use the `civo objectstore credential create` CLI command, like this:
+To create a new object store credential with your chosen name, you can use the `civo objectstore credential create` CLI command, like this:
 
 ```console
 $ civo objectstore credential create demo-credential

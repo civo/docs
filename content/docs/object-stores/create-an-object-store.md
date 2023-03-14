@@ -6,11 +6,11 @@ description: Documentation on creating Civo object stores through the account da
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Creating an Object store
+# Creating an object store
 
 ## Prerequisite: Credentials
 
-Civo Object stores are accessed through the S3 API using specified credentials. If you have not yet [created an object store credential](./object-store-credentials), you will be prompted to do so when you first try to create an Object store.
+Civo object stores are accessed through the S3 API using specified credentials. If you have not yet [created an object store credential](./object-store-credentials), you will be prompted to do so when you first try to create an object store.
 
 ## Object store creation options
 
@@ -47,11 +47,11 @@ The optional parameters are:
 
 `--size {500/1000/1500...}` - the size in GB of the store, in multiples of 500.
 
-`--owner-access-key <id>` - the [Object store credential](./object-store-credentials) referenced by id to make the owner of the store to be created.
+`--owner-access-key <id>` - the [object store credential](./object-store-credentials) referenced by id to make the owner of the store to be created.
 
-`--owner-name <name>` - the [Object store credential](./object-store-credentials) referenced by its name to make the owner of the store to be created.
+`--owner-name <name>` - the [object store credential](./object-store-credentials) referenced by its name to make the owner of the store to be created.
 
-`--region <region>` the Civo region in which to create the Object store. If not provided, will use the currently-selected region.
+`--region <region>` the Civo region in which to create the object store. If not provided, will use the currently-selected region.
 
 </TabItem>
 </Tabs>

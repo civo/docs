@@ -6,9 +6,9 @@ description: Documentation for uploading files to Civo Object stores, an S3-comp
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Adding files to Object stores
+# Adding files to object stores
 
-You can add (upload) files to your object stores both through the Object store dashboard in your account and using the S3 API directly with a tool such as [s3cmd](https://github.com/s3tools/s3cmd).
+You can add (upload) files to your object stores both through the [object store dashboard](https://dashboard.civo.com/object-stores) in your account and using the S3 API directly with a tool such as [s3cmd](https://github.com/s3tools/s3cmd).
 
 Generally, if the files you want to upload to an object store are large, or there are many of them, it is recommended to use the API rather than uploading them using your web browser.
 
