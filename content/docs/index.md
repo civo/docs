@@ -1,8 +1,12 @@
 ---
 sidebar_position: 1
-title: Civo Documentation | Your Guide to Using Civo
 description: Get started with Civo by browsing our documentation. Find answers to your questions and learn more about Civo services in the Account section.
 ---
+
+<head>
+  <title>Civo Documentation | Your Guide to Using Civo</title>
+</head>
+
 
 # Civo Documentation
 
