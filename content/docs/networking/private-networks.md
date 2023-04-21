@@ -1,11 +1,14 @@
 ---
-description: Learn how to use private networks with Civo. Find out how to create and manage your private network resources to improve your app's security and performance.
+title: Private networks
+description: Learn how to create and manage private networks for your instances and Kubernetes clusters on Civo. Instructions using Civo Dashboard, CLI, and Terraform.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Private networks
+<head>
+  <title>Using Private Networks with Civo | Civo Documentation</title>
+</head>
 
 Networks provide isolation for your instances and Kubernetes clusters, separating groups of instances used for different purposes. When you create a resource such as a Kubernetes cluster, you can assign it to a specific network.
 
