@@ -1,13 +1,15 @@
 ---
-description: Documentation on deleting S3 Civo object stores from your account
 sidebar_position: 5
+title: Deleting object stores
+description: Delete Civo object stores when you no longer need them. Follow our guide to delete an object store safely and ensure you have recovered all files beforehand.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
-# Deleting object stores
+<head>
+  <title>Deleting Object Stores | Civo Documentation</title>
+</head>
 
 Object stores accrue charges based on their size, which are billed to your account. If you no longer require an object store, you can delete it to prevent further charges.
 
