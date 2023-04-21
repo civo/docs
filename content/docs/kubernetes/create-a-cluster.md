@@ -1,10 +1,13 @@
 ---
-description: Learn how to create a Kubernetes cluster on Civo, and find out how to customize and manage your cluster to meet your specific needs. Click for more information.
+title: Creating a Kubernetes cluster
+description: Create and customize your Kubernetes cluster on Civo. Select region, name, size, network, firewall, and more. Click for Civo Dashboard, CLI, or Terraform guides.
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Creating a Kubernetes cluster
+<head>
+  <title>Creating a Kubernetes Cluster on Civo | Civo Documentation</title>
+</head>
 
 ## Overview
 
