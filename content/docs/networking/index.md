@@ -1,8 +1,12 @@
 ---
 sidebar_position: 1
-description: Documentation for Civo services related to networking
+title: Networking
+description: Learn how to configure private networks, firewalls, DNS records, and reserved IPs on Civo. Optimize your resources for security and isolation.
 ---
-# Networking 
+
+<head>
+  <title>Civo Networking Docs incl. Firewalls and DNS Records</title>
+</head>
 
 ## Introduction
 
