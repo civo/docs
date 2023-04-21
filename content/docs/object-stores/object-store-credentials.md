@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: 
+title: Object store credentials
 description: Securely manage your private Civo Object Store contents through the Civo dashboard or Civo CLI. Create & retrieve access key IDs and secret credentials. 
 ---
 
@@ -10,8 +10,6 @@ import TabItem from '@theme/TabItem';
 <head>
   <title>Manage Your Object Store Credentials with Civo | Civo Documentation</title>
 </head>
-
-# Object store credentials
 
 To access object store contents through the S3 API, you will need to create a credential that can be associated with the store. All Civo object stores are created as private and require an access key ID and secret credentials.
 
