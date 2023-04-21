@@ -1,11 +1,14 @@
 ---
+title: Kubernetes Load Balancers
 description: Learn how to use load balancers with your Civo Kubernetes clusters, and find out how to improve the performance and scalability of your applications.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Kubernetes Load Balancers
+<head>
+  <title>Using Load Balancers with Civo Clusters | Civo Documentation</title>
+</head>
 
 ## Overview
 
