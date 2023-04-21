@@ -1,9 +1,12 @@
 ---
 sidebar_position: 1
-description: This section describes features of your Civo account
+title: Account
+description: Discover how to manage your Civo account using various tools, including signing up, billing, and accessing account-specific information like API and SSH keys.
 ---
 
-# Account
+<head>
+  <title>Overview of Civo Account Features | Civo Documentation</title>
+</head>
 
 ## Introduction
 
