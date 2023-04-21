@@ -1,11 +1,14 @@
 ---
-description: Learn how to scale your Civo Kubernetes nodes to improve the performance and capacity of your applications. Click for more information.
+title: Scaling a Kubernetes cluster's nodes
+description: Learn how to scale your Kubernetes cluster's nodes up or down on Civo, with easy steps on the Civo Dashboard, CLI or Terraform. Click for more information.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Scaling a Kubernetes cluster's nodes
+<head>
+  <title>Scaling a Civo Kubernetes Cluster's Nodes | Civo Documentation</title>
+</head> 
 
 ## Overview
 
