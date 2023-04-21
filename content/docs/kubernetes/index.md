@@ -1,8 +1,12 @@
 ---
 sidebar_position: 1
-description: Managed Kubernetes is one of the core Civo services, and is fully-compatible with the wider cloud-native ecosystem as well as certified CNCF conformant.
+title: Kubernetes
+description: Create Kubernetes clusters with ease on Civo. Learn to manage clusters on Civo using the web interface, CLI, and Terraform. Certified CNCF conformant.
 ---
-# Kubernetes 
+
+<head>
+  <title>Civo Kubernetes Management | Civo Documentation</title>
+</head>
 
 ## Introduction
 
