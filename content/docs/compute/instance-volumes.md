@@ -1,11 +1,14 @@
 ---
-description: Learn how to manage and attach volumes to your Civo Compute instances to expand your storage capacity and improve the performance of your applications. 
+title: Instance volumes
+description: Learn how to manage and attach volumes to your Civo Compute instances using Civo Dashboard, Civo CLI, or Terraform to expand your storage capacity.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Instance volumes
+<head>
+  <title>How to Manage Volumes for Your Civo Instances | Civo Documentation</title>
+</head> 
 
 Volumes are flexible-size additional storage for instances. By creating a volume and associating it with an instance, an additional virtual disk will be made available for backups or database files that can then moved to another instance, or used as extra storage space.
 
