@@ -1,7 +1,11 @@
 ---
+title: Account quota
 description: Learn about your Civo account quota, and find out how to manage your usage to ensure you have enough resources for your projects. Click for more information.
 ---
-# Account quota
+
+<head>
+  <title>Managing Your Civo Account Quota | Civo Documentation</title>
+</head>
 
 Each account on Civo has a quota based on a combined allocation of instances/Kubernetes nodes, CPUs, RAM usage, and other resources that can be allocated to an account. All customers start on a basic quota level, like in the screenshot below:
 
