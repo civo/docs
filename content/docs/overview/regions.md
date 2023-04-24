@@ -1,6 +1,7 @@
 ---
 titles: Regions
 description: Discover how to select regions to deploy Civo resources like Kubernetes clusters and VMs. Use the Civo Dashboard or CLI to manage regions effortlessly.
+image: ./images/regions-overview-banner.png
 ---
 
 <head>

@@ -2,6 +2,7 @@
 sidebar_position: 1
 title: Compute
 description: Launch Instances on Civo's platform in various regions with a range of sizes and capacities. Learn how to manage Instances and get started today.
+image: ./images/compute-documentation-banner.png
 ---
 
 <head>

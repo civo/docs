@@ -2,6 +2,7 @@
 sidebar_position: 1
 title: Kubernetes
 description: Create Kubernetes clusters with ease on Civo. Learn to manage clusters on Civo using the web interface, CLI, and Terraform. Certified CNCF conformant.
+image: ./images/kubernetes-documentation-banner.png
 ---
 
 <head>

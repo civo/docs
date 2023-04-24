@@ -1,6 +1,7 @@
 ---
 title: Kubernetes Volumes
 description: Learn how to manage and attach volumes to your Civo Kubernetes clusters, find out how to use them and improve the performance of your applications.
+image: ./images/kubernetes-volumes-banner.png
 ---
 
 import Tabs from '@theme/Tabs';

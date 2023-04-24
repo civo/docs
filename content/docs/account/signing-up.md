@@ -1,8 +1,10 @@
 ---
 sidebar_position: 1
-Title: Signing up
 description: Learn how to get started with Civo. Find out how to access & manage your Civo resources, incl. instances, Kubernetes clusters, and networking resources.
+image: ./images/signing-up-banner.png
 ---
+
+# Signing up
 
 <head>
   <title>Getting Started with Civo | Civo Documentation</title>

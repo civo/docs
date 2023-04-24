@@ -2,6 +2,7 @@
 sidebar_position: 2
 title: Creating an object store
 description: Learn how to create Civo Object Store through the Civo Dashboard and Civo Cli Tool. Assign object store credentials and start storing unstructured data effortlessly.
+image: ./images/creating-object-store-banner.png
 ---
 
 import Tabs from '@theme/Tabs';

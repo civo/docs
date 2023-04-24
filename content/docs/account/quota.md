@@ -1,6 +1,7 @@
 ---
 title: Account quota
 description: Learn about your Civo account quota, and find out how to manage your usage to ensure you have enough resources for your projects. Click for more information.
+image: ./images/quota-documentation-banner.png
 ---
 
 <head>

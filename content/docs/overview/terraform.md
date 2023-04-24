@@ -1,6 +1,7 @@
 ---
 title: Civo Terraform provider
 description: Learn how to use Terraform to manage your Civo resources. Find out how to automate the creation and management of your Civo infrastructure.
+image: ./images/terraform-provider-documentation-banner.png
 ---
 
 <head>

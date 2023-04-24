@@ -1,6 +1,7 @@
 ---
 title: Private networks
 description: Learn how to create and manage private networks for your instances and Kubernetes clusters on Civo. Instructions using Civo Dashboard, CLI, and Terraform.
+image: ./images/private-networks-banner.png
 ---
 
 import Tabs from '@theme/Tabs';
