@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 description: Learn how to get started with Civo. Find out how to access & manage your Civo resources, incl. instances, Kubernetes clusters, and networking resources.
-image: images/signing-up-banner.png
 ---
 
 # Signing up

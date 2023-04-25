@@ -2,7 +2,6 @@
 sidebar_position: 5
 title: Deleting object stores
 description: Delete Civo object stores when you no longer need them. Follow our guide to delete an object store safely and ensure you have recovered all files beforehand.
-image: images/deleting-object-stores-banner.png
 ---
 
 import Tabs from '@theme/Tabs';

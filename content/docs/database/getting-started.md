@@ -1,7 +1,6 @@
 ---
 sidebar_position: 2
 description: Get up and running with Civo's managed database service in no time with our comprehensive getting started guide. Start building your database with confidence today!
-image: images/database-getting-started-documentation-banner.png
 ---
 
 # Getting started with Civo Database

@@ -1,7 +1,6 @@
 ---
 title: Reserved IP addresses
 description: Easily reserve, assign, and release IP addresses for Civo resources to build resiliency. Region-specific and subject to quota allowance.
-image: images/reserved-ip-documentation-banner.png
 ---
 
 import Tabs from '@theme/Tabs';
