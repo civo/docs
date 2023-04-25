@@ -1,11 +1,16 @@
 ---
-description: How to access and download files from Civo object stores
 sidebar_position: 4
+title: Downloading files from object stores
+description: Learn how to access files in Civo Object Stores through URLs or the S3 API. Follow our instructions for successful downloads from object stores.
+image: ./images/downloading-files-object-stores-banner.png
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Downloading files from object stores
+<head>
+  <title>Downloading Files from Object Stores | Civo Documentation</title>
+</head>
 
 ## Accessing files by URL
 

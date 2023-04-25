@@ -1,11 +1,15 @@
 ---
-description: Learn how to use firewalls to protect your Civo networking resources, and find out how to customize your firewall rules to meet your specific needs. 
+title: Firewalls
+description: Create and manage firewalls for your Civo instances and clusters. Use Terraform or Civo dashboard/CLI to list, create, and delete firewalls for added security.
+image: ./images/firewall-documentation-banner.png
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Firewalls
+<head>
+  <title>Using Firewalls with Civo Networking | Civo Documentation</title>
+</head>
 
 A firewall lets you control the incoming and outgoing network traffic from your cluster or instance. The `Default` firewall in each region has all ports open, but we strongly recommend you customize your firewalls for security reasons.
 

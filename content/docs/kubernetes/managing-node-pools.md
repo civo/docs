@@ -1,11 +1,15 @@
 ---
-description: Learn how to manage and scale your Civo Kubernetes clusters by creating, managing and optimizing your node pools. Click for more information.
+title: Managing a Kubernetes cluster's node pools
+description: Learn how to create and manage node pools in your Kubernetes cluster on Civo. Add new node pools or delete existing ones via Civo Dashboard, CLI or Terraform.
+image: ./images/node-pools-banner.png
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Managing a Kubernetes cluster's node pools
+<head>
+  <title>Managing a Civo Kubernetes Cluster's Node Pools | Civo Documentation</title>
+</head> 
 
 ## Overview
 

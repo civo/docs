@@ -1,7 +1,13 @@
 ---
 sidebar_position: 1
+title: Overview
 description: Learn how to get started with Civo. Find out how to access & manage your Civo resources, incl. instances, Kubernetes clusters, and networking resources.
+image: ./images/docs-overview-banner.png
 ---
+
+<head>
+  <title>Civo Services Overview Doc | Civo Documentation</title>
+</head>
 
 # Overview
 

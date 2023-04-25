@@ -1,9 +1,13 @@
 ---
 sidebar_position: 1
-description: Compute instances are virtual machines that run on the Civo platform
+title: Compute
+description: Launch Instances on Civo's platform in various regions with a range of sizes and capacities. Learn how to manage Instances and get started today.
+image: ./images/compute-documentation-banner.png
 ---
 
-# Compute
+<head>
+  <title>Get Started with Civo Compute Instances | Civo Documentation</title>
+</head>
 
 ## Introduction to Compute Instances
 

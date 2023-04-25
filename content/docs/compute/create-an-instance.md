@@ -1,11 +1,15 @@
 ---
-description: Learn how to create a Civo Compute instance, and find out how to customize your instance to meet your specific needs. Click for more information.
+title: Creating an instance
+description: Learn how to easily create a customized Civo Compute instance that meets your specific needs using our Civo Dashboard, CLI or Terraform.
+image: ./images/creating-an-instance-banner.png
 ---
+
+<head>
+  <title>Creating a Civo Compute Instance | Civo Documentation</title>
+</head>
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Creating an instance
 
 ## Overview
 

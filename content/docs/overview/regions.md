@@ -1,8 +1,12 @@
 ---
-description: Civo cloud resources can be deployed in a number of regions around the world.
+title: Regions
+description: Discover how to select regions to deploy Civo resources like Kubernetes clusters and VMs. Use the Civo Dashboard or CLI to manage regions effortlessly.
+image: ./images/regions-overview-banner.png
 ---
 
-# Regions
+<head>
+  <title>A Guide to Civo Regions | Civo Documentation</title>
+</head>
 
 Civo resources can be deployed can be deployed in a number of regions around the world.
 

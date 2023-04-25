@@ -1,11 +1,15 @@
 ---
-description: Reserving IP addresses for instances and load balancers allows you to ensure continued service.
+title: Reserved IP addresses
+description: Easily reserve, assign, and release IP addresses for Civo resources to build resiliency. Region-specific and subject to quota allowance.
+image: ./images/reserved-ip-documentation-banner.png
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Reserved IP addresses
+<head>
+  <title>Managing IP Addresses for Civo Resources | Civo Documentation</title>
+</head>
 
 While resources that are accessible from the public internet, such as [instances](../compute/) and Kubernetes cluster [load balancers](../kubernetes/load-balancers.md), get assigned public IP addresses when they are created, there are times you may wish to ensure that the IP address gets reserved to you. This allows you to change these publicly routable resources without changing their IP addresses. Reserving a [static IP address](https://dashboard.civo.com/reserved-ips) allows you to reassign the address from one instance to another to build resiliency.
 

@@ -1,9 +1,14 @@
 ---
 sidebar_position: 1
-description: Signing up for a Civo account
+description: Learn how to get started with Civo. Find out how to access & manage your Civo resources, incl. instances, Kubernetes clusters, and networking resources.
+image: ./images/signing-up-banner.png
 ---
 
 # Signing up
+
+<head>
+  <title>Getting Started with Civo | Civo Documentation</title>
+</head>
 
 When you [sign up](https://dashboard.civo.com/signup) to Civo, the system will require you to confirm your email address to gain access. Once you have clicked the email confirmation link, you will be able to use your selected username and password to log in to your account.
 

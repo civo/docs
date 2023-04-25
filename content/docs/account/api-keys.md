@@ -1,8 +1,12 @@
 ---
+title: API Keys
 description: Learn how to manage your Civo API key, and access your Civo account and tools. Retrieve and reset your unique API key to unlock all Civo services and resources.
+image: ./images/api-keys-documentation-banner.png
 ---
 
-# API Keys
+<head>
+  <title>Retrieve and Reset Your Civo API Key | Civo Documentation</title>
+</head>
 
 Services in your Civo account can be administered using the Civo API. To authenticate the account for the [API](https://www.civo.com/api) or tools that use it such as the Civo [command-line interface](../overview/civo-cli.md), you will need to provide an API key that is unique to your account.
 

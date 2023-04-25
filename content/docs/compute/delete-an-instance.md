@@ -1,11 +1,15 @@
 ---
-description: How to delete a Civo compute instance using various tools and options
+title: Deleting an instance
+description: Learn how to delete Instances on Civo using the Civo Dashboard or Civo CLI. Get tips on safely retrieving data and avoiding billing errors.
+image: ./images/deleting-an-instance-banner.png
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Deleting an instance
+<head>
+  <title>How to Delete Civo Instances | Civo Documentation</title>
+</head>
 
 ## Overview
 
