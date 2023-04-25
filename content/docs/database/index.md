@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 description: Discover the power and scalability of Civo's managed database service at an affordable price with our technical documentation. Learn everything you need to know by getting started today.
-image: ./images/database-documentation-banner.png
+image: images/database-documentation-banner.png
 ---
 # Database
 

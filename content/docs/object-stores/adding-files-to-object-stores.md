@@ -2,7 +2,7 @@
 sidebar_position: 3
 title: Adding files to object stores
 description: Learn how to add files to Civo object stores with ease, either through the object store dashboard or using the S3 API with tools such as s3cmd.
-image: ./images/adding-files-to-object-store-banner.png
+image: images/adding-files-to-object-store-banner.png
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,7 +1,7 @@
 ---
 title: Kubernetes Load Balancers
 description: Learn how to use load balancers with your Civo Kubernetes clusters, and find out how to improve the performance and scalability of your applications.
-image: ./images/kubernetes-load-balancers-banner.png
+image: images/kubernetes-load-balancers-banner.png
 ---
 
 import Tabs from '@theme/Tabs';
