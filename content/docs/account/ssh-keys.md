@@ -1,7 +1,7 @@
 ---
 title: SSH Key management and use
 description: Learn how to manage and secure your SSH keys on Civo, how to generate a new SSH key and add it to your account through the Civo Dashboard, CLI or Terraform.
-image: ./images/ssh-key-management-banner.png
+image: images/ssh-key-management-banner.png
 ---
 
 

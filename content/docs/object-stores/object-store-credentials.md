@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Object store credentials
 description: Securely manage your private Civo Object Store contents through the Civo dashboard or Civo CLI. Create & retrieve access key IDs and secret credentials. 
-image: ./images/object-store-credentials-banner.png
+image: images/object-store-credentials-banner.png
 ---
 
 import Tabs from '@theme/Tabs';

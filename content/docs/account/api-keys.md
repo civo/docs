@@ -1,7 +1,7 @@
 ---
 title: API Keys
 description: Learn how to manage your Civo API key, and access your Civo account and tools. Retrieve and reset your unique API key to unlock all Civo services and resources.
-image: ./images/api-keys-documentation-banner.png
+image: images/api-keys-documentation-banner.png
 ---
 
 <head>

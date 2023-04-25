@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Account
 description: Discover how to manage your Civo account using various tools, including signing up, billing, and accessing account-specific information like API and SSH keys.
-image: ./images/account-documentation-banner.png
+image: images/account-documentation-banner.png
 ---
 
 <head>
