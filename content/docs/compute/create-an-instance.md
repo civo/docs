@@ -1,7 +1,6 @@
 ---
 title: Creating an instance
 description: Learn how to easily create a customized Civo Compute instance that meets your specific needs using our Civo Dashboard, CLI or Terraform.
-image: images/creating-an-instance-banner.png
 ---
 
 <head>

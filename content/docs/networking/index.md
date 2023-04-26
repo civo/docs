@@ -2,7 +2,6 @@
 sidebar_position: 1
 title: Networking
 description: Learn how to configure private networks, firewalls, DNS records, and reserved IPs on Civo. Optimize your resources for security and isolation.
-image: images/networking-documentation-banner.png
 ---
 
 <head>

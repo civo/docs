@@ -1,7 +1,6 @@
 ---
 title: Firewalls
 description: Create and manage firewalls for your Civo instances and clusters. Use Terraform or Civo dashboard/CLI to list, create, and delete firewalls for added security.
-image: images/firewall-documentation-banner.png
 ---
 
 import Tabs from '@theme/Tabs';
