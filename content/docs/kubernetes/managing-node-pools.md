@@ -845,5 +845,43 @@ The node pool (5b21796e-13df-4127-abc2-e18afde09ea4) has been deleted from the c
 ```
 
 </TabItem>
+</Tabs>
+
+### Recycling nodes
+
+If you need to rebuild nodes for whatever reason, you can use the **recycle** method to rebuild a single node. 
+
+:::note
+Recycling a node will delete it entirely, rebuild a new node to match it, and attach that to your cluster. When a node is recycled, it is fully deleted. The recycle command does not drain a node, it simply deletes it before building a new node and attaching it to a cluster. It is intended for scenarios where the node itself develops an issue and must be replaced with a new one.
+:::
+
+<Tabs groupId="recycle-nodes">
+
+<TabItem value="dashboard-recycle-node" label="Dashboard">
+
+Recycling a node on the dashboard is done on the Kubernetes cluster management page in the Node Pools section. Each node will have its own button to recycle, highlighted in the image below:
+
+![Recycle node button](./images/node-recycle.png)
+
+Once you click the recycle button, you will be prompted to confirm your choice:
+
+![Recycle node confirmation](./images/node-recycle-confirm.png)
+
+The confirmation is important, as the node is immediately torn down and replaced when recycled.
+
+</TabItem>
+
+<TabItem value="cli-recycle-node" label="Civo CLI">
+
+The CLI command to recycle a node takes the format `civo kubernetes recycle`. This takes as arguments your cluster and the specific node you wish to recycle:
+
+```bash
+$ civo kubernetes recycle kube_demo --node kube-node-2f5d
+The node (kube-node-2f5d) was recycled
+```
+
+If you were to look at the output of `civo kubernetes show (cluster_name)` you would see the node being rebuilt and the status reflecting that.
+
+</TabItem>
 
 </Tabs>
