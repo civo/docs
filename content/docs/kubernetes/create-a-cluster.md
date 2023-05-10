@@ -118,6 +118,55 @@ The cluster civo-cluster (ac1447d4-d938-4c0d-8eb6-7844b7f0a4dd) has been created
 
 Once running, you can use `kubectl` and the *kubeconfig* file from the cluster to interact with it. If you did not save the *kubeconfig* on cluster creation, you can use `civo kubernetes config civo-cluster --save --merge` to download the configuration and access your cluster.
 
+## Viewing cluster information on Civo CLI
+
+Once you have a running cluster, you can get a nicely-formatted information screen by running `civo kubernetes show [cluster_name]`. You can even use a partial name or unique section of the ID to have it show, like in the following example - as long as the part of the name you input matches only one cluster, you'll get the cluster information returned:
+
+```bash
+$ civo k8s show demo
+                    ID : 73866847-749a-43b9-8168-65bc3cc12ffc
+                  Name : docs-demo
+           ClusterType : k3s
+                Region : LON1
+                 Nodes : 4
+                  Size : g4s.kube.medium
+                Status : ACTIVE
+              Firewall : k3s-cluster-docs-demo-0377-b72777
+               Version : 1.23.6-k3s1
+          API Endpoint : https://74.220.27.254:6443
+           External IP : 74.220.27.254
+          DNS A record : 73866847-749a-43b9-8168-65bc3cc12ffc.k8s.civo.com
+Installed Applications : Traefik-v2-nodeport, metrics-server
+
+Pool (a1cd9b):
++-------------------------------------------------+---------------+----------+-----------------+-----------+----------+---------------+
+| Name                                            | IP            | Status   | Size            | Cpu Cores | RAM (MB) | SSD disk (GB) |
++-------------------------------------------------+---------------+----------+-----------------+-----------+----------+---------------+
+| k3s-docs-demo-614e-9e2f67-node-pool-1372-dnz9h  | 74.220.27.254 | ACTIVE   | g4s.kube.medium |         1 |     2048 |            40 |
+| k3s-docs-demo-614e-9e2f67-node-pool-1372-2u195  |               | BUILDING | g4s.kube.medium |         1 |     2048 |            40 |
+| k3s-docs-demo-614e-9e2f67-node-pool-1372-ts645  |               | ACTIVE   | g4s.kube.medium |         1 |     2048 |            40 |
+| k3s-docs-demo-614e-9e2f67-node-pool-1372-4xirw  |               | BUILDING | g4s.kube.medium |         1 |     2048 |            40 |
++-------------------------------------------------+---------------+----------+-----------------+-----------+----------+---------------+
+
+Labels:
+kubernetes.civo.com/node-pool=a1cd9b96-3707-4998-8fc3-209144ad234c
+kubernetes.civo.com/node-size=g4s.kube.medium
+
+Applications:
++---------------------+-----------+-----------+--------------+
+| Name                | Version   | Installed | Category     |
++---------------------+-----------+-----------+--------------+
+| Traefik-v2-nodeport |       2.6 | true      | architecture |
+| metrics-server      | (default) | true      | architecture |
++---------------------+-----------+-----------+--------------+
+```
+
+You can see that the four nodes that were requested are running, they are the size they were specified to be above, and the cluster has the default installed applications, *Traefik* and the Kubernetes *metrics-server* up as well. Any changes, such as scaling your cluster up/down, will be immediately reflected on this status screen as shown in the *BUILDING* state of the two nodes.
+
+:::note
+Tou will need to have set the correct [Civo region](../overview/regions.md) for where the cluster was created when you [set up Civo CLI](../overview/civo-cli.md), or specify it in the command with `--region` to be able to view the cluster information.
+:::
+
 </TabItem>
 
 <TabItem value="terraform" label="Terraform">
