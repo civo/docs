@@ -14,6 +14,16 @@ import TabItem from '@theme/TabItem';
 
 You can scale the number of nodes in a cluster's node pool up or down without having to define new node pools. If you scale the number of nodes up, they will have the same specifications and labels as existing nodes in that pool.
 
+:::tipInformation on scaling down nodes
+The scaling down of nodes in a cluster will be determined by the following:
+
+- Any instance that has been explicitly requested via the API to be deleted
+- Any instances that are in a building state
+- Any nodes that are in a *not ready* state in your cluster
+- Any nodes that are cordoned in your cluster
+- Remaining nodes ordered by age in descending order
+:::
+
 <Tabs groupId="scale-nodes">
 
 <TabItem value="dashboard" label="Dashboard">
