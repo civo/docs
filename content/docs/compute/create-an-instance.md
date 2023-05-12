@@ -48,6 +48,10 @@ Sizing options may be restricted depending on your account quota and how many re
 
 The hourly/monthly slider for the pricing is purely to show the pricing equivalent at different time scales. All Civo resources are billed hourly. [Read more about billing](../account/billing.md).
 
+:::tip
+As the price charged increases with instance size, consider the type of work you expect the instance to be performing. If your instance is too small for the workload, it may not be able to remain responsive. If you over-budget the instance size, you may be paying more for the instance to mostly sit idle.
+:::
+
 ### 4. Select image
 
 The base operating system image to use for the instance. Note that you can select from a number of versions of each operating system.
