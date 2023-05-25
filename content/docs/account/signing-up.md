@@ -11,6 +11,24 @@ description: Learn how to get started with Civo. Find out how to access & manage
 
 When you [sign up](https://dashboard.civo.com/signup) to Civo, the system will require you to confirm your email address to gain access. Once you have clicked the email confirmation link, you will be able to use your selected username and password to log in to your account.
 
+## Verifying your phone number
+
+For account security and integrity, Civo requires you to verify your phone number. Before you are able to add a payment method or launch resources in your account, you will need to complete this process.
+
+If you see the "We need you to verify your phone number to complete your sign-up" banner, click the "Verify your numer now" link to access the service.
+
+![Phone verification input](./images/phone-verification-input.png)
+
+On this screen, choose the country your phone is registered to, and enter your mobile/cell phone number. Once complete, click "Send verification code" to receive a message with a one-time code.
+
+You will be prompted to enter the code you received as a text message on the following screen:
+
+![Phone verification code entry](./images/code-entry.png)
+
+:::note
+Certain countries are not supported by the phone verification. If you see a message saying "Unfortunately we are unable to verify phone numbers in your country" this means we are unable to offer Civo services to you.
+:::
+
 ## Adding a payment method
 
 Civo services are billable. If you do not add a valid payment type to your account, you will see a banner stating you need to do so, and will not be able to create Kubernetes clusters, virtual machine instances, or the like.
