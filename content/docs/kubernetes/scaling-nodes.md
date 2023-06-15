@@ -130,6 +130,25 @@ You can add the cluster autoscaler to a running Civo Kubernetes cluster using th
 
 For more information Civo CLI, see the [CLI documentation](../overview/civo-cli.md).
 </TabItem>
+
+<TabItem value="terraform" label="Terraform">
+
+To add the cluster autoscaler application via Terraform, include it in the `applications` section of the cluster definition such as the following:
+
+```terraform
+resource "civo_kubernetes_cluster" "cluster" {
+  name              = "<name you want to give your cluster>"
+  cluster_type      = "k3s" # Your choice of cluster type, can be k3s or talos
+  applications      = "civo-cluster-autoscaler"
+  num_target_nodes  = 3
+  target_nodes_size = element(data.civo_instances_size.small.sizes, 0).name
+  region            = "NYC1" # Your choice of Civo region
+}
+```
+
+Refer to the [cluster creation documentation](./create-a-cluster.md) using Terraform for more options and required fields.
+
+</TabItem>
 </Tabs>
 
 ### Behind the scenes
