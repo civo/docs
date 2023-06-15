@@ -16,7 +16,7 @@ On Civo, Kubernetes cluster `LoadBalancer` objects are external to your cluster,
 
 Civo Kubernetes load balancers are a managed implementation of the Kubernetes [External Load Balancer](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/). This means if you create a `Service` object of type `LoadBalancer` the Civo API will detect this, and on assigning the load balancer a public IP address will start to account for its usage as part of your [billing](../account/billing.md) and [quota](../account/quota.md).
 
-Kubernetes load balancers, like all Civo resources, are billed hourly according to the [current pricing](https://www.civo.com/pricing).
+Kubernetes load balancers, like all Civo resources, are billed hourly according to the [current pricing](https://www.civo.com/pricing). Additional costs apply for each subsequent 10,000 concurrent requests you configure the load balancer to handle.
 
 ## Creating a Kubernetes load balancer
 
@@ -149,6 +149,17 @@ metadata:
     kubernetes.civo.com/ipv4-address: "value of reserved IP address"
 ```
 
+### Maximum concurrent requests
+
+By default, Kubernetes load balancers are configured to handle 10,000 concurrent requests. You can increase this limit by setting the annotation `kubernetes.civo.com/max-concurrent-requests` to a value above `10000`. The annotation for your service definition is as follows:
+
+```yaml
+metadata:
+  annotations:
+      kubernetes.civo.com/max-concurrent-requests: "20000"
+```
+
+Additional load balancers will be charged for each 10,000 requests above the default limit.
 
 :::tip
 You can update any of the configuration options detailed above in your service definition and re-apply it to your cluster without having to remove and re-create the load balancer.
