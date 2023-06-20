@@ -198,18 +198,15 @@ Staff and Ambassadors will have a logo next to their names to make them easily i
 
 Ambassadors are trusted and knowledgeable community members who will be glad to help out if you have questions about the service.
 
+## Marketplace
 
+### How can I contribute an app to the marketplace?
 
+The Civo Marketplace is open source. If you do not see an application on the [Civo Marketplace](https://www.civo.com/marketplace) and believe it should be available, you can raise a Pull Request on the Marketplace GitHub repository. See the ["Contributing" document](https://github.com/civo/kubernetes-marketplace/blob/master/CONTRIBUTING.md) for more information.
 
+### Can I remove an installed marketplace application?
 
+At the moment, the only way to remove a marketplace application is by running `kubectl delete -f` on the resource and manifest files which can be found in the [Marketplace git repository](https://github.com/civo/kubernetes-marketplace). Please note that while the marketplace application will get removed from your cluster, this will not be reflected on the web UI for the moment.
 
-
-
-
-
-
-
-
-
-
+We are working on a new version of the Civo Marketplace which would allow for installation and uninstallation at will.
 
