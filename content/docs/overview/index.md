@@ -8,8 +8,6 @@ description: Learn how to get started with Civo. Find out how to access & manage
   <title>Civo Services Overview Doc | Civo Documentation</title>
 </head>
 
-# Overview
-
 Civo is a cloud-native service provider. We run state-of-the-art cloud computing hardware in data centres around the world that can be used by our users through the services we offer.
 
 This documentation is designed to offer a product and service-focused reference to Civo resource usage.
