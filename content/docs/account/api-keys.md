@@ -21,7 +21,7 @@ You will be shown an API key like the following:
 
 This API key is unique to your account, and used to authenticate you for tools that interact with the Civo API. For details about the Civo API, refer to the [API documentation](https://www.civo.com/api).
 
-If your account belongs to an Organization, you may see multiple API keys on the page. Each one is tied to a specific account.
+If your account belongs to an [Organization](../account/teams.md), you may see multiple API keys on the page. Each one is tied to a specific account.
 
 ## Resetting your API key
 
