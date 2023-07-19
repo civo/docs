@@ -80,7 +80,7 @@ You can choose a random password for logging in to the instance, or use a [previ
 
 ### 10. Initialisation script
 
-If you want your instance to be preinstalled with some tools, or want to run a script on startup, this is the section to paste the script. [Read more about instance initialisation script usage](https://www.civo.com/learn/compute-instance-cloud-init-install-script-usage).
+If you want your instance to be preinstalled with some tools, or want to run a script on startup, this is the section to paste the script. [Read more about instance initialisation script usage](../compute/install-script-usage.md).
 
 ### 11. Tags
 
