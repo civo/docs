@@ -65,7 +65,7 @@ When you are satisfied with your initial Kubeflow Cluster configuration, you can
 
 ![A Civo KF Cluster in the process of being built](images/kf-building.png)
 
-
+<!-- Need to write "how to connect?" (will be very different than how I connect to Kubeflow I deployed) yet blocked on Kfaas working for me  -->
 </TabItem>
 
 <TabItem value="cli" label="Civo CLI">
