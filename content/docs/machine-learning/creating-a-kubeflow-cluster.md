@@ -97,3 +97,17 @@ As an example, the following command will create a Kubeflow Cluster in the curre
 `civo kfcluster create sample_kfcluster --size g3.kf.small`
 </TabItem>
 </Tabs>
+
+## Verify Kubeflow Pods are in the Ready State
+
+You can also verify if Kubeflow is properly deployed by checking if the associated pods are in the Ready state by first connecting to the underlying Kubernetes cluster and running the command.
+
+```
+kubectl get pods -n cert-manager
+kubectl get pods -n istio-system
+kubectl get pods -n auth
+kubectl get pods -n knative-eventing
+kubectl get pods -n knative-serving
+kubectl get pods -n kubeflow
+kubectl get pods -n kubeflow-user-example-com
+```
