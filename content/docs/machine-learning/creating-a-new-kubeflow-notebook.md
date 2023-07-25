@@ -81,6 +81,13 @@ When you are satisfied with your initial instance configuration, you can click "
 
 ![Notebook is Created](images/nb-created.png)
 
+While the notebook is being created Kub:
+
+- Kubeflow first creates a StatefulSet in which the pods for our Notebook Server will be created
+- A pod is created for our Notebook Server which is where our code runs
+- A dedicated Persistent Volume Claim is attached to this pod which is where our home directory when using the notebook server resides
+- Our Notebook Server uses the image we specify and starts a container in the pod
+
 ## Accessing your Notebook Server
 
 Once your instance is running, you will be able to connect to it using the Connect button.
