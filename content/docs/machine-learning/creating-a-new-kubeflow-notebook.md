@@ -73,7 +73,7 @@ You can also specify affinity and tolerations for the notebook server as describ
 
 ### Shared Memory
 
-Notebooks also allow you to enable shared memory. Common machine learning frameworks usually have methods that allow you to use shared memory, for example the `torch.multiprocessing` or `torch.Tensor.share_memory_()` APIs which heavily rely on the usage of shared memory.
+Notebooks also allow you to enable shared memory. Common machine learning frameworks usually have methods that allow you to use shared memory, for example the [`torch.multiprocessing`](https://pytorch.org/docs/stable/multiprocessing.html#module-torch.multiprocessing) or [`torch.Tensor.share_memory_()`](https://pytorch.org/docs/stable/generated/torch.Tensor.share_memory_.html) APIs which heavily rely on the usage of shared memory.
 
 ## Creating your Notebook
 
