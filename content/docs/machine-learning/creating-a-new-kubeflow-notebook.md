@@ -65,7 +65,7 @@ You can specify one or more data volumes (new or existing) to be mounted as PVC 
 
 ### Configurations
 
-Configurations is a way to inject common data (env vars, volumes) into notebooks. These can describe additional runtime requirements to be injected into the Pod at creation time.
+Configurations is a way to inject common data (environment variables, volumes) into notebooks. These can describe additional runtime requirements to be injected into the Pod at creation time.
 
 ### Affinity / Tolerations
 
