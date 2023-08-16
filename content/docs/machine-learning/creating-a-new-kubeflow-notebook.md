@@ -59,6 +59,12 @@ GPU support is under development and this documentation will be updated to refle
 
 You can specify a workspace volume (new or existing) to be mounted as a PVC Volume on your home directory.
 
+:::tipPersistent data volumes
+A StatefulSet assigns unique identifiers to each pod and allows you to easily store and track data in a persistent data volume, however, an important thing to remeber is that this is a completely separate entity and has an independent lifecycle from the pods. The persistent volume is a cluster resource like a node inside the cluster. This abstracts out a lot of details on how storage is provided from how it is consumed, it retrieves data needed for analysis from the main storage and writes back changes as needed
+
+The persistent data volume is connected to a particular pod by a persistent volume claim, these allow a user to consume abstract storage resources. In the instance that you delete the notebook server, the data still persists in the persistent data volume assigned to that pod and if a new notebook server is created, it would be able to access the same data from the same persistent data volume.
+:::
+
 ### Data volume
 
 You can specify one or more data volumes (new or existing) to be mounted as PVC Volumes.
