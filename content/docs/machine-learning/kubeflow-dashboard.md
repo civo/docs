@@ -39,7 +39,7 @@ From the Notebooks dashboard you can:
 
 Clicking on a notebook will show you all the logging, events and resources associated with that particular notebook:
 
-![Notebook details] "Notebook details image"
+![Notebook details](images/notebook-details.png)
 
 ## Pipelines
 
