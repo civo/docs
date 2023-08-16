@@ -95,7 +95,3 @@ Once your instance is running, you will be able to connect to it using the Conne
 ## The Notebook ServiceAccount
 
 When you create a new notebook Kubeflow by default assigns that Notebook pod the `default-editor` Kubernetes ServiceAccount. To better understand what this means for you as a user, you could run the following command in a notebook. This allows you to run `kubectl` inside it without providing additional authentication.
-
-```
-kubectl describe clusterrole kubeflow-edit
-```
