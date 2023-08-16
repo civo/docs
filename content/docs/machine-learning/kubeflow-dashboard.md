@@ -48,7 +48,6 @@ Pipelines is one of the most popular component of Kubeflow.
 Kubeflow Pipelines allows you to easily manage, create and deploy end-to-end scalable machine learning workflows. Kubeflow Pipelines functions as an orchestrator for machine learning pipelines making experimentation and deployments pretty easy.
 
 ## Katib
-<!-- Do we deploy this too in Civo Kubeflow? -->
 
 Katib allows you to work with automated machine learning tasks, hyperparameter tuning, and neural architecture search. Finding the right values for hyperparameters is much dependent on previous experience and experimentation which is made easy with Katib.
 
