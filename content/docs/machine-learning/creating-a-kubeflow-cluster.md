@@ -64,8 +64,6 @@ The [private network](../networking/private-networks.md) for the Kubeflow Cluste
 When you are satisfied with your initial Kubeflow Cluster configuration, you can click "**Create**" and be directed to the Kubeflow Cluster's dashboard page. It will take a moment to become active, and you will be shown the status throughout as it builds:
 
 ![A Civo KF Cluster in the process of being built](images/kf-building.png)
-
-<!-- Need to write "how to connect?" (will be very different than how I connect to Kubeflow I deployed) yet blocked on Kfaas working for me  -->
 </TabItem>
 
 <TabItem value="cli" label="Civo CLI">
@@ -98,16 +96,10 @@ As an example, the following command will create a Kubeflow Cluster in the curre
 </TabItem>
 </Tabs>
 
-## Verify Kubeflow Pods are in the Ready State
+## Connect to Kubeflow Cluster
 
-You can also verify if Kubeflow is properly deployed by checking if the associated pods are in the Ready state by first connecting to the underlying Kubernetes cluster and running the command.
+Now you can connect to the Kubeflow cluster using the dahboard URL shown on Civo dashboard after which you will be prompted to sign into the Kubeflow dashboard using your Civo credentials. Once you sign into the Kubeflow dashboard you should be able to see the Kubeflow dashboard.
 
-```
-kubectl get pods -n cert-manager
-kubectl get pods -n istio-system
-kubectl get pods -n auth
-kubectl get pods -n knative-eventing
-kubectl get pods -n knative-serving
-kubectl get pods -n kubeflow
-kubectl get pods -n kubeflow-user-example-com
-```
+![Kubeflow Dahboard Landing page](images/dashboard.png)
+
+Now you can start using Civo's Kubeflow as a service!
