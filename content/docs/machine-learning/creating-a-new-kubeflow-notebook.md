@@ -87,7 +87,7 @@ When you are satisfied with your initial instance configuration, you can click "
 
 ![Notebook is Created](images/nb-created.png)
 
-While the notebook is being created Kub:
+While the notebook is being created:
 
 - Kubeflow first creates a StatefulSet in which the pods for our Notebook Server will be created
 - A pod is created for our Notebook Server which is where our code runs
