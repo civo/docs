@@ -15,7 +15,7 @@ When you [sign up](https://dashboard.civo.com/signup) to Civo, the system will r
 
 For account security and integrity, Civo requires you to verify your phone number. Before you are able to add a payment method or launch resources in your account, you will need to complete this process.
 
-If you see the "We need you to verify your phone number to complete your sign-up" banner, click the "Verify your numer now" link to access the service.
+If you see the "We need you to verify your phone number to complete your sign-up" banner, click the "Verify your number now" link to access the service.
 
 ![Phone verification input](./images/phone-verification-input.png)
 
