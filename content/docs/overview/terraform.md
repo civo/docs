@@ -9,7 +9,7 @@ description: Learn how to use Terraform to manage your Civo resources. Find out 
 
 ## Overview
 
-[Terraform](https://www.terraform.io) is an infrastructure as code (IaC) tool that can help you manage cloud resources using code. In order to use Terraform on a cloud service, you need to set up the *Provider* for that service. A provider (also know as plugin) is the middle layer between the Terraform CLI that you will be using and the cloud platform that you are using. It's implemented in Go and interface with the cloud platform's API using a client library — which also written in Go. Civo maintains a [Terraform provider](https://registry.terraform.io/providers/civo/civo/latest) that gives users access to resources in their accounts.
+[Terraform](https://www.terraform.io) is an infrastructure as code (IaC) tool that can help you manage cloud resources using code. In order to use Terraform on a cloud service, you need to set up the *Provider* for that service. A provider (also known as plugin) is the middle layer between the Terraform CLI that you will be using and the cloud platform that you are using. It's implemented in Go and interface with the cloud platform's API using a client library — which also written in Go. Civo maintains a [Terraform provider](https://registry.terraform.io/providers/civo/civo/latest) that gives users access to resources in their accounts.
 
 ## Setting up the Civo Terraform provider
 

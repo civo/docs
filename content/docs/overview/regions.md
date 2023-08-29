@@ -7,7 +7,7 @@ description: Discover how to select regions to deploy Civo resources like Kubern
   <title>A Guide to Civo Regions | Civo Documentation</title>
 </head>
 
-Civo resources can be deployed can be deployed in a number of regions around the world.
+Civo resources can be deployed in a number of regions around the world.
 
 Resources such as Kubernetes clusters and virtual machine instances are region-specific. This means that running clusters are displayed only on the listings in the region where they are deployed.
 

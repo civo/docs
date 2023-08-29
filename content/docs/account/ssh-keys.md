@@ -38,11 +38,11 @@ The dialog will prompt you for a memorable name and have space to paste the enti
 
 Be sure to include the `ssh-rsa` and any trailing information, these are also part of the key.
 
-Once you click *Create*, the key will be then stored with the name you chose in your account:
+Once you click on the *Create* button, the key will then be stored with the name you chose in your account like the following:
 
 ![Stored SSH Key showing the name, a fingerprint and a button to delete it from Civo](images/ssh-key-summary.png)
 
-You can now [launch virtual machine instances](../compute/create-an-instance.md) and automatically associate your created key with them, allowing you to log in without a password.
+You can now [launch virtual machine instances](../compute/create-an-instance.md) and automatically associate your created key with them, and this will allow you to log in without a password.
 
 </TabItem>
 

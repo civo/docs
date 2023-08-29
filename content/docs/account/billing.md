@@ -9,7 +9,7 @@ description: Learn how Civo calculates charges for services and usage, and find 
 
 ## Overview
 
-Civo services are chargeable, which is why you need a valid payment method on file at all times, and won't be able to create Kubernetes clusters or instances before your card is verified. This document details how charges are calculated and how we bill you for usage.
+Civo services are chargeable, which is why you need a valid payment method on file at all times, and you won't be able to create Kubernetes clusters or instances before your card is verified. This document details how charges are calculated and how we bill you for usage.
 
 ## Charges
 
@@ -23,25 +23,25 @@ We won't automatically stop your instances and risk interrupting your services.
 
 ## Billing for shut down resources
 
-If an instance or Kubernetes cluster is shut down, it still takes up resources, so a stopped instance or cluster is chargeable is exactly the same as an active instance or cluster. In other words, The hourly price will be added to your monthly charges while the instances are in your account, running or not.
+If an instance or Kubernetes cluster is shut down, it still takes up resources, so a stopped instance or cluster is chargeable, and it is exactly the same as an active instance or cluster. In other words, The hourly price will be added to your monthly charges while the instances are in your account, running or not.
 
-All prices are charged in US dollars and are exclusive of VAT (where applicable).
+All our prices are charged in US dollars and are exclusive of VAT (where applicable).
 
 ## Payment
 
-On the first day of each month we raise an invoice for services used throughout the previous month. Your [previous invoices](https://dashboard.civo.com/invoices) are available within your dashboard.
+On the first day of each month,  we raise an invoice for services used throughout the previous month. Your [previous invoices](https://dashboard.civo.com/invoices) are available within your dashboard.
 
 When we raise the invoice, we will immediately try to settle it. The first method of payment we'll use is any unexpired credit balance on your account. You can read more about credit below.
 
 If there is still a balance left to settle on the invoice, we will attempt to take this from your saved credit/debit card (these card details are held securely by our payment processor Stripe.com, not on our servers).
 
-If your invoice is successfully settled, you'll receive email notification confirming this.
+If your invoice is successfully settled, you'll receive an email notification confirming this.
 
 If your invoice still hasn’t been settled by credit balance or card payment, we'll continue to attempt taking payment for 6 more days and notify you that you are at risk of having your services and account suspended. After this time, if your invoice is still outstanding on the 8th day of the month, your services and account will be **suspended**.
 
 If your account gets suspended or we are not able to take payment from you, [contact us](https://www.civo.com/contact) as soon as possible once you have [entered a valid payment type](https://dashboard.civo.com/billing/new). We will then be able to process your bill and allow to restore your Civo services.
 
-Within two weeks of suspension, if there's still no contact from you or attempt to pay for the services, we’ll completely delete all services including Kubernetes clusters, instances, snapshots, persistent volumes, etc. and will commence debt recovery.
+Within two weeks of suspension, if there's still no contact from you or attempt to pay for the services, we’ll completely delete all services including Kubernetes clusters, instances, snapshots, persistent volumes, etc. and we will commence debt recovery.
 
 ## Accepted Payment types
 

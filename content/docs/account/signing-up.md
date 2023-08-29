@@ -19,7 +19,7 @@ If you see the "We need you to verify your phone number to complete your sign-up
 
 ![Phone verification input](./images/phone-verification-input.png)
 
-On this screen, choose the country your phone is registered to, and enter your mobile/cell phone number. Once complete, click "Send verification code" to receive a message with a one-time code.
+On this screen, choose the country your phone is registered to, and enter your mobile/cell phone number. Once completed, click the "Send verification code" button to receive a message with a one-time code.
 
 You will be prompted to enter the code you received as a text message on the following screen:
 
@@ -53,14 +53,14 @@ See the Civo [Billing documentation](billing.md) for more information.
 
 Once you enter your address you will be taken to a page that lets you enter the card details. These include the cardholder name as written on the card, as well as the card number, expiry date, and security code (CVV).
 
-Once you have entered these details you can click "Submit" to start the card verification process. This is handled by our payment processor, Stripe.
+Once you have entered these details, you can click "Submit" to start the card verification process. This is handled by our payment processor, Stripe.
 
 ## Account verification
 
 If your account was successfully verified automatically, you will be taken to your dashboard with a notification stating so.
 
-Occasionally, the verification process will not be able to validate your account automatically. In these cases, your account will remain in a pending state until manually verified by a member of Civo staff. In most cases this wait is short, and you will receive an email as soon as your account is active.
+Occasionally, the verification process will not be able to validate your account automatically. In these cases, your account will remain in a pending state until manually verified by a member of Civo staff. In most cases, this wait is short, and you will receive an email as soon as your account is active.
 
 ## Introductory credit
 
-In order to benefit from the introductory offer of Civo credit, the payment method (credit/debit card) used needs to be unique. In other words, two accounts using the same payment method will not be able to both benefit from introductory credit. See the Civo [Billing documentation](billing.md) for more information on credit balances and usage.
+In order for you to benefit from the introductory offer of Civo credit, your payment method (credit/debit card) used needs to be unique. In other words, two accounts using the same payment method will not be able to both benefit from introductory credit. See the Civo [Billing documentation](billing.md) for more information on credit balances and usage.
