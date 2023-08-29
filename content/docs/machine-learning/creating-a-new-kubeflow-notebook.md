@@ -13,7 +13,7 @@ To create a new Kubeflow notebook, you will need to provide a name, select a dev
 ## Notebook options
 
 :::tipNamespaces
-Always check on the top left corner of Kubeflow Dashboard if you are creating resources in the correct namespace.
+Always check on the top left corner of the KubeFlow Dashboard that you are creating resources in the correct namespace.
 :::
 
 ### Name
@@ -24,11 +24,11 @@ Choose a name for the notebook that makes sense for your organisation and workfl
 
 For the notebook development environment, choose from the following options:
 
-- **Jupyter Lab**, the renowned IPython Notebook environment. For most users, we recommend starting here.
+- **[Jupyter Lab](https://jupyter.org/)**, the renowned IPython Notebook environment. For most users, we recommend starting here.
 
-- **VisualStudio Code**, an IDE environment with support for Jupyter notebooks. Recommended for more advanced users looking at working wider than Jupyter notebooks, or people who use VScode regularly and are familiar with it.
+- **[VisualStudio Code](https://code.visualstudio.com/)**, an IDE environment with support for Jupyter notebooks. Recommended for more advanced users looking at working wider than Jupyter notebooks, or people who use VScode regularly and are familiar with it.
 
-- **RStudio**, the first party development IDE and ecosystem for the R language. If you’re someone who prefers R over Python, this is the choice for you!
+- **[RStudio](https://posit.co/products/open-source/rstudio/)**, the first party development IDE and ecosystem for the R language. If you’re someone who prefers R over Python, this is the choice for you!
 
 :::tipCustom environments
 If you can’t find what you’re looking for or are the type of person who brings their own IDE, you’re also welcome to pull a custom container. Please ensure they meet the Kubeflow container image requirements [listed here](https://www.kubeflow.org/docs/components/notebooks/container-images/#image-requirements).
@@ -60,9 +60,9 @@ GPU support is under development and this documentation will be updated to refle
 You can specify a workspace volume (new or existing) to be mounted as a PVC Volume on your home directory.
 
 :::tipPersistent data volumes
-A StatefulSet assigns unique identifiers to each pod and allows you to easily store and track data in a persistent data volume, however, an important thing to remeber is that this is a completely separate entity and has an independent lifecycle from the pods. The persistent volume is a cluster resource like a node inside the cluster. This abstracts out a lot of details on how storage is provided from how it is consumed, it retrieves data needed for analysis from the main storage and writes back changes as needed
+A StatefulSet assigns unique identifiers to each pod and allows you to easily store and track data in a persistent data volume. However, an important thing to remember is that this is a completely separate Kubernetes entity and has an independent lifecycle from the cluster's pods.
 
-The persistent data volume is connected to a particular pod by a persistent volume claim, these allow a user to consume abstract storage resources. In the instance that you delete the notebook server, the data still persists in the persistent data volume assigned to that pod and if a new notebook server is created, it would be able to access the same data from the same persistent data volume.
+The persistent data volume is connected to a particular pod by a Persistent Volume Claim (PVC). These allow a user to consume abstract storage resources. In the case that you delete the notebook server, the data still persists in the persistent data volume assigned to that pod and if a new notebook server is created, it would be able to access the same data from the same persistent data volume.
 :::
 
 ### Data volume
@@ -96,8 +96,8 @@ While the notebook is being created:
 
 ## Accessing your Notebook Server
 
-Once your instance is running, you will be able to connect to it using the Connect button.
+Once your notebook server instance is running, you will be able to connect to it using the Connect button.
 
 ## The Notebook ServiceAccount
 
-When you create a new notebook Kubeflow by default assigns that Notebook pod the `default-editor` Kubernetes ServiceAccount. To better understand what this means for you as a user, you could run the following command in a notebook. This allows you to run `kubectl` inside it without providing additional authentication.
+When you create a new notebook Kubeflow by default assigns that Notebook pod the `default-editor` Kubernetes ServiceAccount. This is a highly priviliged account and this also allows you to run `kubectl` inside the notebook server without providing additional authentication.

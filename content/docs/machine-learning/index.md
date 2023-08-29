@@ -14,7 +14,7 @@ The Civo machine learning service leverages Kubeflow and other Civo services to 
 
 ### What is Kubeflow?
 
-[Kubeflow](https://www.kubeflow.org/) is a open source machine learning platform developed by Google to accelerate the development cycle of machine learning experiments to run at scale on Kubernetes.
+[Kubeflow](https://www.kubeflow.org/) is an open source machine learning platform developed by Google to accelerate the development cycle of machine learning experiments to run at scale on Kubernetes.
 
 Kubeflow provides a way for multiple end users with diverse expertise to collaborate together. A Kubernetes infrastructure engineer, machine learning engineer and a data analyst will all find themselves at home within the ecosystem.
 
