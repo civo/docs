@@ -16,6 +16,10 @@ Once your cluster is running, you will need to authenticate yourself to access t
 If a Kubeflow cluster administrator has given you access to a cluster they run, you will have a different mode of authentication. Ask your cluster administrator for details on how to log in to the cluster.
 :::
 
+Kubeflow has quite a few components which you could see on the dashboard.
+
+![Kubeflow Components](images/components.png)
+
 ## Kubeflow dashboard home screen
 
 Once logged in, the Home tab will present you with an overview of your recent notebooks (Jupyter) and pipelines, quick shortcuts to your notebooks, pipelines and experiments and links to the Civo provided documentation.
@@ -81,4 +85,8 @@ This tab shows you a history of previous runs and what functions did Kubeflow pi
 
 ## Training Operators
 
-Training Operators allow you to train your machine learning models in a distributed fashion in Kubeflow. At the moment, training operators support TensorFlow, PyTorch, MXNet, and XGBoost jobs
+Training Operators allow you to train your machine learning models in a distributed fashion in Kubeflow. At the moment, training operators support TensorFlow, PyTorch, MXNet, and XGBoost jobs.
+
+With these components Kubeflow can be used across the entire machine learning workflow.
+
+![Where can Kubeflow be used](images/usecases.png)
