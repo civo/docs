@@ -3,6 +3,8 @@ title: Deleting a Kubernetes cluster
 description: Learn how to delete Kubernetes clusters on Civo using the Civo Dashboard or Civo CLI to avoid dangerous billing errors and irreversible data loss.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <head>
   <title>Deleting a Civo Kubernetes Cluster | Civo Documentation</title>
@@ -19,7 +21,6 @@ Cluster deletion is immediate and irreversible. Make sure you have retrieved any
 :::
 
 <Tabs groupId="delete-cluster">
-
 <TabItem value="dashboard" label="Dashboard">
 
 ## Deleting a cluster from the Dashboard
