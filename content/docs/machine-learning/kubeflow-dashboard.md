@@ -18,7 +18,7 @@ If a Kubeflow cluster administrator has given you access to a cluster they run, 
 
 Kubeflow has quite a few components which you could see on the dashboard.
 
-![Kubeflow Components](images/components.png)
+<img src={require('./images/components.png').default} style={{"background-color":"white"}} />
 
 ## Kubeflow dashboard home screen
 
@@ -89,4 +89,4 @@ Training Operators allow you to train your machine learning models in a distribu
 
 With these components Kubeflow can be used across the entire machine learning workflow.
 
-![Where can Kubeflow be used](images/usecases.png)
+<img src={require('./images/usecases.png').default} style={{"background-color":"white"}} />
