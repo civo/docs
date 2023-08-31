@@ -48,7 +48,7 @@ By default, Civo CLI will confirm whether you want to proceed:
 
 ```bash
 $ civo kubernetes delete demo-cluster
-Warning: Are you sure you want to delete the api-demo.test Kubernetes cluster (y/N) ? y
+Warning: Are you sure you want to delete the demo-cluster Kubernetes cluster (y/N) ? y
 The Kubernetes cluster (demo-cluster) has been deleted
 ```
 
