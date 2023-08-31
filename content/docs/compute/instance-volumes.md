@@ -162,7 +162,7 @@ resource "civo_volume_attachment" "db-backup-attachment" {
 
 So what happens when we apply the configuration above?
 
-* The _Query small instance size_, _Query instance disk image_ and _Create a new instance_ blocks were taken from [Launch a Civo compute instance using Terraform](https://www.civo.com/learn/launch-a-civo-compute-instance-using-terraform) guide. Be sure to checkout that guide for the explanation.
+* The _Query small instance size_, _Query instance disk image_ and _Create a new instance_ blocks were taken from [Launch a Civo compute instance using Terraform](../compute/create-an-instance#creating-an-instance-using-terraform) guide. Be sure to checkout that guide for the explanation.
 * In the _Query default network_ block:
     * We are querying for Default network in our Civo account using [`civo_network`](https://registry.terraform.io/providers/civo/civo/latest/docs/data-sources/network) data source, by looking at
         * `label` attribute for `default` network name
