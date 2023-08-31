@@ -24,9 +24,9 @@ Cluster deletion is immediate and irreversible. Make sure you have retrieved any
 
 ## Deleting a cluster from the Dashboard
 
-You can delete an instance from the instance's dashboard page by clicking the "Delete" button on the top right of the page, also shown below:
+You can delete a cluster from its dashboard page by clicking the "Delete" button on the top right of the page, also shown below:
 
-![Delete an instance from the dashboard](images/dashboard-delete-cluster.png)
+![Delete a cluster from the dashboard](images/dashboard-delete-cluster.png)
 
 As a precaution, the system will ask you to confirm the name of the cluster you are looking to delete.
 
