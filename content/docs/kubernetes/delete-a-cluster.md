@@ -3,8 +3,6 @@ title: Deleting a Kubernetes cluster
 description: Learn how to delete Kubernetes clusters on Civo using the Civo Dashboard or Civo CLI to avoid dangerous billing errors and irreversible data loss.
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <head>
   <title>Deleting a Civo Kubernetes Cluster | Civo Documentation</title>
@@ -12,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-Kubernetes clusters on Civo will remain in your account until you delete them. Clusters in your account are [billed hourly](../account/billing.md) for each node and count towards your [account quota](../account/quota.md). If you no longer need Kubernetes cluster, you can delete it in the following ways.
+Kubernetes clusters on Civo will remain in your account until you delete them. Clusters in your account are [billed hourly](../account/billing.md) for each node and count towards your [account quota](../account/quota.md). If you no longer need a Kubernetes cluster, you can delete it in the following ways.
 
 :::danger
 
