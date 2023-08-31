@@ -47,7 +47,7 @@ civo kubernetes delete cluster_name
 By default, Civo CLI will confirm whether you want to proceed:
 
 ```bash
-$ civo instance delete demo-cluster
+$ civo kubernetes delete demo-cluster
 Warning: Are you sure you want to delete the api-demo.test Kubernetes cluster (y/N) ? y
 The Kubernetes cluster (demo-cluster) has been deleted
 ```
