@@ -75,7 +75,7 @@ Configurations is a way to inject common data (environment variables, volumes) i
 
 ### Affinity / Tolerations
 
-You can also specify affinity and tolerations for the notebook server as described in the [Kubernetes docs](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/).
+You can also specify affinity and tolerations for the notebook server as described in the [Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/).
 
 ### Shared Memory
 
@@ -83,16 +83,16 @@ Notebooks also allow you to enable shared memory. Common machine learning framew
 
 ## Creating your Notebook
 
-When you are satisfied with your initial instance configuration, you can click "Create" and be directed to the instance's dashboard page. It will take a while to become active, and you will be shown when it builds:
+When you are satisfied with your initial notebook configuration, you can click "Create" and be directed to its dashboard page. It will take some moments to become active, and you will be shown when it builds:
 
 ![Notebook is Created](images/nb-created.png)
 
 While the notebook is being created:
 
-- Kubeflow first creates a StatefulSet in which the pods for our Notebook Server will be created
-- A pod is created for our Notebook Server which is where our code runs
-- A dedicated Persistent Volume Claim is attached to this pod which is where our home directory when using the notebook server resides
-- Our Notebook Server uses the image we specify and starts a container in the pod
+- Kubeflow first creates a StatefulSet in which the pods for the Notebook Server will be created
+- A pod is created for our Notebook Server, which is where the code runs
+- A dedicated Persistent Volume Claim is attached to this pod which is where the home directory when using the notebook server resides
+- The Notebook Server uses the image specified, and starts a container in the pod
 
 ## Accessing your Notebook Server
 
@@ -100,4 +100,4 @@ Once your notebook server instance is running, you will be able to connect to it
 
 ## The Notebook ServiceAccount
 
-When you create a new notebook Kubeflow by default assigns that Notebook pod the `default-editor` Kubernetes ServiceAccount. This is a highly priviliged account and this also allows you to run `kubectl` inside the notebook server without providing additional authentication.
+When you create a new notebook Kubeflow by default assigns that Notebook pod the `default-editor` Kubernetes ServiceAccount. This is a highly privileged account and this also allows you to run `kubectl` inside the notebook server without providing additional authentication.

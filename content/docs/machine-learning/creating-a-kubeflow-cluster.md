@@ -23,7 +23,7 @@ Creating a managed Kubeflow Cluster on Civo requires a few specified parameters,
 
 <TabItem value="dashboard" label="Dashboard">
 
-## Creating an Kubeflow Cluster from the Dashboard
+## Creating a Kubeflow Cluster from the Dashboard
 
 Begin by selecting the Civo Region you are operating in. You can do so in the lower left of your [Dashboard page](https://dashboard.civo.com):
 
@@ -48,33 +48,33 @@ Sizing options may be restricted depending on your account quota and how many re
 The hourly/monthly slider for the pricing is purely to show the pricing equivalent at different time scales. All Civo resources are billed hourly. [Read more about billing](../account/billing.md).
 
 :::tip
-The minimum size for a managed Kubeflow cluster is the small size which might seem like a lot of resources but are required to run Kubeflow optimally due to its resource requirements.
+The minimum size for a managed Kubeflow cluster is the *small* size, which has the minimal resources required to run Kubeflow optimally due to its system requirements.
 :::
 
 ### Firewall
 
-You can create a new firewall along with creating this Kubeflow Cluster, or choose from an existing one if present in the network. Read more about firewalls on Civo.
+You can create a new firewall along with creating this Kubeflow cluster, or choose from an existing one if present in the network. [Read more about firewalls on Civo](../networking/firewalls.md).
 
 ### Network
 
-The [private network](../networking/private-networks.md) for the Kubeflow Cluster to be situated in. You can choose from the default network for your account, or if you have created networks prior to creating this Kubeflow Cluster, you can choose from one of them.
+The [private network](../networking/private-networks.md) for the Kubeflow Cluster to be situated in. You can choose from the default network for your account in the current region, or if you have created networks prior to creating this Kubeflow Cluster, you can choose one of them.
 
-### Creating your Kubeflow Cluster
+### Creating your Kubeflow cluster
 
-When you are satisfied with your initial Kubeflow Cluster configuration, you can click "**Create**" and be directed to the Kubeflow Cluster's dashboard page. It will take a moment to become active, and you will be shown the status throughout as it builds:
+When you are satisfied with your initial Kubeflow cluster configuration, you can click "**Create**" and be directed to the Kubeflow Cluster's dashboard page. It will take a moment to become active, and you will be shown the status throughout as it builds:
 
 ![A Civo KF Cluster in the process of being built](images/kf-building.png)
 </TabItem>
 
 <TabItem value="cli" label="Civo CLI">
 
-## Creating an instance using the Civo CLI
+## Creating a KubeFlow cluster using the Civo CLI
 
-You can create a Civo instance on the command-line by running the `civo kfcluster create` command, with optional parameters.
+You can create a Kubeflow cluster on the command line by running the `civo kfcluster create` command, with optional parameters.
 
 :::tip
 
-You can view the instance creation options available on the Civo CLI by running:
+You can view the cluster creation options available on the Civo CLI by running:
 
 ```bash
 civo kfcluster create --help
@@ -90,15 +90,18 @@ If you run `civo kfcluster create` on its own, it will create an Kubeflow Cluste
 
 The CLI allows you to specify a number of options for your Kubeflow Cluster, from the size and specification of the virtual machine, to the firewall rules to set up, the version and flavour of operating system to use, and more. A full list of options for Kubeflow Cluster creation can be found by running `civo kfcluster create --help`.
 
-As an example, the following command will create a Kubeflow Cluster in the current region, using the `g3.kf.small` Kubeflow Cluster type,.
+As an example, the following command will create a Kubeflow Cluster in the current region, using the `g3.kf.small` Kubeflow cluster size.
 
-`civo kfcluster create sample_kfcluster --size g3.kf.small`
+```console
+civo kfcluster create sample_kfcluster --size g3.kf.small
+```
+
 </TabItem>
 </Tabs>
 
 ## Connect to Kubeflow Cluster
 
-Now you can connect to the Kubeflow cluster using the dahboard URL shown on Civo dashboard after which you will be prompted to sign into the Kubeflow dashboard using your Civo credentials. Once you sign into the Kubeflow dashboard you should be able to see the Kubeflow dashboard.
+Now you can connect to the Kubeflow cluster using the dahboard URL shown on the Civo dashboard, after which you will be prompted to sign into the Kubeflow dashboard using your Civo credentials. Once you successfully sign in, you should be able to see the Kubeflow dashboard.
 
 ![Kubeflow Dahboard Landing page](images/dashboard.png)
 
