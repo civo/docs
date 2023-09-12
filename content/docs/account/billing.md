@@ -9,7 +9,7 @@ description: Learn how Civo calculates charges for services and usage, and find 
 
 ## Overview
 
-Civo services are chargeable, which is why you need a valid payment method on file at all times, and you won't be able to create Kubernetes clusters or instances before your card is verified. This document details how charges are calculated and how we bill you for usage.
+Civo services are chargeable, which is why you need a valid payment method on file at all times, and won't be able to create Kubernetes clusters or instances before your card is verified. This document details how charges are calculated and how we bill you for usage.
 
 ## Charges
 
@@ -23,7 +23,7 @@ We won't automatically stop your instances and risk interrupting your services.
 
 ## Billing for shut down resources
 
-If an instance or Kubernetes cluster is shut down, it still takes up resources, so a stopped instance or cluster is chargeable, and it is exactly the same as an active instance or cluster. In other words, The hourly price will be added to your monthly charges while the instances are in your account, running or not.
+If an instance or Kubernetes cluster is shut down, it still takes up resources, so a stopped instance or cluster is chargeable, and is exactly the same as an active instance or cluster. In other words, The hourly price will be added to your monthly charges while the instances are in your account, running or not.
 
 All our prices are charged in US dollars and are exclusive of VAT (where applicable).
 
@@ -41,7 +41,7 @@ If your invoice still hasn’t been settled by credit balance or card payment, w
 
 If your account gets suspended or we are not able to take payment from you, [contact us](https://www.civo.com/contact) as soon as possible once you have [entered a valid payment type](https://dashboard.civo.com/billing/new). We will then be able to process your bill and allow to restore your Civo services.
 
-Within two weeks of suspension, if there's still no contact from you or attempt to pay for the services, we’ll completely delete all services including Kubernetes clusters, instances, snapshots, persistent volumes, etc. and we will commence debt recovery.
+Within two weeks of suspension, if there's still no contact from you or attempt to pay for the services, we’ll completely delete all services including Kubernetes clusters, instances, snapshots, persistent volumes, etc. and will commence debt recovery.
 
 ## Accepted Payment types
 
