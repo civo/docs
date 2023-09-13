@@ -19,11 +19,11 @@ If you remove resources by, for example, deleting a Kubernetes node pool, this s
 
 ## Requesting a quota increase
 
-To request a quota increase, navigate to the [Quota page](https://dashboard.civo.com/quota) in your account and click on "Request quota increase" in the top right:
+To request a quota increase, navigate to the [Quota page](https://dashboard.civo.com/quota) in your account and click on the "Request quota increase" button in the top right:
 
 ![Request quota increase button](images/quota-increase.png)
 
-In order for us to expedite the quota increase, please provide as much detail as you are able teo in the explanation field. This field is optional if you have already paid a bill (excluding any credit) on Civo, but helps us in adjusting your quota to a size that will work for you:
+In order for us to expedite the quota increase, please provide as much detail as you are able to in the explanation field. This field is optional if you have already paid a bill (excluding any credit) on Civo, but this helps us in adjusting your quota to a size that will work for you:
 
 ![Quota increase form](images/quota-increase-form.png)
 
