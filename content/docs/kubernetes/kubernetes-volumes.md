@@ -141,3 +141,7 @@ Events:
   Normal  Scheduled               3m20s                                                 Successfully assigned default/civo-vol-test-pod to k3s-civo-vol-75499ca3-node-pool-a4e8
   Normal  SuccessfulAttachVolume  3m7s   attachdetach-controller                        AttachVolume.Attach succeeded for volume "pvc-11509930-bf05-49ec-8814-62744e4606c4"
 ```
+
+:::warning
+If you have any external volumes attached to a [cluster you delete](./delete-a-cluster.md), these will remain in your account for use. They are not automatically removed. As such, any external volumes will [be charged](../account/billing.md) until they are explicitly deleted.
+:::
