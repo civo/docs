@@ -32,6 +32,10 @@ You can delete a cluster from its dashboard page by clicking the "Delete" button
 As a precaution, the system will ask you to confirm the name of the cluster you are looking to delete.
 
 When you confirm the cluster name, the system will proceed to delete the cluster immediately.
+
+:::warning
+If you have any external [volumes](./kubernetes-volumes.md) attached to the cluster when it is deleted, these will remain in your account for use. They are not automatically removed. As such, any external volumes will [be charged](../account/billing.md) until they are explicitly deleted.
+:::
 </TabItem>
 
 <TabItem value="cli" label="Civo CLI">
