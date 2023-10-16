@@ -36,3 +36,33 @@ This will execute any further commands in the region of your choice.
 :::tip
 You can also pass a `--region <CODE>` parameter to any CLI command to execute it in the region specified by the code, without changing your current region.
 :::
+
+## What products are available per region? 
+
+| Products         | LON1 | FRA1 | NYC1 | PHX1 |
+|:-----------------|:----:|:----:|:----:|:----:|
+| CPU Kubernetes   |  ✓   |  ✓   |  ✓   |  ✓   |
+| CPU Compute      |  ✓   |  ✓   |  ✓   |  ✓   |
+| Object Stores    |  ✓   |  ✓   |  ✓   |  ✓   |
+| Volumes          |  ✓   |  ✓   |  ✓   |  ✓   |
+| Machine Learning |  ✓   |  ✓   |  ✓   |  ✓   |
+| Database         |  ✓   |  ✓   |  ✓   |  ✓   |
+| GPU Kubernetes   |  ✓   |  ✗   |  ✗   |  ✗   |
+| GPU Compute      |  ✓   |  ✗   |  ✗   |  ✗   |
+
+## External Regions
+
+### Deep Green - Exmouth Region
+
+All users are now given the option to select the Deep Green region (DG-EXM) from our range of regions; from here, you’ll be able to run your cloud workloads on Deep Green’s Exmouth (UK) data center. 
+
+As Deep Green continues to expand, you’ll be able to run your workloads at a range of Deep Green data center sites, with waste heat from your compute workloads used to generate hot water communities across the UK. 
+
+Overall, this partnership means that users choosing the Deep Green region will be running their instances using 100% renewable energy.
+
+| Products available on DG-EXM|     |
+|:----------------------------|:---:|
+| GPU Compute                 |  ✓  |
+| Volumes                     |  ✓  |
+
+For more information on our Partnership with Deepgreen, please visit our [Deep Green article](https://www.civo.com/blog/greener-cloud-computing-deep-green). 
