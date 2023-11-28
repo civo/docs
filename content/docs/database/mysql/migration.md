@@ -24,13 +24,13 @@ Migrating a MySQL database to Civo is a process that needs meticulous planning t
 - Target Civo database IP address or DNS FQDN.
 - Target Civo database username and password.
 - Names of the databases to migrate, if not moving all.
-- 
+
 ### If External Connections Are Prohibited:
 An additional step to transfer the backup to a host that can connect to Civo is required if your MySQL server restricts external connections.
 
 ## MySQL Database Migration Steps
 
-1. Backup the Data
+### 1. Backup the Data
 
 - Use `mysqldump` to create a backup of the existing database:
 
@@ -60,7 +60,7 @@ mysqldump -u [username] -p[password] --databases [database1] [database2] > backu
   - Schema only (no data): `--no-data`
   - Data only (no schema information): `--no-create-info`
 
-2. Transfer the Backup (Optional)
+### 2. Transfer the Backup (Optional)
 
 Securely move the backup file using `scp`:
 
@@ -68,7 +68,7 @@ Securely move the backup file using `scp`:
 scp sshuser@mysql-host.com:/path/to/backup.sql /tmp/
 ```
 
-3. Restore the Dump
+### 3. Restore the Dump
 
 - On a system that can connect to Civo, use the `mysql` command to restore the backup:
 
