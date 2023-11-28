@@ -17,14 +17,14 @@ To retrieve your database connection details, go to:
 - Your [Civo Dashboard page](https://dashboard.civo.com)
 - Navigate to the database section in the left-hand panel:
 
-![Navigate to the Civo Database section](images/navigate-to-the-database-section.png)
+![Navigate to the Civo Database section](images/navigate-database-section.png)
 
 - Select your database to view the connection details, including:
   - Host IP/FQDN, 
   - Username,
   - Password.
 
-![Select your database to view the connection details](images/select-your-database-to-view-the-connection-details.png)
+![Select your database to view the connection details](images/view-connection-details.png)
 
 ### Through the Civo CLI
 
@@ -44,7 +44,7 @@ civo database list
 civo database credential [Database_Name] 
 ```
 
-![civo database credential [Database_Name]](images/civo-database-credential-[Database_Name].pgn)
+![civo database credential](images/civo-database-credential.pgn)
 
 ## Connect to your Civo Database
 
@@ -56,7 +56,7 @@ Execute the command without the password and enter it when prompted to ensure se
 mysql -h [MySQL host IP/FQDN] -u [username] -p
 ```
 
-![mysql -h [MySQL host IPFQDN] -u [username] -p](images/mysql--h-[MySQL host IPFQDN]--u-[username]--p.png)
+![MySQL host IPFQDN](images/mysql-host.png)
 
 ## Connection Troubleshooting
 
