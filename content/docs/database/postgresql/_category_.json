@@ -1,5 +1,5 @@
 {
-  "label": "PostgreSQL",
+  "label": "PostgreSQL Civo Database Overview",
   "link": {
     "type": "generated-index",
     "description": "PostgreSQL is a speed-focused, open-source, and object-relational database designed with emphasis on extensibility and data integrity. It provides full ACID compliance through concurrency support, while allowing users to personalize data types and functions using dynamic loading and catalog-driven operations."
