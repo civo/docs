@@ -1,2 +1,0 @@
-# PostgreSQL document 1
-
