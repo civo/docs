@@ -14,18 +14,18 @@ Migrating a MySQL database to Civo is a process that needs meticulous planning t
 - Halt or limit database operations, especially write actions, to prevent data discrepancies during the migration.
 - Schedule the migration at a time that will least affect business operations, taking into account the migration duration and data volume.
 
-## Prerequisites:
+## Prerequisites
 - A Civo MySQL database instance should already be in place with connection details on hand. To create a new database you can follow our getting started guide. 
 - Confirm the availability of the `mysqldump` utility on your system for database copying.
 
-### Details Needed for Migration:
+### Details Needed for Migration
 - Source MySQL host IP address or DNS FQDN.
 - Source MySQL username and password.
 - Target Civo database IP address or DNS FQDN.
 - Target Civo database username and password.
 - Names of the databases to migrate, if not moving all.
 
-### If External Connections Are Prohibited:
+### If External Connections Are Prohibited
 An additional step to transfer the backup to a host that can connect to Civo is required if your MySQL server restricts external connections.
 
 ## MySQL Database Migration Steps
