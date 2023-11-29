@@ -12,6 +12,8 @@ If you wish to add a new documentation topic, the process is the same (open a PR
 
 Civo documentation uses Docusaurus. The documentation files are in Markdown with added extensions to allow for tabs and other elements not present in regular Markdown. For their correct usage, please see existing documentation pieces in this repository, or refer to the [Docusaurus Markdown site](https://docusaurus.io/docs/markdown-features). 
 
+If you add new images, make sure the text is legible, and the size of the image itself is small enough to be downloaded quickly. Console / terminal output and commands should be displayed in code blocks, not images.
+
 ## Contribution best practices
 
 - If you are proposing a larger change or an entirely new piece of documentation, consider opening an Issue in this repository first to allow for discussion. This can allow the maintainers and Civo community to discuss the best way forward.
