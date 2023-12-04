@@ -61,6 +61,7 @@ Choose the RAM, CPU, and NVMe storage size needed for your new database.
 ![Database sizing options screen](./images/database-sizes.jpg)
 
 :::noteBest practices
+
 - Consider the size and complexity of your data.
 - Evaluate the expected workload on your database.
 - Keep in mind that you can easily scale horizontally by adding new nodes.
@@ -74,7 +75,7 @@ By choosing your RAM, CPU, and NVMe storage size, you will have full transparenc
 
 Civo Database provides scalable managed PostgreSQL and MySQL databases that are automatically backed up nightly. They are always-on, and for further peace of mind, you can choose to run additional nodes for your databases.
 
-Select if you would like to add additional nodes to your database. We give you the option to add up to 5 nodes. Note that this will impact the price charged for your database.
+Select if you would like to add additional nodes to your database. We give you the option to add 2 or 4 additional nodes. Note that this will impact the price charged for your database.
 
 ![Additional nodes dropdown](./images/additional-nodes.jpg)
 
