@@ -77,7 +77,7 @@ Civo Database provides scalable managed PostgreSQL and MySQL databases that are 
 
 Select if you would like to add additional nodes to your database. We give you the option to add 2 or 4 additional nodes. Note that this will impact the price charged for your database.
 
-![Additional nodes dropdown](./images/additional-nodes.jpg)
+![Additional nodes dropdown](./images/additional-nodes.png)
 
 :::noteWhy add nodes?
 There are several reasons why one might add additional nodes to a database:
