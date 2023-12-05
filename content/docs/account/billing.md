@@ -15,11 +15,11 @@ Civo services are chargeable, which is why you need a valid payment method on fi
 
 ![Civo charges summary](images/charges-summary.png)
 
-At any time you can see your current month's charge summary from your [Dashboard](https://dashboard.civo.com) and from there drill down into a [detailed listing of current charges](https://dashboard.civo.com/billing/usage). Services are billed hourly and at the rates listed on our [Pricing page](https://www.civo.com/pricing). As with almost all cloud hosting providers, the hourly pricing is worked out by dividing a monthly fee by 28 days (and of course 24 hours in each day).
+At any time you can see your current month's charge summary from your [Dashboard](https://dashboard.civo.com) and from there drill down into a [detailed listing of current charges](https://dashboard.civo.com/billing/usage). Services are billed hourly, rounded up to the nearest full hour, and at the rates listed on our [Pricing page](https://www.civo.com/pricing). As with almost all cloud hosting providers, the hourly pricing is worked out by dividing a monthly fee by 28 days (and of course 24 hours in each day).
 
 This means that if the month is longer than 28 days, then theoretically the price would work out to more than the 28 day monthly price. So we cap it at the monthly price. This does have the following well-known side effect - if you launch an instance, run it for 15 days, then close it down and launch a second one and leave it running until the end of the 30 day month, you would be charged more than the monthly fee. This is how the caps work.
 
-We won't automatically stop your instances and risk interrupting your services.
+We won't automatically stop resources and risk interrupting your services unless your account is suspended.
 
 ## Billing for shut down resources
 
