@@ -251,7 +251,7 @@ const config = {
               "postalCode": "SG1 2FP",
               "addressCountry": "GB"
             },
-          ),
+          }),
         },
       ],
     }),
