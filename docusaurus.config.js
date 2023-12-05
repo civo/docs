@@ -227,6 +227,33 @@ const config = {
           hideable: true,
         },
       },
+      metadata: [
+        {name: 'keywords', content: 'cloud, native, computing, Civo'},
+        {name: 'twitter:card', content: 'summary_large_image'},
+        // Add more metadata tags as necessary
+      ],
+      headTags: [  
+        {
+          tagName: 'script',
+          attributes: {
+          type: 'application/ld+json',
+          },
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Civo",
+            "url": "https://www.civo.com/",
+            "logo": "https://www.civo.com/images/civo-structured-data-logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Units H, J & K, Gateway 1000, Whittle way",
+              "addressLocality": "Stevenage",
+              "postalCode": "SG1 2FP",
+              "addressCountry": "GB"
+            },
+          ),
+        },
+      ],
     }),
 };
 
