@@ -23,7 +23,7 @@ We won't automatically stop resources and risk interrupting your services unless
 
 ## Billing for shut down resources
 
-If an instance or Kubernetes cluster is shut down, it still takes up resources, so a stopped instance or cluster is chargeable, and is exactly the same as an active instance or cluster. In other words, The hourly price will be added to your monthly charges while the instances are in your account, running or not.
+If an instance, Kubernetes cluster or other Civo service is shut down, it still takes up resources, so a stopped instance or cluster is chargeable, and is exactly the same as an active instance or cluster. In other words, The hourly price will be added to your monthly charges while these resources are in your account, running or not.
 
 All our prices are charged in US dollars and are exclusive of VAT (where applicable).
 
