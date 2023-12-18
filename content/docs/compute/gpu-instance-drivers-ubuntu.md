@@ -28,6 +28,11 @@ Testing the installation is successful:
 - Rebooting the instance
 - Running `nvidia-smi`
 
+Installing CUDA:
+
+- Updating the package list
+- Installing the Nvidia CUDA Toolkit
+
 ## Preparation
 
 To upgrade the Ubuntu package list, run the following command in an SSH connection to the instance to update the listing and install any upgrades:
@@ -106,7 +111,7 @@ Connection to [IP address] closed by remote host.
 Connection to [IP address] closed.
 ```
 
-Then, connect back to the instance using SSH. 
+Then, after the reboot completes (in about 30 seconds), connect back to the instance using SSH.
 
 Once connected, run the `nvidia-smi` command.
 
@@ -135,3 +140,32 @@ Mon Dec 18 21:14:04 2023
 ```
 
 The version numbers should show the number corresponding to the version you installed in the earlier steps.
+
+## Installing CUDA
+
+:::note
+If you just finished with the previous sections, you can skip the package update step and proceed straight to installing the CUDA toolkit.
+:::
+
+Update the Ubuntu package listings and installation:
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+Install the CUDA toolkit:
+
+```bash
+sudo apt install nvidia-cuda-toolkit -y
+```
+
+Once the packages are downloaded and installed, you can test that the toolkit is the version you expect:
+
+```bash
+$ nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2021 NVIDIA Corporation
+Built on Thu_Nov_18_09:45:30_PST_2021
+Cuda compilation tools, release 11.5, V11.5.119
+Build cuda_11.5.r11.5/compiler.30672275_0
+```
