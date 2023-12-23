@@ -8,7 +8,7 @@ description: Learn how to get started with Civo's Kubeflow via an example.
   <title>Kubeflow quickstart | Civo Documentation</title>
 </head>
 
-In this quickstart mainly focused towards Pipelines and Notebooks, we take a look at a simple example to train and run a model using Kubeflow Pipelines and Notebooks.
+In this quickstart, focused mainly on Pipelines and Notebooks, we take a look at an example to train and run a machine learning model using Kubeflow.
 
 ## Before you start
 
@@ -18,7 +18,7 @@ Make sure you can create a notebook and log into the notebook by following the i
 
 ## Run a pipeline
 
-We will first compile a pipeline DSL that will train a model using the MNIST dataset. Notice that this pipeline mainly has the following coponents which are run: hyperparameter tuning with Katib, creating a new volume for training, run a training job and finally serve the model using KServe.
+We will first compile a pipeline DSL that will train a model using the [MNIST dataset](https://ieeexplore.ieee.org/document/726791). Notice that this pipeline mainly has the following coponents which are run: hyperparameter tuning with Katib, creating a new volume for training, run a training job and finally serve the model using KServe.
 
 Now [create a new notebook instance](creating-a-new-kubeflow-notebook.md) and run the following commands:
 
@@ -31,7 +31,9 @@ python mnist-example.py
 
 This produces for us a `mnist-example.yaml` file that we will use to run our pipeline.
 
-We now use [Pipelines](kubeflow-dashboard.md/) and use the pipeline configuration we generated in the previous step to define the pipeline. Once you do so, you should create a new [experiment](kubeflow-dashboard.md/) and then trigger a run for the pipline by going to the Run tab, clicking on the "create a run" button and choosing the pipeline you just created.
+We now use [Pipelines](kubeflow-dashboard.md/) and use the pipeline configuration we generated in the previous step to define the pipeline. Once you do so, you should create a new [experiment](kubeflow-dashboard.md/) and then trigger a run for the pipeline by going to the Run tab, clicking on the "create a run" button and choosing the pipeline you just created.
+
+<img src={require('./images/mnist-pipeline.png').default} style={{"background-color":"white"}} />
 
 This would trigger a Kubeflow pipeline run and we would see the pipeline run in the Pipelines dashboard. Once the pipeline run is complete, we can see the model saved in the `end-to-end-pipeline-{ID}-model` volume we created earlier.
 
@@ -67,3 +69,5 @@ print("Prediction for the image")
 display(image)
 print(response.json())
 ```
+
+You should see the image and the JSON response our prediction endpoint returns for the image.
