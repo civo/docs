@@ -34,7 +34,7 @@ You will then be able to [delete any credentials](./object-store-credentials#del
 
 </TabItem>
 
-<TabItem value="cli" label="Clivo CLI">
+<TabItem value="cli" label="Civo CLI">
 
 The command to delete an object store using Civo CLI is `civo objectstore delete <store-name>`:
 
