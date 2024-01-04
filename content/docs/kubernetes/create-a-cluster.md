@@ -116,14 +116,14 @@ The cluster civo-cluster (ac1447d4-d938-4c0d-8eb6-7844b7f0a4dd) has been created
 
 ### Downloading the cluster's kubeconfig from the command line
 
-Once running, you can use `kubectl` and the *kubeconfig* file from the cluster to interact with it. If you did not save the *kubeconfig* on cluster creation, you can use `civo kubernetes config civo-cluster --save --merge` to download the configuration and access your cluster.
+Once running, you can use `kubectl` and the *kubeconfig* file from the cluster to interact with it. If you did not save the *kubeconfig* on cluster creation, you can use `civo kubernetes config civo-cluster --save` to download the configuration and access your cluster.
 
 ## Viewing cluster information on Civo CLI
 
 Once you have a running cluster, you can get a nicely-formatted information screen by running `civo kubernetes show [cluster_name]`. You can even use a partial name or unique section of the ID to have it show, like in the following example - as long as the part of the name you input matches only one cluster, you'll get the cluster information returned:
 
 ```bash
-$ civo k8s show demo
+$ civo kubernetes show demo
                     ID : 73866847-749a-43b9-8168-65bc3cc12ffc
                   Name : docs-demo
            ClusterType : k3s
