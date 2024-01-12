@@ -107,7 +107,7 @@ Finally, click on "Create database" to make the magic happen!
 
 ## Creating an instance using the Civo CLI 
 
-You can create a Civo database on the command-line by running the `civo database create` command with a name as the only argument
+You can create a Civo database on the command-line by running the `civo database create` command with a name as the only argument.
 
 ### Creating a database on the command line with no options
 
@@ -208,7 +208,7 @@ use the data source `civo_size`  "small" block to retrieve details about the `db
 
 Similarly, the data source `civo_database_version` "mysql" block gathers information about available MySQL versions. The filter here focuses on versions with the `mysql` engine.
 
-Finally, with the desired size and version readily available, we define the civo_database resource. With three nodes and the engine and version, we extracted from the data source.
+Finally, with the desired size and version readily available, we define the `civo_database` resource. With three nodes and the engine and version, we extracted from the data source.
 
 At the time of writing Civo currently supports PostgreSQL and MySQL with support for Redis coming soon.
 
