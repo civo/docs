@@ -140,7 +140,7 @@ civo db credential civo-db
     Password : <password>
 ```
 
-### Veiwing Database information on Civo CLI 
+### Viewing Database information on Civo CLI 
 
 You can get a nicely-formatted information about your database by running the `civo database show [database_name]`.
 
