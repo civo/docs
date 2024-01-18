@@ -194,7 +194,7 @@ data "civo_database_version" "mysql" {
 }
 
 resource "civo_database" "mysql_db" {
-  name    = "msql-tf"
+  name    = "mysql-tf"
   region  = "LON1"
   size    = element(data.civo_size.small.sizes, 0).name
   nodes   = 2
@@ -240,7 +240,7 @@ Terraform will perform the following actions:
       + engine       = "MySQL"
       + firewall_id  = (known after apply)
       + id           = (known after apply)
-      + name         = "msql-tf"
+      + name         = "mysql-tf"
       + network_id   = (known after apply)
       + nodes        = 3
       + password     = (known after apply)
@@ -272,7 +272,7 @@ Terraform will perform the following actions:
       + engine       = "MySQL"
       + firewall_id  = (known after apply)
       + id           = (known after apply)
-      + name         = "msql-tf"
+      + name         = "mysql-tf"
       + network_id   = (known after apply)
       + nodes        = 3
       + password     = (known after apply)
