@@ -44,6 +44,12 @@ You can create one or more instances in one operation, subject to the limitation
 
 You can select the size and instance hardware specifications based on the task you want to accomplish. You can view the available sizing options [here](https://www.civo.com/pricing).
 
+![Compute instance sizes](./images/instance-sizes-standard.png)
+
+Some [Civo regions](../overview/regions.md) provide the option to create instances with [attached GPUs](https://www.civo.com/cloud-gpu). These can be selected on the corresponding "GPU" tabs of the sizes section, if available in your current region, as shown in the image below:
+
+![GPU instance sizes](./images/instance-sizes-gpu.png)
+
 Sizing options may be restricted depending on your account quota and how many resources are already running in your account. See the [quota documentation](../account/quota.md) for more information.
 
 The hourly/monthly slider for the pricing is purely to show the pricing equivalent at different time scales. All Civo resources are billed hourly. [Read more about billing](../account/billing.md).
