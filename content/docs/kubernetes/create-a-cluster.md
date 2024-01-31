@@ -116,7 +116,7 @@ The cluster civo-cluster (ac1447d4-d938-4c0d-8eb6-7844b7f0a4dd) has been created
 
 ### Downloading the cluster's kubeconfig from the command line
 
-Once running, you can use `kubectl` and the *kubeconfig* file from the cluster to interact with it. If you did not save the *kubeconfig* on cluster creation, you can use `civo kubernetes config civo-cluster --save --merge` to download the configuration and access your cluster.
+Once running, you can use `kubectl` and the *kubeconfig* file from the cluster to interact with it. If you did not save the *kubeconfig* on cluster creation, you can use `civo kubernetes config civo-cluster --save ` to download the configuration and access your cluster.
 
 ## Viewing cluster information on Civo CLI
 
