@@ -57,8 +57,9 @@ Before connecting, ensure you have the [psql client](https://www.postgresql.org/
 To connect to your database using  `psql`, use the following syntax:
 
 ```bash
-psql -h [PostgreSQL host IP/FQDN] -U [username] -p 5432
+psql -h [PostgreSQL host IP/FQDN] -U [username] -p 5432 [database_name]
 ```
+The default database name will be `postgres`
 
 ![psql connection command](../images/psql-connection-command.png)
 
@@ -67,7 +68,7 @@ psql -h [PostgreSQL host IP/FQDN] -U [username] -p 5432
 For convenience, you can use the  `PGPASSWORD` environment variable to set the password before running the `psql` command:
 
 ```bash
-export PGPASSWORD='your_password'; psql -h [PostgreSQL host IP/FQDN] -U [username] -p 5432
+export PGPASSWORD='your_password'; psql -h [PostgreSQL host IP/FQDN] -U [username] -p 5432 [database_name]
 ```
 
 However, this method is less secure than entering the password when prompted.
