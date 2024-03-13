@@ -230,4 +230,12 @@ const config = {
     }),
 };
 
-module.exports = config;
+// module.exports = config;
+
+module.exports = {
+  ...config,
+  plugins: [
+    // Other plugins...
+    '@easyops-cn/docusaurus-search-local',
+  ],
+};
