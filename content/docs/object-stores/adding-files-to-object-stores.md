@@ -41,7 +41,7 @@ In order to interact with the Civo object store you created, you'll need `s3cmd`
 
 First, you will need to retrieve the Access Key from the [object store credential details](./object-store-credentials#retrieving-object-store-credential-details) in question.
 
-Civo CLI has a method to *export* credential details for s3cmd. The format is `civo objectstore credential export -a <credential_access_key>:
+Civo CLI has a method to *export* credential details for s3cmd. The format is `civo objectstore credential export -a <credential_access_key>`:
 
 ```console
 $ civo objectstore credential export --access-key=OIPUMAEH30PMWHYQU2IX
