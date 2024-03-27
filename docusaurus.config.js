@@ -9,7 +9,7 @@ const config = {
   title: 'Civo Documentation',
   tagline: 'The Cloud Native Service Provider',
   url: 'https://www.civo.com',
-  baseUrl: '/docs',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'docusaurus/img/favicon.ico',
@@ -230,12 +230,4 @@ const config = {
     }),
 };
 
-// module.exports = config;
-
-module.exports = {
-  ...config,
-  plugins: [
-    // Other plugins...
-    '@easyops-cn/docusaurus-search-local',
-  ],
-};
+module.exports = config;
