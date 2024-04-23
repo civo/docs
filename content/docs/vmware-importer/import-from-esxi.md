@@ -46,16 +46,16 @@ Always ensure to back up your VMs before initiating any part of this migration p
 - Initiate Data Fetch: Click 'Fetch Data' to retrieve your VM information.
 - Select VM for Migration: From the list, tick the box next to the VM you wish to migrate. Adjust default settings for region, network, or firewall.
 
-5. Initiate Migration
+5. Initiate Migration <br>
 Click 'import to Civo' to begin importing your instance to Civo's platform.
 
-6. Find the Civo Instance on Dashboard or CLI
+6. Find the Civo Instance on Dashboard or CLI<br>
 The instance after import and its running status will be displayed the same way as a normal Civo instance.
 
-7. Connect to Civo Instance
+7. Connect to Civo Instance<br>
 SSH into Civo Instance. Use SSH to connect to the provided IP address for the Civo instance using your existing VM login credentials.
 
-8. Verify your application on Civo
+8. Verify your application on Civo<br>
 Using your IP address verify your application works as expected. If all is in order, a progress bar will display the estimated migration time, updating in real-time.
 
 :::Tip
