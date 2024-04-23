@@ -21,7 +21,7 @@ This guide outlines the process of migrating VMware instances to Civo's cloud pl
 - HTTPS URL of the VMDK file
 
 :::warning
-Warning! Always ensure to back up your VMs before initiating any part of this migration process.
+Always ensure to back up your VMs before initiating any part of this migration process.
 :::
 
 ### Procedure
