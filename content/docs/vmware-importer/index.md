@@ -14,9 +14,9 @@ Migrating VMware Instances to Civo has never been this simple.
 
 We created a tool, a VMware Importer, which helps you migrate your VMware instances with ease using out 3 different import methods:
 
-- [Import from ESXi](./vmware-importer/import-from-esxi.md): Import VMs directly from ESXi by connecting to your remote VMware ESXi server. 
-- [Upload an Image from your local device](./vmware-importer/upload-image-from-local-device.md): Migrate your VM by providing a local VMDK file to be connected to a live Civo Instance.
-- [Custom Import](./vmware-importer/custom-import.md): Provide a HTTPs URL directly to the VMDK file you would like to import into Civo. 
+- [Import from ESXi](./import-from-esxi.md): Import VMs directly from ESXi by connecting to your remote VMware ESXi server. 
+- [Upload an Image from your local device](./upload-image-from-local-device.md): Migrate your VM by providing a local VMDK file to be connected to a live Civo Instance.
+- [Custom Import](./custom-import.md): Provide a HTTPs URL directly to the VMDK file you would like to import into Civo. 
 - API Integration - Coming soon
 
 With our instant migration magic: move your VMware to Civo in Minutes!
