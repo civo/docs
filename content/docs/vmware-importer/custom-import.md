@@ -1,6 +1,6 @@
 ---
 title: Custom Import
-description: Learn to migrate VMware instances to Civo's cloud platform using a virtual machine from ESXi. Step-by-step guide covers prerequisites to post-migration steps.
+description: Streamline your VMware to Civo migration by importing a VMDK file via a direct HTTP URL. Follow our easy guide to get started quickly and efficiently!
 ---
 
 <head>
