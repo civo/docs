@@ -18,4 +18,5 @@ The documentation covers sections around the following, among other things:
 - Civo [tooling](../overview/tools-overview.md) such as the [command-line interface](../overview/civo-cli.md) and [Terraform](../overview/terraform.md)
 - [Kubernetes clusters](../kubernetes/index.md) and associated services such as [load balancers](../kubernetes/load-balancers.md)
 - [Virtual machine instances](../compute/index.md)
+- [Managed databases](../database/index.md)
 - [Networking](../networking/index.md), [firewalls](../networking/firewalls.md) and DNS (Domain Name Services)
