@@ -3,7 +3,7 @@ sidebar_position: 1
 description: Discover the power and scalability of Civo's managed database service at an affordable price with our technical documentation. Learn everything you need to know by getting started today.
 ---
 
-# Introduction
+# Databases
 
 [Civo Database](https://www.civo.com/databases) is a top-tier managed database service that offers optimized performance and reliability at an affordable price.
 
