@@ -25,29 +25,36 @@ This guide walks you through the steps to use our VMware Importer and migrate yo
 - **Networking Requirements**: Dynamic Host Configuration Protocol (DHCP) must be enabled on all network adapters in the machine to ensure proper functionality.
 
 :::warning
-Warning! Always ensure to back up your VMs before initiating any part of this migration process.
+Always ensure to back up your VMs before initiating any part of this migration process.
 :::
 
 ### Procedure
 
 1. Verify VMware Instance
-Access VMware Console: Log into the VMware instance's console using the credentials provided.
-Check your services are accessible for local hosts and your adapter IP address. 
+- Access VMware Console. Log into the VMware instance's console using the credentials provided.
+- Check your services are accessible for local hosts and your adapter IP address.
+
 2. Prepare for Migration
-Navigate to VMware Importer Tool
-[Login to Civo](https://dashboard.civo.com/login) and use the 'continue with Civo' option and enter your credentials.
+- Navigate to VMware Importer Tool
+- [Login to Civo](https://dashboard.civo.com/login) and use the 'continue with Civo' option and enter your credentials.
+
 3. Configuration for Import
-Select Import Type: Choose 'ESXI Import' and provide the ESXI Host and user details. Ensure secure password entry.
-Region Selection: For demonstration, select your desired region.
+- Select Import Type: Choose 'ESXI Import' and provide the ESXI Host and user details. Ensure secure password entry.
+- Region Selection: For demonstration, select your desired region.
+
 4. Fetch VM Information
-Initiate Data Fetch: Click 'Fetch Data' to retrieve your VM information.
-Select VM for Migration: From the list, tick the box next to the VM you wish to migrate. Adjust default settings for region, network, or firewall.
+- Initiate Data Fetch: Click 'Fetch Data' to retrieve your VM information.
+- Select VM for Migration: From the list, tick the box next to the VM you wish to migrate. Adjust default settings for region, network, or firewall.
+
 5. Initiate Migration
-Start Import: Click 'import to Civo' to begin importing your instance to Civo's platform.
+Click 'import to Civo' to begin importing your instance to Civo's platform.
+
 6. Find the Civo Instance on Dashboard or CLI
 The instance after import and its running status will be displayed the same way as a normal Civo instance.
+
 7. Connect to Civo Instance
-SSH into Civo Instance: Use SSH to connect to the provided IP address for the Civo instance using your existing VM login credentials.
+SSH into Civo Instance. Use SSH to connect to the provided IP address for the Civo instance using your existing VM login credentials.
+
 8. Verify your application on Civo
 Using your IP address verify your application works as expected. If all is in order, a progress bar will display the estimated migration time, updating in real-time.
 
