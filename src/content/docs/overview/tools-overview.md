@@ -3,7 +3,7 @@ sidebar:
   order: 2
 title: Civo tools
 description: Manage your Civo account and resources using multiple tools including Civo CLI and infrastructure-as-code tools like Terraform.
-lastUpdated: 2024-04-25
+lastUpdated: true
 ---
 
 <head>

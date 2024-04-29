@@ -3,8 +3,8 @@ sidebar:
   order: 1
   label: Intro
 title: Overview
+lastUpdated: true
 description: Learn how to get started with Civo. Find out how to access & manage your Civo resources, incl. instances, Kubernetes clusters, and networking resources.
-lastUpdated: 2024-04-25
 ---
 
 <head>

@@ -1,5 +1,6 @@
 ---
 title: Teams management
+lastUpdated: true
 description: Learn how to manage teams and accounts on Civo. Find out how to access & manage team member access to cloud resources.
 ---
 

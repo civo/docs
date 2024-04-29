@@ -2,6 +2,7 @@
 sidebar:
   order: 4
 title: Creating a new Kubeflow notebook
+lastUpdated: true
 description: Creating a new notebook in Civo's machine learning Kubeflow service
 ---
 

@@ -1,6 +1,8 @@
 ---
-sidebar_position: 1
+sidebar:
+  order: 1
 title: Object stores
+lastUpdated: true
 description: Upload unstructured data easily with Civo Object Store, an S3-compatible managed service. Use an S3 client to interact with region-specific object stores.
 ---
 

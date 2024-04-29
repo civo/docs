@@ -1,5 +1,6 @@
 ---
 title: Installing Nvidia drivers on GPU instances running Ubuntu
+lastUpdated: true
 description: Learn how to customize the Nvidia drivers on Civo GPU instances running Ubuntu to meet your specific needs.
 ---
 

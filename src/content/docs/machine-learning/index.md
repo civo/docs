@@ -2,6 +2,7 @@
 sidebar:
   order: 1
 title: Machine learning
+lastUpdated: true
 description: Introduction to the Civo machine learning service and managed Kubeflow
 ---
 

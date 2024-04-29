@@ -2,6 +2,7 @@
 sidebar:
   order: 1
 title: Descripción general
+lastUpdated: true
 description: Aprenda a comenzar con Civo. Descubra cómo acceder y administrar sus recursos de Civo, incluidas instancias, clústeres de Kubernetes y recursos de red.
 ---
 

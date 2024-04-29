@@ -1,5 +1,6 @@
 ---
-title: Connecting to your Civo PostgreSQL Database 
+title: Connecting to your Civo PostgreSQL Database
+lastUpdated: true
 description: Learn how to connect to your Civo PostgreSQL database using the Civo dashboard or CLI tool. Retrieve the connection details and use the PostgreSQL client command.
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: MySQL Database migration to Civo
+lastUpdated: true
 description: Migrate your MySQL database to Civo with this step-by-step guide. Ensure data accuracy and minimize downtime with our backup and restore method.
 ---
 

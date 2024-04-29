@@ -1,5 +1,6 @@
 ---
 title: Connecting to your Civo MySQL Database
+lastUpdated: true
 description: Learn how to connect to your Civo MySQL database using the Civo dashboard or CLI tool. Retrieve the connection details and use the mysql client command.
 ---
 

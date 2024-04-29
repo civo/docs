@@ -1,6 +1,8 @@
 ---
-sidebar_position: 1
+sidebar:
+    order: 1
 title: Kubernetes Management
+lastUpdated: true
 description: Create Kubernetes clusters with ease on Civo. Learn to manage clusters on Civo using the web interface, CLI, and Terraform. Certified CNCF conformant.
 ---
 

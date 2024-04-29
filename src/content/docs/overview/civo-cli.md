@@ -2,8 +2,8 @@
 sidebar:
   order: 3
 title: Civo CLI
+lastUpdated: true
 description: Learn how to use the Civo Command Line Interface (CLI) to manage your Civo resources. Find out how to access features and tools from the command line. 
-lastUpdated: 2024-04-25
 ---
 
 <head>
