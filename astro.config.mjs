@@ -49,6 +49,22 @@ export default defineConfig({
 					autogenerate: { directory: 'machine-learning' },
 					collapsed: true,
 				},
+				{
+					label: 'Networking',
+					autogenerate: { directory: 'networking' },
+					collapsed: true,
+				},
+				{
+					label: 'Object Stores',
+					autogenerate: { directory: 'object-stores' },
+					collapsed: true,
+				},
+				{
+					label: 'FAQs',
+					autogenerate: { directory: 'faq' },
+					collapsed: true,
+				},
+				{ label: 'Civo API documentation', link: 'https://www.civo.com/api' },
 			],
 			defaultLocale: 'root',
 			locales: {
@@ -56,10 +72,10 @@ export default defineConfig({
 					label: 'English',
 					lang: 'en', // lang is required for root locales
 				},
-				es: {
-					label: 'Español',
-					url: '/es/',
-				},
+				// es: {
+				// 	label: 'Español',
+				// 	url: '/es/',
+				// },
 			},
 		}),
 	],
