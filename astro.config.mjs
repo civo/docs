@@ -11,6 +11,10 @@ export default defineConfig({
 				src: './src/assets/logo.svg',
 				replacesTitle: true,
 			},
+			customCss: [
+				// Fontsource files for to regular and semi-bold font weights.
+				'@fontsource-variable/inter/index.css',
+			  ],
 			social: {
 				github: 'https://github.com/civo/docs',
 				twitter: 'https://twitter.com/civocloud',
