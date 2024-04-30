@@ -8,7 +8,7 @@ description: Explore how our VMware Importer makes migrating your VMware instanc
   <title>VMware Importer - Migrating VMware Instances to Civo in Minutes | Civo Documentation</title>
 </head>
 
-## VMware Importer introduction
+## Introduction
 
 Migrating VMware Instances to Civo has never been this simple.
 
