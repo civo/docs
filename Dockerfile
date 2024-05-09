@@ -6,7 +6,6 @@ RUN npm install
 # copy node_modules from temp directory
 # then copy all (non-ignored) project files into the image
 FROM builder AS prerelease
-
 COPY --from=builder /app/node_modules node_modules
 COPY . .
 RUN npm run build
