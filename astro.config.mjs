@@ -80,11 +80,14 @@ export default defineConfig({
 					label: 'English',
 					lang: 'en', // lang is required for root locales
 				},
-				// es: {
-				// 	label: 'Español',
-				// 	url: '/es/',
-				// },
 			},
+			customCss: [
+				// Relative path to your custom CSS file
+				'./src/styles/custom.css',
+			],
+			// components: {
+			// 	TwoColumnContent: './src/components/Footer.astro',
+			// },
 		}),
 	],
 });

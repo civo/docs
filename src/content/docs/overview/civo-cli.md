@@ -1,16 +1,10 @@
 ---
 sidebar:
   order: 3
-title: Civo CLI
+title: Using the Civo Command Line Interface (CLI)
 lastUpdated: true
 description: Learn how to use the Civo Command Line Interface (CLI) to manage your Civo resources. Find out how to access features and tools from the command line. 
 ---
-
-<head>
-  <title>Using the Civo Command Line Interface (CLI) | Civo Documentation</title>
-</head>
-
-## Overview
 
 The Civo CLI is a command-line interface that allows you to create, manage and delete resources such as Kubernetes clusters and instances through the Civo API programmatically through your terminal. The Civo [web dashboard](https://dashboard.civo.com) has a user-friendly interface for managing your account, and if you want to automate or run scripts on your account, or have multiple complex services, the command-line interface outlined here will be useful.
 

@@ -1,0 +1,11 @@
+/* Dark mode colors. */
+:root {
+	--sl-color-accent-high: #292b31;
+    --sl-color-text-invert: white;
+    --sl-color-text-accent: #449bfb;
+}
+/* Light mode colors. */
+:root[data-theme='light'] {
+	--sl-color-accent: #449bfb;
+    --sl-color-text-invert: white;
+}

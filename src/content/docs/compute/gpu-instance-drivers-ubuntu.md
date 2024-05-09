@@ -8,9 +8,11 @@ description: Learn how to customize the Nvidia drivers on Civo GPU instances run
   <title>Nvidia driver installation on Civo GPU Ubuntu Instances | Civo Documentation</title>
 </head>
 
-## Overview
+To take advantage of the Nvidia GPU in Civo GPU instances, you may wish to install a specific version of Nvidia GPU drivers on an instance running Ubuntu. 
 
-To take advantage of the Nvidia GPU in Civo GPU instances, you may wish to install a specific version of Nvidia GPU drivers on an instance running Ubuntu. This document will detail the following:
+## Introduction
+
+This document will detail the following:
 
 Preparation:
 
