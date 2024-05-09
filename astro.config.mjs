@@ -15,6 +15,7 @@ export default defineConfig({
 			customCss: [
 				// Fontsource files for to regular and semi-bold font weights.
 				'@fontsource-variable/inter/index.css',
+				'./src/styles/custom.css',
 			  ],
 			editLink: {
 				baseUrl: 'https://github.com/civo/docs/edit/main/docs/',
@@ -81,10 +82,6 @@ export default defineConfig({
 					lang: 'en', // lang is required for root locales
 				},
 			},
-			customCss: [
-				// Relative path to your custom CSS file
-				'./src/styles/custom.css',
-			],
 			// components: {
 			// 	TwoColumnContent: './src/components/Footer.astro',
 			// },

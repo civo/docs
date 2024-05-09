@@ -1,5 +1,9 @@
 /* Dark mode colors. */
 :root {
+    --sl-font: 'Inter', serif;
+  }
+
+:root {
 	--sl-color-accent-high: #292b31;
     --sl-color-text-invert: white;
     --sl-color-text-accent: #449bfb;
