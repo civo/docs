@@ -16,6 +16,9 @@ export default defineConfig({
 				// Fontsource files for to regular and semi-bold font weights.
 				'@fontsource-variable/inter/index.css',
 			  ],
+			editLink: {
+				baseUrl: 'https://github.com/civo/docs/edit/main/docs/',
+			}, 
 			social: {
 				github: 'https://github.com/civo/docs',
 				twitter: 'https://twitter.com/civocloud',
