@@ -1,54 +1,46 @@
-# Starlight Starter Kit: Basics
+# Civo Documentation
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+This repository serves as the source for [Civo](https://www.civo.com) documentation. The source files in the repository are used to render the documentation pages at https://www.civo.com/docs .
 
-```
-npm create astro@latest -- --template starlight
-```
+You can contribute to this repository by submitting a Pull Request with your suggested changes. Once merged to the main branch, these changes will be reflected on the site. Read our [contributing document](CONTRIBUTING.md) for more detail.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwithastro%2Fstarlight%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
+## Website
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This website is built using [starlight](https://starlight.astro.build/), a modern static website generator base on Astro
 
-## 🚀 Project Structure
+### Installation
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+You will need [bun](https://bun.sh/) installed, to achieve this you can run this.
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   ├── docs/
-│   │   └── config.ts
-│   └── env.d.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+macOS/Linux (curl)
+```console
+curl -fsSL https://bun.sh/install | bash
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+Windows (PowerShell)
+```console
+powershell -c "irm bun.sh/install.ps1|iex"
+```
+### Local Development
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+```console
+$ bun install
+```
 
-Static assets, like favicons, can be placed in the `public/` directory.
+```console
+$ bun run dev
+```
 
-## 🧞 Commands
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-All commands are run from the root of the project, from a terminal:
+### Build
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```console
+$ bun run build
+```
 
-## 👀 Want to learn more?
+This command generates static content into the `dist` directory and can be served using any static contents hosting service.
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+### Deployment
+
+

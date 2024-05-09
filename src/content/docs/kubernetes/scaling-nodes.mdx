@@ -120,11 +120,11 @@ You can also add the autoscaler to an already-running cluster by navigating to t
 
 <TabItem value="civo-cli" label="Civo CLI">
 
-If you are creating a new Kubernetes cluster, you can add the cluster autoscaler as part of the applications to add using the `-a` parameter. Please refer to the [cluster creation documentation](./create-a-cluster.md) for more information.
+If you are creating a new Kubernetes cluster, you can add the cluster autoscaler as part of the applications to add using the `-a` parameter. Please refer to the [cluster creation documentation](/kubernetes/create-a-cluster/) for more information.
 
 You can add the cluster autoscaler to a running Civo Kubernetes cluster using the CLI by running the command `civo kubernetes applications add civo-cluster-autoscaler -c <clustername>`.
 
-For more information Civo CLI, see the [CLI documentation](../overview/civo-cli.md).
+For more information Civo CLI, see the [CLI documentation](/overview/civo-cli/).
 </TabItem>
 
 <TabItem value="terraform" label="Terraform">
@@ -142,7 +142,7 @@ resource "civo_kubernetes_cluster" "cluster" {
 }
 ```
 
-Refer to the [cluster creation documentation](./create-a-cluster.md) using Terraform for more options and required fields.
+Refer to the [cluster creation documentation](/kubernetes/create-a-cluster/) using Terraform for more options and required fields.
 
 </TabItem>
 </Tabs>
@@ -219,6 +219,6 @@ To trigger a scale down to the new minimum node count, you can edit the a deploy
 You can also control the maximum number of nodes that the pool can scale to. This is set by the second number on the `--nodes=1:10:workers` line. If you wanted a node pool to be able to scale beyond 10 nodes, you could edit that number accordingly. 
 
 :::note
-Your [account quota](../account/quota.md) will take precedence over any node scaling, and you would begin seeing "Quota Limit Reached" errors in the Cloud Controller Manager pod if the autoscaler would try to scale the node count beyond what your quota allows for.
+Your [account quota](/account/quota/) will take precedence over any node scaling, and you would begin seeing "Quota Limit Reached" errors in the Cloud Controller Manager pod if the autoscaler would try to scale the node count beyond what your quota allows for.
 :::
 

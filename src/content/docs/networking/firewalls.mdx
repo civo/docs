@@ -42,7 +42,7 @@ $ civo firewall list
 
 Click "Create a firewall" at the top of the [firewalls listing page](https://dashboard.civo.com/firewalls).
 
-Enter a name for the firewall, and choose the network it belongs to. You can either choose the Default network or one of the networks created over in the [network section](https://dashboard.civo.com/networks). ([Read more about networks](./private-networks.md)).
+Enter a name for the firewall, and choose the network it belongs to. You can either choose the Default network or one of the networks created over in the [network section](https://dashboard.civo.com/networks). ([Read more about networks](/networking/private-networks)).
 
 ![Entering a name for a new firewall](images/create-new-firewall.png)
 
@@ -167,7 +167,7 @@ resource "civo_instance" "foo" {
 
 The configuration includes the following:
 
-- The `Query small instance size` and `Query instance disk image` blocks, we are querying for a list of instance sizes and disk images to be used when creating a Civo compute instance later. For more detail about these blocks, see the [Terraform documentation on creating instances](../compute/create-an-instance.md).
+- The `Query small instance size` and `Query instance disk image` blocks, we are querying for a list of instance sizes and disk images to be used when creating a Civo compute instance later. For more detail about these blocks, see the [Terraform documentation on creating instances](/compute/create-an-instance/).
 
 - In the `Create a firewall` block:
   - A new firewall is declared using the `civo_firewall` resource and:
@@ -183,7 +183,7 @@ The configuration includes the following:
     - The label is set to `web-server` for our reference.
     - This firewall rule can be later referred to as as `civo_firewall_rule.http` later, if desired.
     - The action is set to `allow`, this is going to add a rule to allow traffic Conversely, setting the action to `deny` will deny the traffic to the specified port(s).
-- The `Create a compute instance` block is similar to the one created in the [instance creation documentation](../compute/create-an-instance.md), with the addition of a `firewall_id` line, which is pointed to `civo_firewall.www.id`. This means that when the compute instance described in the block is created, it will not use the `default` firewall. Instead, it will use the firewall created in the configuration above.
+- The `Create a compute instance` block is similar to the one created in the [instance creation documentation](/compute/create-an-instance/), with the addition of a `firewall_id` line, which is pointed to `civo_firewall.www.id`. This means that when the compute instance described in the block is created, it will not use the `default` firewall. Instead, it will use the firewall created in the configuration above.
 
 :::tip
 

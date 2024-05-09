@@ -10,7 +10,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 ## Overview
 
-Kubeflow clusters created on Civo will remain in your account until you delete them. Clusters in your account are [billed hourly](../account/billing.md) based on their size, and count towards your [account quota](../account/quota.md). If you no longer need a Kubeflow cluster, you can delete it in the following ways.
+Kubeflow clusters created on Civo will remain in your account until you delete them. Clusters in your account are [billed hourly](/account/billing/) based on their size, and count towards your [account quota](/account/quota/). If you no longer need a Kubeflow cluster, you can delete it in the following ways.
 
 :::danger
 
@@ -26,11 +26,11 @@ Cluster deletion is immediate and irreversible. Make sure you have retrieved any
 
 You can delete a Kubeflow cluster from its dashboard page by clicking the "Delete" button on the top right of the page, also shown below:
 
-![Delete a cluster from the dashboard](images/delete-kubeflow-cluster.png)
+![Delete a cluster from the dashboard](./images/delete-kubeflow-cluster.png)
 
 Alternatively, you can delete a Kubeflow cluster from the listing view by clicking the "Actions" menu and selecting the "Delete" option, shown below:
 
-![Delete a cluster from the listing on the dashboard](images/delete-kubeflow-cluster-listing-view.png)
+![Delete a cluster from the listing on the dashboard](./images/delete-kubeflow-cluster-listing-view.png)
 
 As a precaution, the system will ask you to confirm the name of the cluster you are looking to delete.
 
@@ -42,7 +42,7 @@ When you confirm the cluster name, the system will proceed to delete the cluster
 
 ## Deleting a Kubeflow cluster using Civo CLI
 
-Ensuring your current [region](../overview/regions.md) is set to the one where the Kubeflow cluster is running, you can delete it using:
+Ensuring your current [region](/overview/regions/) is set to the one where the Kubeflow cluster is running, you can delete it using:
 
 ```bash
 civo kfcluster delete cluster_name

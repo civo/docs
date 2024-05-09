@@ -6,7 +6,7 @@ lastUpdated: true
 description: Create a Civo machine learning cluster running Kubeflow. Choose from the options that suit your needs.
 ---
 :::note
-Civo machine learning clusters are [billed hourly](../account/billing.md) and count towards your [account quota](../account/quota.md).
+Civo machine learning clusters are [billed hourly](/account/billing/) and count towards your [account quota](/account/quota/).
 :::
 
 import { Tabs, TabItem } from '@astrojs/starlight/components';
@@ -27,7 +27,7 @@ Begin by selecting the Civo Region you are operating in. You can do so in the lo
 
 Then, navigate to the [Kubeflow Cluster creation page](https://dashboard.civo.com/kfclusters/new):
 
-![Instance creation page overview](images/create-kf-cluster.png)
+![Instance creation page overview](./images/create-kf-cluster.png)
 
 The sections give you options for the specifications of your Kubeflow Cluster.
 
@@ -39,9 +39,9 @@ The name is the name of your Kubeflow Cluster. Names can only contain letters, n
 
 You can select the size and Kubeflow Cluster hardware specifications based on the task you want to accomplish. You can view the available sizing options [here](https://www.civo.com/pricing).
 
-Sizing options may be restricted depending on your account quota and how many resources are already running in your account. See the [quota documentation](../account/quota.md) for more information.
+Sizing options may be restricted depending on your account quota and how many resources are already running in your account. See the [quota documentation](/account/quota/) for more information.
 
-The hourly/monthly slider for the pricing is purely to show the pricing equivalent at different time scales. All Civo resources are billed hourly. [Read more about billing](../account/billing.md).
+The hourly/monthly slider for the pricing is purely to show the pricing equivalent at different time scales. All Civo resources are billed hourly. [Read more about billing](/account/billing/).
 
 :::tip
 The minimum size for a managed Kubeflow cluster is the *small* size, which has the minimal resources required to run Kubeflow optimally due to its system requirements.
@@ -49,11 +49,11 @@ The minimum size for a managed Kubeflow cluster is the *small* size, which has t
 
 ### Firewall
 
-You can create a new firewall along with creating this Kubeflow cluster, or choose from an existing one if present in the network. [Read more about firewalls on Civo](../networking/firewalls.md).
+You can create a new firewall along with creating this Kubeflow cluster, or choose from an existing one if present in the network. [Read more about firewalls on Civo](/networking/firewalls/).
 
 ### Network
 
-The [private network](../networking/private-networks.md) for the Kubeflow Cluster to be situated in. You can choose from the default network for your account in the current region, or if you have created networks prior to creating this Kubeflow Cluster, you can choose one of them.
+The [private network](/networking/private-networks/) for the Kubeflow Cluster to be situated in. You can choose from the default network for your account in the current region, or if you have created networks prior to creating this Kubeflow Cluster, you can choose one of them.
 
 ### Creating your Kubeflow cluster
 

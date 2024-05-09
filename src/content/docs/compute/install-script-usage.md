@@ -8,7 +8,7 @@ description: Learn how to automatically apply an installation or cloud-init scri
   <title>Install Scripts for Compute Instances | Civo Documentation</title>
 </head>
 
-During Civo [compute instance creation](../compute/create-an-instance.md) there is a section where you can provide an installation script. This can prove to be very useful when you want to install certain tooling on the instance or run scripts for initial setup.
+During Civo [compute instance creation](../compute/create-an-instance/) there is a section where you can provide an installation script. This can prove to be very useful when you want to install certain tooling on the instance or run scripts for initial setup.
 
 In this example we will set up `containerd`, `kubeadm`, `kubectl` and `kubelet` on an instance. The use case for this can be that you can create 4 instances and have them all execute the install script on creation. After that you would need to just run `kubeadm init` and `kubeadm join` commands to set up a Kubernetes (K8s) cluster.
 

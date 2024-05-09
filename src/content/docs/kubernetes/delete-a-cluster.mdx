@@ -8,7 +8,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 ## Overview
 
-Kubernetes clusters on Civo will remain in your account until you delete them. Clusters in your account are [billed hourly](../account/billing.md) for each node and count towards your [account quota](../account/quota.md). If you no longer need a Kubernetes cluster, you can delete it in the following ways.
+Kubernetes clusters on Civo will remain in your account until you delete them. Clusters in your account are [billed hourly](/account/billing/) for each node and count towards your [account quota](/account/quota/). If you no longer need a Kubernetes cluster, you can delete it in the following ways.
 
 :::danger
 
@@ -30,7 +30,7 @@ As a precaution, the system will ask you to confirm the name of the cluster you 
 When you confirm the cluster name, the system will proceed to delete the cluster immediately.
 
 :::caution
-If you have any external [volumes](./kubernetes-volumes.md) attached to the cluster when it is deleted, these will remain in your account for use. They are not automatically removed. As such, any external volumes will [be charged](../account/billing.md) until they are explicitly deleted.
+If you have any external [volumes](kubernetes-volumes) attached to the cluster when it is deleted, these will remain in your account for use. They are not automatically removed. As such, any external volumes will [be charged](/account/billing/) until they are explicitly deleted.
 :::
 </TabItem>
 

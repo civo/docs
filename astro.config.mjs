@@ -7,6 +7,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Civo Docs',
+			favicon: './src/assets/favicon.ico',
 			logo: {
 				src: './src/assets/logo.svg',
 				replacesTitle: true,

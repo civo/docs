@@ -27,9 +27,9 @@ To create a provider file for Terraform to read, create a file called `provider.
 
 The file should contain the provider information from the [Civo Terraform Provider page](https://registry.terraform.io/providers/civo/civo/latest) that you get when you select "Use Provider":
 
-![Terraform provider page with highlighted sections to use the Civo provider](../../../assets/terraform/terraform-1.png)
+![Terraform provider page with highlighted sections to use the Civo provider](./images/terraform-1.png)
 
-In your editor, replace the `# Configuration options` line with `token = "<YOUR_CIVO_API_KEY>"`. The `<YOUR_CIVO_API_KEY>` block should be the [API key](../account/api-keys.md) for the account you wish to manage using Terraform.
+In your editor, replace the `# Configuration options` line with `token = "<YOUR_CIVO_API_KEY>"`. The `<YOUR_CIVO_API_KEY>` block should be the [API key](/account/api-keys/) for the account you wish to manage using Terraform.
 
 As an example, the file may look like the following
 
@@ -63,15 +63,15 @@ terraform init
 
 This should output a success message:
 
-![Terraform project initialized](../../../assets/terraform/terraform-2.png)
+![Terraform project initialized](./images/terraform-2.png)
 
 Congratulations! You now have a working Terraform project. You can use this setup to manage cloud resources on Civo according to the product and service-specific documentation.
 
 As some examples, you can do all of the following with Terraform:
 
-- Create a [Kubernetes cluster](../kubernetes/create-a-cluster.md)
-- Create [private networks](../networking/private-networks.md)
-- Manage [virtual machine instances](../compute/create-an-instance.md)
+- Create a [Kubernetes cluster](/kubernetes/create-a-cluster/)
+- Create [private networks](/networking/private-networks/)
+- Manage [virtual machine instances](/compute/create-an-instance/)
 
 ## Upgrading the Terraform provider
 
