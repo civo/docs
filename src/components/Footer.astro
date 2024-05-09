@@ -3,18 +3,17 @@ import type { Props } from '@astrojs/starlight/props';
 import Default from '@astrojs/starlight/components/TwoColumnContent.astro';
 ---
 
-<Default {...Astro.props}><slot /></Default>
-
-
-<div class="footer_parent">
-    asd
-    <div class="bottom">asdasdasd</div>
-</div>
+<Default {...Astro.props}>
+    <slot />
+    <div class="footer_parent">
+        asd
+    </div> 
+</Default>
 
 <style>
     .footer_parent {
-        border-top: solid 0.5px #eaeaea;
+        background-color: var(--sl-color-bg-nav);
+        1px solid var(--sl-color-hairline-shade);
         padding: 20px;
-        height: auto;
     }
 </style>
