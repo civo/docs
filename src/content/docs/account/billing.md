@@ -8,8 +8,6 @@ description: Learn how Civo calculates charges for services and usage, and find 
   <title>Understanding Civo's Billing Process | Civo Documentation</title>
 </head>
 
-## Overview
-
 Civo services are chargeable, which is why you need a valid payment method on file at all times, and won't be able to create Kubernetes clusters or instances before your card is verified. This document details how charges are calculated and how we bill you for usage.
 
 ## Charges
