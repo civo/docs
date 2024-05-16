@@ -41,7 +41,7 @@ civo database list
 To get the credentials of a specific database, use:
 
 ```bash
-civo database show [Database_Name] --credentials
+civo db credential [Database_Name]
 ```
 
 ![psql database show](../images/psql-database-show.png)
