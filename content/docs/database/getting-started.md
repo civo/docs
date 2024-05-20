@@ -68,7 +68,7 @@ Choose the RAM, CPU, and NVMe storage size needed for your new database.
 
 ![Database sizing options screen](./images/database-sizes.jpg)
 
-:::noteBest practices
+> Best practices
 
 - Consider the size and complexity of your data.
 - Evaluate the expected workload on your database.
@@ -87,7 +87,8 @@ Select if you would like to add additional nodes to your database. We give you t
 
 ![Additional nodes dropdown](./images/additional-nodes.png)
 
-:::noteWhy add nodes?
+> Why add nodes?
+
 There are several reasons why one might add additional nodes to a database:
 
 - Scalability: As a database grows in size and complexity, it may become necessary to add more nodes to ensure that it can handle an increasing amount of data and traffic. Adding more nodes allows for the workload to be distributed across the cluster, which can increase performance and reduce the risk of bottlenecks.
@@ -95,11 +96,106 @@ There are several reasons why one might add additional nodes to a database:
 - Fault tolerance: By adding additional nodes, a database can be made more resilient to hardware failures, network outages, and other issues that can impact availability. With multiple nodes, the database can continue to operate even if one or more nodes fail.
 
 - Improved analytics: In some cases, adding more nodes can help to support advanced analytics and data processing tasks, such as machine learning and predictive modeling. With more nodes, data can be processed faster, enabling more sophisticated analysis and modeling.
-:::
 
 Finally, click on "Create database" to make the magic happen!
 
 ![Create database](./images/create-database-button.jpg)
+
+Once your database is created, see the following links for connecting to your database:
+ - [Connecting to your Civo MySQL Database](https://www.civo.com/docs/database/mysql/connect)
+ - [Connecting to your Civo PostgreSQL Database](https://www.civo.com/docs/database/postgresql/connect)
+
+### 7. (OPTIONAL) Connecting your Database to Kubernetes
+
+> PREREQUISITE: In order to proceed, you must have your Database connection details in order to proceed (e.g. hostname, port, database name, username, password)
+
+**Create a Secret in Kubernetes for Database Credentials:**
+To securely store your database credentials, create a Kubernetes secret.
+
+Create a YAML file for the secret:
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-credentials
+type: Opaque
+data:
+  username: <base64_encoded_username>
+  password: <base64_encoded_password>
+  hostname: <base64_encoded_hostname>
+  port: <base64_encoded_port>
+  dbname: <base64_encoded_dbname>
+```
+
+> NOTE: Replace the placeholders with your actual credentials encoded in base64. You can encode your credentials using `echo -n 'your_value' | base64`
+
+Apply the secret to your cluster:
+```bash
+kubectl apply -f db-credentials.yaml
+```
+
+**Configure Your Application to Use the Database**
+Now, you need to update your Kubernetes deployment or pod configuration to use the database credentials stored in the secret.
+
+Modify your deployment YAML file to include the environment variables:
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: your-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: your-app
+  template:
+    metadata:
+      labels:
+        app: your-app
+    spec:
+      containers:
+        - name: your-container
+          image: your-image
+          env:
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: password
+            - name: DB_HOSTNAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: hostname
+            - name: DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: port
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: dbname
+```
+
+Apply the updated deployment to your cluster:
+```bash
+kubectl apply -f your-deployment.yaml
+```
+
+After deploying your application, ensure that it can connect to the managed database. You can check the logs of your application pods to verify the connection.
+```bash
+kubectl logs -l app=your-app
+```
+
+Look for any error messages related to database connectivity. If everything is configured correctly, your application should be able to communicate with the managed database.
+
 
 </TabItem>
 
@@ -159,6 +255,97 @@ civo database show civo-db
 :::note
 You will need to have set the correct [Civo region](../overview/regions.md) for where the database was created when you [set up Civo CLI](../overview/civo-cli.md), or specify it in the command with `--region` to be able to view the cluster information.
 :::
+
+### (OPTIONAL) Connecting your Database to Kubernetes
+
+> PREREQUISITE: In order to proceed, you must have your Database connection details in order to proceed (e.g. hostname, port, database name, username, password)
+
+**Create a Secret in Kubernetes for Database Credentials:**
+To securely store your database credentials, create a Kubernetes secret.
+
+Create a YAML file for the secret:
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-credentials
+type: Opaque
+data:
+  username: <base64_encoded_username>
+  password: <base64_encoded_password>
+  hostname: <base64_encoded_hostname>
+  port: <base64_encoded_port>
+  dbname: <base64_encoded_dbname>
+```
+
+> NOTE: Replace the placeholders with your actual credentials encoded in base64. You can encode your credentials using `echo -n 'your_value' | base64`
+
+Apply the secret to your cluster:
+```bash
+kubectl apply -f db-credentials.yaml
+```
+
+**Configure Your Application to Use the Database**
+Now, you need to update your Kubernetes deployment or pod configuration to use the database credentials stored in the secret.
+
+Modify your deployment YAML file to include the environment variables:
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: your-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: your-app
+  template:
+    metadata:
+      labels:
+        app: your-app
+    spec:
+      containers:
+        - name: your-container
+          image: your-image
+          env:
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: password
+            - name: DB_HOSTNAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: hostname
+            - name: DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: port
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: dbname
+```
+
+Apply the updated deployment to your cluster:
+```bash
+kubectl apply -f your-deployment.yaml
+```
+
+After deploying your application, ensure that it can connect to the managed database. You can check the logs of your application pods to verify the connection.
+```bash
+kubectl logs -l app=your-app
+```
+
+Look for any error messages related to database connectivity. If everything is configured correctly, your application should be able to communicate with the managed database.
 
 </TabItem>
 
@@ -322,7 +509,96 @@ When the creation completes, refresh your [Civo dashboard](https://dashboard.civ
 
 ![Database created from Terraform appears on the dashboard](images/mysql-terraform-screen.png)
 
+### (OPTIONAL) Connecting your Database to Kubernetes
 
+> PREREQUISITE: In order to proceed, you must have your Database connection details in order to proceed (e.g. hostname, port, database name, username, password)
+
+**Create a Secret in Kubernetes for Database Credentials:**
+To securely store your database credentials, create a Kubernetes secret.
+
+Create a YAML file for the secret:
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-credentials
+type: Opaque
+data:
+  username: <base64_encoded_username>
+  password: <base64_encoded_password>
+  hostname: <base64_encoded_hostname>
+  port: <base64_encoded_port>
+  dbname: <base64_encoded_dbname>
+```
+
+> NOTE: Replace the placeholders with your actual credentials encoded in base64. You can encode your credentials using `echo -n 'your_value' | base64`
+
+Apply the secret to your cluster:
+```bash
+kubectl apply -f db-credentials.yaml
+```
+
+**Configure Your Application to Use the Database**
+Now, you need to update your Kubernetes deployment or pod configuration to use the database credentials stored in the secret.
+
+Modify your deployment YAML file to include the environment variables:
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: your-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: your-app
+  template:
+    metadata:
+      labels:
+        app: your-app
+    spec:
+      containers:
+        - name: your-container
+          image: your-image
+          env:
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: password
+            - name: DB_HOSTNAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: hostname
+            - name: DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: port
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: dbname
+```
+
+Apply the updated deployment to your cluster:
+```bash
+kubectl apply -f your-deployment.yaml
+```
+
+After deploying your application, ensure that it can connect to the managed database. You can check the logs of your application pods to verify the connection.
+```bash
+kubectl logs -l app=your-app
+```
+
+Look for any error messages related to database connectivity. If everything is configured correctly, your application should be able to communicate with the managed database.
 
 
 
