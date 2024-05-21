@@ -70,7 +70,7 @@ EOF
 The s3cmd syntax to upload a file to a store is `s3cmd put FILE [FILE...] s3://STORENAME[/FOLDERNAME]`. Assuming you named your object store `demo-store`, the command would be:
 
 ```console
-$ s3cmd --host=${AWS_HOST}  --host-bucket=s3://demo-store put --acl-public cli_upload_demo.txt s3://demo-store/cli/
+$ s3cmd --access_key=${AWS_ACCESS_KEY_ID} --secret_key=${AWS_SECRET_ACCESS_KEY} --host=${AWS_HOST} --host-bucket=s3://demo-store put --acl-public cli_upload_demo.txt s3://demo-store/cli/
 
 upload: 'cli_upload_demo.txt' -> 's3://demo-store/cli/cli_upload_demo.txt'  [1 of 1]
  80 of 80   100% in    0s   572.01 B/s  done
@@ -89,3 +89,9 @@ In this command, the structure is as follows:
 Now, if you look on the web interface for the object store, you can see that a folder called `cli/` has been created and it contains the file you uploaded:
 
 ![Uploaded cli_upload_demo.txt file in the cli/ folder on an object store](./images/uploaded_file.png)
+
+You can also use `s3cmd` to list the files:
+
+```console
+s3cmd --access_key=${AWS_ACCESS_KEY_ID} --secret_key=${AWS_SECRET_ACCESS_KEY} --host=${AWS_HOST} --host-bucket=s3://demo-store ls s3://demo-store/cli/
+```
