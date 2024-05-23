@@ -87,7 +87,7 @@ Select if you would like to add additional nodes to your database. We give you t
 
 ![Additional nodes dropdown](./images/additional-nodes.png)
 
-:::noteWhy add nodes?
+:::note Why add nodes?
 There are several reasons why one might add additional nodes to a database:
 
 - Scalability: As a database grows in size and complexity, it may become necessary to add more nodes to ensure that it can handle an increasing amount of data and traffic. Adding more nodes allows for the workload to be distributed across the cluster, which can increase performance and reduce the risk of bottlenecks.
