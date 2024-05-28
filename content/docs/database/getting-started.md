@@ -68,7 +68,8 @@ Choose the RAM, CPU, and NVMe storage size needed for your new database.
 
 ![Database sizing options screen](./images/database-sizes.jpg)
 
-:::note Best practices
+:::note 
+Best practices
 
 - Consider the size and complexity of your data.
 - Evaluate the expected workload on your database.
@@ -87,7 +88,8 @@ Select if you would like to add additional nodes to your database. We give you t
 
 ![Additional nodes dropdown](./images/additional-nodes.png)
 
-:::note Why add nodes?
+:::note 
+Why add nodes?
 
 There are several reasons why one might add additional nodes to a database:
 
@@ -96,6 +98,7 @@ There are several reasons why one might add additional nodes to a database:
 - Fault tolerance: By adding additional nodes, a database can be made more resilient to hardware failures, network outages, and other issues that can impact availability. With multiple nodes, the database can continue to operate even if one or more nodes fail.
 
 - Improved analytics: In some cases, adding more nodes can help to support advanced analytics and data processing tasks, such as machine learning and predictive modeling. With more nodes, data can be processed faster, enabling more sophisticated analysis and modeling.
+:::
 
 Finally, click on "Create database" to make the magic happen!
 
