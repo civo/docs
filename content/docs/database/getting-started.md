@@ -68,7 +68,7 @@ Choose the RAM, CPU, and NVMe storage size needed for your new database.
 
 ![Database sizing options screen](./images/database-sizes.jpg)
 
-> Best practices
+:::note Best practices
 
 - Consider the size and complexity of your data.
 - Evaluate the expected workload on your database.
@@ -87,7 +87,7 @@ Select if you would like to add additional nodes to your database. We give you t
 
 ![Additional nodes dropdown](./images/additional-nodes.png)
 
-> Why add nodes?
+:::note Why add nodes?
 
 There are several reasons why one might add additional nodes to a database:
 
