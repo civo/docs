@@ -116,7 +116,7 @@ If you do not want to have the tool set up locally, you can run it as a Docker A
 
 By default, outbound mail traffic (SMTP on Port 25 & 587) from Civo instances is blocked. We recommend using any of the well-regarded mail services available as an email alternative. However, depending on your use case, our team can open the SMTP port if you request to open the SMTP port. 
 
-Apart from Port 25/SMTP, no other particular ports are blocked on Civo services. If you experience any issues while trying to use a specific port, please contact us, and we will investigate the problem.
+Apart from Port 25 & 587/SMTP, no other particular ports are blocked on Civo services. If you experience any issues while trying to use a specific port, please contact us, and we will investigate the problem.
 
 ### Can I connect to my cluster nodes with SSH?
 
