@@ -3,7 +3,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://civo.com/docs/',
+	site: ' https://fafa-188-28-217-37.ngrok-free.app',
+	trailingSlash: 'never',
 	integrations: [
 		starlight({
 			title: 'Civo Docs',
@@ -82,9 +83,17 @@ export default defineConfig({
 					lang: 'en', // lang is required for root locales
 				},
 			},
-			// components: {
-			// 	TwoColumnContent: './src/components/Footer.astro',
-			// },
+			head: [
+				{
+					tag: "meta",
+					attrs: {property: "og:image", content: "/cover.png"}
+				},
+				{
+					tag: "script",
+					attrs: {type: "application/ld+json"},
+					content: `{ "@context": "https://schema.org", "@type": "Organization", "name": "Civo", "url": "https://www.civo.com/", "logo": "https://www.civo.com/images/civo-structured-data-logo.png", "address": { "@type": "PostalAddress", "streetAddress": "Units H, J & K, Gateway 1000, Whittle way", "addressLocality": "Stevenage", "postalCode": "SG1 2FP", "addressCountry": "GB" }, "sameAs": [ "https://www.linkedin.com/company/civo-cloud", "https://x.com/civocloud", "https://www.youtube.com/civocloud", "https://www.facebook.com/civocloud" ]}`
+				}
+			]
 		}),
 	],
 });

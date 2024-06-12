@@ -10,7 +10,7 @@ description: Discover the power and scalability of Civo's managed database servi
 
 With support for popular databases such as MySQL and PostgreSQL, automatic backups, high-availability options, and 24/7 support, Civo Database offers a simplified approach to database management.
 
-See how to [get started with Civo Database](getting-started).
+See how to [get started with Civo Database](/database/getting-started).
 
 ### Need more information?
 
