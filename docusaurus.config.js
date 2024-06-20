@@ -91,7 +91,7 @@ const config = {
               },
               {
                 label: 'Careers',
-                to: 'https://www.civo.com/careers',
+                to: 'https://careers.civo.com/',
               },
             ],
           },
