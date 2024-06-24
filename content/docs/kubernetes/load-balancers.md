@@ -127,7 +127,7 @@ The firewall ID must be found in the same region as your cluster, otherwise the 
 
 ### Proxy Protocol
 
-Civo Load Balancers support the HAProxy [Proxy Protocol](https://www.haproxy.com/blog/use-the-proxy-protocol-to-preserve-a-clients-ip-address/). Use of the Proxy Protocol allows for the preservation of client IP information to supporting services such as NginX. Not enabled by default.
+Civo Load Balancers support the HAProxy [Proxy Protocol](https://www.haproxy.com/blog/use-the-proxy-protocol-to-preserve-a-clients-ip-address). Use of the Proxy Protocol allows for the preservation of client IP information to supporting services such as NginX. Not enabled by default.
 
 Supported values are `send-proxy` and `send-proxy-v2`.
 
@@ -152,6 +152,8 @@ metadata:
 :::tip
 You can update any of the configuration options detailed above in your service definition and re-apply it to your cluster without having to remove and re-create the load balancer.
 :::
+
+For more information on how to preserve Source IP when using an Ingress Controller, [check this tutorial](https://www.civo.com/learn/how-preserve-source-ip-ingress-controller)
 
 ### Maximum concurrent requests
 
