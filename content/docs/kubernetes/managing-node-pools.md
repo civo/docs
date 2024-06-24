@@ -14,6 +14,10 @@ import TabItem from '@theme/TabItem';
 
 You can group a cluster's worker nodes into *node pools*. The nodes in each pool are all of the same size, so if you want a cluster to have nodes of different instance sizes, you must create a new pool for each size.
 
+:::note
+When creating nodes for GPU workloads, you will need to select the "GPU Optimized" Tab when selecting the size of the node.
+:::
+
 ### Adding a new node pool
 
 <Tabs groupId="add-nodepools">

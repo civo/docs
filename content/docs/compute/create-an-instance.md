@@ -12,7 +12,9 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-Creating an instance on Civo requires a few specified parameters, whether you are starting the instance through the web dashboard or using one of our API tools. The documentation below covers the main options available on initial instance launch.
+To create an instance on Civo, you will need to provide several specific parameters. This requirement applies whether you are initiating the instance through the web dashboard or utilizing one of our API tools. In the sections below, you will find detailed documentation that explains the main options available to you during the initial launch of an instance. These options include various configuration settings that you can customize to suit your specific needs, ensuring that your instance is set up precisely as you require from the outset.
+
+
 
 <Tabs groupId="create-instance">
 
