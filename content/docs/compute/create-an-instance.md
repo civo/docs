@@ -14,13 +14,25 @@ import TabItem from '@theme/TabItem';
 
 To create an instance on Civo, you will need to provide several specific parameters. This requirement applies whether you are initiating the instance through the web dashboard or utilizing one of our API tools. In the sections below, you will find detailed documentation that explains the main options available to you during the initial launch of an instance. These options include various configuration settings that you can customize to suit your specific needs, ensuring that your instance is set up precisely as you require from the outset.
 
+## Creating an Instance for GPU Workloads on Civo
 
+Civo offers the capability to run your GPU workloads on its specialized instances. The type of instance you select will differ based on the size and performance requirements you specify. This allows you to tailor your selection to meet a variety of performance needs, whether you are seeking low-latency responses for real-time applications, high-throughput for handling numerous inference requests, or other specific performance characteristics. 
+
+With Civo, you have access to a comprehensive array of options designed to support and optimize your GPU workloads, ensuring you can achieve the desired performance and efficiency for your applications.
+
+Civo provides the following GPU Types:
+- **NVIDIA A100 40GB:** Designed for AI and data analytics, it delivers high performance and memory capacity.
+- **NVIDIA A100 80GB:** An enhanced version of the A100, offering more memory for demanding workloads such as large AI models.
+- **NVIDIA L40S 48GB:** Suitable for tasks requiring a mix of AI and graphics performance, such as 3D rendering and large language model training.
+- **NVIDIA H100:** Optimized for AI training and inference with advanced memory and Tensor Cores, suitable for high-performance computing and AI tasks.
+
+To deploy GPU workloads on Civo Instances, [select a GPU optimized image](#4-select-image) from within the [instance creation page](https://dashboard.civo.com/instances/new).
 
 <Tabs groupId="create-instance">
 
 <TabItem value="dashboard" label="Dashboard">
 
-## Creating an instance from the Dashboard
+## Creating a Standard Instance from the Civo Dashboard
 
 Begin by selecting the Civo Region you are operating in. You can do so in the lower left of your [Dashboard page](https://dashboard.civo.com):
 
