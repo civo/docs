@@ -1,5 +1,7 @@
 # Civo Documentation
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e4db56cc-4251-41d0-8a48-ed479c5b80e5/deploy-status)](https://app.netlify.com/sites/civo-docs/deploys)
+
 This repository serves as the source for [Civo](https://www.civo.com) documentation. The source files in the repository are used to render the documentation pages at https://www.civo.com/docs .
 
 You can contribute to this repository by submitting a Pull Request with your suggested changes. Once merged to the main branch, these changes will be reflected on the site. Read our [contributing document](CONTRIBUTING.md) for more detail.
