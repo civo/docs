@@ -1,5 +1,5 @@
 ---
-title: Installing NVIDIA GPU Operator on Civo Kubernetes
+title: Installing the NVIDIA GPU Operator on Civo Kubernetes
 description: When using GPU workloads on Civo Kubernetes clusters, you may wish to install the GPU operator in your cluster.
 ---
 import Tabs from '@theme/Tabs';
@@ -8,8 +8,6 @@ import TabItem from '@theme/TabItem';
 <head>
   <title>Installing NVIDIA GPU operator | Civo Documentation</title>
 </head>
-
-## Installing NVIDIA GPU operator on Civo Kubernetes
 
 To take advantage of the Nvidia GPU in Civo Kubernetes clusters, you may wish to install a GPU operator to the cluster. This document will detail the following:
 - Preparation of a Kubernetes cluster with a GPU node
