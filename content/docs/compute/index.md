@@ -10,7 +10,7 @@ description: Launch Instances on Civo's platform in various regions with a range
 
 ## Introduction to Compute Instances
 
-Civo is a cloud computing platform. As part of the compute services offered, users can launch virtual machines in all available regions. On Civo, these virtual machines are called Instances.
+Civo is a cloud computing platform. As part of the compute services offered, users can launch virtual machines (VMs) in all available regions. On Civo, these virtual machines are called Instances.
 
 Instances can have a variety of Linux operating systems, and come in a range of sizes and capacities, which determine the price charged to you.
 
