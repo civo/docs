@@ -197,29 +197,9 @@ You will need to have set the correct [Civo region](../overview/regions.md) for 
 
 ### Defining a Kubernetes resource in Terraform
 
-Once you have configured the [Civo Terraform provider](../overview/terraform.md), you can define a Civo Kubernetes resource in Terraform:
+Once you have configured the [Civo Terraform provider](../overview/terraform.md), you can define a Civo Kubernetes resource in Terraform.
 
-```terraform
-resource "civo_kubernetes_cluster" "cluster" {
-  name              = "<name you want to give your cluster>"
-  cluster_type      = "k3s" # Your choice of cluster type, can be k3s or talos
-  applications      = ""
-  num_target_nodes  = 3
-  target_nodes_size = element(data.civo_instances_size.small.sizes, 0).name
-  region            = "NYC1" # Your choice of Civo region
-}
-
-data "civo_kubernetes_cluster" "cluster" {
-  name = civo_kubernetes_cluster.cluster.name
-}
-
-data "civo_instances_size" "small" {
-    filter {
-        key = "type"
-        values = ["kubernetes"]
-    }
-}
-```
+For the latest feature set, make sure your version line matches the latest version on the [Terraform Provider page](https://registry.terraform.io/providers/civo/civo/latest).
 
 You can find further information on the data that can be specified by running the following commands:
 

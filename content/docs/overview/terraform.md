@@ -13,7 +13,7 @@ description: Learn how to use Terraform to manage your Civo resources. Find out 
 
 ## Setting up the Civo Terraform provider
 
-In order to use the Civo Terraform provider, you need to set up the Terraform command-line interface itself first. It's available for Mac, Linux and Windows on [the official site](https://developer.hashicorp.com/terraform/downloads).
+In order to use the Civo Terraform provider, you need to set up the Terraform command-line interface itself first. It's available for Mac, Linux and Windows on [the official site](https://developer.hashicorp.com/terraform/install).
 
 The following setup guide and the examples in the Civo product documentation assume you have the Terraform CLI installed.
 
