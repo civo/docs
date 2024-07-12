@@ -13,6 +13,7 @@ To take advantage of the Nvidia GPU in Civo Kubernetes clusters, you may wish to
 - Preparation of a Kubernetes cluster with a GPU node
 - Installation of the GPU operator using Helm
 - Troubleshooting
+
 ### Preparation
 
 Start by creating a Kubernetes cluster and allocate a GPU node to it following the instructions [here](https://www.civo.com/docs/kubernetes/create-a-cluster).
@@ -23,7 +24,7 @@ In order to install the GPU operator, you will need to [have Helm installed](htt
 
 Now you should be able to use Kubectl to manage the Kubernetes Cluster.
 
-## Installation of the GPU operator using Terraform Helm
+## Installation of the GPU operator using Helm
 
 Once your KUBECONFIG is downloaded and set as your current context,  you can run the following to deploy the GPU operator:  
 
@@ -32,20 +33,16 @@ kubectl create ns gpu-operator
 
 kubectl label --overwrite ns gpu-operator pod-security.kubernetes.io/enforce=privileged
 
-helm repo add nvidia https://helm.ngc.nvidia.com/nvidia \
-
-    && helm repo update
+helm repo add nvidia https://helm.ngc.nvidia.com/nvidia && helm repo update
 
 helm install --wait --generate-name \
+-n gpu-operator --create-namespace \
+nvidia/gpu-operator
 
-    -n gpu-operator --create-namespace \
-
-    nvidia/gpu-operator
-
-```  
+```
   
-:::Note: 
-No upgrade the GPU operator to newer versions are needed - this process is fully automated
+:::note
+No upgrade the GPU operator to newer versions are needed - this process is fully automated.
 :::
 
 Once you have deployed the GPU operator, run `kubectl -n gpu-operator get pods` to verify that the GPU operator is running well:
@@ -56,8 +53,8 @@ Now you are all set to use the GPU Operator, feel free to run `kubectl describe 
 
 ### Troubleshooting
 
-If you experience any issues during the deployment (for example if you experience a timeout), you can reattempt the deployment by rerunning:
+If you experience any issues during the deployment (for example if you experience a timeout), you can reattempt the deployment by running the upgrade command:
 
-```sh
-terraform apply
+```bash
+helm upgrade gpu-operator-1720804693 nvidia/gpu-operator -n gpu-operator
 ```
