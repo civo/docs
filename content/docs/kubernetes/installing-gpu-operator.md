@@ -56,5 +56,5 @@ Now you are all set to use the GPU Operator, feel free to run `kubectl describe 
 If you experience any issues during the deployment (for example if you experience a timeout), you can reattempt the deployment by running the upgrade command:
 
 ```bash
-helm upgrade gpu-operator-1720804693 nvidia/gpu-operator -n gpu-operator
+export HELM_RELEASE_NAME=$(helm list --all-namespaces | awk 'NR>1 {print $1}') && helm upgrade $HELM_RELEASE_NAME nvidia/gpu-operator -n gpu-operator
 ```
