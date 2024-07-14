@@ -227,9 +227,9 @@ const config = {
         },
       },
       algolia: {
-        appId: "0WDU4T6PDO",
-        apiKey: "14e8ed0c206549035790a1654a58c9ab",
-        indexName: "initializio",
+        appId: "I038LYZI81",
+        apiKey: "936b54a2e9acd8e2a6a60c0de9e713ad",
+        indexName: "civo",
         contextualSearch: true, // Show contextual search results
         searchParameters: {}, // Additional search parameters
       },
