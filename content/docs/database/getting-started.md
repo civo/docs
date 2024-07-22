@@ -82,7 +82,7 @@ By choosing your RAM, CPU, and NVMe storage size, you will have full transparenc
 
 ### 6. Additional nodes
 
-Civo Database provides scalable managed PostgreSQL and MySQL databases that are automatically backed up nightly. They are always-on, and for further peace of mind, you can choose to run additional nodes for your databases.
+Civo Database provides scalable managed PostgreSQL and MySQL databases. They are always-on, and for further peace of mind, you can choose to run additional nodes for your databases.
 
 Select if you would like to add additional nodes to your database. We give you the option to add 2 or 4 additional nodes. Note that this will impact the price charged for your database.
 
