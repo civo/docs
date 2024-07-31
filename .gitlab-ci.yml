@@ -1,0 +1,97 @@
+variables:
+    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+
+stages:
+    - build
+    - autopilot
+
+docker_image:
+    stage: build
+    variables:
+        DOCKER_DRIVER: overlay2
+    script:
+        - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+        - docker build --pull -t $IMAGE_TAG .
+        - docker push $IMAGE_TAG
+    tags:
+        - docker
+
+.autopilot-tag:
+  image: alpine:3.20
+  stage: autopilot
+  before_script:
+    - apk update && apk add git openssh curl glab kustomize
+    - glab config set -g check_update false
+    - git config --global user.email "ci@civo.com"
+    - git config --global user.name "CI Bot"
+    - git clone $AUTOPILOT src
+    - cd src
+    - git checkout main
+    - git pull
+    - git clean -fdx
+  tags:
+    - docker
+  only:
+    refs:
+      - master
+      - main
+
+autopilot-staging:
+  extends: .autopilot-tag
+  variables:
+    BRANCH: staging-docs-$CI_COMMIT_SHORT_SHA
+  script: |
+    cd docs/overlays/staging
+    git checkout -b $BRANCH
+    kustomize edit set image $CI_REGISTRY_IMAGE=$IMAGE_TAG
+
+    # Do we have any changes?
+    if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
+        git add -A
+        git commit -m "staging/docs to $CI_COMMIT_SHORT_SHA"
+        git push -u origin $BRANCH
+        sleep 5
+        glab mr create -a @me -f -y
+        sleep 5
+        glab mr approve
+        sleep 5
+        glab mr merge -y -d
+    else
+        echo "no changes for staging"
+    fi
+
+autopilot-prod:
+  extends: .autopilot-tag
+  needs: ["autopilot-staging"]
+  variables:
+    BRANCH: prod-docs-$CI_COMMIT_SHORT_SHA
+  script: |
+    cd docs/overlays/prod
+    git checkout -b $BRANCH
+    kustomize edit set image $CI_REGISTRY_IMAGE=$IMAGE_TAG
+
+    # Do we have any changes?
+    if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
+        git add -A
+        git commit -m "prod/docs to $CI_COMMIT_SHORT_SHA"
+        git push -u origin $BRANCH
+        sleep 5
+        glab mr create -a @me -f -y
+        sleep 5
+
+        # Close all other MRs
+        CURRENT_MR=$(glab mr list --assignee=@me | grep $BRANCH | awk '{print $1}' | tr -d '!')
+
+        for mr in $(glab mr list --assignee=@me | grep -v $BRANCH | grep prod-docs | awk '{print $1}' | tr -d '()')
+        do
+          glab mr note $mr -m "Automatically closing in favour of newer MR !${CURRENT_MR}"
+        done
+
+        for mr in $(glab mr list --assignee=@me | grep -v $BRANCH | grep prod-docs | awk '{print $8}' | tr -d '()')
+        do
+          echo Closing branch $mr
+          git push origin --delete $mr
+        done
+    else
+        echo "no changes for prod"
+    fi
