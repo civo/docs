@@ -19,6 +19,8 @@ docker_image:
 .autopilot-tag:
   image: alpine:3.20
   stage: autopilot
+  variables:
+    GIT_STRATEGY: none
   before_script:
     - apk update && apk add git openssh curl glab kustomize
     - glab config set -g check_update false
