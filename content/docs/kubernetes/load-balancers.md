@@ -90,23 +90,6 @@ spec:
   externalTrafficPolicy: Local
 ```
 
-### Session affinity configuration
-
-You can ensure that all requests from a particular client IP get routed to the same Pod within a given time frame by setting the optional session affinity configuration. The structure of this optional configuration is as follows.
-
-`sessionAffinity: ClientIP`
-
-If you include the first line, you can also optimally set the timeout of a session in seconds on subsequent lines. The default value of `timeoutSeconds` is 10800, i.e. 3 hours, which will be used if not provided.
-
-```yaml
-spec:
-  type: LoadBalancer
-  sessionAffinity: ClientIP
-    sessionAffinityConfig:
-      clientIP:
-        timeoutSeconds: 480
-```
-
 ### Firewall ID
 
 The firewall configuration for your Load Balancer is specified in an annotation `kubernetes.civo.com/firewall-id` that takes the ID of your chosen firewall as input, such as:
