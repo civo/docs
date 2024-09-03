@@ -74,10 +74,6 @@ const config = {
                 to: 'https://www.civo.com/white-papers',
               },
               {
-                label: 'Partners',
-                to: 'https://www.civo.com/partners',
-              },
-              {
                 label: 'Legal',
                 to: 'https://www.civo.com/legal',
               },
