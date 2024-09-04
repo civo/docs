@@ -33,10 +33,6 @@ docker_image:
     - git clean -fdx
   tags:
     - docker
-  only:
-    refs:
-      - master
-      - main
 
 autopilot-staging:
   extends: .autopilot-tag
