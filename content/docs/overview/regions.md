@@ -50,19 +50,3 @@ You can also pass a `--region <CODE>` parameter to any CLI command to execute it
 | GPU Kubernetes   |  ✓   |  ✗   |  ✗   |  ✗   |
 | GPU Compute      |  ✓   |  ✗   |  ✗   |  ✗   |
 
-## External Regions
-
-### Deep Green - Exmouth Region
-
-All users are now given the option to select the Deep Green region (DG-EXM) from our range of regions; from here, you’ll be able to run your cloud workloads on Deep Green’s Exmouth (UK) data center.
-
-As Deep Green continues to expand, you’ll be able to run your workloads at a range of Deep Green data center sites, with waste heat from your compute workloads used to generate hot water communities across the UK.
-
-Overall, this partnership means that users choosing the Deep Green region will be running their instances using 100% renewable energy.
-
-| Products available on DG-EXM|     |
-|:----------------------------|:---:|
-| GPU Compute                 |  ✓  |
-| Volumes                     |  ✓  |
-
-For more information on our Partnership with Deep Green, please visit our [Deep Green article](https://www.civo.com/blog/greener-cloud-computing-deep-green). 
