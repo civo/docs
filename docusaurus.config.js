@@ -121,7 +121,7 @@ const config = {
               },
               {
                 label: 'Startup program',
-                to: 'https://www.civo.com/startup-program',
+                to: 'https://www.civo.com/startup',
               },
               {
                 label: 'Small and mid-market',
