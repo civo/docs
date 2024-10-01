@@ -136,8 +136,6 @@ metadata:
 You can update any of the configuration options detailed above in your service definition and re-apply it to your cluster without having to remove and re-create the load balancer.
 :::
 
-For more information on how to preserve Source IP when using an Ingress Controller, [check this tutorial](https://www.civo.com/learn/how-preserve-source-ip-ingress-controller)
-
 ### Maximum concurrent requests
 
 By default, Kubernetes load balancers are configured to handle 10,000 concurrent requests. You can increase this limit by setting the annotation `kubernetes.civo.com/max-concurrent-requests` to a value above `10000`. The annotation for your service definition is as follows:
