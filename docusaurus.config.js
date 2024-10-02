@@ -120,10 +120,6 @@ const config = {
                 to: 'https://www.civo.com/startups',
               },
               {
-                label: 'Startup program',
-                to: 'https://www.civo.com/startup',
-              },
-              {
                 label: 'Small and mid-market',
                 to: 'https://www.civo.com/small-mid-market',
               },
