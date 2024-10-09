@@ -158,7 +158,7 @@ An additional load balancer charge will be levied for each 10,000 requests above
 `LoadBalancer` objects can target a specific pool of Civo Instances to obtain more granularity over traffic distribution, making it easier to balance loads across instances.
 
 An example of Civo LoadBalancer with InstancePools is:
-```
+```yaml
 apiVersion: stack.civo.com/v1alpha1
 kind: CivoLoadBalancer
 metadata:
