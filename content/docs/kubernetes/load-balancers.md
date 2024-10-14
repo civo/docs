@@ -154,8 +154,55 @@ If you update the maxmimum concurrent requests annotation, the load balancer wil
 
 An additional load balancer charge will be levied for each 10,000 requests above the default limit.
 
-## Viewing details of a Kubernetes load balancer
+## Instance Pools
+`LoadBalancer` objects can target a specific pool of Civo Instances to obtain more granularity over traffic distribution, making it easier to balance loads across instances.
 
+An example of Civo LoadBalancer with InstancePools is:
+```yaml
+apiVersion: stack.civo.com/v1alpha1
+kind: CivoLoadBalancer
+metadata:
+  name: example-instance-lb
+spec:
+  algorithm: round_robin
+  backendType: envoy
+  instancePools:
+    - protocol: http
+      # Only one method should be used at a time between tags and names
+      tags: ["api"]
+      sourcePort: 80
+      targetPort: 8081
+      healthCheck:
+        port: 8081
+        path: /healthz
+    - protocol: http
+      # Only one method should be used at a time between tags and names
+      names: ["db-1", "db-2"] 
+      sourcePort: 9443
+      targetPort: 9443
+      healthCheck:
+        port: 9443
+        path: /healthz
+  externalTrafficPolicy: Cluster
+```
+The InstancePool configuration supports the use of both tags and instance names to identify instances in the instance pool. However, **only one method (tags or names) should be used at a time**.
+
+For example, targeting by tags:
+
+```yaml
+tags: ["frontend"]
+```
+Or, targeting by instance names:
+
+```yaml
+names: ["app-1", "app-2"]
+```
+
+### Health Checks
+Health checks for the instances in each pool can be specified to ensure that traffic is only routed to healthy instances. The configuration of health checks for each InstancePool allows the load balancer to continuously monitor the health of each instance.
+
+
+## Viewing details of a Kubernetes load balancer
 <Tabs groupId="list-loadbalancer">
 <TabItem value="dashboard" label="Dashboard">
 
