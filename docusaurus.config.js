@@ -74,10 +74,6 @@ const config = {
                 to: 'https://www.civo.com/white-papers',
               },
               {
-                label: 'Partners',
-                to: 'https://www.civo.com/partners',
-              },
-              {
                 label: 'Legal',
                 to: 'https://www.civo.com/legal',
               },
@@ -122,10 +118,6 @@ const config = {
               {
                 label: 'Startup solutions',
                 to: 'https://www.civo.com/startups',
-              },
-              {
-                label: 'Startup program',
-                to: 'https://www.civo.com/startup-program',
               },
               {
                 label: 'Small and mid-market',
