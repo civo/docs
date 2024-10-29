@@ -52,7 +52,7 @@ If you have configured existing firewalls in this region, you will be able to se
 
 ### 5. Node size
 
-The specifications for the machines in the initial node pool. These are priced per node, per hour. The "Hourly/Monthly" slider allows you to estimate the cost per month or per hour of the cluster running. For more information, see the Billing section.
+The specifications for the machines in the initial node pool. These are priced per node, per hour. The "Hourly/Monthly" slider allows you to estimate the cost per month or per hour of the cluster running. For more information, see the [Billing section](../account/billing.md).
 
 Sizes or configurations may not be available due to quota on your account or the number of nodes you have chosen in section 2 above.
 
@@ -62,7 +62,7 @@ Depending on the applications you want to run on your cluster, you may need to s
 
 ### 6. Advanced options
 
-This section allows you to optionally configure advanced options. 
+This section allows you to optionally configure advanced options.
 
 #### Container Networking Interface (CNI)
 

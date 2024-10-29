@@ -30,7 +30,7 @@ As the system would have prompted you to create a credential in the previous ste
 
 Pick the credential name you just created from the drop-down menu.
 
-You can size an object store in 500GB increments up to your object store [quota limit](../account/quota). The price (displayed monthly but charged on an hourly basis) will change depending on the size of the object store you create.
+You can size an object store in 500GB increments up to your object store [quota limit](../account/quota). The price (displayed monthly but [charged on an hourly basis](../account/billing.md)) will change depending on the size of the object store you create.
 
 Next, click "Create store" to proceed.
 
