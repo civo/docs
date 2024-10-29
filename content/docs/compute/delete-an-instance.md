@@ -1,4 +1,5 @@
 ---
+sidebar_position: 2
 title: Deleting an instance
 description: Learn how to delete Instances on Civo using the Civo Dashboard or Civo CLI. Get tips on safely retrieving data and avoiding billing errors.
 ---

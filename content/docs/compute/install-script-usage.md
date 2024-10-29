@@ -1,4 +1,5 @@
 ---
+sidebar_position: 3
 title: Install / cloud-init script usage
 description: Learn how to automatically apply an installation or cloud-init script during Civo Compute instance creation to install tools or perform initial setups. 
 ---

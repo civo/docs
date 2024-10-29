@@ -1,4 +1,5 @@
 ---
+sidebar_position: 4
 title: Instance volumes
 description: Learn how to manage and attach volumes to your Civo Compute instances using Civo Dashboard, Civo CLI, or Terraform to expand your storage capacity.
 ---
