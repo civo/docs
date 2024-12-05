@@ -20,7 +20,7 @@ A [cluster running on Civo](./create-a-cluster.md) will have `civo-volume` as th
  kubectl get sc
 NAME                    PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
 local-path              rancher.io/local-path   Delete          WaitForFirstConsumer   false                  10m
-civo-volume (default)   csi.civo.com            Delete          Immediate              false                  10m
+civo-volume (default)   csi.civo.com            Delete          WaitForFirstConsumer   false                  10m
 ```
 
 ## Creating a Persistent Volume Claim (PVC)
@@ -49,13 +49,9 @@ $ kubectl create -f pvc.yaml
 persistentvolumeclaim/civo-volume-test created
 ```
 
-This will have created the PersistentVolume and claim:
+This will have created the PersistentVolumeClaim:
 
 ```console
-$ kubectl get pv
-NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                      STORAGECLASS   REASON   AGE
-pvc-11509930-bf05-49ec-8814-62744e4606c4   3Gi        RWO            Delete           Bound    default/civo-volume-test   civo-volume             2s
-
 $ kubectl get pvc
 NAME               STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 civo-volume-test   Bound    pvc-11509930-bf05-49ec-8814-62744e4606c4   3Gi        RWO            civo-volume    13m
@@ -95,6 +91,14 @@ pod/civo-vol-test-pod created
 $ kubectl get pods
 NAME                READY   STATUS    RESTARTS   AGE
 civo-vol-test-pod   1/1     Running   0          54s
+```
+
+And the associated volume, specified in the claim:
+
+```console
+$ kubectl get pv
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                      STORAGECLASS   REASON   AGE
+pvc-11509930-bf05-49ec-8814-62744e4606c4   3Gi        RWO            Delete           Bound    default/civo-volume-test   civo-volume             2s
 ```
 
 ## Cordoning and deleting a node to show persistence
