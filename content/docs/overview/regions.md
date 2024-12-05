@@ -34,19 +34,19 @@ civo region use <REGION_CODE>
 This will execute any further commands in the region of your choice.
 
 :::tip
-You can also pass a `--region <CODE>` parameter to any CLI command to execute it in the region specified by the code, without changing your current region.
+You can also pass a `--region <CODE>` parameter to any CLI command to execute it in the region specified by the code, without changing or setting your current region.
 :::
 
 ## What products are available per region?
 
-| Products         | LON1 | FRA1 | NYC1 | PHX1 |
-|:-----------------|:----:|:----:|:----:|:----:|
-| CPU Kubernetes   |  ✓   |  ✓   |  ✓   |  ✓   |
-| CPU Compute      |  ✓   |  ✓   |  ✓   |  ✓   |
-| Object Stores    |  ✓   |  ✓   |  ✓   |  ✓   |
-| Volumes          |  ✓   |  ✓   |  ✓   |  ✓   |
-| Machine Learning |  ✓   |  ✓   |  ✓   |  ✓   |
-| Databases        |  ✓   |  ✓   |  ✓   |  ✓   |
-| GPU Kubernetes   |  ✓   |  ✗   |  ✗   |  ✗   |
-| GPU Compute      |  ✓   |  ✗   |  ✗   |  ✗   |
+| Products         | LON1 | LON2 | FRA1 | NYC1 | PHX1 |
+|:-----------------|:----:|:----:|:----:|:----:|:----:|
+| CPU Kubernetes   |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
+| CPU Compute      |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
+| Object Stores    |  ✓   |  ✗   |  ✓   |  ✓   |  ✓   |
+| Volumes          |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
+| Machine Learning |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
+| Databases        |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
+| GPU Kubernetes   |  ✓   |  ✓   |  ✗   |  ✗   |  ✗   |
+| GPU Compute      |  ✓   |  ✓   |  ✗   |  ✗   |  ✗   |
 
