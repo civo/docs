@@ -16,7 +16,8 @@ You can scale the number of nodes in a cluster's node pool up or down without ha
 
 You can scale the number of nodes [manually](#scaling-nodes-manually), or automate it by [configuring the cluster autoscaler](#using-the-civo-cluster-autoscaler).
 
-:::tipInformation on scaling down nodes
+:::tip 
+Information on scaling down nodes
 The scaling down of nodes in a cluster will be determined by the following:
 
 - Any instance that has been explicitly requested via the API to be deleted
