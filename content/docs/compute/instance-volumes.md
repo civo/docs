@@ -551,3 +551,7 @@ If there's no change in your `main.tf` file and you rerun `terraform apply`, it 
 ## Preparing and using volumes in your instances
 
 In order to format and mount a newly-created volume, or an existing one you have detached from another instance, see [this guide](https://www.civo.com/learn/configuring-block-storage-on-civo).
+
+## Volumes larger than 1TB
+
+In order to create, manage, and work with volumes larger than 1TB, see [this guide to logical volume management](https://www.civo.com/learn/breaking-the-1tb-barrier-creating-a-large-volume-in-civo).

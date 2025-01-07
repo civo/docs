@@ -12,8 +12,7 @@ To create a new Kubeflow notebook, you will need to provide a name, select a dev
 
 ## Notebook options
 
-:::tip
-Namespaces
+:::tip Namespaces
 Always check on the top left corner of the KubeFlow Dashboard that you are creating resources in the correct namespace.
 :::
 
@@ -31,8 +30,7 @@ For the notebook development environment, choose from the following options:
 
 - **[RStudio](https://posit.co/products/open-source/rstudio/)**, the first party development IDE and ecosystem for the R language. If you’re someone who prefers R over Python, this is the choice for you!
 
-:::tip
-Custom environments
+:::tip Custom environments
 If you can’t find what you’re looking for or are the type of person who brings their own IDE, you’re also welcome to pull a custom container. Please ensure they meet the Kubeflow container image requirements [listed here](https://www.kubeflow.org/docs/components/notebooks/container-images/#image-requirements).
 :::
 
@@ -62,8 +60,7 @@ GPU support is under development and this documentation will be updated to refle
 
 You can specify a workspace volume (new or existing) to be mounted as a PVC Volume on your home directory.
 
-:::tip
-Persistent data volumes
+:::tip Persistent data volumes
 A StatefulSet assigns unique identifiers to each pod and allows you to easily store and track data in a persistent data volume. However, an important thing to remember is that this is a completely separate Kubernetes entity and has an independent lifecycle from the cluster's pods.
 
 The persistent data volume is connected to a particular pod by a Persistent Volume Claim (PVC). These allow a user to consume abstract storage resources. In the case that you delete the notebook server, the data still persists in the persistent data volume assigned to that pod and if a new notebook server is created, it would be able to access the same data from the same persistent data volume.
