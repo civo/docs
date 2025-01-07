@@ -12,8 +12,7 @@ description: Learn the components of Civo's machine learning Kubeflow cluster da
 
 Once your cluster is running, you will need to authenticate yourself to access the cluster dashboard. The login credentials to use are the same ones you use to sign in to Civo.
 
-:::note
-Other user authentication
+:::note Other user authentication
 If a Kubeflow cluster administrator has given you access to a cluster they run, you will have a different mode of authentication. Ask your cluster administrator for details on how to log in to the cluster.
 :::
 
