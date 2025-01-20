@@ -17,10 +17,9 @@ Civo Kubernetes clusters provide a native storage class (`civo-volume`) that you
 A [cluster running on Civo](./create-a-cluster.md) will have `civo-volume` as the default storage class. This can be confirmed by viewing the `storageclass` resources on your cluster:
 
 ```console
- kubectl get sc
-NAME                    PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
-local-path              rancher.io/local-path   Delete          WaitForFirstConsumer   false                  10m
-civo-volume (default)   csi.civo.com            Delete          Immediate              false                  10m
+$ k get sc
+NAME                    PROVISIONER    RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+civo-volume (default)   csi.civo.com   Delete          WaitForFirstConsumer   true                   10m
 ```
 
 ## Creating a Persistent Volume Claim (PVC)
@@ -49,16 +48,12 @@ $ kubectl create -f pvc.yaml
 persistentvolumeclaim/civo-volume-test created
 ```
 
-This will have created the PersistentVolume and claim:
+Due to the StorageClass volume binding mode, the PersistentVolumeClaim will remain in a pending state, until a Pod using the PersistentVolumeClaim is created.
 
 ```console
-$ kubectl get pv
-NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                      STORAGECLASS   REASON   AGE
-pvc-11509930-bf05-49ec-8814-62744e4606c4   3Gi        RWO            Delete           Bound    default/civo-volume-test   civo-volume             2s
-
 $ kubectl get pvc
-NAME               STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
-civo-volume-test   Bound    pvc-11509930-bf05-49ec-8814-62744e4606c4   3Gi        RWO            civo-volume    13m
+NAME               STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+civo-volume-test   Pending                                                                        civo-volume    25s
 ```
 
 ## Creating a pod to use a persistent volume
@@ -95,6 +90,71 @@ pod/civo-vol-test-pod created
 $ kubectl get pods
 NAME                READY   STATUS    RESTARTS   AGE
 civo-vol-test-pod   1/1     Running   0          54s
+```
+## Expanding the persistent volume after creation
+
+Civo supports the capability of offline expansion for volumes, which entails specific requirements for resizing operations. 
+
+Offline expansion means that the volume must first be unmounted before any resizing can take place. This unmounting process involves ensuring that the volume is no longer in use, typically requiring the deletion or termination of any associated Pods utilizing the volume. 
+
+The necessity for unmounting the volume is critical, as it helps to avoid potential conflicts or inconsistencies that could arise if the volume were modified while still actively mounted. By ensuring the volume is completely detached from any workloads during the resizing operation, the process can be executed reliably and without risk to the integrity of the data or the application.
+
+To do this, delete the pod created in the previous step:
+
+```console
+$ kubectl delete pod civo-vol-test-pod
+pod "civo-vol-test-pod" deleted
+```
+
+Now, resize the PersistentVolumeClaim by changing the request in your `pvc.yaml` file above:
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: civo-volume-test
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 300Gi
+```
+
+When reapplied to your cluster, you will see the size change:
+
+```console
+kubectl apply -f pvc.yaml
+persistentvolumeclaim/civo-volume-test configured
+```
+
+You will see in the Kubernetes events, the PersistentVolumeClaim has expanded and is now waiting for the pod to be recreated:
+
+```console
+$ kubectl get events --field-selector involvedObject.kind=PersistentVolumeClaim,involvedObject.name=civo-volume-test -n default
+LAST SEEN   TYPE      REASON                     OBJECT                                   MESSAGE
+31m         Normal    WaitForFirstConsumer       persistentvolumeclaim/civo-volume-test   waiting for first consumer to be created before binding
+28m         Warning   ProvisioningFailed         persistentvolumeclaim/civo-volume-test   failed to provision volume with StorageClass "civo-volume": rpc error: code = DeadlineExceeded desc = context deadline exceeded
+28m         Normal    Provisioning               persistentvolumeclaim/civo-volume-test   External provisioner is provisioning volume for claim "default/civo-volume-test"
+28m         Normal    ProvisioningSucceeded      persistentvolumeclaim/civo-volume-test   Successfully provisioned volume pvc-a77aee95-f722-49e9-9ec2-ffcc884aa7c0
+6m43s       Warning   ExternalExpanding          persistentvolumeclaim/civo-volume-test   waiting for an external controller to expand this PVC
+6m43s       Normal    Resizing                   persistentvolumeclaim/civo-volume-test   External resizer is resizing volume pvc-a77aee95-f722-49e9-9ec2-ffcc884aa7c0
+5m37s       Normal    FileSystemResizeRequired   persistentvolumeclaim/civo-volume-test   Require file system resize of volume on node
+```
+
+Finally, recreate the pod and notice the PersistentVolumeClaim shows the new size:
+
+```console
+$ kubectl create -f pod.yaml 
+pod/civo-vol-test-pod created
+
+$ kubectl get pods
+NAME                READY   STATUS    RESTARTS   AGE
+civo-vol-test-pod   1/1     Running   0          7s
+
+$ kubectl get pvc
+NAME               STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+civo-volume-test   Bound    pvc-a77aee95-f722-49e9-9ec2-ffcc884aa7c0   300Gi      RWO            civo-volume    43m
 ```
 
 ## Cordoning and deleting a node to show persistence
