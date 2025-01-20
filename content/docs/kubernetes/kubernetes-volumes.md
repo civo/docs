@@ -22,7 +22,7 @@ NAME                    PROVISIONER    RECLAIMPOLICY   VOLUMEBINDINGMODE      AL
 civo-volume (default)   csi.civo.com   Delete          WaitForFirstConsumer   true                   10m
 ```
 
-## Creating a Persistent Volume Claim (PVC)
+## Creating a PersistentVolumeClaim (PVC)
 
 To create a Persistent Volume Claim that will automatically trigger a PersistentVolume (PV) creation based on its specification, apply a `PersistentVolumeClaim` to your cluster.
 
@@ -56,7 +56,7 @@ NAME               STATUS    VOLUME                                     CAPACITY
 civo-volume-test   Pending                                                                        civo-volume    25s
 ```
 
-## Creating a pod to use a persistent volume
+## Creating a pod to use a PersistentVolume
 
 To create a pod to use the volume created above, you need to specify the volume claim in the spec, as in the below `pod.yaml`:
 
@@ -91,7 +91,7 @@ $ kubectl get pods
 NAME                READY   STATUS    RESTARTS   AGE
 civo-vol-test-pod   1/1     Running   0          54s
 ```
-## Expanding the persistent volume after creation
+## Expanding the PersistentVolume after creation
 
 Civo supports the capability of offline expansion for volumes, which entails specific requirements for resizing operations. 
 
@@ -142,7 +142,7 @@ LAST SEEN   TYPE      REASON                     OBJECT                         
 5m37s       Normal    FileSystemResizeRequired   persistentvolumeclaim/civo-volume-test   Require file system resize of volume on node
 ```
 
-Finally, recreate the pod and notice the PersistentVolumeClaim shows the new size:
+Finally, recreate the pod and notice the PersistentVolume and PersistentVolumeClaim reflect the new size:
 
 ```console
 $ kubectl create -f pod.yaml 
@@ -155,6 +155,10 @@ civo-vol-test-pod   1/1     Running   0          7s
 $ kubectl get pvc
 NAME               STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 civo-volume-test   Bound    pvc-a77aee95-f722-49e9-9ec2-ffcc884aa7c0   300Gi      RWO            civo-volume    43m
+
+$ kubectl get pv
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                      STORAGECLASS   REASON   AGE
+pvc-a77aee95-f722-49e9-9ec2-ffcc884aa7c0   300Gi      RWO            Delete           Bound    default/civo-volume-test   civo-volume             41m
 ```
 
 ## Cordoning and deleting a node to show persistence
