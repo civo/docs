@@ -62,10 +62,15 @@ You can also install by downloading the specific release version (detailed on th
 **Note that the version in the example below may not be the latest. Specify the version based on the [latest available](https://github.com/civo/cli/releases) if you are using this method.**
 
 ```bash
-wget https://github.com/civo/cli/releases/download/v1.0.40/civo-1.0.40-linux-amd64.tar.gz
-tar -xvf civo-1.0.40-linux-amd64.tar.gz
-chmod +x civo
-mv ./civo /usr/local/bin/
+CIVO_VERSION=$(curl -s https://api.github.com/repos/civo/cli/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | cut -c2-)
+ARCH=$(uname -m)
+case $ARCH in
+    x86_64) ARCH="amd64" ;;
+    aarch64) ARCH="arm64" ;;
+    armv7l) ARCH="arm" ;;
+    *) echo "Unsupported architecture: $ARCH" && exit 1 ;;
+esac
+wget https://github.com/civo/cli/releases/download/v${CIVO_VERSION}/civo-${CIVO_VERSION}-linux-${ARCH}.tar.gz
 ```
 
 Or you can build the CLI from the original source if you have [go installed](https://go.dev/doc/install):
