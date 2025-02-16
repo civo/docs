@@ -24,13 +24,12 @@ const config = {
           path: 'content',
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/civo/docs/tree/main/',
+          editUrl: 'https://github.com/civo/docs/tree/main/',
           showLastUpdateTime: true,
         },
         blog: false,
         googleTagManager: {
-          containerId: process.env.GTAG_MANAGER_ID || "undefined",
+          containerId: process.env.GTAG_MANAGER_ID || 'undefined',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -46,7 +45,7 @@ const config = {
         logo: {
           alt: 'Civo Logo',
           src: 'docusaurus/img/logo.svg',
-          href: 'https://www.civo.com/'
+          href: 'https://www.civo.com/',
         },
         items: [
           {
@@ -218,6 +217,13 @@ const config = {
         sidebar: {
           hideable: true,
         },
+      },
+      algolia: {
+        appId: 'I038LYZI81',
+        apiKey: '936b54a2e9acd8e2a6a60c0de9e713ad',
+        indexName: 'civo',
+        contextualSearch: true, // Show contextual search results
+        searchParameters: {}, // Additional search parameters
       },
     }),
 };
