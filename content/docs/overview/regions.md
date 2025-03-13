@@ -43,10 +43,10 @@ You can also pass a `--region <CODE>` parameter to any CLI command to execute it
 |:-----------------|:----:|:----:|:----:|:----:|:----:|
 | CPU Kubernetes   |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
 | CPU Compute      |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
-| Object Stores    |  ✓   |  ✗   |  ✓   |  ✓   |  ✓   |
+| Object Stores    |  ✓   |  ✗   |  ✓   |  ✓   |  ✗   |
 | Volumes          |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
 | Machine Learning |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
-| Databases        |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
+| Databases        |  ✓   |  ✗   |  ✓   |  ✓   |  ✓   |
 | GPU Kubernetes   |  ✓   |  ✓   |  ✗   |  ✗   |  ✗   |
 | GPU Compute      |  ✓   |  ✓   |  ✗   |  ✗   |  ✗   |
 
