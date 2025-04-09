@@ -139,11 +139,15 @@ To add the cluster autoscaler application via Terraform, include it in the `appl
 ```terraform
 resource "civo_kubernetes_cluster" "cluster" {
   name              = "<name you want to give your cluster>"
-  cluster_type      = "k3s" # Your choice of cluster type, can be k3s or talos
+  cluster_type      = "k3s" # k3s or talos
   applications      = "civo-cluster-autoscaler"
-  num_target_nodes  = 3
-  target_nodes_size = element(data.civo_instances_size.small.sizes, 0).name
-  region            = "NYC1" # Your choice of Civo region
+  network_id        = civo_network.example.id # replace with your network reference
+  firewall_id       = civo_firewall.example.id # replace with your firewall reference
+  pools {
+      label = "pool-name"
+      size = "g4s.kube.small"
+      node_count = 3
+  }
 }
 ```
 
