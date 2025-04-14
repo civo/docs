@@ -13,68 +13,62 @@ import TabItem from '@theme/TabItem';
 
 Setting up a managed Kubernetes cluster on Civo offers a smooth experience, enabling you to personalise different components of your cluster for an ideal configuration. Civo also provides a number of CPU and GPU options to ensure optimal performance, cost-efficiency, and scalability.
 
-If you run GPU workloads (e.g. TensorFlow, PyTorch, Real-time Inference, etc.) on Kubernetes, you will need higher computational requirements. Large models will require nodes with more GPU memory.
+Running GPU workloads (for example: TensorFlow, PyTorch, Real-time Inference) on Kubernetes requires higher computational requirements. In addition, large models require nodes with more GPU memory.
 
-### Deploy Standard, Performance, or CPU-Optimized Workloads on Civo Kubernetes
+### Deploying Workloads on Civo Kubernetes
+
+Civo Kubernetes supports deploying Standard, Performance, or CPU-Optimized workloads.
 
 The following instructions outline the steps for creating a Kubernetes cluster for standard workloads, with options to set up the cluster using the Civo Dashboard, Civo CLI, or Terraform.
+
+[//]: # (The only thing that is not clear to me based on the content below is if these steps are the same if it's a Standard, Performance or CPU-Optimzed workload, if it is that should be clearly stated)
 
 <Tabs groupId="create-cluster">
 <TabItem value="dashboard" label="Dashboard">
 
-## Creating a cluster on the Dashboard
+## Creating a Cluster with the Dashboard
 
-Begin by selecting the Civo Region you are operating in. You can do so in the lower left of your [Dashboard page](https://dashboard.civo.com):
+1. Select the Civo Region in which you are operating in the lower left of your [Dashboard page](https://dashboard.civo.com).
 
-![Region selection menu](images/region-select.png)
+    ![Region selection menu](images/region-select.png)
 
-Then, navigate to the [Kubernetes cluster creation page](https://dashboard.civo.com/kubernetes/new):
+2. Navigate to the [Kubernetes cluster creation page](https://dashboard.civo.com/kubernetes/new)
 
-![Overview of the cluster creation page on Civo](images/create-kubernetes-cluster-page.png)
+    ![Overview of the cluster creation page on Civo](images/create-kubernetes-cluster-page.png)
 
-The numbered sections give you options for the specifications of your cluster.
+3. The numbered sections give you options for the cluster details, complete the required information to create your cluster.
 
-### 1. Name
+- **1. Name** Provide a name for your cluster. _No spaces allowed._
 
-This is your cluster's name. May not contain a space.
+- **2. Number of nodes**
 
-### 2. Number of nodes
+    Kubernetes clusters on Civo can have multiple node pools - this is the number you want to launch in the cluster's initial node pool. This can be scaled up and down once the cluster is running, and does not include the control plane node, which is handled by Civo.
 
-Kubernetes clusters on Civo can have multiple node pools - this is the number you want to launch in the cluster's initial node pool. This can be scaled up and down once the cluster is running, and does not include the control plane node, which is handled by Civo.
+- **3. Network**
 
-### 3. Network
+    If you have created custom networks in this region, choose one of them here. Custom networks allow you to define private networking within a region, which allows you to prevent some resources from being routable to the public internet. Civo Kubernetes clusters always have a public IP address.
 
-If you have created custom networks in this region, you will be able to choose one of them here. Custom networks allow you to define private networking within a region, which allows you to prevent some resources from being routable to the public internet. Civo Kubernetes clusters will always have a public IP address.
+- **4. Firewall**
 
-### 4. Firewall
+    If you have configured existing firewalls in this region, select one of them for this cluster, or create a new firewall and specify which port(s) to open. Firewall rules can be customised after creation.
 
-If you have configured existing firewalls in this region, you will be able to select one of them for this cluster, or create a new firewall and specify which port(s) to open. Firewall rules can be customised after creation.
+- **5. Node size**
 
-### 5. Node size
+    The specifications for the machines in the initial node pool. These are priced per node, per hour. The "Hourly/Monthly" slider allows you to estimate the cost per month or per hour of the cluster running. For more information, see the [Billing section](../account/billing.md).
 
-The specifications for the machines in the initial node pool. These are priced per node, per hour. The "Hourly/Monthly" slider allows you to estimate the cost per month or per hour of the cluster running. For more information, see the [Billing section](../account/billing.md).
+  - Sizes or configurations may not be available due to quota on your account or the number of nodes you have chosen in section 2 above
+  - Depending on the applications you want to run on your cluster, you may need to select larger nodes.
 
-Sizes or configurations may not be available due to quota on your account or the number of nodes you have chosen in section 2 above.
+    ![Advanced options and marketplace](images/create-kubernetes-cluster-page-2.png)
 
-Depending on the applications you want to run on your cluster, you may need to select larger nodes.
+- **6. Advanced options**
 
-![Advanced options and marketplace](images/create-kubernetes-cluster-page-2.png)
+  This section allows you to optionally configure advanced options. Including the Container Networking Interface (CNI) and Cluster type.
+  
+  - The default CNI on Civo is Flannel. However, you can choose Cilium as an alternative Container Networking Interface (CNI) for your cluster. 
+  - The Cluster type selector allows you to choose between K3s or Talos Linux. The underlying operating system on K3s clusters is an Alpine Linux image. Talos Linux is an immutable Kubernetes-oriented Linux operating system.
 
-### 6. Advanced options
-
-This section allows you to optionally configure advanced options.
-
-#### Container Networking Interface (CNI)
-
-The default CNI on Civo is Flannel. However, you can choose Cilium as an alternative Container Networking Interface (CNI) for your cluster.
-
-Please note that the Cilium CNI is not compatible with Talos clusters. If you choose Cilium as your CNI and set Talos as your cluster type, the system will default to using Flannel.
-
-#### Cluster type
-
-The Cluster type selector allows you to choose between K3s or Talos Linux. The underlying operating system on K3s clusters is an Alpine Linux image. Talos Linux is an immutable Kubernetes-oriented Linux operating system.
-
-As noted above, please note that the Cilium CNI is not compatible with Talos clusters and Flannel will be used instead.
+_Note that the Cilium CNI is not compatible with Talos clusters and if Talos is selected with Cilium the system defaults to using Flannel instead._
 
 ### 7. Marketplace
 
@@ -106,11 +100,11 @@ If you run `civo kubernetes create` on its own, it will create a cluster in the 
 
 The CLI allows you to specify any number of options for your cluster, from the size of the nodes in the initial node pool to the firewall rules to set up, the version of Kubernetes to use, and more. A full list of options for cluster creation can be found by running `civo kubernetes create --help`.
 
-As an example, the following command will create a 4-node K3s cluster called "civo-cluster" of *g4s.kube.medium* nodes, with a custom firewall with only port 6443 open, in the LON1 region, and wait for the cluster to become live before saving the *kubeconfig* alongside your current `~/.kube/config` file.
+As an example, the following command will create a 4-node K3s cluster called "civo-cluster" of _g4s.kube.medium_ nodes, with a custom firewall with only port 6443 open, in the LON1 region, and wait for the cluster to become live before saving the _kubeconfig_ alongside your current `~/.kube/config` file.
 
 `civo kubernetes create civo-cluster -n 4 -s g4s.kube.medium --cluster-type k3s --create-firewall --firewall-rules "6443" --region LON1 --wait --save --merge --switch`
 
-When you run the above, the Civo CLI will show you the completion time and confirm your *kubeconfig* has been merged in, and the current context has been switched to the new cluster:
+When you run the above, the Civo CLI will show you the completion time and confirm your _kubeconfig_ has been merged in, and the current context has been switched to the new cluster:
 
 ```console
 Merged with main kubernetes config: ~/.kube/config
@@ -122,7 +116,7 @@ The cluster civo-cluster (ac1447d4-d938-4c0d-8eb6-7844b7f0a4dd) has been created
 
 ### Downloading the cluster's kubeconfig from the command line
 
-Once running, you can use `kubectl` and the *kubeconfig* file from the cluster to interact with it. If you did not save the *kubeconfig* on cluster creation, you can use `civo kubernetes config civo-cluster --save ` to download the configuration and access your cluster.
+Once running, you can use `kubectl` and the _kubeconfig_ file from the cluster to interact with it. If you did not save the _kubeconfig_ on cluster creation, you can use `civo kubernetes config civo-cluster --save` to download the configuration and access your cluster.
 
 ## Viewing cluster information on Civo CLI
 
@@ -167,7 +161,7 @@ Applications:
 +---------------------+-----------+-----------+--------------+
 ```
 
-You can see that the four nodes that were requested are running, they are the size they were specified to be above, and the cluster has the default installed applications, *Traefik* and the Kubernetes *metrics-server* up as well. Any changes, such as scaling your cluster up/down, will be immediately reflected on this status screen as shown in the *BUILDING* state of the two nodes.
+You can see that the four nodes that were requested are running, they are the size they were specified to be above, and the cluster has the default installed applications, _Traefik_ and the Kubernetes _metrics-server_ up as well. Any changes, such as scaling your cluster up/down, will be immediately reflected on this status screen as shown in the _BUILDING_ state of the two nodes.
 
 :::note
 You will need to have set the correct [Civo region](../overview/regions.md) for where the cluster was created when you [set up Civo CLI](../overview/civo-cli.md), or specify it in the command with `--region` to be able to view the cluster information.
@@ -209,6 +203,7 @@ Lastly, we can create our cluster by running `terraform apply`. You should see a
 Running GPU workloads on Kubernetes is becoming increasingly common due to the flexibility and scalability it provides. Deciding on the type of Kubernetes nodes for your GPU workloads involves many considerations. Whether you require low-latency responses, high-throughput inference requests, or other performance needs, Civo has you covered.
 
 **Civo provides the following GPU Types:**
+
 - **NVIDIA A100 Tensor Core GPU:** Available in both 40GB and 80GB variants, this GPU is designed for high-demand workloads such as machine learning model training, large language models, and scientific computing. It offers significant computational power with over 312 teraflops of FP16 performance and 1,248 Tensor cores.
 - **NVIDIA H100 Tensor Core GPU:** Known for its advanced Hopper architecture, this GPU excels in AI training and inference tasks, making it ideal for developing and deploying large AI models like chatbots and recommendation engines.
 - **NVIDIA L40S GPU:** With 48GB of GDDR6 memory, this GPU is suitable for tasks requiring a blend of AI computations and advanced graphics processing, such as 3D graphics rendering and training large language models.
@@ -216,6 +211,6 @@ Running GPU workloads on Kubernetes is becoming increasingly common due to the f
 
 To deploy GPU workloads on Kubernetes, [add a new node pool to your cluster](../kubernetes/managing-node-pools.md) and [install the Kubernetes operator for GPU nodes](../kubernetes/installing-gpu-operator.md)
 
-:::note 
+:::note
 GPU nodes for Kubernetes is a separate node SKU than traditional Kubernetes nodes.
 :::
