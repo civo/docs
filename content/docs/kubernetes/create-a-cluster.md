@@ -28,15 +28,21 @@ The following instructions outline the steps for creating a Kubernetes cluster f
 
 ## Creating a Cluster with the Dashboard
 
-1. Select the Civo Region in which you are operating in the lower left of your [Dashboard page](https://dashboard.civo.com).
+### Step 1 - Select your region
+
+Select the Civo Region in which you are operating in the lower left of your [Dashboard page](https://dashboard.civo.com).
 
     ![Region selection menu](images/region-select.png)
 
-2. Navigate to the [Kubernetes cluster creation page](https://dashboard.civo.com/kubernetes/new)
+### Step 2 - Navigate to the cluster creation page
+
+From your Civo dashboard, navigate to the [Kubernetes cluster creation page](https://dashboard.civo.com/kubernetes/new)
 
     ![Overview of the cluster creation page on Civo](images/create-kubernetes-cluster-page.png)
 
-3. The numbered sections give you options for the cluster details, complete the required information to create your cluster.
+### Step 3 - Provide your cluster details
+
+The numbered sections give you options for the cluster details, complete the required information to create your cluster.
 
 - **1. Name** Provide a name for your cluster. _No spaces allowed._
 
@@ -59,8 +65,6 @@ The following instructions outline the steps for creating a Kubernetes cluster f
   - Sizes or configurations may not be available due to quota on your account or the number of nodes you have chosen in section 2 above
   - Depending on the applications you want to run on your cluster, you may need to select larger nodes.
 
-    ![Advanced options and marketplace](images/create-kubernetes-cluster-page-2.png)
-
 - **6. Advanced options**
 
   This section allows you to optionally configure advanced options. Including the Container Networking Interface (CNI) and Cluster type.
@@ -68,15 +72,17 @@ The following instructions outline the steps for creating a Kubernetes cluster f
   - The default CNI on Civo is Flannel. However, you can choose Cilium as an alternative Container Networking Interface (CNI) for your cluster. 
   - The Cluster type selector allows you to choose between K3s or Talos Linux. The underlying operating system on K3s clusters is an Alpine Linux image. Talos Linux is an immutable Kubernetes-oriented Linux operating system.
 
-_Note that the Cilium CNI is not compatible with Talos clusters and if Talos is selected with Cilium the system defaults to using Flannel instead._
+    _Note that the Cilium CNI is not compatible with Talos clusters and if Talos is selected with Cilium the system defaults to using Flannel instead._
 
-### 7. Marketplace
+    ![Advanced options and marketplace](images/create-kubernetes-cluster-page-2.png)
 
-You can remove applications to prevent them from being installed by default, or add applications to start alongside your cluster. For more information, see the Marketplace documentation.
+- **7. Marketplace**
 
-### Creating your cluster
+  Use Marketplace to remove applications and prevent them from being installed by default, or add applications to start alongside your cluster.
 
-When you are satisfied with your initial cluster configuration, you can click "**Create cluster**" and be directed to the cluster's dashboard page. It will take a moment to become active, and you will be shown the status throughout.
+### Step 4 - Create your cluster
+
+When you are satisfied with your initial cluster configuration, select "**Create cluster**" to finalize the creation and open the cluster's dashboard page. It takes a moment to become active, and displays the status during setup.
 
 ![Cluster building](images/cluster-building.png)
 
