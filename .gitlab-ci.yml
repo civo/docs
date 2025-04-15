@@ -26,6 +26,7 @@ docker_image:
     - glab config set -g check_update false
     - git config --global user.email "ci@civo.com"
     - git config --global user.name "CI Bot"
+    - rm -rf src
     - git clone $AUTOPILOT src
     - cd src
     - git checkout main
