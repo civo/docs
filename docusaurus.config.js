@@ -15,6 +15,10 @@ const config = {
   favicon: 'docusaurus/img/favicon.ico',
   trailingSlash: false,
 
+  themes: [
+    "docusaurus-theme-search-typesense",
+  ],
+
   presets: [
     [
       'classic',
@@ -219,7 +223,30 @@ const config = {
           hideable: true,
         },
       },
-    }),
+
+
+    typesense: {
+      typesenseCollectionName: 'civo-docs',
+      typesenseServerConfig: {
+        nodes: [
+          {
+            host: 'typesense.konstruct.io',
+            port: 443,
+            protocol: 'https',
+          },
+        ],
+        // readonly key, safe for source code and browsers
+        apiKey: 'rgx1Psjo2NGd4I3HkpMgyae7se74Jtso',
+      },
+      contextualSearch: true,
+    },
+  }),
 };
 
+
+
+
 module.exports = config;
+
+
+
