@@ -21,5 +21,3 @@ The Kubernetes documentation included here assumes you have the following:
 - An [active Civo account](../account/signing-up.md)
 - Appropriate [related tools](../overview/tools-overview.md) for installation
 - And the [kubectl, the Kubernetes command-line tool](https://kubernetes.io/docs/reference/kubectl/kubectl/) for your specific operating system to manage your clusters after launch.
-
-## Support

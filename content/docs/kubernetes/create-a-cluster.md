@@ -69,7 +69,7 @@ The numbered sections give you options for the cluster details, complete the req
 
   This section allows you to optionally configure advanced options. Including the Container Networking Interface (CNI) and Cluster type.
   
-  - The default CNI on Civo is Flannel. However, you can choose Cilium as an alternative Container Networking Interface (CNI) for your cluster. 
+  - The default CNI on Civo is Flannel. However, you can choose Cilium as an alternative Container Networking Interface (CNI) for your cluster.
   - The Cluster type selector allows you to choose between K3s or Talos Linux. The underlying operating system on K3s clusters is an Alpine Linux image. Talos Linux is an immutable Kubernetes-oriented Linux operating system.
 
     _Note that the Cilium CNI is not compatible with Talos clusters and if Talos is selected with Cilium the system defaults to using Flannel instead._
@@ -94,80 +94,84 @@ Once running, you can use `kubectl` and the downloaded `kubeconfig` file from th
 
 <TabItem value="cli" label="Civo CLI">
 
-## Creating a cluster using Civo CLI
+## Creating a Cluster Using the Civo CLI
 
 You can create a Civo Kubernetes cluster on the command line by running the `civo kubernetes create` command, with optional parameters.
 
-### Creating a cluster on the command line with no options
+### Using the CLI with No Options
 
-If you run `civo kubernetes create` on its own, it will create a cluster in the currently-selected region with a generated name, some default options, and return.
+If you run `civo kubernetes create` on its own, it creates a cluster in the currently-selected region with a generated name, some default options, and return.
 
-### Creating a cluster on the command line with options
+### Using the CLI command with Options
 
 The CLI allows you to specify any number of options for your cluster, from the size of the nodes in the initial node pool to the firewall rules to set up, the version of Kubernetes to use, and more. A full list of options for cluster creation can be found by running `civo kubernetes create --help`.
 
 As an example, the following command will create a 4-node K3s cluster called "civo-cluster" of _g4s.kube.medium_ nodes, with a custom firewall with only port 6443 open, in the LON1 region, and wait for the cluster to become live before saving the _kubeconfig_ alongside your current `~/.kube/config` file.
 
-`civo kubernetes create civo-cluster -n 4 -s g4s.kube.medium --cluster-type k3s --create-firewall --firewall-rules "6443" --region LON1 --wait --save --merge --switch`
+    ```bash
 
-When you run the above, the Civo CLI will show you the completion time and confirm your _kubeconfig_ has been merged in, and the current context has been switched to the new cluster:
+    civo kubernetes create civo-cluster -n 4 -s g4s.kube.medium --cluster-type k3s --create-firewall --firewall-rules "6443" --region LON1 --wait --save --merge --switch`
 
-```console
-Merged with main kubernetes config: ~/.kube/config
+    ```
 
-Access your cluster with:
-kubectl get node
-The cluster civo-cluster (ac1447d4-d938-4c0d-8eb6-7844b7f0a4dd) has been created in 1 min 28 sec
-```
+When you run the above, the Civo CLI shows you the completion time and confirmation that your _kubeconfig_ has been merged in, and the current context has been switched to the new cluster:
 
-### Downloading the cluster's kubeconfig from the command line
+    ```console
+    Merged with main kubernetes config: ~/.kube/config
+
+    Access your cluster with:
+    kubectl get node
+    The cluster civo-cluster (ac1447d4-d938-4c0d-8eb6-7844b7f0a4dd) has been created in 1 min 28 sec
+    ```
+
+### Downloading the Cluster `kubeconfig` from the CLI
 
 Once running, you can use `kubectl` and the _kubeconfig_ file from the cluster to interact with it. If you did not save the _kubeconfig_ on cluster creation, you can use `civo kubernetes config civo-cluster --save` to download the configuration and access your cluster.
 
-## Viewing cluster information on Civo CLI
+## Viewing Cluster Information
 
-Once you have a running cluster, you can get a nicely-formatted information screen by running `civo kubernetes show [cluster_name]`. You can even use a partial name or unique section of the ID to have it show, like in the following example - as long as the part of the name you input matches only one cluster, you'll get the cluster information returned:
+Once you have a running cluster, you can get a nicely-formatted information screen by running `civo kubernetes show [cluster_name]`. You can also use a partial name or unique section of the ID to have it show, like in the following example - as long as the part of the name you input matches only one cluster, you'll get the cluster information returned:
 
-```bash
-$ civo k8s show demo
-                    ID : 73866847-749a-43b9-8168-65bc3cc12ffc
-                  Name : docs-demo
-           ClusterType : k3s
-                Region : LON1
-                 Nodes : 4
-                  Size : g4s.kube.medium
-                Status : ACTIVE
-              Firewall : k3s-cluster-docs-demo-0377-b72777
-               Version : 1.23.6-k3s1
-          API Endpoint : https://74.220.27.254:6443
-           External IP : 74.220.27.254
-          DNS A record : 73866847-749a-43b9-8168-65bc3cc12ffc.k8s.civo.com
-Installed Applications : Traefik-v2-nodeport, metrics-server
+    ```bash
+    $ civo k8s show demo
+                        ID : 73866847-749a-43b9-8168-65bc3cc12ffc
+                      Name : docs-demo
+              ClusterType : k3s
+                    Region : LON1
+                    Nodes : 4
+                      Size : g4s.kube.medium
+                    Status : ACTIVE
+                  Firewall : k3s-cluster-docs-demo-0377-b72777
+                  Version : 1.23.6-k3s1
+              API Endpoint : https://74.220.27.254:6443
+              External IP : 74.220.27.254
+              DNS A record : 73866847-749a-43b9-8168-65bc3cc12ffc.k8s.civo.com
+    Installed Applications : Traefik-v2-nodeport, metrics-server
 
-Pool (a1cd9b):
-+-------------------------------------------------+---------------+----------+-----------------+-----------+----------+---------------+
-| Name                                            | IP            | Status   | Size            | Cpu Cores | RAM (MB) | SSD disk (GB) |
-+-------------------------------------------------+---------------+----------+-----------------+-----------+----------+---------------+
-| k3s-docs-demo-614e-9e2f67-node-pool-1372-dnz9h  | 74.220.27.254 | ACTIVE   | g4s.kube.medium |         1 |     2048 |            40 |
-| k3s-docs-demo-614e-9e2f67-node-pool-1372-2u195  |               | BUILDING | g4s.kube.medium |         1 |     2048 |            40 |
-| k3s-docs-demo-614e-9e2f67-node-pool-1372-ts645  |               | ACTIVE   | g4s.kube.medium |         1 |     2048 |            40 |
-| k3s-docs-demo-614e-9e2f67-node-pool-1372-4xirw  |               | BUILDING | g4s.kube.medium |         1 |     2048 |            40 |
-+-------------------------------------------------+---------------+----------+-----------------+-----------+----------+---------------+
+    Pool (a1cd9b):
+    +-------------------------------------------------+---------------+----------+-----------------+-----------+----------+---------------+
+    | Name                                            | IP            | Status   | Size            | Cpu Cores | RAM (MB) | SSD disk (GB) |
+    +-------------------------------------------------+---------------+----------+-----------------+-----------+----------+---------------+
+    | k3s-docs-demo-614e-9e2f67-node-pool-1372-dnz9h  | 74.220.27.254 | ACTIVE   | g4s.kube.medium |         1 |     2048 |            40 |
+    | k3s-docs-demo-614e-9e2f67-node-pool-1372-2u195  |               | BUILDING | g4s.kube.medium |         1 |     2048 |            40 |
+    | k3s-docs-demo-614e-9e2f67-node-pool-1372-ts645  |               | ACTIVE   | g4s.kube.medium |         1 |     2048 |            40 |
+    | k3s-docs-demo-614e-9e2f67-node-pool-1372-4xirw  |               | BUILDING | g4s.kube.medium |         1 |     2048 |            40 |
+    +-------------------------------------------------+---------------+----------+-----------------+-----------+----------+---------------+
 
-Labels:
-kubernetes.civo.com/node-pool=a1cd9b96-3707-4998-8fc3-209144ad234c
-kubernetes.civo.com/node-size=g4s.kube.medium
+    Labels:
+    kubernetes.civo.com/node-pool=a1cd9b96-3707-4998-8fc3-209144ad234c
+    kubernetes.civo.com/node-size=g4s.kube.medium
 
-Applications:
-+---------------------+-----------+-----------+--------------+
-| Name                | Version   | Installed | Category     |
-+---------------------+-----------+-----------+--------------+
-| Traefik-v2-nodeport |       2.6 | true      | architecture |
-| metrics-server      | (default) | true      | architecture |
-+---------------------+-----------+-----------+--------------+
-```
+    Applications:
+    +---------------------+-----------+-----------+--------------+
+    | Name                | Version   | Installed | Category     |
+    +---------------------+-----------+-----------+--------------+
+    | Traefik-v2-nodeport |       2.6 | true      | architecture |
+    | metrics-server      | (default) | true      | architecture |
+    +---------------------+-----------+-----------+--------------+
+    ```
 
-You can see that the four nodes that were requested are running, they are the size they were specified to be above, and the cluster has the default installed applications, _Traefik_ and the Kubernetes _metrics-server_ up as well. Any changes, such as scaling your cluster up/down, will be immediately reflected on this status screen as shown in the _BUILDING_ state of the two nodes.
+You can see that the four nodes that were requested are running, they are the size they were specified to be above, and the cluster has the default installed applications, _Traefik_ and the Kubernetes _metrics-server_ up as well. Any changes, such as scaling your cluster up/down, are immediately reflected on this status screen as shown in the _BUILDING_ state of the two nodes.
 
 :::note
 You will need to have set the correct [Civo region](../overview/regions.md) for where the cluster was created when you [set up Civo CLI](../overview/civo-cli.md), or specify it in the command with `--region` to be able to view the cluster information.
@@ -179,7 +183,9 @@ You will need to have set the correct [Civo region](../overview/regions.md) for 
 
 ## Creating a Cluster using Terraform
 
-### Defining a Kubernetes resource in Terraform
+Creating a cluster in Civo using Terraform requires that you've completed the steps to configure a [Civo Terraform provider](../overview/terraform.md).
+
+### Step 1 - Defining a Kubernetes Resource in Terraform
 
 Once you have configured the [Civo Terraform provider](../overview/terraform.md), you can define a Civo Kubernetes resource in Terraform.
 
@@ -193,7 +199,7 @@ You can find further information on the data that can be specified by running th
 
 `data.civo_instances_size.small`
 
-### Creating a defined cluster with Terraform
+### Step 2 - Creating a Defined Cluster with Terraform
 
 After specifying the fields for your Kubernetes cluster, run `terraform plan` to ensure it can be created correctly. This should not throw any errors. However, if you receive any errors, you can now make sure to fix those.
 
