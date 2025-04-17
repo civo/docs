@@ -17,6 +17,8 @@ In case you need to access an instance directly for any reason, such as SSH acce
 Your instance must be configured to permit access through username and password to successfully be able to access it using the console. Console access to instances is intended as an emergency tool only, and does not allow for copy/paste or other conveniences.
 :::
 
+Console access can currently be enabled using the [Civo API](https://www.civo.com/api/console-access) or CLI only.
+
 <Tabs groupId="activate-console">
 
 <TabItem value="cli" label="Civo CLI">
