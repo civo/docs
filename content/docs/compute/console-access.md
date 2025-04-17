@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
   <title>How to Enable Console Access on Civo Compute Instances | Civo Documentation</title>
 </head>
 
-In case you need to access an instance directly for any reason, such as SSH access not working, you can activate an instance's console access to enable you to get back to normal operation.
+In case you need to access an instance directly for any reason, such as SSH access not working, you can activate an instance's out-of-band console access to enable you to get back to normal operation.
 
 :::danger note
 Your instance must be configured to permit access through username and password to successfully be able to access it using the console. Console access to instances is intended as an emergency tool only, and does not allow for copy/paste or other conveniences.
@@ -41,6 +41,8 @@ This will open up your default web browser to the console access URL and allow y
 
 :::note
 Only one session can be active for a particular instance at a time: subsequent requests to initiate a console while a session has already been initialized will respond idempotently, returning a link to the currently active session.
+
+The console only supports one concurrent connection to the instance at any time. You can disconnect or close the browser tab if you wish to let other users interact with the instance using the web console.
 :::
 
 You can see all available options for managing console access on the CLI by running `civo instance vnc --help`.
