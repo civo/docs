@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 Civo Kubernetes clusters provide a native storage class (`civo-volume`) that you can use directly for your persistent workloads.
 
-A [cluster running on Civo](./create-a-cluster.md) has `civo-volume` as the default storage class. This can be confirmed by viewing the `storageclass` resources on your cluster:
+A [cluster running on Civo](../create-a-cluster.md) has `civo-volume` as the default storage class. This can be confirmed by viewing the `storageclass` resources on your cluster:
 
 ```console
 $ k get sc
@@ -208,5 +208,5 @@ Events:
 ```
 
 :::warning
-If you have any external volumes attached to a [cluster you delete](./delete-a-cluster.md), these remain in your account for use. They are not automatically removed. As such, any external volumes are [be billed](../account/billing.md) until they are explicitly deleted.
+If you have any external volumes attached to a [cluster you delete](../delete-a-cluster.md), these remain in your account for use. They are not automatically removed. As such, any external volumes are [be billed](../../account/billing.md) until they are explicitly deleted.
 :::

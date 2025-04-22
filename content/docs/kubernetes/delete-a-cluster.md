@@ -1,6 +1,7 @@
 ---
 title: Deleting a Kubernetes cluster
 description: Learn how to delete Kubernetes clusters on Civo using the Civo Dashboard or Civo CLI to avoid dangerous billing errors and irreversible data loss.
+sidebar_position: 3
 ---
 
 import Tabs from '@theme/Tabs';
@@ -34,7 +35,7 @@ As a precaution, the system asks you to confirm the name of the cluster you are 
 When you confirm the cluster name, the system deletes the cluster immediately.
 
 :::warning
-If you have any external [volumes](./kubernetes-volumes.md) attached to the cluster when it is deleted, these remain in your account for use. They are not automatically removed. As such, any external volumes [are billed](../account/billing.md) until they are explicitly deleted.
+If you have any external [volumes](./config/kubernetes-volumes.md) attached to the cluster when it is deleted, these remain in your account for use. They are not automatically removed. As such, any external volumes [are billed](../account/billing.md) until they are explicitly deleted.
 :::
 </TabItem>
 

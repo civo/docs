@@ -26,19 +26,19 @@ When creating nodes for GPU workloads, you will need to select the "GPU Optimize
 
 You can add a new node pool to a running cluster by clicking on "**Create new pool**" on your cluster's information page.
 
-![Cluster node pool information](images/node-pools-section.png)
+![Cluster node pool information](../images/node-pools-section.png)
 
 You will be taken to the pool creation page:
 
-![Adding a new node pool options](images/create-new-node-pool.png)
+![Adding a new node pool options](../images/create-new-node-pool.png)
 
-In this section, you can select the number of nodes to create in this new pool, and the specifications/size of the nodes to create. You can choose from the same sizes as when [creating a cluster](create-a-cluster.md).
+In this section, you can select the number of nodes to create in this new pool, and the specifications/size of the nodes to create. You can choose from the same sizes as when [creating a cluster](../create-a-cluster.md).
 
 The cost per node of each type is displayed.
 
 When you click "**Create new pool**" you will be taken back to the cluster information page and the new pool will be displayed as creating:
 
-![New node pool is being created](images/new-node-pool-created.png)
+![New node pool is being created](../images/new-node-pool-created.png)
 
 You can then specify specific tasks within your cluster to run on a specific pool's nodes, optimizing your cluster.
 
@@ -60,7 +60,7 @@ The `--size` or `-s` parameter is followed by the code of the type of Kubernetes
 
 ### 1. Prepare the node pool configuration file
 
-Once you have configured the [Civo Terraform provider](../overview/terraform.md) and successfully created a [Kubernetes cluster resource](./create-a-cluster.md) in Terraform, you can define a new node pool as follows.
+Once you have configured the [Civo Terraform provider](../../overview/terraform.md) and successfully created a [Kubernetes cluster resource](../create-a-cluster.md) in Terraform, you can define a new node pool as follows.
 
 In the `main.tf` file, enter the following:
 
@@ -144,7 +144,7 @@ The sections of the above file are as follows:
   - To access the sizes later, we can use `data.civo_size.xsmall.sizes` syntax where `sizes` is the data source key that contains all the sizes (list)
 
 - *Create a firewall* and *Create a firewall rule*
-  - Creates a new firewall and firewall rule for the Kubernetes cluster. Specifically, we are opening port 6443 so we can communicate with our cluster from outside e.g. through the `kubectl` CLI. See the [firewall creation](../networking/firewalls.md) documentation for more information.
+  - Creates a new firewall and firewall rule for the Kubernetes cluster. Specifically, we are opening port 6443 so we can communicate with our cluster from outside e.g. through the `kubectl` CLI. See the [firewall creation](../../networking/firewalls.md) documentation for more information.
 
 - *Create a cluster*
   - Creates a new Kubernetes cluster using the [civo_kubernetes_cluster](https://registry.terraform.io/providers/civo/civo/latest/docs/resources/kubernetes_cluster) resource in the `LON1` region, with:
@@ -367,7 +367,7 @@ civo_kubernetes_node_pool.back-end-nodepool: Creation complete after 1m4s [id=63
 
 When the creation completes, refresh your Civo web dashboard. You should see the new cluster on the [Kubernetes page](https://dashboard.civo.com/kubernetes). Click it to see more details. It should show both node pools running:
 
-![Cluster created with an added node pool](./images/terraform-nodepool-created.png)
+![Cluster created with an added node pool](../images/terraform-nodepool-created.png)
 
 ### Updating a node pool configuration on Terraform
 
@@ -803,11 +803,11 @@ If there's no change in your `main.tf` file and you rerun `terraform apply`, it 
 
 You can delete a node pool entirely by clicking on the "**Delete**" button next to the node pool information.
 
-![Node pools information](images/node-pools-section.png)
+![Node pools information](../images/node-pools-section.png)
 
 A popup will appear asking you to confirm that you want to delete the node pool by entering its name:
 
-![Delete node pool popup](images/delete-node-pool.png)
+![Delete node pool popup](../images/delete-node-pool.png)
 
 The pool will be deleted as soon as you click "**Delete**" and is irreversible. All workloads in that pool will be destroyed and re-allocated in your cluster.
 
@@ -865,11 +865,11 @@ Recycling a node will delete it entirely, rebuild a new node to match it, and at
 
 Recycling a node on the dashboard is done on the Kubernetes cluster management page in the Node Pools section. Each node will have its own button to recycle, highlighted in the image below:
 
-![Recycle node button](./images/node-recycle.png)
+![Recycle node button](../images/node-recycle.png)
 
 Once you click the recycle button, you will be prompted to confirm your choice:
 
-![Recycle node confirmation](./images/node-recycle-confirm.png)
+![Recycle node confirmation](../images/node-recycle-confirm.png)
 
 The confirmation is important, as the node is immediately torn down and replaced when recycled.
 
