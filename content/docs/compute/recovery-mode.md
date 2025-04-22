@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
   <title>How to use recovery mode | Civo Documentation</title>
 </head> 
 
-In some cases, you may damage your instance OS or do anything that makes it unreachable. You can put the instance in recovery mode. Which enables you to access the instance using a special OS for emergencies. From which you can inspect the instance disk and modify it how you desire then bring it back into normal operations. When an instance is in recovery mode it can be accessed through VNC only
+In some cases, you may damage your instance OS or do anything that makes it unreachable. You can put the instance in recovery mode, which enables you to access the instance using a special OS for emergencies. From which you can inspect the instance disk and modify it how you desire then bring it back into normal operations. When an instance is in recovery mode it can be accessed through a visual console only
 
 ### Putting an instance into recovery mode through the CLI
 
