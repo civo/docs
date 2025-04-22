@@ -12,9 +12,9 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-Civo Kubernetes clusters provide a native storage class (`civo-volume`) that you can use for your persistent workloads directly.
+Civo Kubernetes clusters provide a native storage class (`civo-volume`) that you can use directly for your persistent workloads.
 
-A [cluster running on Civo](./create-a-cluster.md) will have `civo-volume` as the default storage class. This can be confirmed by viewing the `storageclass` resources on your cluster:
+A [cluster running on Civo](../create-a-cluster.md) has `civo-volume` as the default storage class. This can be confirmed by viewing the `storageclass` resources on your cluster:
 
 ```console
 $ k get sc
@@ -24,7 +24,7 @@ civo-volume (default)   csi.civo.com   Delete          WaitForFirstConsumer   tr
 
 ## Creating a PersistentVolumeClaim (PVC)
 
-To create a Persistent Volume Claim that will automatically trigger a PersistentVolume (PV) creation based on its specification, apply a `PersistentVolumeClaim` to your cluster.
+To create a Persistent Volume Claim that automatically triggers a PersistentVolume (PV) creation based on its specification, apply a `PersistentVolumeClaim` to your cluster.
 
 As an example, the following `pvc.yaml`:
 
@@ -48,7 +48,7 @@ $ kubectl create -f pvc.yaml
 persistentvolumeclaim/civo-volume-test created
 ```
 
-Due to the StorageClass volume binding mode, the PersistentVolumeClaim will remain in a pending state, until a Pod using the PersistentVolumeClaim is created.
+Due to the StorageClass volume binding mode, the PersistentVolumeClaim remains in a pending state until a Pod using the PersistentVolumeClaim is created.
 
 ```console
 $ kubectl get pvc
@@ -56,7 +56,7 @@ NAME               STATUS    VOLUME                                     CAPACITY
 civo-volume-test   Pending                                                                        civo-volume    25s
 ```
 
-## Creating a pod to use a PersistentVolume
+## Creating a pod to Use a PersistentVolume
 
 To create a pod to use the volume created above, you need to specify the volume claim in the spec, as in the below `pod.yaml`:
 
@@ -91,11 +91,12 @@ $ kubectl get pods
 NAME                READY   STATUS    RESTARTS   AGE
 civo-vol-test-pod   1/1     Running   0          54s
 ```
-## Expanding the PersistentVolume after creation
 
-Civo supports the capability of offline expansion for volumes, which entails specific requirements for resizing operations. 
+## Expanding the PersistentVolume After Creation
 
-Offline expansion means that the volume must first be unmounted before any resizing can take place. This unmounting process involves ensuring that the volume is no longer in use, typically requiring the deletion or termination of any associated Pods utilizing the volume. 
+Civo supports the capability of offline expansion for volumes, which entails specific requirements for resizing operations.
+
+Offline expansion means that the volume must first be unmounted before any resizing can take place. This unmounting process involves ensuring that the volume is no longer in use, typically requiring the deletion or termination of any associated Pods utilizing the volume.
 
 The necessity for unmounting the volume is critical, as it helps to avoid potential conflicts or inconsistencies that could arise if the volume were modified while still actively mounted. By ensuring the volume is completely detached from any workloads during the resizing operation, the process can be executed reliably and without risk to the integrity of the data or the application.
 
@@ -161,7 +162,7 @@ NAME                                       CAPACITY   ACCESS MODES   RECLAIM POL
 pvc-a77aee95-f722-49e9-9ec2-ffcc884aa7c0   300Gi      RWO            Delete           Bound    default/civo-volume-test   civo-volume             41m
 ```
 
-## Cordoning and deleting a node to show persistence
+## Cordoning and Deleting a Node to Show Persistence
 
 If you cordon the node and delete the pod from above, you should be able to re-create it and have it spin up on a different node but attached to the pre-defined persistent volume.
 
@@ -207,5 +208,5 @@ Events:
 ```
 
 :::warning
-If you have any external volumes attached to a [cluster you delete](./delete-a-cluster.md), these will remain in your account for use. They are not automatically removed. As such, any external volumes will [be charged](../account/billing.md) until they are explicitly deleted.
+If you have any external volumes attached to a [cluster you delete](../delete-a-cluster.md), these remain in your account for use. They are not automatically removed. As such, any external volumes are [be billed](../../account/billing.md) until they are explicitly deleted.
 :::

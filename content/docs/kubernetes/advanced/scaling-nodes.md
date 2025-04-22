@@ -37,15 +37,15 @@ The scaling down of nodes in a cluster will be determined by the following:
 
 On a running cluster, you can scale each node pool of the cluster separately. You will find the scale button next to each node pool you are running:
 
-![Node pools information](images/node-pools.png)
+![Node pools information](../images/node-pools.png)
 
 When you click **Scale Up/Down**, you will be shown a page allowing you to specify the number of nodes, along with being shown the change to the cluster's billing that results:
 
-![Node pool scale slider page](images/node-pool-scale.png)
+![Node pool scale slider page](../images/node-pool-scale.png)
 
 Once you click "scale pool" you will be taken to the cluster information page and see the new amount of nodes:
 
-![Added nodes](images/added-nodes.png)
+![Added nodes](../images/added-nodes.png)
 
 If you scaled the node pool up, these nodes will take a minute or so to become available. If you scaled the pool down, the nodes are deleted immediately.
 
@@ -102,7 +102,7 @@ The Civo cluster autoscaler is an implementation of the [Kubernetes autoscaler](
 - If pods fail to initialize or run because nodes lack the resources to run them
 - If nodes are not fully utilized, the pods performing the workload could reasonably be scheduled on other nodes.
 
-You can set up the Civo cluster autoscaler on any running cluster by adding it as an application from the [Marketplace](https://www.civo.com/marketplace). 
+You can set up the Civo cluster autoscaler on any running cluster by adding it as an application from the [Marketplace](https://www.civo.com/marketplace).
 
 :::info
 By default, the autoscaler is configured to scale between 1 and 10 nodes, but you can [edit the configuration](#editing-the-cluster-autoscaler-configuration) to fit your use case.
@@ -116,20 +116,20 @@ By default, the autoscaler is configured to scale between 1 and 10 nodes, but yo
 
 As a marketplace application, you can add the cluster autoscaler to any running Civo Kubernetes cluster. You will find the autoscaler in the Management group of the Marketplace when first setting up a cluster:
 
-![Adding the autoscaler application from the marketplace](./images/autoscaler-marketplace.png)
+![Adding the autoscaler application from the marketplace](../images/autoscaler-marketplace.png)
 
 You can also add the autoscaler to an already-running cluster by navigating to the Marketplace tab on the cluster's management page in the dashboard:
 
-![Adding the autoscaler to a running cluster](./images/autoscaler-to-running-cluster.png)
+![Adding the autoscaler to a running cluster](../images/autoscaler-to-running-cluster.png)
 </TabItem>
 
 <TabItem value="civo-cli" label="Civo CLI">
 
-If you are creating a new Kubernetes cluster, you can add the cluster autoscaler as part of the applications to add using the `-a` parameter. Please refer to the [cluster creation documentation](./create-a-cluster.md) for more information.
+If you are creating a new Kubernetes cluster, you can add the cluster autoscaler as part of the applications to add using the `-a` parameter. Please refer to the [cluster creation documentation](../create-a-cluster.md) for more information.
 
 You can add the cluster autoscaler to a running Civo Kubernetes cluster using the CLI by running the command `civo kubernetes applications add civo-cluster-autoscaler -c <clustername>`.
 
-For more information Civo CLI, see the [CLI documentation](../overview/civo-cli.md).
+For more information Civo CLI, see the [CLI documentation](../../overview/civo-cli.md).
 </TabItem>
 
 <TabItem value="terraform" label="Terraform">
@@ -151,7 +151,7 @@ resource "civo_kubernetes_cluster" "cluster" {
 }
 ```
 
-Refer to the [cluster creation documentation](./create-a-cluster.md) using Terraform for more options and required fields.
+Refer to the [cluster creation documentation](../create-a-cluster.md) using Terraform for more options and required fields.
 
 </TabItem>
 </Tabs>
@@ -197,7 +197,7 @@ Requests:
       memory:  300Mi
 ```
 
-These lines define the running configuration of the autoscaler in its default configuration, including the minimum and maximun number of nodes to scale to. The autoscaler watches for events in the cluster for CPU and memory requests from pods. If no nodes have the requested capacity available for scheduling, this triggers a scaling event in the cluster and a node is added to the pool.
+These lines define the running configuration of the autoscaler in its default configuration, including the minimum and maximum number of nodes to scale to. The autoscaler watches for events in the cluster for CPU and memory requests from pods. If no nodes have the requested capacity available for scheduling, this triggers a scaling event in the cluster and a node is added to the pool.
 
 ```console
 Environment:
@@ -228,6 +228,5 @@ To trigger a scale down to the new minimum node count, you can edit the a deploy
 You can also control the maximum number of nodes that the pool can scale to. This is set by the second number on the `--nodes=1:10:workers` line. If you wanted a node pool to be able to scale beyond 10 nodes, you could edit that number accordingly. 
 
 :::note
-Your [account quota](../account/quota.md) will take precedence over any node scaling, and you would begin seeing "Quota Limit Reached" errors in the Cloud Controller Manager pod if the autoscaler would try to scale the node count beyond what your quota allows for.
+Your [account quota](../../account/quota.md) will take precedence over any node scaling, and you would begin seeing "Quota Limit Reached" errors in the Cloud Controller Manager pod if the autoscaler would try to scale the node count beyond what your quota allows for.
 :::
-

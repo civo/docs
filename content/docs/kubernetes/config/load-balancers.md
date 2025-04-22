@@ -14,15 +14,15 @@ import TabItem from '@theme/TabItem';
 
 On Civo, Kubernetes cluster `LoadBalancer` objects are external to your cluster, but created and managed as part of your cluster's service definitions. In other words, you create them like other `Service` objects in Kubernetes as part of your cluster definition, but their state is handled by the Cloud Controller Manager that speaks to the Civo API. This allows you to have a service that routes traffic into your cluster externally, balancing the traffic between the nodes.
 
-Civo Kubernetes load balancers are a managed implementation of the Kubernetes [External Load Balancer](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/). This means if you create a `Service` object of type `LoadBalancer` the Civo API will detect this, and on assigning the load balancer a public IP address will start to account for its usage as part of your [billing](../account/billing.md) and [quota](../account/quota.md).
+Civo Kubernetes load balancers are a managed implementation of the Kubernetes [External Load Balancer](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/). This means if you create a `Service` object of type `LoadBalancer` the Civo API  detects this, and on assigning the load balancer a public IP address starts to account for its usage as part of your [billing](../../account/billing.md) and [quota](../../account/quota.md).
 
 Kubernetes load balancers, like all Civo resources, are billed hourly according to the [current pricing](https://www.civo.com/pricing). Additional costs apply for each subsequent 10,000 concurrent requests you configure the load balancer to handle.
 
-## Creating a Kubernetes load balancer
+## Creating a Kubernetes Load Balancer
 
 Being strictly a Kubernetes object, Kubernetes load balancers must be defined in a running cluster. There is no way to start a Kubernetes load balancer for a cluster from the dashboard, as they are application-specific.
 
-Definining a load balancer can be done either using `kubectl` to define a `Service` in your cluster, or by launching a Marketplace application that defines one for you. The documentation below shows the creation of a load balancer using `kubectl` as Marketplace applications configure them automatically.
+Defining a load balancer can be done either using `kubectl` to define a `Service` in your cluster, or by launching a Marketplace application that defines one for you. The documentation below shows the creation of a load balancer using `kubectl` as Marketplace applications configure them automatically.
 
 To define a Civo Kubernetes load balancer object, at a minimum you need to define the Service and its type as `LoadBalancer`, such as:
 
@@ -44,13 +44,13 @@ spec:
 
 This should be applied to your cluster with `kubectl apply -f loadbalancer.yaml`.
 
-As mentioned above, creating a load balancer relies on the Civo Cloud Controller Manager sending the appropriate request to the Civo API to handle the creation and configuration of the Load Balancer according to your specification. This system means that if you create any `Service` with type `LoadBalancer`, it will be picked up by the Civo API and as part of the [Load balancers listing](https://dashboard.civo.com/loadbalancers) as well as on the cluster's dashboard page in your account:
+As mentioned above, creating a load balancer relies on the Civo Cloud Controller Manager sending the appropriate request to the Civo API to handle the creation and configuration of the Load Balancer according to your specification. This system means that if you create any `Service` with type `LoadBalancer`, it is be picked up by the Civo API and as part of the [Load balancers listing](https://dashboard.civo.com/loadbalancers) as well as on the cluster's dashboard page in your account:
 
-![Kubernetes load balancer as displayed on the Civo dashboard](images/loadbalancers-list.png)
+![Kubernetes load balancer as displayed on the Civo dashboard](../images/loadbalancers-list.png)
 
 There are several available configuration options for Kubernetes load balancers, detailed below.
 
-## Kubernetes load balancer configuration options
+## Kubernetes Load Balancer Configuration Options
 
 The Civo load balancer specification allows optional configuration elements. These are detailed below. Configuration options for your Load Balancer are to be specified in the the appropriate block of your `LoadBalancer` service definition.
 
@@ -70,7 +70,7 @@ or
     kubernetes.civo.com/loadbalancer-algorithm: round_robin
 ```
 
-### External traffic policy
+### External Traffic Policy
 
 The external traffic policy, if provided, is one of `Cluster` or `Local`. `Cluster`, the default, means routing of external traffic to cluster-wide endpoints and ensures evenness of the request load across . `Local` is only for HTTP traffic, and preserves the client source IP using a `X-Forwarded-For` header added to the request, with the side effect of less efficient load balancing.
 
@@ -102,10 +102,10 @@ metadata:
 
 The firewall must be specified using its ID, rather than displayed name.
 
-If a firewall is not specified in an annotation, the Load Balancer will use the default firewall and not close any ports.
+If a firewall is not specified in an annotation, the Load Balancer uses the default firewall and not close any ports.
 
 :::note
-The firewall ID must be found in the same region as your cluster, otherwise the load balancer will present an error of the specified resource not being found.
+The firewall ID must be found in the same region as your cluster, otherwise the load balancer presents an error of the specified resource not being found.
 :::
 
 ### Proxy Protocol
@@ -149,10 +149,10 @@ metadata:
 ```
 
 :::warning
-If you update the maxmimum concurrent requests annotation, the load balancer will have a brief period of downtime as it rebuilds.
+If you update the maximum concurrent requests annotation, the load balancer enters a brief period of downtime as it rebuilds.
 :::
 
-An additional load balancer charge will be levied for each 10,000 requests above the default limit.
+An additional load balancer charge is levied for each 10,000 requests above the default limit.
 
 ## Instance Pools
 `LoadBalancer` objects can target a specific pool of Civo Instances to obtain more granularity over traffic distribution, making it easier to balance loads across instances.
@@ -185,6 +185,7 @@ spec:
         path: /healthz
   externalTrafficPolicy: Cluster
 ```
+
 The InstancePool configuration supports the use of both tags and instance names to identify instances in the instance pool. However, **only one method (tags or names) should be used at a time**.
 
 For example, targeting by tags:
@@ -199,8 +200,8 @@ names: ["app-1", "app-2"]
 ```
 
 ### Health Checks
-Health checks for the instances in each pool can be specified to ensure that traffic is only routed to healthy instances. The configuration of health checks for each InstancePool allows the load balancer to continuously monitor the health of each instance.
 
+Health checks for the instances in each pool can be specified to ensure that traffic is only routed to healthy instances. The configuration of health checks for each InstancePool allows the load balancer to continuously monitor the health of each instance.
 
 ## Viewing details of a Kubernetes load balancer
 <Tabs groupId="list-loadbalancer">
@@ -208,7 +209,7 @@ Health checks for the instances in each pool can be specified to ensure that tra
 
 You can view the current configuration of any load balancers both on the [load balancers listing page](https://dashboard.civo.com/loadbalancers), as well as on the page of the cluster where the load balancer is configured:
 
-![Kubernetes load balancer as displayed on the Civo dashboard](images/loadbalancers-list.png)
+![Kubernetes load balancer as displayed on the Civo dashboard](../images/loadbalancers-list.png)
 
 You can also view more specific details of a particular load balancer by dropping down the "Actions" menu and selecting "View".
 
@@ -249,11 +250,11 @@ If you wish to see load balancers in another region, you can append `--region <C
 
 ## Deleting a Kubernetes load balancer
 
-The Cloud Controller Manager (CCM) running in your cluster will handle the deletion of a Civo load balancer once the accompanying Service is deleted from your cluster. You can delete the load balancer, and stop billing for the load balancer, by either deleting the service definition using the manifest file as in the example below, or by deleting the service from the cluster itself:
+The Cloud Controller Manager (CCM) running in your cluster handles the deletion of a Civo load balancer once the accompanying Service is deleted from your cluster. You can delete the load balancer, and stop billing for the load balancer, by either deleting the service definition using the manifest file as in the example below, or by deleting the service from the cluster itself:
 
 ```console
 $ kubectl delete -f loadbalancer.yaml
 service "civo-lb-service" deleted
 ```
 
-The charge for the Load Balancer and additional public IP will end when the Service object is deleted.
+The charge for the Load Balancer and additional public IP ends when the Service object is deleted.
