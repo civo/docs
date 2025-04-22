@@ -30,6 +30,4 @@ If you have a technical issue with the Civo platform or a particular cluster or 
 
 ### General Community Support
 
-If you have questions about using Civo services, [join our Slack community](https://civo-community.slack.com/). Staff and Ambassadors have a logo next to their names to make them easily identifiable.
-
-Ambassadors are trusted and knowledgeable community members who are glad to help out if you have questions.
+If you have any questions about using Civo services, once you sign up you will be able to [join our Slack community](https://civo-community.slack.com/) to discuss it with Civo staff and community members. Access to the Civo Community Slack is by invitation. If you don't have a confirmation email or can't locate your sign-up information, [reach out to Civo support](https://www.civo.com/contact) to get an invitation.
