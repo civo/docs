@@ -176,7 +176,7 @@ To access and use the Civo API, you need to send HTTP requests to the API endpoi
 
 ## Community and Support
 
-### How can I learn more about Kubernetes? 
+### How can I learn more about Kubernetes?
 
 Learn Kubernetes for free with [Civo Academy](https://www.civo.com/academy). We've created over 50 video guides and tutorials that will help you navigate Kubernetes.
 
@@ -188,13 +188,13 @@ If you have a technical issue with the Civo platform or a particular cluster or 
 
 ### General community support
 
-If you have any queries about how to use Civo services, [join our Slack community](https://civo-community.slack.com/) to discuss it with Civo staff and community members. 
+If you have any queries about how to use Civo services, once you sign up you will be able to [join our Slack community](https://civo-community.slack.com/) to discuss it with Civo staff and community members. Access to the Civo Community Slack is by invitation. If you don't have a confirmation email or can't locate your sign-up information, [reach out to Civo support](https://www.civo.com/contact) to get an invitation.
 
 ### Where can I find the Civo community?
 
-We have a [Civo community Slack](https://civo-community.slack.com/) which all our users are invited to join. 
+We have a [Civo community Slack](https://civo-community.slack.com/) where all our users are invited to join when they complete their account sign-up.
 
-Staff and Ambassadors will have a logo next to their names to make them easily identifiable.
+Staff and Civo Ambassadors will have a logo next to their names to make them easily identifiable.
 
 Ambassadors are trusted and knowledgeable community members who will be glad to help out if you have questions about the service.
 
@@ -209,4 +209,3 @@ The Civo Marketplace is open source. If you do not see an application on the [Ci
 At the moment, the only way to remove a marketplace application is by running `kubectl delete -f` on the resource and manifest files which can be found in the [Marketplace git repository](https://github.com/civo/kubernetes-marketplace). Please note that while the marketplace application will get removed from your cluster, this will not be reflected on the web UI for the moment.
 
 We are working on a new version of the Civo Marketplace which would allow for installation and uninstallation at will.
-
