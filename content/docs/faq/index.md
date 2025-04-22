@@ -188,7 +188,7 @@ If you have a technical issue with the Civo platform or a particular cluster or 
 
 ### General community support
 
-If you have any queries about how to use Civo services, once you sign up you will be able to [join our Slack community](https://civo-community.slack.com/) to discuss it with Civo staff and community members.
+If you have any queries about how to use Civo services, once you sign up you will be able to [join our Slack community](https://civo-community.slack.com/) to discuss it with Civo staff and community members. Access to the Civo Community Slack is by invitation. If you don't have a confirmation email or can't locate your sign-up information, [reach out to Civo support](https://www.civo.com/contact) to get an invitation.
 
 ### Where can I find the Civo community?
 
