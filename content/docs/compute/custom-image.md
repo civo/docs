@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 Custom disk images allow you to use your own operating system images when creating Civo instances. This feature is useful when you need to:
 
-- Use specialized operating systems not available in the default Civo marketplace
+- Use specialized operating systems not provided by Civo
 - Create instances with pre-configured applications and settings
 
 :::note
@@ -30,18 +30,22 @@ This feature is currently only available for selected private regions. Please co
 You can create a new custom disk image by using the `civo diskimage create` command:
 
 ```console
-$ civo diskimage create --name my-ubuntu-image \
+$ civo diskimage create --name ubuntuimage \
                        --distribution ubuntu \
                        --version 22.04 \
                        --path ./disk.raw \
-                       --os linux
-Created a disk image called cust-my-ubuntu-image with ID 8a76ec9c-ef94-4d21-90a5-b48fc6d4fee2
-The upload URL is valid for 15 minutes. Uploading disk image...
-Upload complete. The disk image is now being processed.
+                       --os linux \
+                       -- logo_path ./logo.svg
+Uploading disk image... 100% |█████████████████████████████████| (19/19 B, 14 B/s)
++--------------------------------------+------------------------------+--------+
+| id                                   | name                         | status |
++--------------------------------------+------------------------------+--------+
+| a3721853-f976-49fd-83e4-1b7f48ecdb58 | cust-ubuntuimage-148ee-wrodm |        |
++--------------------------------------+------------------------------+--------+
 ```
 
 :::note
-The name is prefixed with `cust-` to distinguish custom images from system images provided by Civo .
+The name is modified and prefixed with `cust-` once created to distinguish custom images from system images provided by Civo .
 :::
 By default, the image is created in your currently-selected region.
 
@@ -52,14 +56,14 @@ You can see all available options for disk image creation on the CLI by running 
 
 ### Available parameters for creation
 
-| Parameter                 | Description                                                   |
-| ------------------------- | ------------------------------------------------------------- |
-| `--name`                  | Name of the disk image (required)                             |
-| `--distribution`          | OS distribution (e.g., "ubuntu", "centos") (required)         |
-| `--version`               | Version of the operating system (required)                    |
-| `--path`                  | Path to the disk image file (.raw or .qcow2) (required)       |
-| `--os` (optional)         | Operating system type (defaults to "linux", can be "windows") |
-| `--logo_path` (optional ) | Path to your logo file (SVG format)                           |
+| Parameter                 | Description                                                          |
+| ------------------------- | -------------------------------------------------------------------- |
+| `--name`                  | Name of the disk image (required)                                    |
+| `--distribution`          | OS distribution (e.g., "ubuntu", "centos") (required)                |
+| `--version`               | Version of the operating system (required)                           |
+| `--path`                  | Path to the disk image file (.raw or .qcow2 , max 600 GB) (required) |
+| `--os` (optional)         | Operating system type (defaults to "linux", can be "windows")        |
+| `--logo_path` (optional ) | Path to your logo file (SVG format, max 5 MB)                        |
 
 ## Checking disk image status
 
@@ -69,9 +73,9 @@ You can see all available options for disk image creation on the CLI by running 
 After uploading an image, it goes through several processing stages. You can check the status of your disk image with:
 
 ```console
-$ civo diskimage show cust-my-ubuntu-image
-                ID : 8a76ec9c-ef94-4d21-90a5-b48fc6d4fee2
-              Name : cust-my-ubuntu-image
+$ civo diskimage show cust-ubuntuimage-148ee-wrodm
+                ID : a3721853-f976-49fd-83e4-1b7f48ecdb58
+              Name : cust-ubuntuimage-148ee-wrodm
       Distribution : ubuntu
            Version : 22.04
                 OS : linux
@@ -108,11 +112,11 @@ To see all your custom disk images:
 
 ```console
 $ civo diskimage list --local
-+--------------------------------------+----------------------+--------------+---------+-----------+
-| ID                                   | Name                 | Distribution | Version | Status    |
-+--------------------------------------+----------------------+--------------+---------+-----------+
-| 8a76ec9c-ef94-4d21-90a5-b48fc6d4fee2 | cust-my-ubuntu-image | ubuntu       | 22.04   | available |
-+--------------------------------------+----------------------+--------------+---------+-----------+
++--------------------------------------+--------------------------------+----------+-----------+--------------+
+| ID                                   | Name                           | Version  | State     | Distribution |
++--------------------------------------+--------------------------------+----------+-----------+--------------+
+| a3721853-f976-49fd-83e4-1b7f48ecdb58 | cust-ubuntuimage-148ee-wrodm   |    22.04 | available | ubuntu       |
++--------------------------------------+--------------------------------+----------+-----------+--------------+
 ```
 
 The `--local` flag filters the list to show only your custom uploaded disk images, excluding system images.
@@ -128,13 +132,13 @@ The `--local` flag filters the list to show only your custom uploaded disk image
 To delete a custom disk image:
 
 ```console
-$ civo diskimage delete cust-my-ubuntu-image
-The disk image (cust-my-ubuntu-image) has been deleted
+$  civo diskimage delete cust-ubuntuimage-148ee-wrodm
++------------------------------+---------+
+| Disk image                   | Result  |
++------------------------------+---------+
+| cust-ubuntuimage-148ee-wrodm | deleted |
++------------------------------+---------+
 ```
-
-:::note
-You cannot delete a custom disk image that is currently in use by any instances.
-:::
 
 </TabItem>
 </Tabs>
@@ -149,7 +153,7 @@ Once your custom disk image is in the **available** state, you can use it to cre
 ```console
 $ civo instance create --hostname custom-instance \
                      --size g3.small \
-                     --diskimage cust-my-ubuntu-image
+                     --diskimage cust-ubuntuimage-148ee-wrodm
 Created instance custom-instance with ID 58a9b7f2-5d12-46ab-9e97-b3d24c32cc2a
 ```
 
@@ -160,12 +164,12 @@ Created instance custom-instance with ID 58a9b7f2-5d12-46ab-9e97-b3d24c32cc2a
 
 ### Upload expired or error state
 
-If your upload expired or error state:
+If your upload window expired, or the image is in an error state:
 
 ```console
-$ civo diskimage show cust-my-ubuntu-image
+$ civo diskimage show cust-ubuntuimage-148ee-wrodm
                 ID : 8a76ec9c-ef94-4d21-90a5-b48fc6d4fee2
-              Name : cust-my-ubuntu-image
+              Name : cust-ubuntuimage-148ee-wrodm
       Distribution : ubuntu
            Version : 22.04
                 OS : linux
@@ -174,6 +178,7 @@ $ civo diskimage show cust-my-ubuntu-image
           Logo URL : https://objectstore.staging.civo.com/disk-images/my-ubuntu-image/logo.svg
        Image Size : 2.5 GB
         Created At : 2023-04-07T15:22:18Z
+        Created By : 90a5-b48fc6d4fee2-8a76ec9
 ```
 
 This typically happens when:
