@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
   <title>Managing IP Addresses for Civo Resources | Civo Documentation</title>
 </head>
 
-While resources that are accessible from the public internet, such as [instances](../compute/) and Kubernetes cluster [load balancers](../kubernetes/load-balancers.md), get assigned public IP addresses when they are created, there are times you may wish to ensure that the IP address gets reserved to you. This allows you to change these publicly routable resources without changing their IP addresses. Reserving a [static IP address](https://dashboard.civo.com/reserved-ips) allows you to reassign the address from one instance to another to build resiliency.
+While resources that are accessible from the public internet, such as [instances](../compute/) and Kubernetes cluster [load balancers](../kubernetes/config/load-balancers.md), get assigned public IP addresses when they are created, there are times you may wish to ensure that the IP address gets reserved to you. This allows you to change these publicly routable resources without changing their IP addresses. Reserving a [static IP address](https://dashboard.civo.com/reserved-ips) allows you to reassign the address from one instance to another to build resiliency.
 
 If you create a new instance or load balancer, you will be able to attach a reserved IP address in your account. If you select an address that is already assigned to a resource, it will be moved to the new one immediately.
 
@@ -172,4 +172,4 @@ IP called docs-demo with ID 4828b05a-3ee2-4e3f-bb5d-108345ac6ba5 was deleted
 
 ## Reserved IP addresses and Kubernetes load balancers
 
-IP addresses that have been reserved in your account can be assigned to Kubernetes load balancers by means of an annotation on the cluster itself. See the [load balancer documentation](../kubernetes/load-balancers.md#reserved-ip-address) for more details.
+IP addresses that have been reserved in your account can be assigned to Kubernetes load balancers by means of an annotation on the cluster itself. See the [load balancer documentation](../kubernetes/config/load-balancers.md#reserved-ip-address) for more details.
