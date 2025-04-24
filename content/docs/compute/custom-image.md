@@ -13,14 +13,16 @@ import TabItem from '@theme/TabItem';
 
 # Use Custom Disk Images
 
+:::note
+These features are only available on CivoStack Enterprise regions, and are made available by request
+:::
+
+## Overview
+
 Custom disk images allow you to use your own operating system images when creating Civo instances. This feature is useful when you need to:
 
 - Use specialized operating systems not provided by Civo
 - Create instances with pre-configured applications and settings
-
-:::note
-This feature is currently only available for selected private regions. Please contact Civo support if you need this feature in a different region.
-:::
 
 ## Creating a custom disk image
 
@@ -45,7 +47,10 @@ Uploading disk image... 100% |████████████████�
 ```
 
 :::note
-The name is modified and prefixed with `cust-` once created to distinguish custom images from system images provided by Civo .
+
+- The name is modified and prefixed with `cust-` once created to distinguish custom images from system images provided by Civo .
+- The `civo diskimage create` command does **both** the image record creation **and** the file upload in one step—you don’t need to call a separate “upload” command.
+
 :::
 By default, the image is created in your currently-selected region.
 
@@ -96,7 +101,9 @@ The disk image states include:
 - `upload_completed`: Upload finished, MD5 checksum verified
 - `pending`: Image is being processed for distribution
 - `available`: Image is ready to use for creating instances
-- `upload_expired`: Upload not completed within 15 minutes
+
+- `upload_expired`: Upload not completed within 200 minutes (images in this state **cannot** be used to create instances; delete and retry)
+
 - `error`: Issue with upload or processing
 
 :::note
@@ -111,7 +118,7 @@ Only images in the **available** state can be used to create instances.
 To see all your custom disk images:
 
 ```console
-$ civo diskimage list --local
+$ civo diskimage list --custom
 +--------------------------------------+--------------------------------+----------+-----------+--------------+
 | ID                                   | Name                           | Version  | State     | Distribution |
 +--------------------------------------+--------------------------------+----------+-----------+--------------+
@@ -119,7 +126,7 @@ $ civo diskimage list --local
 +--------------------------------------+--------------------------------+----------+-----------+--------------+
 ```
 
-The `--local` flag filters the list to show only your custom uploaded disk images, excluding system images.
+The `--custom` flag filters the list to show only your custom uploaded disk images, excluding system images.
 
 </TabItem>
 </Tabs>
