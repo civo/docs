@@ -4,9 +4,6 @@ description: Learn how to delete Kubernetes clusters on Civo using the Civo Dash
 sidebar_position: 3
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 <head>
   <title>Deleting a Civo Kubernetes Cluster | Civo Documentation</title>
 </head>
@@ -17,49 +14,44 @@ Kubernetes clusters on Civo remain in your account until you delete them. Cluste
 
 :::danger
 
-Cluster deletion is immediate and irreversible. Make sure you have retrieved any data you may need from an instance before deleting it.
+Cluster deletion is immediate and irreversible. Retrieve any important data you may need from an instance **before** deleting it.
 
 :::
 
-<Tabs groupId="delete-cluster">
-<TabItem value="dashboard" label="Dashboard">
+## Steps for Deleting a Cluster
 
-## Deleting a Cluster from the Dashboard
+There are two easy methods for deleting a cluster from Civo. You can delete a cluster through the Civo Dashboard, or with the CIvo CLI. Refer to the steps below for the method you prefer.
 
-You can delete a cluster from its dashboard page by clicking the "Delete" button on the top right of the page.
+### Deleting a Cluster from the Dashboard
 
-![Delete a cluster from the dashboard](images/dashboard-delete-cluster.png)
+1. After logging in to the Dashboard, navigate to **Kubernetes** , locate the cluster you want to delete. If you're viewing the full list of clusters **select the red X** at the top right corner.
+  
+     - From the cluster dashboard look for the **Delete** button in the top right.
 
-As a precaution, the system asks you to confirm the name of the cluster you are looking to delete.
+    ![Delete a cluster from the cluster list](./images/delete-cluster.png)
 
-When you confirm the cluster name, the system deletes the cluster immediately.
+2. As a precaution, the system asks you to confirm the name of the cluster you are looking to delete. Confirm the cluster name, and select **Delete**. The cluster is deleted immediately.
 
 :::warning
-If you have any external [volumes](./config/kubernetes-volumes.md) attached to the cluster when it is deleted, these remain in your account for use. They are not automatically removed. As such, any external volumes [are billed](../account/billing.md) until they are explicitly deleted.
+If you have external [volumes](./config/kubernetes-volumes.md) attached to the cluster when it is deleted, these remain in your account for use. They are not automatically removed. As such, any external volumes [are billed](../account/billing.md) until they are explicitly deleted.
 :::
-</TabItem>
 
-<TabItem value="cli" label="Civo CLI">
+### Deleting a Cluster using the Civo CLI
 
-## Deleting a Cluster using the Civo CLI
+1. Ensure your current region is set to the one where the cluster is running, you can delete it using:
 
-Ensuring your current region is set to the one where the cluster is running, you can delete it using:
+    ```bash
+    civo kubernetes delete cluster_name
+    ```
 
-  ```bash
-  civo kubernetes delete cluster_name
-  ```
+2. By default, the Civo CLI confirms whether you want to proceed:
 
-By default, Civo CLI confirms whether you want to proceed:
-
-  ```bash
-  $ civo kubernetes delete demo-cluster
-  Warning: Are you sure you want to delete the demo-cluster Kubernetes cluster (y/N) ? y
-  The Kubernetes cluster (demo-cluster) has been deleted
-  ```
+    ```bash
+    $ civo kubernetes delete demo-cluster
+    Warning: Are you sure you want to delete the demo-cluster Kubernetes cluster (y/N) ? y
+    The Kubernetes cluster (demo-cluster) has been deleted
+    ```
 
 :::tip
 For scripting use, you can add a `-y` flag to Civo CLI commands which usually require confirmation. This assumes you answer "yes" to any prompt.
 :::
-
-</TabItem>
-</Tabs>

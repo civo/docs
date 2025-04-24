@@ -10,9 +10,11 @@ description: Create Kubernetes clusters with ease on Civo. Learn to manage clust
 
 ## Introduction
 
-Managed Kubernetes is one of the core services of Civo services, and is certified conformant by Cloud Native Computing Foundating (CNCF). Civo Kubernetes is fully compatible with the wider cloud-native ecosystem and enables you to create Civo Kubernetes clusters in all Civo regions.
+Managed Kubernetes is one of the core services of Civo, and is certified conformant by Cloud Native Computing Foundating (CNCF). Civo Kubernetes is fully compatible with the wider cloud-native ecosystem and enables you to create Civo Kubernetes clusters in all Civo regions.
 
-This documentation covers management of Kubernetes clusters on Civo using the web interface, the Civo CLI, and using Terraform as an example of Infrastructure as Code (IaC) tools.
+This documentation covers management of Kubernetes clusters on Civo using the web interface and the Civo CLI.
+
+For more information check out [the section of the FAQ on Civo Kubernetes](../faq/index.md#civo-kubernetes)
 
 ## Kubernetes Prerequisites
 
