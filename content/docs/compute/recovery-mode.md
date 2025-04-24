@@ -11,14 +11,13 @@ import TabItem from '@theme/TabItem';
   <title>How to use recovery mode | Civo Documentation</title>
 </head> 
 
-In some cases, you may damage your instance OS or do anything that makes it unreachable. You can put the instance in recovery mode, which enables you to access the instance using a special OS for emergencies. From which you can inspect the instance disk and modify it how you desire then bring it back into normal operations. When an instance is in recovery mode it can be accessed through a visual console only.
-More info can be found on console access in this [link](https://www.civo.com/api/console-access)
+In the event of a failure of an instance's operating system, an alternative method of accessing the data on the instance is required. To do this, you can take advantage of recovery mode. Recovery mode provides access to an instance using a special OS for emergencies, which allows users to inspect the boot volume of the instance, and make any modifications to bring it back into normal operations. When an instance is in recovery mode it can only be accessed [through the console](https://www.civo.com/api/console-access).
 
 Instances in recovery mode will use systemrescue. More details about it can be found [here](https://www.system-rescue.org/)
 
 ### Putting an instance into recovery mode through the CLI
 
-By running the following command:
+Enable recovery mode on an instance by running the Civo CLI command:
 
 ```sh
 civo instance recovery enable INSTANCE_ID/HOSTNAME
@@ -35,13 +34,13 @@ You can then query the status of recovery mode on the instance through this comm
 civo instance recovery-status INSTANCE_ID/HOSTNAME
 ```
 
-You can then access the instance by running
+You can then access the instance by running:
 
 ```sh
 civo instance vnc INSTANCE_ID/HOSTNAME --duration 2h
 ```
 
-After finishing what you need to do, you can put the instance out of recovery mode by running then reboot the instance again:
+After finishing what you need to do in the recovery mode console, you can disable recovery mode by running the following commands, which turn off recovery mode and reboot the instance to make it accessible as normal:
 
 ```sh
 civo instance recovery disable INSTANCE_ID/HOSTNAME
