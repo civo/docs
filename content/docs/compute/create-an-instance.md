@@ -61,7 +61,7 @@ You can select the size and instance hardware specifications based on the task y
 
 ![Compute instance sizes](./images/instance-sizes-standard.png)
 
-Some [Civo regions](../overview/regions.md) provide the option to create instances with [attached GPUs](https://www.civo.com/cloud-gpu). These can be selected on the corresponding "GPU" tabs of the sizes section, if available in your current region, as shown in the image below:
+Some [Civo regions](../overview/regions.md) provide the option to create instances with [attached GPUs](https://www.civo.com/ai/cloud-gpu). These can be selected on the corresponding "GPU" tabs of the sizes section, if available in your current region, as shown in the image below:
 
 ![GPU instance sizes](./images/instance-sizes-gpu.png)
 
