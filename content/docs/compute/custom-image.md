@@ -79,15 +79,22 @@ After uploading an image, it goes through several processing stages. You can che
 
 ```console
 $ civo diskimage show cust-ubuntuimage-148ee-wrodm
-                ID : a3721853-f976-49fd-83e4-1b7f48ecdb58
-              Name : cust-ubuntuimage-148ee-wrodm
-      Distribution : ubuntu
-           Version : 22.04
-                OS : linux
-             State : available
-         Image URL : https://objectstore.staging.civo.com/disk-images/my-ubuntu-image/disk.raw?X-Amz-Algorithm=AWS4-HMAC-SHA256&SignedHeaders=host&x-id=PutObject&X-Amz-Signature=8a7d32f...
-          Logo URL : https://objectstore.staging.civo.com/disk-images/my-ubuntu-image/logo.svg
-       Image Size : 2.5 GB
+                     ID : a3721853-f976-49fd-83e4-1b7f48ecdb58
+                   Name : cust-ubuntuimage-148ee-wrodm
+                Version : 22.04
+                  State : available
+           Distribution : ubuntu
+           Initial User : ubuntu
+                     OS : linux
+            Description : ubuntu
+                  Label :
+         Disk Image URL : https://objectstore.staging.civo.com/cust-diskimages/disk-images/cust-ubuntuimage-148ee-wrodm/disk.raw?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ULZKAJLTLGBCBJCSPWXE%2F20250423%2Fstaging%2Fs3%2Faws4_request&X-Amz-Date=20250423T135659Z&X-Amz-Expires=12000&X-Amz-SignedHeaders=content-length%3Bhost&x-id=PutObject&X-Amz-Signature=fd52d1fe1f58df870c60bbb3df649a7197417804b5db2dbc7557d9023d84
+Disk Image Size (bytes) : 536870912
+               Logo URL :
+             Created At : 2025-04-23 13:56:59 +0000 UTC
+             Created By : 77f454ca-45f8-4dc8-965e-ee2c9dfb09b8
+   Distribution Default : false
+
 ```
 
 </TabItem>
@@ -127,6 +134,10 @@ $ civo diskimage list --custom
 ```
 
 The `--custom` flag filters the list to show only your custom uploaded disk images, excluding system images.
+
+:::note
+Since custom disk images are region-specific , you can also specify a region with the `--region` flag.
+:::
 
 </TabItem>
 </Tabs>
