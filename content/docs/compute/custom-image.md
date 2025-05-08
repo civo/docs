@@ -88,7 +88,7 @@ $ civo diskimage show cust-ubuntuimage-148ee-wrodm
                      OS : linux
             Description : ubuntu
                   Label :
-         Disk Image URL : https://objectstore.lon1.civo.com/cust-diskimages/disk-images/cust-ubuntuimage-148ee-wrodm/disk.raw?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ULZKAJLTLGBCBJCSPWXE%2F20250423%2Flon1%2Fs3%2Faws4_request&X-Amz-Date=20250423T135659Z&X-Amz-Expires=12000&X-Amz-SignedHeaders=content-length%3Bhost&x-id=PutObject&X-Amz-Signature=fd52d1fe1f58df870c60bbb3df649a7197417804b5db2dbc7557d9023d84
+         Disk Image URL : https://objectstore.myregion.civo.com/cust-diskimages/disk-images/cust-ubuntuimage-148ee-wrodm/disk.raw?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ULZKAJLTLGBCBJCSPWXE%2F20250423%2Fmyregion%2Fs3%2Faws4_request&X-Amz-Date=20250423T135659Z&X-Amz-Expires=12000&X-Amz-SignedHeaders=content-length%3Bhost&x-id=PutObject&X-Amz-Signature=fd52d1fe1f58df870c60bbb3df649a7197417804b5db2dbc7557d9023d84
 Disk Image Size (bytes) : 536870912
                Logo URL :
              Created At : 2025-04-23 13:56:59 +0000 UTC
@@ -192,8 +192,8 @@ $ civo diskimage show cust-ubuntuimage-148ee-wrodm
            Version : 22.04
                 OS : linux
              State : upload_expired
-         Image URL : https://objectstore.lon1.civo.com/disk-images/my-ubuntu-image/disk.raw?X-Amz-Algorithm=AWS4-HMAC-SHA256&SignedHeaders=host&x-id=PutObject&X-Amz-Signature=8a7d32f...
-          Logo URL : https://objectstore.lon1.civo.com/disk-images/my-ubuntu-image/logo.svg
+         Image URL : https://objectstore.myregion.civo.com/disk-images/my-ubuntu-image/disk.raw?X-Amz-Algorithm=AWS4-HMAC-SHA256&SignedHeaders=host&x-id=PutObject&X-Amz-Signature=8a7d32f...
+          Logo URL : https://objectstore.myregion.civo.com/disk-images/my-ubuntu-image/logo.svg
        Image Size : 2.5 GB
         Created At : 2023-04-07T15:22:18Z
         Created By : 90a5-b48fc6d4fee2-8a76ec9
