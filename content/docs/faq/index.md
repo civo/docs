@@ -146,7 +146,7 @@ Depending on whether you choose a K3s or Talos cluster, the operating system wil
 
 ### Can I pool different-sized nodes into the same cluster?
 
-You can create [node pools](../kubernetes/managing-node-pools.md) in your cluster. This means you can have nodes of different sizes (e.g., 2x medium, 2x large) in the same cluster, and they get labeled for your convenience. On your cluster, you will see node pools illustrated like this:
+You can create [node pools](../kubernetes/advanced/managing-node-pools.md) in your cluster. This means you can have nodes of different sizes (e.g., 2x medium, 2x large) in the same cluster, and they get labeled for your convenience. On your cluster, you will see node pools illustrated like this:
 
 ![Node pools](../kubernetes/images/node-pools-section.png)
 

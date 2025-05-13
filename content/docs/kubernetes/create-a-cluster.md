@@ -18,7 +18,7 @@ Running GPU workloads (for example: TensorFlow, PyTorch, Real-time Inference) on
 
 :::tip
 
-For details on creating and configuring a GPU Cluster check out the [GPU Clusters page](../kubernetes/advanced/installing-gpu-operator.md)
+For details on creating and configuring a GPU Cluster check out the [GPU Clusters page](../kubernetes/advanced/gpu-config.md)
 
 :::
 
