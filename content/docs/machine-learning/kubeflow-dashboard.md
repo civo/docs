@@ -8,6 +8,10 @@ description: Learn the components of Civo's machine learning Kubeflow cluster da
   <title>Kubeflow cluster dashboard | Civo Documentation</title>
 </head>
 
+## ⚠️ Deprecated Product Alert
+
+**This managed product is deprecated and will be removed in the future.** Please consider alternatives.
+
 ## Logging in to your Kubeflow cluster
 
 Once your cluster is running, you will need to authenticate yourself to access the cluster dashboard. The login credentials to use are the same ones you use to sign in to Civo.
