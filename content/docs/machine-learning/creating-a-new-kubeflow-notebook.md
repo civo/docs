@@ -10,7 +10,7 @@ description: Creating a new notebook in Civo's machine learning Kubeflow service
 
 ## ⚠️ Deprecated Product Alert
 
-**This managed product is deprecated and will be removed in the future.** Please consider alternatives.
+**This managed product is deprecated and will be removed in the future.** Alternative method coming soon.
 
 ## Overview
 

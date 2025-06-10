@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 ## ⚠️ Deprecated Product Alert
 
-**This managed product is deprecated and will be removed in the future.** Please consider alternatives.
+**This managed product is deprecated and will be removed in the future.** Alternative method coming soon.
 
 ## Overview
 

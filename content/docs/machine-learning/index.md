@@ -14,7 +14,7 @@ The Civo machine learning service leverages Kubeflow and other Civo services to 
 
 ## ⚠️ Deprecated Product Alert
 
-**This managed product is deprecated and will be removed in the future.** Please consider alternatives.
+**This managed product is deprecated and will be removed in the future.** Alternative method coming soon.
 
 ### What is Kubeflow?
 

@@ -10,7 +10,7 @@ description: Learn the components of Civo's machine learning Kubeflow cluster da
 
 ## ⚠️ Deprecated Product Alert
 
-**This managed product is deprecated and will be removed in the future.** Please consider alternatives.
+**This managed product is deprecated and will be removed in the future.** Alternative method coming soon.
 
 ## Logging in to your Kubeflow cluster
 
