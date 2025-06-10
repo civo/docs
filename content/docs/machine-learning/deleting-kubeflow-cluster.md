@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
   <title>Deleting a Kubeflow cluster | Civo Documentation</title>
 </head>
 
+## ⚠️ Deprecated Product Alert
+
+**This managed product is deprecated and will be removed in the future.** Alternative method coming soon.
+
 ## Overview
 
 Kubeflow clusters created on Civo will remain in your account until you delete them. Clusters in your account are [billed hourly](../account/billing.md) based on their size, and count towards your [account quota](../account/quota.md). If you no longer need a Kubeflow cluster, you can delete it in the following ways.

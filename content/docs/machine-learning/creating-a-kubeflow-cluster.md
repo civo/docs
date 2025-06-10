@@ -15,6 +15,10 @@ Civo machine learning clusters are [billed hourly](../account/billing.md) and co
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## ⚠️ Deprecated Product Alert
+
+**This managed product is deprecated and will be removed in the future.** Alternative method coming soon.
+
 ## Overview
 
 Creating a managed Kubeflow Cluster on Civo requires a few specified parameters, whether you are starting the Kubeflow cluster through the web dashboard or using one of our API tools. The documentation below covers the main options available on initial Kubeflow cluster launch.

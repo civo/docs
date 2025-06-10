@@ -8,6 +8,12 @@ description: Creating a new notebook in Civo's machine learning Kubeflow service
   <title>Creating a new Kubeflow notebook | Civo Documentation</title>
 </head>
 
+## ⚠️ Deprecated Product Alert
+
+**This managed product is deprecated and will be removed in the future.** Alternative method coming soon.
+
+## Overview
+
 To create a new Kubeflow notebook, you will need to provide a name, select a development environment, and make a few architectural decisions. All of these are explained below.
 
 ## Notebook options

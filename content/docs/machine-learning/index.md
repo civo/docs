@@ -8,9 +8,13 @@ description: Introduction to the Civo machine learning service and managed Kubef
   <title>Civo Machine Learning | Civo Documentation</title>
 </head>
 
-### Kubeflow on Civo
+## Kubeflow on Civo
 
 The Civo machine learning service leverages Kubeflow and other Civo services to provide an integrated, managed service to manage machine learning experiments.
+
+## ⚠️ Deprecated Product Alert
+
+**This managed product is deprecated and will be removed in the future.** Alternative method coming soon.
 
 ### What is Kubeflow?
 
