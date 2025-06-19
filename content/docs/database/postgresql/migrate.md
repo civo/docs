@@ -17,7 +17,7 @@ Migrating a PostgreSQL database to Civo involves careful planning to ensure a se
 ## Prerequisites
 
 - A Civo Postgres database instance should already be in place with connection details on hand. To create a new database you can follow our getting started guide.
-- Confirm the availability of the `pg_dump` utility on your system for database copying.
+- Confirm the availability of the `pg_dump` utility on your system for database copying. (https://www.postgresql.org/docs/current/app-pgdump.html)
 
 ### Details Needed for Migration
 
@@ -37,7 +37,7 @@ When transferring a database using <code>pg_dump</code> and <code>pg_restore</co
 
 While PostgreSQL is generally backward compatible, meaning you can restore a dump from an older version to a newer version, it's recommended to minimize the version gap. This helps avoid potential issues related to changes in data types, syntax, and features between versions, ensuring a more reliable and hassle-free database transfer process.
 
-You can check the PostgreSQL version of your Civo database on your [Civo Dashboard](https://dashboard.civo.com/).
+You can check the PostgreSQL version of your Civo database on your [Civo Dashboard](https://dashboard.civo.com/databases).
 
 ## PostgreSQL Database Migration Steps
 
