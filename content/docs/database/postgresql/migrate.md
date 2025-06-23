@@ -15,10 +15,12 @@ Migrating a PostgreSQL database to Civo involves careful planning to ensure a se
 - Choose a migration time that minimizes downtime and has the least impact on business operations, considering the data volume and migration duration.
 
 ## Prerequisites
-- A Civo MySQL database instance should already be in place with connection details on hand. To create a new database you can follow our getting started guide. 
-- Confirm the availability of the `mysqldump` utility on your system for database copying.
+
+- A Civo Postgres database instance should already be in place with connection details on hand. To create a new database you can follow our getting started guide.
+- Confirm the availability of the `pg_dump` utility on your system for database copying. (https://www.postgresql.org/docs/current/app-pgdump.html)
 
 ### Details Needed for Migration
+
 - Source PostgreSQL host IP address or DNS FQDN.
 - Source PostgreSQL username and password.
 - Civo database IP address or DNS FQDN.
@@ -26,15 +28,16 @@ Migrating a PostgreSQL database to Civo involves careful planning to ensure a se
 - Database name(s) to migrate.
 
 ### If External Connections Are Prohibited
+
 If the source PostgreSQL server does not allow external connections, you'll need to transfer the database backup to a host that can connect to the Civo database.
 
 ### PostgreSQL Version Compatibility Considerations
 
-When transferring a database using <code>pg_dump</code> and <code>pg_restore</code> in PostgreSQL, version compatibility is a crucial consideration. Both utilities should ideally be the same or very close in version to ensure a smooth transition. 
+When transferring a database using <code>pg_dump</code> and <code>pg_restore</code> in PostgreSQL, version compatibility is a crucial consideration. Both utilities should ideally be the same or very close in version to ensure a smooth transition.
 
-While PostgreSQL is generally backward compatible, meaning you can restore a dump from an older version to a newer version, it's recommended to minimize the version gap. This helps avoid potential issues related to changes in data types, syntax, and features between versions, ensuring a more reliable and hassle-free database transfer process. 
+While PostgreSQL is generally backward compatible, meaning you can restore a dump from an older version to a newer version, it's recommended to minimize the version gap. This helps avoid potential issues related to changes in data types, syntax, and features between versions, ensuring a more reliable and hassle-free database transfer process.
 
-You can check the PostgreSQL version of your Civo database on your [Civo Dashboard](https://dashboard.civo.com/). 
+You can check the PostgreSQL version of your Civo database on your [Civo Dashboard](https://dashboard.civo.com/databases).
 
 ## PostgreSQL Database Migration Steps
 
@@ -46,7 +49,7 @@ You can check the PostgreSQL version of your Civo database on your [Civo Dashboa
 pg_dump -C -U [user] [database_name] -f [dump_file].sql
 ```
 
--  To backup all databases, use `pg_dumpall`:
+- To backup all databases, use `pg_dumpall`:
 
 ```bash
 pg_dumpall -C -U [user] -f [dump_file].sql
@@ -97,6 +100,7 @@ psql -h 74.220.31.116 -U root productiondb < backup.sql
 ### Data Integrity and Consistency
 
 After the database restoration process, it's essential to verify that all the data has been migrated correctly. This can involve:
+
 - Checking the counts and consistency of records in tables.
 - Running integrity checks or using built-in database validation tools.
 - Comparing data samples between the old and new databases.
@@ -104,8 +108,9 @@ After the database restoration process, it's essential to verify that all the da
 ### Update Application Configurations
 
 Applications that were connected to the old database instance will need to be updated to connect to the new database on Civo. This typically involves:
+
 - Updating the database connection strings in application configuration files or environment variables.
 - Ensuring that any user accounts and permissions required by the applications are correctly set up on the new Civo database.
 - Testing the application to ensure it can connect to and interact with the new database without issues.
 
-By following these detailed steps, your MySQL database migration to Civo should be executed smoothly with data integrity preserved.
+By following these detailed steps, your Postgres database migration to Civo should be executed smoothly with data integrity preserved.
