@@ -74,7 +74,7 @@ Read more about K3s [here](https://www.civo.com/blog/understanding-k3s).
 
 K3s is a fully-compatible and full-featured Kubernetes. Its lighter resource overhead makes it ideal for smaller deployments, resource-limited settings, edge computing, or IoT, but given its simplified and opinionated setup, as well as lower resource consumption, it is a cost-effective choice for any number scenarios.
 
-Upstream Kubernetes (K8s) is requires a cluster administrator to configure and manage a larger set of components in comparison to K3s. Traditionally, K8s is seen as suited for large-scale, intricate workloads needing high scalability, performance, and availability, which can all be configured by the administrator.
+Upstream Kubernetes (K8s) requires a cluster administrator to configure and manage a larger set of components in comparison to K3s. Traditionally, K8s is seen as suited for large-scale, intricate workloads needing high scalability, performance, and availability, which can all be configured by the administrator.
 
 It's crucial to assess your specific needs, resources, and objectives, as both K3s and K8s have particular advantages, to make an informed choice.
 
