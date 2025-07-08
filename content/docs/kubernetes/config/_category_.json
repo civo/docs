@@ -1,0 +1,8 @@
+{
+  "label": "Storage and Network Configurations",
+  "link": {
+    "type": "generated-index",
+    "slug": "docs/kubernetes/config",
+    "description": "Review the pages in this section to walk through additional configuration information for Civo Kubernetes."
+  }
+}
