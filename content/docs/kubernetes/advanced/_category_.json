@@ -1,0 +1,8 @@
+{
+  "label": "Advanced Kubernetes Configurations",
+  "link": {
+    "type": "generated-index",
+    "slug": "docs/kubernetes/advanced",
+    "description": "Review information on advanced features for Civo Kubernetes. Learn more about managing node pools and working with GPUs."
+  }
+}
