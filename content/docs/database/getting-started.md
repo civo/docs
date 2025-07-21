@@ -60,6 +60,12 @@ In the example above, Civo Database gives you 2 options between processing openi
 
 Currently, we offer two different types of database software: MySQL and PostgreSQL.
 
+Versions available are
+- for MySQL: 8
+- for PostgreSQL: 14, 15, 16, 17
+
+Please notice that a PostgreSQL database with version 14 cannot co-exist in the same Network of a database with different version.
+
 ![Database software](./images/database-software.jpg)
 
 ### 5. Size and pricing
