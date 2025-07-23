@@ -76,7 +76,7 @@ The numbered sections give you options for the cluster details, complete the req
 
   :::note
 
-  Flannel and Talos Linux support are being deprecated.
+  Talos Linux support is being deprecated.
 
   :::
 
