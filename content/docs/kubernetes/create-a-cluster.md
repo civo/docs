@@ -47,32 +47,38 @@ From your Civo dashboard, navigate to the [Kubernetes cluster creation page](htt
 
 ### Step 3 - Provide your cluster details
 
-The numbered sections give you options for the cluster details, complete the required information to create your cluster.
+The sections on this page give you options for the cluster you are about to create. Complete the required fields to create your cluster.
 
-- **1. Name** Provide a name for your cluster. _No spaces allowed._
+- **Name** 
 
-- **2. Number of nodes**
+    Provide a name for your cluster. _No spaces allowed._
+
+- **Kubernetes version** 
+
+    Select the desired Kubernetes version.
+
+- **Number of nodes**
 
     Kubernetes clusters on Civo can have multiple node pools - this is the number you want to launch in the cluster's initial node pool. This can be scaled up and down once the cluster is running, and does not include the control plane node, which is handled by Civo.
 
-- **3. Network**
+- **Network**
 
     If you have created custom networks in this region, choose one of them here. Custom networks allow you to define private networking within a region, which allows you to prevent some resources from being routable to the public internet. Civo Kubernetes clusters always have a public IP address.
 
-- **4. Firewall**
+- **Firewall**
 
     If you have configured existing firewalls in this region, select one of them for this cluster, or create a new firewall and specify which port(s) to open. Firewall rules can be customised after creation.
 
-- **5. Node size**
+- **Node size**
 
     The specifications for the machines in the initial node pool. These are priced per node, per hour. The "Hourly/Monthly" slider allows you to estimate the cost per month or per hour of the cluster running. For more information, see the [Billing section](../account/billing.md).
 
   - Sizes or configurations may not be available due to quota on your account or the number of nodes you have chosen in section 2 above
   - Depending on the applications you want to run on your cluster, you may need to select larger nodes.
 
-- **6. Advanced options**
+- **Advanced options**
 
-  This section allows you to optionally configure advanced options. Including the Container Networking Interface (CNI) and Cluster type.
+  This section allows you to optionally configure advanced options, including the Container Networking Interface (CNI) and cluster type.
 
   :::note
 
@@ -80,7 +86,7 @@ The numbered sections give you options for the cluster details, complete the req
 
   :::
 
-- **7. Marketplace**
+- **Marketplace**
 
   Use Marketplace to remove applications and prevent them from being installed by default, or add applications to start alongside your cluster.
 
