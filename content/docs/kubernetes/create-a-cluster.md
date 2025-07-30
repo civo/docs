@@ -47,11 +47,15 @@ From your Civo dashboard, navigate to the [Kubernetes cluster creation page](htt
 
 ### Step 3 - Provide your cluster details
 
-The numbered sections give you options for the cluster details, complete the required information to create your cluster.
+The sections on this page give you options for the cluster you are about to create. Complete the required fields to create your cluster.
 
-- **Name** Provide a name for your cluster. _No spaces allowed._
+- **Name** 
 
-- **Kubernetes version** Select the desired Kubernetes version.
+    Provide a name for your cluster. _No spaces allowed._
+
+- **Kubernetes version** 
+
+    Select the desired Kubernetes version.
 
 - **Number of nodes**
 
@@ -74,7 +78,7 @@ The numbered sections give you options for the cluster details, complete the req
 
 - **Advanced options**
 
-  This section allows you to optionally configure advanced options. Including the Container Networking Interface (CNI) and Cluster type.
+  This section allows you to optionally configure advanced options, including the Container Networking Interface (CNI) and cluster type.
 
   :::note
 
