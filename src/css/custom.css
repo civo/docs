@@ -91,6 +91,10 @@ html[data-theme='dark'] {
   background-color: #D1CCBE; /* Light mode sidebar background */
 }
  
+.menu__list-item-collapsible--active {
+  background: none;
+}
+
 .menu__link--sublist.menu__link--active{
   color: #000000;
 }
@@ -125,13 +129,41 @@ html[data-theme='dark'] {
   color: #000000 !important;
 }
 
+.DocSearch-Hit-source {
+  background: #D1CCBE !important;
+}
+
+.DocSearch-Hit-icon {
+  color: #000000 !important;
+}
+
+.DocSearch-Hit[aria-selected=true] .DocSearch-Hit-action, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-icon, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-path, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-text, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-title, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-Tree, .DocSearch-Hit[aria-selected=true] mark {
+  color: #000000 !important;
+}
+
+.DocSearch-Hit a {
+  background: #E8E5DF !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+.DocSearch-Hit a:hover {
+  background: #00FF6F !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+.DocSearch-Hit-path {
+  color: #7a808b !important;
+}
+
 .theme-layout-footer-header {
   padding: 3.125rem 0 0 0 !important;
 }
 
 .theme-layout-footer-container {
   display: flex;
-  flex-direction: row;
+  
   justify-content: space-between;
   align-items: baseline;
 }
@@ -231,11 +263,20 @@ html[data-theme='dark'] .navbar-github-link:before {
   .footer__col {
     flex-basis: 0;
   }
+
+  .theme-layout-footer-container {
+    flex-direction: row;
+  }
 }
 
 /* Mobile Styles */
 @media screen and (max-width: 426px) {
   .footer__col {
     flex-basis: 50%;
+  }
+
+  .theme-layout-footer-container {
+    flex-direction: column;
+    gap: 20px;
   }
 }
