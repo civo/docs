@@ -236,7 +236,7 @@ const config = {
           },
         ],
         // readonly key, safe for source code and browsers
-        apiKey: 'rgx1Psjo2NGd4I3HkpMgyae7se74Jtso',
+        apiKey: 'Q6vQFYOPwD6vSxcbeEqDY3gYE4ezPH1c',
       },
       contextualSearch: true,
     },
