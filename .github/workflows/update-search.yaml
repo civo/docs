@@ -1,0 +1,24 @@
+---
+name: Update the docs search index
+
+on:
+  schedule:
+    - cron: "0 3 * * *"  # Every day at 3AM
+  workflow_dispatch:
+
+jobs:
+  update-search-index:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v4.2.1
+
+      - name: Run the crawler
+        uses: celsiusnarhwal/typesense-scraper@v2.0.1
+        with:
+          api-key: ${{ secrets.TYPESENSE_ADMIN_KEY }}
+          host: typesense.konstruct.io
+          port: 443
+          protocol: https
+          config: typesense.docsearch.config.json
