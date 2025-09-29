@@ -70,16 +70,20 @@ const config = {
                 to: 'https://www.civo.com/about',
               },
               {
+                label: 'Pricing',
+                to: 'https://www.civo.com/pricing',
+              },
+              {
                 label: 'Case studies',
                 to: 'https://www.civo.com/case-studies',
               },
               {
-                label: 'White papers',
-                to: 'https://www.civo.com/white-papers',
+                label: 'Navigate Events',
+                to: 'https://www.civo.com/navigate',
               },
               {
-                label: 'Legal',
-                to: 'https://www.civo.com/legal',
+                label: 'White papers',
+                to: 'https://www.civo.com/white-papers',
               },
               {
                 label: 'Newsroom',
@@ -93,10 +97,14 @@ const config = {
                 label: 'Careers',
                 to: 'https://careers.civo.com/',
               },
+              {
+                label: 'Tech Junction',
+                to: 'https://www.civo.com/tech-junction',
+              },
             ],
           },
           {
-            title: 'Products',
+            title: 'Public Cloud',
             items: [
               {
                 label: 'Kubernetes',
@@ -107,90 +115,119 @@ const config = {
                 to: 'https://www.civo.com/compute',
               },
               {
-                label: 'Pricing',
-                to: 'https://www.civo.com/pricing',
+                label: 'Databases',
+                to: 'https://www.civo.com/databases',
               },
               {
                 label: 'Load balancers',
                 to: 'https://www.civo.com/load-balancers',
               },
-            ],
-          },
-          {
-            title: 'Solutions',
-            items: [
               {
-                label: 'Startup solutions',
-                to: 'https://www.civo.com/startups',
-              },
-              {
-                label: 'Small and mid-market',
-                to: 'https://www.civo.com/small-mid-market',
-              },
-              {
-                label: 'SaaS companies',
-                to: 'https://www.civo.com/saas',
-              },
-              {
-                label: 'CI/CD and testing',
-                to: 'https://www.civo.com/ci-testing',
-              },
-              {
-                label: 'Move to Kubernetes',
-                to: 'https://www.civo.com/move-to-kubernetes',
-              },
-              {
-                label: 'Consultancy',
-                to: 'https://www.civo.com/kubernetes-consultancy',
+                label: 'Block storage',
+                to: 'https://www.civo.com/features/block-storage',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Private Cloud',
             items: [
               {
-                label: 'Docs',
-                to: 'https://www.civo.com/docs',
+                label: 'CivoStack Enterprise',
+                to: 'https://www.civo.com/civostack-enterprise',
               },
               {
-                label: 'Tutorials',
-                to: 'https://www.civo.com/learn',
+                label: 'FlexCore',
+                to: 'https://www.civo.com/flexcore',
               },
               {
-                label: 'API',
+                label: 'VMware for service providers',
+                to: 'https://www.civo.com/vmware-service-providers',
+              },
+              {
+                label: 'VMware alternative',
+                to: 'https://www.civo.com/vmware-alternative',
+              },
+              {
+                label: 'VMware migration tool',
+                to: 'https://www.civo.com/vmware-migration-tool',
+              },
+              {
+                label: 'UK Sovereign Cloud',
+                to: 'https://www.civo.com/uk-sovereign-cloud',
+              },
+              {
+                label: 'India Sovereign Cloud',
+                to: 'https://www.civo.com/india',
+              },
+            ],
+          },
+          {
+            title: 'CivoAI',
+            items: [
+              {
+                label: 'Cloud GPU',
+                to: 'https://www.civo.com/ai/cloud-gpu',
+              },
+              {
+                label: 'Kubernetes GPU',
+                to: 'https://www.civo.com/ai/kubernetes',
+              },
+              {
+                label: 'Compute GPU',
+                to: 'https://www.civo.com/ai/compute',
+              },
+              {
+                label: 'relaxAI',
+                to: 'https://www.relax.ai/',
+              },
+              {
+                label: 'Green GPU',
+                to: 'https://www.civo.com/carbon-neutral-gpu',
+              },
+            ],
+          },
+          {
+            title: 'Resources',
+            items: [
+              {
+                label: 'Ambassadors',
+                to: 'https://www.civo.com/ambassadors',
+              },
+              {
+                label: 'API documentation',
                 to: 'https://www.civo.com/api',
-              },
-              {
-                label: 'Academy',
-                to: 'https://www.civo.com/academy',
-              },
-              {
-                label: 'Developers',
-                to: 'https://www.civo.com/developers',
-              },
-              {
-                label: 'Meetups',
-                to: 'https://www.civo.com/meetups',
               },
               {
                 label: 'Blog',
                 to: 'https://www.civo.com/blog',
               },
               {
-                label: 'Ambassadors',
-                to: 'https://www.civo.com/ambassadors',
+                label: 'Civo Academy',
+                to: 'https://www.civo.com/academy',
               },
               {
-                label: 'KubeQuest',
-                to: 'https://www.civo.com/kubequest',
+                label: 'Civo documentation',
+                to: 'https://www.civo.com/docs',
               },
               {
-                label: 'Write for us',
-                to: 'https://www.civo.com/write-for-us',
+                label: 'Civo GitHub repo',
+                to: 'https://github.com/civo',
               },
               {
-                label: 'Developer demo program',
-                to: 'https://www.civo.com/demo-program',
+                label: 'Cloud native A to Z',
+                to: 'https://www.civo.com/blog/kubernetes-and-cloud-native-az-guide',
+              },
+              {
+                label: 'Civo Marketplace',
+                to: 'https://www.civo.com/marketplace',
+              },
+              {
+                label: 'Meetups',
+                to: 'https://www.civo.com/meetups',
+              },
+              {
+                label: 'Tutorials',
+                to: 'https://www.civo.com/learn',
               },
             ],
           },
@@ -209,10 +246,14 @@ const config = {
                 label: 'Status',
                 to: 'https://status.civo.com',
               },
+              {
+                label: 'Bug Bounty',
+                to: 'https://status.civo.com',
+              },
             ],
           },
         ],
-        copyright: `© Civo ${new Date().getFullYear()}. All rights reserved.`,
+        copyright: `© Civo ${new Date().getFullYear()}. All rights reserved. | <a href="https://www.civo.com/legal" class="copyright-link">Legal</a> | <a href="https://www.civo.com/legal/terms" class="copyright-link">Terms & Conditions</a> | <a href="https://www.civo.com/legal/privacy" class="copyright-link">Privacy Policy</a> | <a href="https://www.civo.com/legal/cookie" class="copyright-link">Cookies</a> | <a href="https://www.civo.com/legal/data-processing-agreement" class="copyright-link">Data Processing Agreement</a>`,
       },
       prism: {
         theme: lightCodeTheme,

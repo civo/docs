@@ -6,10 +6,10 @@
 
 /* You can override the default Infima variables here. */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300;1,6..72,300&display=swap');
 
 :root {
-  --ifm-font-family-base: 'Inter';
+  --ifm-font-family-base: 'Hanken Grotesk';
 
   --ifm-color-primary: #0F273E;
   --ifm-color-primary-dark: #0d1e2f;
@@ -20,30 +20,91 @@
   --ifm-color-primary-lightest: #64b8fd;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-
+  --ifm-navbar-search-input-background-color: #35a4ff;
+  --docsearch-searchbox-background: #000000 !important;
+  /*--docsearch-muted-color: #FFFFFF !important;
+  --docsearch-text-color: #FFFFFF !important;*/
+    
+  --ifm-menu-color-background-active: #000000;
+  --ifm-menu-color-background-hover: #000000;
+  --ifm-menu-color-hover: #00FF6F;
+  --ifm-menu-color-active:#00FF6F;
+  --prism-color: #393A34;
+  --prism-background-color: #D1CCBE;
+  --ifm-toc-border-color: #000;
 
   --ifm-heading-color: #163B5D;
-  --ifm-color-content: #657388;
+  --ifm-color-content: #000000;
   --ifm-color-content-secondary: #718096;
   --ifm-breadcrumb-color-active: #434D5B;
-  --ifm-link-color: #339DFF;
-  --ifm-menu-color: #657388;
+  --ifm-link-color: #000000;
+  --ifm-menu-color: #000000;
   --ifm-pagination-nav-color-hover: #239DFF;
-  --ifm-footer-color: #FFFFFF;
-  --ifm-footer-title-color: #FFFFFF;
-  --ifm-footer-background-color: #0F273E;
-  --ifm-footer-link-color: #FFFFFF;
-  --ifm-footer-link-hover-color: #ADCDEB;
+  --ifm-footer-color: #000000;
+  --ifm-footer-title-color: #000000;
+  --ifm-footer-background-color: #00FF6F;
+  --ifm-footer-link-color: #000000;
+  --ifm-footer-link-hover-color: #131212;
   --ifm-tabs-color-active-border: #239DFF;
   --ifm-tabs-color-active: #239DFF;
 
-  --ifm-hover-overlay: #F1F2F5;
+  --ifm-hover-overlay: #D1CCBE;
 
   --ifm-breadcrumb-border-radius: 0.3rem;
   --ifm-footer-padding-vertical: 4rem;
   --ifm-footer-padding-horizontal: 2rem;
   --ifm-menu-link-padding-vertical: 0.6rem;
   --ifm-menu-link-padding-horizontal: 0.6rem;
+  /* --ifm-menu-link-sublist-icon: url("data:image/svg+xml,%3Csvg%20width%3D%228%22%20height%3D%2212%22%20viewBox%3D%220%200%208%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1.68141e-08%201.41L4.94467%206L1.26284e-07%2010.59L1.52227%2012L8%206L1.52227%207.72462e-08L1.68141e-08%201.41Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E"); */
+}
+
+[data-theme='light'] .DocSearch-Button-Key {
+  color: #000000 !important;
+}
+
+.my-circle {
+  fill: #000000;
+}
+
+[data-theme='dark'] .my-circle {
+  fill: #00FF6F;
+}
+
+[data-theme='dark'] .DocSearch-Button-Key {
+  background: #FFFFFF !important;
+}
+
+[data-theme='dark'] .markdown h1:first-child {
+  color: #00FF6F;
+}
+
+[data-theme='dark'] .menu__link--active:not(.menu__link--sublist) {
+  border: 1px solid;
+}
+
+[data-theme='dark'] .menu {
+  border-right: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+[data-theme='dark'] .collapseSidebarButton_PEFL {
+  border-right: 1px solid #FFFFFF;
+}
+
+[data-theme='dark'] .theme-layout-footer-header {
+  border-top: 1px solid #FFFFFF;
+}
+
+[data-theme='dark'] .pagination-nav__link {
+  border: 1px solid #00FF6F;
+}
+
+[data-theme='dark'] .table-of-contents__link:hover, [data-theme='dark'] .table-of-contents__link:hover code, [data-theme='dark'] .table-of-contents__link--active, [data-theme='dark'] .table-of-contents__link--active code {
+  color: #00FF6F;
+}
+
+[data-theme='dark'] .table-of-contents__left-border {
+  border-left: 1px solid #00FF6F;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -57,13 +118,19 @@ html[data-theme='dark'] {
   --ifm-color-primary-lightest: #f3f3f3;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
-  --ifm-background-color: #22262D;
-  --ifm-navbar-background-color: #2D3138;
+  --ifm-background-color: #000000;
+  --ifm-navbar-background-color: #000000;
   --ifm-heading-color: #FFFFFF;
-  --ifm-breadcrumb-color-active: #DCDFE5;
+  --ifm-breadcrumb-color-active: #00FF6F;
   --ifm-menu-color: #DADDE1;
-  --ifm-footer-background-color: #2D3138;
-  --ifm-footer-link-hover-color: #239DFF;
+  --ifm-footer-background-color: #000000;
+  --ifm-footer-link-hover-color: #00FF6F;
+  --ifm-footer-title-color: #00FF6F;
+  --ifm-footer-link-color: #00FF6F;
+  --ifm-link-color: #00FF6F;
+  --ifm-footer-color: #00FF6F;
+  --docsearch-primary-color: #00FF6F;
+  --ifm-color-content: #FFFFFF !important;
 }
 
 
@@ -72,8 +139,234 @@ html[data-theme='dark'] {
   opacity: 0.6;
 }
 
+.theme-doc-sidebar-container {
+  background-color: #D1CCBE; /* Light mode sidebar background */
+}
+
+html[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: #000000; /* Light mode sidebar background */
+}
+ 
+.menu__list-item-collapsible--active {
+  background: none;
+}
+
+.menu__link--sublist.menu__link--active{
+  color: #000000;
+}
+
+html[data-theme='dark'] .menu__link--sublist.menu__link--active {
+  color: #FFFFFF;
+}
+
+[data-theme='dark'] .breadcrumbs__item--active {
+  border: 1px solid #00FF6F;
+}
+
+[data-theme='dark'] .breadcrumbs__item:not(:last-child):after {
+  opacity: 1;
+}
+
+.menu__link:hover {
+  color: #00FF6F;
+}
+
+.DocSearch-Footer {
+  background-color: #000000 !important;
+}
+
+[data-theme='dark'] .DocSearch-Footer {
+  background-color: #00FF6F !important;
+}
+
+.DocSearch-Label {
+  color: #00FF6F !important;
+}
+
+[data-theme='dark'] .DocSearch-Label {
+  color: #000000 !important;
+}
+
+.DocSearch-Commands-Key {
+  background: #00FF6F !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+[data-theme='dark'] .DocSearch-Commands-Key {
+  background: #000000 !important;
+  color: #FFFFFF !important;
+  box-shadow: none !important;
+}
+
+.DocSearch-Modal {
+  background: #D6D1C4 !important;
+}
+
+.DocSearch-Form {
+  background: #D6D1C4 !important;
+}
+
+[data-theme='dark'] .DocSearch-Modal {
+  background: #000000 !important;
+}
+
+[data-theme='dark'] .DocSearch-Form {
+  background: #000000 !important;
+  
+}
+
+.DocSearch-Help {
+  color: #000000 !important;
+}
+
+[data-theme='dark'] .DocSearch-Help {
+  color: #FFFFFF !important;
+}
+
+.DocSearch-Hit-source {
+  background: #D1CCBE !important;
+}
+
+[data-theme='dark'] .DocSearch-Hit-source {
+  background: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme='dark'] .DocSearch-Hits mark {
+  color: #FFFFFF !important;
+}
+
+[data-theme='dark'] .DocSearch-Hit-Container {
+  color: #FFFFFF !important;
+}
+
+.DocSearch-Hit-icon {
+  color: #000000 !important;
+}
+
+[data-theme='dark'] .DocSearch-Hit-icon {
+  color: #FFFFFF !important;
+}
+
+.DocSearch-Hit[aria-selected=true] .DocSearch-Hit-action, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-icon, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-path, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-text, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-title, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-Tree, .DocSearch-Hit[aria-selected=true] mark {
+  color: #000000 !important;
+}
+
+.DocSearch-Hit a {
+  background: #E8E5DF !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+[data-theme='dark'] .DocSearch-Hit a {
+  background: #333333 !important;
+  color: #FFFFFF !important;
+  box-shadow: none !important;
+}
+
+.DocSearch-Hit a:hover {
+  background: #00FF6F !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+.DocSearch-Hit-path {
+  color: #7a808b !important;
+}
+
+.theme-layout-footer-header {
+  padding: 3.125rem 0 0 0 !important;
+}
+
+.theme-layout-footer-container {
+  display: flex;
+  
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.theme-layout-footer-social {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.footer-hr-color {
+  border: none;
+  background-color: #000000; /* Set the color of the line */
+}
+
+.footer-circle {
+  border: 1px solid #000000;
+  border-radius: 50%;
+  padding: 1px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+}
+
+.footer-circle-dark {
+  border: 1px solid #00FF6F;
+  border-radius: 50%;
+  padding: 1px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+}
+
+.logo-light {
+  display: block;
+}
+
+[data-theme='dark'] .logo-light {
+  display: none;
+}
+
+.logo-dark {
+  display: none;
+}
+
+[data-theme='dark'] .logo-dark {
+  display: block;
+}
+
+.copyright-link {
+  color: #000000;
+}
+
+.clean-btn {
+ color: #FFFFFF;
+}
+
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: #3a3f47; /* Dark mode sidebar background */
+}
+
+[data-theme='dark'] .footer-hr-color {
+  background-color: #00FF6F; /* Set the color of the line */
+}
+
+[data-theme='dark'] .copyright-link {
+  color: #00FF6F;
+}
+
+.navbar {
+  background-color: #000000;
+}
+
+[data-theme='dark'] .navbar {
+  border-bottom: 1px solid #FFFFFF;
+}
+
 .navbar-github-link:before {
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+  background: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20clip-path%3D%22url(%23clip0_233_46221)%22%3E%3Cpath%20d%3D%22M12%200.296997C5.37%200.296997%200%205.67%200%2012.297C0%2017.6%203.438%2022.097%208.205%2023.682C8.805%2023.795%209.025%2023.424%209.025%2023.105C9.025%2022.82%209.015%2022.065%209.01%2021.065C5.672%2021.789%204.968%2019.455%204.968%2019.455C4.422%2018.07%203.633%2017.7%203.633%2017.7C2.546%2016.956%203.717%2016.971%203.717%2016.971C4.922%2017.055%205.555%2018.207%205.555%2018.207C6.625%2020.042%208.364%2019.512%209.05%2019.205C9.158%2018.429%209.467%2017.9%209.81%2017.6C7.145%2017.3%204.344%2016.268%204.344%2011.67C4.344%2010.36%204.809%209.29%205.579%208.45C5.444%208.147%205.039%206.927%205.684%205.274C5.684%205.274%206.689%204.952%208.984%206.504C9.944%206.237%2010.964%206.105%2011.984%206.099C13.004%206.105%2014.024%206.237%2014.984%206.504C17.264%204.952%2018.269%205.274%2018.269%205.274C18.914%206.927%2018.509%208.147%2018.389%208.45C19.154%209.29%2019.619%2010.36%2019.619%2011.67C19.619%2016.28%2016.814%2017.295%2014.144%2017.59C14.564%2017.95%2014.954%2018.686%2014.954%2019.81C14.954%2021.416%2014.939%2022.706%2014.939%2023.096C14.939%2023.411%2015.149%2023.786%2015.764%2023.666C20.565%2022.092%2024%2017.592%2024%2012.297C24%205.67%2018.627%200.296997%2012%200.296997Z%22%20fill%3D%22white%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip0_233_46221%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22white%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3C%2Fsvg%3E") no-repeat;
   content: '';
   display: flex;
   height: 24px;
@@ -122,10 +415,30 @@ html[data-theme='dark'] .navbar-github-link:before {
   text-decoration: none;
 }
 
+.light-social {
+  display: block;
+}
+
+.dark-social {
+  display: none;
+}
+
+[data-theme='dark'] .light-social {
+  display: none;
+}
+
+[data-theme='dark'] .dark-social {
+  display: block;
+}
+
 /* Tablet Styles */
 @media screen and (max-width: 996px) {
   .footer__col {
     flex-basis: 0;
+  }
+
+  .theme-layout-footer-container {
+    flex-direction: row;
   }
 }
 
@@ -133,5 +446,10 @@ html[data-theme='dark'] .navbar-github-link:before {
 @media screen and (max-width: 426px) {
   .footer__col {
     flex-basis: 50%;
+  }
+
+  .theme-layout-footer-container {
+    flex-direction: column;
+    gap: 20px;
   }
 }
