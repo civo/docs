@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
-title: Use Custom Disk Images
-description: Learn how to upload and manage your own custom disk images for Civo instances using the Civo CLI.
+title: Custom disk images
+description: Learn how to upload and manage your own custom disk images for CivoStack Enterprise private region instances using the Civo CLI.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -10,8 +10,6 @@ import TabItem from '@theme/TabItem';
 <head>
   <title>Use Custom Disk Images | Civo Documentation</title>
 </head>
-
-# Use Custom Disk Images
 
 :::note
 These features are only available on CivoStack Enterprise regions, and are made available by request
@@ -29,7 +27,7 @@ Custom disk images allow you to use your own operating system images when creati
 <Tabs groupId="create-diskimage">
 <TabItem value="cli" label="Civo CLI">
 
-You can create a new custom disk image by using the `civo diskimage create` command:
+Once the feature is enabled on your CivoStack Enterprise region, you can create a new custom disk image by using the `civo diskimage create` command:
 
 ```console
 $ civo diskimage create --name ubuntuimage \
