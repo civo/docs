@@ -77,7 +77,7 @@ As the price charged increases with instance size, consider the type of work you
 
 The base operating system image to use for the instance. Note that you can select from a number of versions of each operating system.
 
-Custom instance types are not supported on Civo at the moment.
+Custom operating system disk images can be enabled on [CivoStack Enterprise](https://www.civo.com/civostack-enterprise) regions. For more information on creating and managing custom disk images, refer to the [custom image](./custom-image.md) documentation.
 
 ### 5. Initial user
 
