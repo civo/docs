@@ -151,7 +151,6 @@ Available Commands:
   help         Help about any command
   instance     Details of Civo instances
   ip           Details of Civo reserved IPs
-  kfcluster    Manage Civo Kubeflow Clusters
   kubernetes   Details of Civo Kubernetes clusters
   loadbalancer Details of Civo Load Balancer
   network      Details of Civo networks
