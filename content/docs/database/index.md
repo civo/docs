@@ -11,7 +11,7 @@ With support for popular databases such as MySQL and PostgreSQL, automatic backu
 
 :::warning Database Version Updates
 **Important notices regarding database versions:**
-- **MySQL**: This database engine is scheduled for deprecation. Users are advised to begin planning migration to PostgreSQL.
+- **MySQL**: This database engine is scheduled for deprecation.
 - **PostgreSQL 14**: This version is scheduled for deprecation. Users should plan to migrate to newer PostgreSQL versions.
 - **PostgreSQL 17**: Currently available in beta for testing purposes. We welcome feedback from users testing this version to help us improve the service before general availability.
 :::
