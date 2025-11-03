@@ -1,260 +1,85 @@
 ---
-title: Kubernetes Load Balancers
-description: Learn how to use load balancers with your Civo Kubernetes clusters, and find out how to improve the performance and scalability of your applications.
+title: Load Balancers
+description: Learn how to create and configure load balancers to distribute traffic across your instances and improve application performance and scalability.
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 <head>
-  <title>Using Load Balancers with Civo Clusters | Civo Documentation</title>
+  <title>Creating Load Balancers | Civo Documentation</title>
 </head>
 
 ## Overview
 
-On Civo, Kubernetes cluster `LoadBalancer` objects are external to your cluster, but created and managed as part of your cluster's service definitions. In other words, you create them like other `Service` objects in Kubernetes as part of your cluster definition, but their state is handled by the Cloud Controller Manager that speaks to the Civo API. This allows you to have a service that routes traffic into your cluster externally, balancing the traffic between the nodes.
+Load balancers distribute incoming traffic across multiple instances, improving the performance and availability of your applications. You can create and configure load balancers through the Civo dashboard to route traffic to your instances with various distribution algorithms and health checking options.
 
-Civo Kubernetes load balancers are a managed implementation of the Kubernetes [External Load Balancer](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/). This means if you create a `Service` object of type `LoadBalancer` the Civo API  detects this, and on assigning the load balancer a public IP address starts to account for its usage as part of your [billing](../../account/billing.md) and [quota](../../account/quota.md).
+Load balancers are billed hourly according to the [current pricing](https://www.civo.com/pricing). Additional costs apply for each subsequent 10,000 concurrent requests you configure the load balancer to handle. Usage is tracked as part of your [billing](../../account/billing.md) and [quota](../../account/quota.md).
 
-Kubernetes load balancers, like all Civo resources, are billed hourly according to the [current pricing](https://www.civo.com/pricing). Additional costs apply for each subsequent 10,000 concurrent requests you configure the load balancer to handle.
+## Creating a Load Balancer
 
-## Creating a Kubernetes Load Balancer
-
-Being strictly a Kubernetes object, Kubernetes load balancers must be defined in a running cluster. There is no way to start a Kubernetes load balancer for a cluster from the dashboard, as they are application-specific.
-
-Defining a load balancer can be done either using `kubectl` to define a `Service` in your cluster, or by launching a Marketplace application that defines one for you. The documentation below shows the creation of a load balancer using `kubectl` as Marketplace applications configure them automatically.
-
-To define a Civo Kubernetes load balancer object, at a minimum you need to define the Service and its type as `LoadBalancer`, such as:
-
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: civo-lb-service
-spec:
-  type: LoadBalancer
-  selector:
-    app: example-app
-  ports:
-  - protocol: TCP
-    port: 5000
-    targetPort: 8443
-    name: example-app
-```
-
-This should be applied to your cluster with `kubectl apply -f loadbalancer.yaml`.
-
-As mentioned above, creating a load balancer relies on the Civo Cloud Controller Manager sending the appropriate request to the Civo API to handle the creation and configuration of the Load Balancer according to your specification. This system means that if you create any `Service` with type `LoadBalancer`, it is be picked up by the Civo API and as part of the [Load balancers listing](https://dashboard.civo.com/loadbalancers) as well as on the cluster's dashboard page in your account:
+You can create a load balancer from the dashboard to distribute traffic across your instances. Load balancers can be configured with various options detailed below.
 
 ![Kubernetes load balancer as displayed on the Civo dashboard](../images/loadbalancers-list.png)
 
-There are several available configuration options for Kubernetes load balancers, detailed below.
+## Load Balancer Configuration Options
 
-## Kubernetes Load Balancer Configuration Options
-
-The Civo load balancer specification allows optional configuration elements. These are detailed below. Configuration options for your Load Balancer are to be specified in the the appropriate block of your `LoadBalancer` service definition.
+The following configuration options are available when creating a load balancer from the dashboard:
 
 ### Algorithm
 
-The load balancing algorithm, if provided, is one of `round_robin` or `least_connections`. The default, if not provided, is `round_robin`. This is specified in a `metadata/annotation` prefixed by `kubernetes.civo.com/` as follows:
+The load balancing algorithm determines how traffic is distributed across your instances:
+- **Round Robin** (default): Requests are distributed evenly across all available instances in sequence
+- **Least Connections**: Requests are sent to the instance with the fewest active connections
 
-```yaml
-  annotations:
-    kubernetes.civo.com/loadbalancer-algorithm: least_connections
-```
+### Network
 
-or
+You can select which network the load balancer should use to communicate with your instances. Choose from available networks in your account.
 
-```yaml
-  annotations:
-    kubernetes.civo.com/loadbalancer-algorithm: round_robin
-```
+### Firewall
 
-### External Traffic Policy
+Select which firewall rules to apply to your load balancer. You can choose from existing firewalls in your account or create a new one. If no firewall is specified, the load balancer will use the default firewall configuration.
 
-The external traffic policy, if provided, is one of `Cluster` or `Local`. `Cluster`, the default, means routing of external traffic to cluster-wide endpoints and ensures evenness of the request load across . `Local` is only for HTTP traffic, and preserves the client source IP using a `X-Forwarded-For` header added to the request, with the side effect of less efficient load balancing.
 
-The specification for the external traffic policy is made through a `spec` in your Service definition:
 
-```yaml
-spec:
-  type: LoadBalancer
-  externalTrafficPolicy: Cluster
-```
+### Maximum Concurrent Requests
 
-or
-
-```yaml
-spec:
-  type: LoadBalancer
-  externalTrafficPolicy: Local
-```
-
-### Firewall ID
-
-The firewall configuration for your Load Balancer is specified in an annotation `kubernetes.civo.com/firewall-id` that takes the ID of your chosen firewall as input, such as:
-
-```yaml
-metadata:
-  annotations:
-    kubernetes.civo.com/firewall-id: 3eb6534a-4f81-4bb9-9d91-a382391f18ad
-```
-
-The firewall must be specified using its ID, rather than displayed name.
-
-If a firewall is not specified in an annotation, the Load Balancer uses the default firewall and not close any ports.
-
-:::note
-The firewall ID must be found in the same region as your cluster, otherwise the load balancer presents an error of the specified resource not being found.
-:::
-
-### Proxy Protocol
-
-Civo Load Balancers support the HAProxy [Proxy Protocol](https://www.haproxy.com/blog/use-the-proxy-protocol-to-preserve-a-clients-ip-address). Use of the Proxy Protocol allows for the preservation of client IP information to supporting services such as NginX. Not enabled by default.
-
-Supported values are `send-proxy` and `send-proxy-v2`.
-
-Proxy Protocol can be enabled with:
-
-```yaml
-metadata:
-  annotations:
-   kubernetes.civo.com/loadbalancer-enable-proxy-protocol: send-proxy
-```
-
-### Reserved IP address
-
-If you have [reserved a public IP address](https://dashboard.civo.com/reserved-ips) you can assign it to a Kubernetes load balancer to ensure public routing into a service remains constant. The annotation for your service definition is as follows:
-
-```yaml
-metadata:
-  annotations:
-    kubernetes.civo.com/ipv4-address: "value of reserved IP address"
-```
-
-:::tip
-You can update any of the configuration options detailed above in your service definition and re-apply it to your cluster without having to remove and re-create the load balancer.
-:::
-
-For more information on how to preserve Source IP when using an Ingress Controller, [check this tutorial](https://www.civo.com/learn/how-preserve-source-ip-ingress-controller)
-
-### Maximum concurrent requests
-
-By default, Kubernetes load balancers are configured to handle 10,000 concurrent requests. You can increase this limit by setting the annotation `kubernetes.civo.com/max-concurrent-requests` to a value above `10000`. The annotation for your service definition is as follows:
-
-```yaml
-metadata:
-  annotations:
-      kubernetes.civo.com/max-concurrent-requests: "20000"
-```
+By default, load balancers are configured to handle 10,000 concurrent requests. You can increase this limit by entering a value above 10,000 in the dashboard. An additional charge is levied for each 10,000 requests above the default limit.
 
 :::warning
-If you update the maximum concurrent requests annotation, the load balancer enters a brief period of downtime as it rebuilds.
+Updating the maximum concurrent requests will cause a brief period of downtime as the load balancer rebuilds.
 :::
-
-An additional load balancer charge is levied for each 10,000 requests above the default limit.
 
 ## Instance Pools
-`LoadBalancer` objects can target a specific pool of Civo Instances to obtain more granularity over traffic distribution, making it easier to balance loads across instances.
 
-An example of Civo LoadBalancer with InstancePools is:
-```yaml
-apiVersion: stack.civo.com/v1alpha1
-kind: CivoLoadBalancer
-metadata:
-  name: example-instance-lb
-spec:
-  algorithm: round_robin
-  backendType: envoy
-  instancePools:
-    - protocol: http
-      # Only one method should be used at a time between tags and names
-      tags: ["api"]
-      sourcePort: 80
-      targetPort: 8081
-      healthCheck:
-        port: 8081
-        path: /healthz
-    - protocol: http
-      # Only one method should be used at a time between tags and names
-      names: ["db-1", "db-2"] 
-      sourcePort: 9443
-      targetPort: 9443
-      healthCheck:
-        port: 9443
-        path: /healthz
-  externalTrafficPolicy: Cluster
-```
+Instance pools allow you to target specific groups of instances for traffic distribution. When configuring instance pools in the dashboard, you can specify:
 
-The InstancePool configuration supports the use of both tags and instance names to identify instances in the instance pool. However, **only one method (tags or names) should be used at a time**.
+### Targeting Instances
+You can target instances using either:
+- **Tags**: Select instances that have specific tags assigned to them
+- **Names**: Directly specify instance names to include in the pool
 
-For example, targeting by tags:
+**Note**: Only use one method (tags or names) per instance pool, not both.
 
-```yaml
-tags: ["frontend"]
-```
-Or, targeting by instance names:
-
-```yaml
-names: ["app-1", "app-2"]
-```
+### Port Configuration
+For each instance pool, configure:
+- **Source Port**: The port on the load balancer that will receive incoming traffic
+- **Target Port**: The port on your instances where traffic should be forwarded
+- **Protocol**: The protocol to use (HTTP, TCP, etc.)
 
 ### Health Checks
+Configure health check settings to ensure traffic is only sent to healthy instances:
+- **Health Check Port**: The port on your instances to monitor for health status
+- **Health Check Path**: The path to check for HTTP health checks (e.g., `/healthz`)
 
-Health checks for the instances in each pool can be specified to ensure that traffic is only routed to healthy instances. The configuration of health checks for each InstancePool allows the load balancer to continuously monitor the health of each instance.
+## Viewing Load Balancer Details
 
-## Viewing details of a Kubernetes load balancer
-<Tabs groupId="list-loadbalancer">
-<TabItem value="dashboard" label="Dashboard">
+You can view the current configuration of any load balancers on the [load balancers listing page](https://dashboard.civo.com/loadbalancers). From there, you can see details such as:
 
-You can view the current configuration of any load balancers both on the [load balancers listing page](https://dashboard.civo.com/loadbalancers), as well as on the page of the cluster where the load balancer is configured:
+- Load balancer name and status
+- Algorithm being used
+- Public IP address
+- Connected backends/instances
 
-![Kubernetes load balancer as displayed on the Civo dashboard](../images/loadbalancers-list.png)
+You can view more specific details of a particular load balancer by clicking on it or using the "Actions" menu and selecting "View".
 
-You can also view more specific details of a particular load balancer by dropping down the "Actions" menu and selecting "View".
+## Deleting a Load Balancer
 
-
-</TabItem>
-<TabItem value="cli" label="Civo CLI">
-
-The CLI command for viewing load balancers is `civo loadbalancer list`.
-
-The command will show details of load balancers in the region, their algorithm, status, and more:
-
-```console
-$ civo loadbalancer list
-+--------------------------------------+------------------------------------+-------------+-------------+-----------+--------------------------+
-| ID                                   | Name                               | Algorithm   | Public IP   | State     | Backends                 |
-+--------------------------------------+------------------------------------+-------------+-------------+-----------+--------------------------+
-| 003c874e-c71c-4119-9d1c-edb39f68cb0c | kubernetes-default-civo-lb-service | round_robin | 74.220.23.6 | available | 192.168.1.4, 192.168.1.3 |
-+--------------------------------------+------------------------------------+-------------+-------------+-----------+--------------------------+
-```
-
-You can also view more specific details of a particular load balancer by running `civo loadbalancer show <load balancer name>`:
-
-```console
-$ civo loadbalancer show kubernetes-default-civo-lb-service
-+--------------------------------------+------------------------------------+-------------+---------------+-----------+--------------------------------------------------+--------------------------+
-| ID                                   | Name                               | Algorithm   | Public IP     | State     | DNS Entry                                        | Backends                 |
-+--------------------------------------+------------------------------------+-------------+---------------+-----------+--------------------------------------------------+--------------------------+
-| 003c874e-c71c-4119-9d1c-edb39f68cb0c | kubernetes-default-civo-lb-service | round_robin |  74.220.23.6  | available | 003c874e-c71c-4119-9d1c-edb39f68cb0c.lb.civo.com | 192.168.1.4, 192.168.1.3 |
-+--------------------------------------+------------------------------------+-------------+---------------+-----------+--------------------------------------------------+--------------------------+
-```
-
-:::tip
-If you wish to see load balancers in another region, you can append `--region <CODE>` to the command
-:::
-
-</TabItem>
-</Tabs>
-
-## Deleting a Kubernetes load balancer
-
-The Cloud Controller Manager (CCM) running in your cluster handles the deletion of a Civo load balancer once the accompanying Service is deleted from your cluster. You can delete the load balancer, and stop billing for the load balancer, by either deleting the service definition using the manifest file as in the example below, or by deleting the service from the cluster itself:
-
-```console
-$ kubectl delete -f loadbalancer.yaml
-service "civo-lb-service" deleted
-```
-
-The charge for the Load Balancer and additional public IP ends when the Service object is deleted.
+You can delete a load balancer from the dashboard by going to the load balancers listing page and using the "Actions" menu to select "Delete". Once deleted, billing for the load balancer and its associated public IP address will stop immediately.
