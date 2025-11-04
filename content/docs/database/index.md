@@ -9,6 +9,13 @@ description: Discover the power and scalability of Civo's managed database servi
 
 With support for popular databases such as MySQL and PostgreSQL, automatic backups, high-availability options, and 24/7 support, Civo Database offers a simplified approach to database management.
 
+:::warning Database Version Updates
+**Important notices regarding database versions:**
+- **MySQL**: This database engine is scheduled for deprecation.
+- **PostgreSQL 14**: This version is scheduled for deprecation. Users should plan to migrate to newer PostgreSQL versions.
+- **PostgreSQL 17**: Currently available in beta for testing purposes. We welcome feedback from users testing this version to help us improve the service before general availability.
+:::
+
 See how to [get started with Civo Database](getting-started.md).
 
 ### Need more information?
