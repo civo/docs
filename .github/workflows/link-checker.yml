@@ -1,0 +1,23 @@
+name: Link Checker
+
+on:
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday at midnight
+
+jobs:
+  link-check:
+    name: Check External Links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Only check external HTTP(S) links, not internal file links
+          # Internal links are already validated by Docusaurus build (test-build.yml)
+          args: --verbose --no-progress --scheme https --scheme http './content/**/*.md' './content/**/*.mdx'
+          fail: true
