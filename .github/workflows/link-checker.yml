@@ -17,5 +17,5 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress './content/**/*.md' './content/**/*.mdx'
+          args: --verbose --no-progress --remap '(\.md|\.mdx)$' './content/**/*.md' './content/**/*.mdx'
           fail: true
