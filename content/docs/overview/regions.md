@@ -39,14 +39,14 @@ You can also pass a `--region <CODE>` parameter to any CLI command to execute it
 
 ## What products are available per region?
 
-| Products         | LON1 | LON2 | FRA1 | NYC1 | PHX1 | MUM1 |
-|:-----------------|:----:|:----:|:----:|:----:|:----:|:----:|
-| CPU Kubernetes   |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
-| CPU Compute      |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
-| Object Stores    |  ✓   |  ✗   |  ✓   |  ✓   |  ✗   |  ✓   |
-| Volumes          |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
-| Machine Learning |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
-| Databases        |  ✓   |  ✗   |  ✓   |  ✓   |  ✓   |  ✓   |
-| GPU Kubernetes   |  ✓   |  ✓   |  ✗   |  ✗   |  ✗   |  ✗   |
-| GPU Compute      |  ✓   |  ✓   |  ✗   |  ✗   |  ✗   |  ✗   |
+| Products         | LON1 | FRA1 | NYC1 | PHX1 | MUM1 |
+|:-----------------|:----:|:----:|:----:|:----:|:----:|
+| CPU Kubernetes   |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
+| CPU Compute      |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
+| Object Stores    |  ✓   |  ✓   |  ✓   |  ✗   |  ✓   |
+| Volumes          |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
+| Machine Learning |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
+| Databases        |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
+| GPU Kubernetes   |  ✓   |  ✗   |  ✗   |  ✗   |  ✗   |
+| GPU Compute      |  ✓   |  ✗   |  ✗   |  ✗   |  ✗   |
 
