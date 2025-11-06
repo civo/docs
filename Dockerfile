@@ -1,4 +1,4 @@
-FROM node:18-alpine3.15 as builder
+FROM node:20-alpine3.22 as builder
 RUN apk add --no-cache git
 WORKDIR /app
 COPY package.json package-lock.json ./
