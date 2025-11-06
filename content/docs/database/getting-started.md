@@ -1,13 +1,13 @@
 ---
 sidebar_position: 2
-description: Get up and running with Civo's managed database service in no time with our comprehensive getting started guide. Start building your database with confidence today!
+description: Get up and running with Civo's managed database service in no time with our comprehensive getting-started guide. Start building your database with confidence today!
 ---
 
-# Getting started with Civo Database
+# Getting started with Civo Database (Beta)
 
 We do all the heavy lifting as our database service significantly lowers the administrative burden, allowing you to focus on developing applications.
 
-Launching a database on Civo has a few specific requirements depending on if you are using MySQL or PostgreSQL. The documentation below covers the main options available for database launch.
+Launching a database on Civo has a few specific requirements, depending on whether you are using MySQL or PostgreSQL. The documentation below covers the main options available for database launch.
 
 
 import Tabs from '@theme/Tabs';
