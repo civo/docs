@@ -15,7 +15,7 @@ Resources such as Kubernetes clusters and virtual machine instances are region-s
 
 You can select a region from the region drop-down menu at the bottom of the left-hand sidebar in your account on any page of the Civo dashboard:
 
-![Drop-down menu for selecting Civo regions](content/docs/database/images/regions2.png)
+![Drop-down menu for selecting Civo regions](content/docs/overview/images/regions2.png)
 
 ## Selecting a region on the command line
 
