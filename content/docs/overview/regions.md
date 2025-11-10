@@ -15,7 +15,7 @@ Resources such as Kubernetes clusters and virtual machine instances are region-s
 
 You can select a region from the region drop-down menu at the bottom of the left-hand sidebar in your account on any page of the Civo dashboard:
 
-![Drop-down menu for selecting Civo regions](../compute/images/region2.png)
+![Drop-down menu for selecting Civo regions](../database/images/region2.png)
 
 ## Selecting a region on the command line
 
@@ -38,15 +38,86 @@ You can also pass a `--region <CODE>` parameter to any CLI command to execute it
 :::
 
 ## What products are available per region?
-
-| Products         | LON1 | FRA1 | NYC1 | PHX1 | MUM1 |
-|:-----------------|:----:|:----:|:----:|:----:|:----:|
-| CPU Kubernetes   |  🟢   |  🟢   |  🟢   |  🟢   |  🟢   |
-| CPU Compute      |  🟢   |  🟢   |  🟢   |  🟢   |  🟢   |
-| Object Stores    |  🟢   |  🟢   |  🟢   |  🔴   |  🟢   |
-| Volumes          |  🟢   |  🟢   |  🟢   |  🟢   |  🟢   |
-| Machine Learning |  🟢   |  🟢   |  🟢   |  🟢   |  🟢   |
-| Databases        |  🟢   |  🟢   |  🟢   |  🟢   |  🟢   |
-| GPU Kubernetes   |  🟢   |  🔴   |  🔴   |  🔴   |  🔴   |
-| GPU Compute      |  🟢   |  🔴   |  🔴   |  🔴   |  🔴   |
-
+<table role="table" style="border-collapse: collapse; width: 100%; font-size: 14px;">
+  
+  <caption style="caption-side: top; text-align: left; font-weight: bold; margin-bottom: 12px;">
+    Availability of Civo Products Across Data Centers
+  </caption>
+  
+  <thead>
+    <tr style="background-color: #f3f3f3;">
+      <th scope="col" style="padding: 6px 8px; border: 1px solid #ccc; text-align: left;">Products</th>
+      <th scope="col" style="padding: 6px 8px; border: 1px solid #ccc; text-align: left;">LON1</th>
+      <th scope="col" style="padding: 6px 8px; border: 1px solid #ccc; text-align: left;">FRA1</th>
+      <th scope="col" style="padding: 6px 8px; border: 1px solid #ccc; text-align: left;">NYC1</th>
+      <th scope="col" style="padding: 6px 8px; border: 1px solid #ccc; text-align: left;">PHX1</th>
+      <th scope="col" style="padding: 6px 8px; border: 1px solid #ccc; text-align: left;">MUM1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: #ffffff;">
+      <td scope="row" style="padding: 6px 8px; border: 1px solid #ccc;">CPU Kubernetes</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+    </tr>
+    <tr style="background-color: #f7f7f7;">
+      <td scope="row" style="padding: 6px 8px; border: 1px solid #ccc;">CPU Compute</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+    </tr>
+    <tr style="background-color: #ffffff;">
+      <td scope="row" style="padding: 6px 8px; border: 1px solid #ccc;">Object Stores</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🔴 Unavailable</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+    </tr>
+    <tr style="background-color: #f7f7f7;">
+      <td scope="row" style="padding: 6px 8px; border: 1px solid #ccc;">Volumes</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+    </tr>
+    <tr style="background-color: #ffffff;">
+      <td scope="row" style="padding: 6px 8px; border: 1px solid #ccc;">Machine Learning</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+    </tr>
+    <tr style="background-color: #f7f7f7;">
+      <td scope="row" style="padding: 6px 8px; border: 1px solid #ccc;">Databases</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+    </tr>
+    <tr style="background-color: #ffffff;">
+      <td scope="row" style="padding: 6px 8px; border: 1px solid #ccc;">GPU Kubernetes</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🔴 Unavailable</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🔴 Unavailable</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🔴 Unavailable</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🔴 Unavailable</td>
+    </tr>
+    <tr style="background-color: #f7f7f7;">
+      <td scope="row" style="padding: 6px 8px; border: 1px solid #ccc;">CPU Kubernetes</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🟢 Available</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🔴 Unavailable</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🔴 Unavailable</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🔴 Unavailable</td>
+      <td style="padding: 6px 8px; border: 1px solid #ccc;">🔴 Unavailable</td>
+    </tr>
+  </tbody>
+</table>
