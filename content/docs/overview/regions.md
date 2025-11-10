@@ -38,12 +38,7 @@ You can also pass a `--region <CODE>` parameter to any CLI command to execute it
 :::
 
 ## What products are available per region?
-<table role="table" style="border-collapse: collapse; width: 100%; font-size: 14px;">
-  
-  <caption style="caption-side: top; text-align: left; font-weight: bold; margin-bottom: 12px;">
-    Availability of Civo Products Across Data Centers
-  </caption>
-  
+<table role="table" style="border-collapse: collapse; width: 100%; font-size: 14px;">  
   <thead>
     <tr style="background-color: #f3f3f3;">
       <th scope="col" style="padding: 6px 8px; border: 1px solid #ccc; text-align: left;">Products</th>
