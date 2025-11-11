@@ -7,7 +7,7 @@ description: Get up and running with Civo's managed database service in no time 
 
 We do all the heavy lifting as our database service significantly lowers the administrative burden, allowing you to focus on developing applications.
 
-Launching a database on Civo has a few specific requirements depending on if you are using MySQL or PostgreSQL. The documentation below covers the main options available for database launch.
+Launching a database on Civo has a few specific requirements. The documentation below covers the main options available for database launch. We currently support Postgres 17.
 
 
 import Tabs from '@theme/Tabs';
@@ -21,11 +21,11 @@ import TabItem from '@theme/TabItem';
 
 Begin by selecting the [database section](https://dashboard.civo.com/databases) in the left-hand navigation & click the "Launch my first database" button.
 
-![Databases screen](./images/databases-intro.jpg)
+![Databases screen](./images/databases-intro.png)
 
 This will take you to the "[Create a new database" page](https://dashboard.civo.com/databases/new):
 
-![Create a new database](./images/new-database-screen.jpg)
+![Create a new database](./images/new-database-screen.png)
 
 The numbered sections give you options for the specifications of your new database.
 
@@ -45,22 +45,22 @@ To set your database firewall, we give you 2 options:
 
 - Create a new firewall directly in the Database UI: 
 
-![Database firewall creation options](./images/database-firewalls.jpg)
+![Database firewall creation options](./images/database-firewalls.png)
 
 :::note
 By taking the second option, you acknowledge you will have to configure the firewall yourself and open all ports to all traffic until you do so.
 :::
 
-In the example above, Civo Database gives you 2 options between processing opening a network port for MySQL traffic in a firewall or security group configuration:
+In the example above, Civo Database gives you 2 options between processing opening a network port for PostgreSQL traffic in a firewall or security group configuration:
 
-- *Open port 3306 for MySQL traffic*: open port 3306 to all incoming traffic, allowing any IP address to connect to the MySQL or PostgreSQL service running on the server. This is useful when you need to allow connections from multiple IP addresses, such as when running a public-facing service.
-- *Open port 3306 for MySQL access from my IP only*: would restrict access to port 3306 to a specific IP address, by default the address you are connecting from. This is useful when you want to limit access to the MySQL or PostgreSQL services to a specific machine or network, such as for security reasons or when testing connectivity from a specific location.
+- *Open port 5432 for PostgreSQL traffic*: open port 5432 to all incoming traffic, allowing any IP address to connect to the PostgreSQL service running on the server. This is useful when you need to allow connections from multiple IP addresses, such as when running a public-facing service.
+- *Open port 5432 for PostgreSQL access from my IP only*: would restrict access to port 5432 to a specific IP address, by default the address you are connecting from. This is useful when you want to limit access to the PostgreSQL services to a specific machine or network, such as for security reasons or when testing connectivity from a specific location.
 
 ### 4. Software
 
-Currently, we offer two different types of database software: MySQL and PostgreSQL.
+Currently, we offer PostgreSQL for our managed database service, which is currently in Beta
 
-![Database software](./images/database-software.jpg)
+![Database software](./images/database-software.png)
 
 :::warning Database Version Updates
 **Important notices regarding database versions:**
@@ -73,7 +73,7 @@ Currently, we offer two different types of database software: MySQL and PostgreS
 
 Choose the RAM, CPU, and NVMe storage size needed for your new database.
 
-![Database sizing options screen](./images/database-sizes.jpg)
+![Database sizing options screen](./images/database-sizes.png)
 
 :::note Best practices
 
@@ -88,7 +88,7 @@ By choosing your RAM, CPU, and NVMe storage size, you will have full transparenc
 
 ### 6. Additional nodes
 
-Civo Database provides scalable managed PostgreSQL and MySQL databases. They are always-on, and for further peace of mind, you can choose to run additional nodes for your databases.
+Civo Database provides scalable managed PostgreSQL and PostgreSQL databases. They are always-on, and for further peace of mind, you can choose to run additional nodes for your databases.
 
 Select if you would like to add additional nodes to your database. We give you the option to add 2 or 4 additional nodes. Note that this will impact the price charged for your database.
 
@@ -107,10 +107,9 @@ There are several reasons why one might add additional nodes to a database:
 
 Finally, click on "Create database" to make the magic happen!
 
-![Create database](./images/create-database-button.jpg)
+![Create database](./images/create-database-button.png)
 
-Once your database is created, see the following links for connecting to your database:
- - [Connecting to your Civo MySQL Database](https://www.civo.com/docs/database/mysql/connect)
+Once your database is created, see the following link for connecting to your database:
  - [Connecting to your Civo PostgreSQL Database](https://www.civo.com/docs/database/postgresql/connect)
 
 ### 7. (OPTIONAL) Connecting your Database to Kubernetes
@@ -215,7 +214,7 @@ You can create a Civo database on the command-line by running the `civo database
 
 ### Creating a database on the command line with no options
 
-If you run `civo database create <DATABASE-NAME>` with no options,  it will create a one node database in the currently selected region,  with MySQL as the database engine and `g3.db.small` as the instance size.
+If you run `civo database create <DATABASE-NAME>` with no options,  it will create a one node database in the currently selected region,  with PostgreSQL as the database engine and `g3.db.small` as the instance size.
 
 ### Creating a database on the command line with options 
 
@@ -256,7 +255,7 @@ civo database show civo-db
             Size : g3.db.medium
            Nodes : 1
         Software : PostgreSQL
-        Software Version : 14
+        Software Version : 17
             Host : 74.220.17.158:0
 ```
 
@@ -381,31 +380,31 @@ data "civo_size" "small" {
 }
 
 # Query database version 
-data "civo_database_version" "mysql" {
+data "civo_database_version" "postgresql" {
   filter {
     key    = "engine"
-    values = ["mysql"]
+    values = ["postgresql"]
   }
 }
 
-resource "civo_database" "mysql_db" {
-  name    = "mysql-tf"
+resource "civo_database" "postgresql_db" {
+  name    = "postgresql-tf"
   region  = "LON1"
   size    = element(data.civo_size.small.sizes, 0).name
   nodes   = 2
-  engine  = element(data.civo_database_version.mysql.versions, 0).engine
-  version = element(data.civo_database_version.mysql.versions, 0).version
+  engine  = element(data.civo_database_version.postgresql.versions, 0).engine
+  version = element(data.civo_database_version.postgresql.versions, 0).version
 }
 ```
 
 In the code above we:
 use the data source `civo_size`  "small" block to retrieve details about the `db.small` size option. The filters ensure we target the correct size by searching for a name matching `db.small` using regex and specifying the `database` type.
 
-Similarly, the data source `civo_database_version` "mysql" block gathers information about available MySQL versions. The filter here focuses on versions with the `mysql` engine.
+Similarly, the data source `civo_database_version` "postgresql" block gathers information about available PostgreSQL versions. The filter here focuses on versions with the `postgresql` engine.
 
 Finally, with the desired size and version readily available, we define the `civo_database` resource. With three nodes and the engine and version, we extracted from the data source.
 
-At the time of writing Civo currently supports PostgreSQL and MySQL with support for Redis coming soon.
+At the time of writing Civo currently supports PostgreSQL.
 
 :::note
 when creating a database cluster you should always choose an odd number of nodes. This is because an even number doesn't guarantee stability during the leader election.
@@ -418,24 +417,24 @@ Once you have created the `main.tf` file with your chosen options, you can run `
 
 ```console 
 terraform plan
-data.civo_database_version.mysql: Reading...
+data.civo_database_version.postgresql: Reading...
 data.civo_size.small: Reading...
 data.civo_size.small: Read complete after 1s [id=terraform-20240105120002648500000001]
-data.civo_database_version.mysql: Read complete after 1s [id=terraform-20240105120002800800000002]
+data.civo_database_version.postgresql: Read complete after 1s [id=terraform-20240105120002800800000002]
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
 Terraform will perform the following actions:
 
-  # civo_database.mysql_db will be created
-  + resource "civo_database" "mysql_db" {
+  # civo_database.postgresql_db will be created
+  + resource "civo_database" "postgresql_db" {
       + dns_endpoint = (known after apply)
       + endpoint     = (known after apply)
-      + engine       = "MySQL"
+      + engine       = "PostgreSQL"
       + firewall_id  = (known after apply)
       + id           = (known after apply)
-      + name         = "mysql-tf"
+      + name         = "postgresql-tf"
       + network_id   = (known after apply)
       + nodes        = 3
       + password     = (known after apply)
@@ -444,7 +443,7 @@ Terraform will perform the following actions:
       + size         = "g3.db.small"
       + status       = (known after apply)
       + username     = (known after apply)
-      + version      = "8.0"
+      + version      = "17"
     }
 
 Plan: 1 to add, 0 to change, 0 to destroy.
@@ -460,14 +459,14 @@ Terraform used the selected providers to generate the following execution plan. 
 
 Terraform will perform the following actions:
 
-  # civo_database.mysql_db will be created
-  + resource "civo_database" "mysql_db" {
+  # civo_database.postgresql_db will be created
+  + resource "civo_database" "postgresql_db" {
       + dns_endpoint = (known after apply)
       + endpoint     = (known after apply)
-      + engine       = "MySQL"
+      + engine       = "PostgreSQL"
       + firewall_id  = (known after apply)
       + id           = (known after apply)
-      + name         = "mysql-tf"
+      + name         = "postgresql-tf"
       + network_id   = (known after apply)
       + nodes        = 3
       + password     = (known after apply)
@@ -476,7 +475,7 @@ Terraform will perform the following actions:
       + size         = "g3.db.small"
       + status       = (known after apply)
       + username     = (known after apply)
-      + version      = "8.0"
+      + version      = "17"
     }
 
 Plan: 1 to add, 0 to change, 0 to destroy.
@@ -487,35 +486,33 @@ Do you want to perform these actions?
 
   Enter a value: yes
 
-civo_database.mysql_db: Creating...
-civo_database.mysql_db: Still creating... [10s elapsed]
-civo_database.mysql_db: Still creating... [20s elapsed]
-civo_database.mysql_db: Still creating... [30s elapsed]
-civo_database.mysql_db: Still creating... [40s elapsed]
-civo_database.mysql_db: Still creating... [50s elapsed]
-civo_database.mysql_db: Still creating... [1m0s elapsed]
-civo_database.mysql_db: Still creating... [1m10s elapsed]
-civo_database.mysql_db: Still creating... [1m20s elapsed]
-civo_database.mysql_db: Still creating... [1m30s elapsed]
-civo_database.mysql_db: Still creating... [1m40s elapsed]
-civo_database.mysql_db: Still creating... [1m50s elapsed]
-civo_database.mysql_db: Still creating... [2m0s elapsed]
-civo_database.mysql_db: Still creating... [2m10s elapsed]
-civo_database.mysql_db: Still creating... [2m20s elapsed]
-civo_database.mysql_db: Still creating... [2m30s elapsed]
-civo_database.mysql_db: Still creating... [2m40s elapsed]
-civo_database.mysql_db: Still creating... [2m50s elapsed]
-civo_database.mysql_db: Still creating... [3m0s elapsed]
-civo_database.mysql_db: Still creating... [3m10s elapsed]
-civo_database.mysql_db: Still creating... [3m20s elapsed]
-civo_database.mysql_db: Still creating... [3m30s elapsed]
-civo_database.mysql_db: Creation complete after 3m40s [id=97de98fb-62dd-4fd1-a147-82a9c8f8804d]
+civo_database.postgresql_db: Creating...
+civo_database.postgresql_db: Still creating... [10s elapsed]
+civo_database.postgresql_db: Still creating... [20s elapsed]
+civo_database.postgresql_db: Still creating... [30s elapsed]
+civo_database.postgresql_db: Still creating... [40s elapsed]
+civo_database.postgresql_db: Still creating... [50s elapsed]
+civo_database.postgresql_db: Still creating... [1m0s elapsed]
+civo_database.postgresql_db: Still creating... [1m10s elapsed]
+civo_database.postgresql_db: Still creating... [1m20s elapsed]
+civo_database.postgresql_db: Still creating... [1m30s elapsed]
+civo_database.postgresql_db: Still creating... [1m40s elapsed]
+civo_database.postgresql_db: Still creating... [1m50s elapsed]
+civo_database.postgresql_db: Still creating... [2m0s elapsed]
+civo_database.postgresql_db: Still creating... [2m10s elapsed]
+civo_database.postgresql_db: Still creating... [2m20s elapsed]
+civo_database.postgresql_db: Still creating... [2m30s elapsed]
+civo_database.postgresql_db: Still creating... [2m40s elapsed]
+civo_database.postgresql_db: Still creating... [2m50s elapsed]
+civo_database.postgresql_db: Still creating... [3m0s elapsed]
+civo_database.postgresql_db: Still creating... [3m10s elapsed]
+civo_database.postgresql_db: Still creating... [3m20s elapsed]
+civo_database.postgresql_db: Still creating... [3m30s elapsed]
+civo_database.postgresql_db: Creation complete after 3m40s [id=97de98fb-62dd-4fd1-a147-82a9c8f8804d]
 
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ```
-When the creation completes, refresh your [Civo dashboard](https://dashboard.civo.com/databases) and you will see there's a new database that has been created. Click it to see more details. It will look something like this:
-
-![Database created from Terraform appears on the dashboard](images/mysql-terraform-screen.png)
+When the creation completes, refresh your [Civo dashboard](https://dashboard.civo.com/databases) and you will see there's a new database that has been created. Click it to see more details.
 
 ### (OPTIONAL) Connecting your Database to Kubernetes
 
