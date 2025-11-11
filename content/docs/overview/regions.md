@@ -15,7 +15,7 @@ Resources such as Kubernetes clusters and virtual machine instances are region-s
 
 You can select a region from the region drop-down menu at the bottom of the left-hand sidebar in your account on any page of the Civo dashboard:
 
-![Drop-down menu for selecting Civo regions](../compute/images/region-select.png)
+![Drop-down menu for selecting Civo regions](./images/regions2.png)
 
 ## Selecting a region on the command line
 
@@ -39,14 +39,12 @@ You can also pass a `--region <CODE>` parameter to any CLI command to execute it
 
 ## What products are available per region?
 
-| Products         | LON1 | FRA1 | NYC1 | PHX1 | MUM1 |
-|:-----------------|:----:|:----:|:----:|:----:|:----:|
-| CPU Kubernetes   |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
-| CPU Compute      |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
-| Object Stores    |  ✓   |  ✓   |  ✓   |  ✗   |  ✓   |
-| Volumes          |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
-| Machine Learning |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
-| Databases        |  ✓   |  ✓   |  ✓   |  ✓   |  ✓   |
-| GPU Kubernetes   |  ✓   |  ✗   |  ✗   |  ✗   |  ✗   |
-| GPU Compute      |  ✓   |  ✗   |  ✗   |  ✗   |  ✗   |
-
+| Products | LON1 | FRA1 | NYC1 | PHX1 | MUM1 |
+|----------|------|------|------|------|------|
+| CPU Kubernetes | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available |
+| GPU Kubernetes | 🟢 Available | 🔴 Unavailable | 🔴 Unavailable | 🔴 Unavailable | 🔴 Unavailable |
+| CPU Compute | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available |
+| GPU Compute | 🟢 Available | 🔴 Unavailable | 🔴 Unavailable | 🔴 Unavailable | 🔴 Unavailable |
+| Object Stores | 🟢 Available | 🟢 Available | 🟢 Available | 🔴 Unavailable | 🟢 Available |
+| Volumes | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available |
+| Databases | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available |
