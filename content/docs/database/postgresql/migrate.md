@@ -6,6 +6,7 @@ description: Migrate your PostgreSQL database to Civo with this step-by-step gui
 <head>
   <title>Migrating a PostgreSQL database to Civo | Civo Documentation</title>
 </head>
+
 Migrating a PostgreSQL database to Civo involves careful planning to ensure a seamless transition with minimal downtime. This guide outlines the steps to migrate your PostgreSQL database using the backup and restore method.
 
 ## Pre-Migration Considerations
