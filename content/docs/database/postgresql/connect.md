@@ -17,7 +17,7 @@ To retrieve your database connection details, go to:
 - Your [Civo Dashboard](https://dashboard.civo.com/)
 - Navigate to the database section in the left-hand panel:
 
-![psql database section](../images/psql-database-section.png)
+![psql database section](../images/new-database.png)
 
 - Select your database to view the connection details, including:
   - Host IP/FQDN, 
