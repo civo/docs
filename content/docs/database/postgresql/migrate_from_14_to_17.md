@@ -4,7 +4,7 @@ description: Learn how to safely migrate your Civo managed PostgreSQL 14 databas
 ---
 
 <head>
-  <title>Migrating Your Database from PostgreSQL 14 to PostgreSQL 17</title>
+  <title>Migrating Your Database from PostgreSQL 14 to PostgreSQL 17 | Civo Documentation</title>
 </head>
 
 # Migrating Your Database from PostgreSQL 14 to PostgreSQL 17
