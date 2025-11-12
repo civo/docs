@@ -1,3 +1,12 @@
+---
+title: Creating a MySQL Database Dump
+description: Learn how to create complete backups of your Civo managed MySQL database using mysqldump for backup, migration, or development purposes.
+---
+
+<head>
+  <title>Creating MySQL Database Dumps | Civo Documentation</title>
+</head>
+
 # Creating a MySQL Database Dump
 
 **Need to create a backup of your MySQL database?**  
