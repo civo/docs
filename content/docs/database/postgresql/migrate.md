@@ -1,12 +1,11 @@
 ---
-title: Migrating Your Database from PostgreSQL 14 to PostgreSQL 17
-description: Learn how to safely migrate your Civo managed PostgreSQL 14 database to PostgreSQL 17 with step‑by‑step instructions, prerequisites, and troubleshooting tips.
+title: PostgreSQL Database Migration to Civo
+description: Migrate your PostgreSQL database to Civo with this step-by-step guide. Ensure data accuracy and minimize downtime with our backup and restore method.
 ---
 
 <head>
-  <title>Migrating Your Database from PostgreSQL 14 to PostgreSQL 17</title>
+  <title>Migrating a PostgreSQL database to Civo | Civo Documentation</title>
 </head>
-
 Migrating a PostgreSQL database to Civo involves careful planning to ensure a seamless transition with minimal downtime. This guide outlines the steps to migrate your PostgreSQL database using the backup and restore method.
 
 ## Pre-Migration Considerations

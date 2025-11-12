@@ -1,3 +1,12 @@
+---
+title: Migrating Your Database from PostgreSQL 14 to PostgreSQL 17
+description: Learn how to safely migrate your Civo managed PostgreSQL 14 database to PostgreSQL 17 with step‑by‑step instructions, prerequisites, and troubleshooting tips.
+---
+
+<head>
+  <title>Migrating Your Database from PostgreSQL 14 to PostgreSQL 17</title>
+</head>
+
 # Migrating Your Database from PostgreSQL 14 to PostgreSQL 17
 
 **PostgreSQL 14 reaches end‑of‑life on 12 Nov 2026.**  
