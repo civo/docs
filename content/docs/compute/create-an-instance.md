@@ -131,10 +131,6 @@ You can create a Civo instance on the command-line by running the `civo instance
 
 You can view the instance creation options available on the Civo CLI by running:
 
-```bash
-civo instance create --help
-```
-
 :::
 
 ### Creating an instance on the command line with no options
@@ -159,43 +155,7 @@ To create an instance using Terraform, you will first need to have an initialize
 
 ### Preparing a configuration file
 
-First, create a file called `main.tf`, and add the following Terraform code to it:
-
-```terraform
-# Query small instance size
-data "civo_size" "small" {
-    filter {
-        key = "name"
-        values = ["g3.small"]
-        match_by = "re"
-    }
-
-    filter {
-        key = "type"
-        values = ["instance"]
-    }
-
-}
-
-# Query instance disk image
-data "civo_disk_image" "debian" {
-   region = "LON1"
-   filter {
-        key = "name"
-        values = ["debian-10"]
-   }
-}
-
-# Create a new instance
-resource "civo_instance" "foo" {
-    region = "LON1"
-    hostname = "foo.com"
-    size = element(data.civo_size.small.sizes, 0).name
-    disk_image = element(data.civo_disk_image.debian.diskimages, 0).id
-}
-```
-
-To explain the contents of the file and what happens when the configuration above is applied:
+First, create a file called `main.tf` and add your Terraform configuration. The configuration should include:
 
 - In the *Query small instance size* block:
   - We are using the `civo_instances_size` data source to find a list of instance sizes that match with these filters:
@@ -222,44 +182,7 @@ The civo_instance resource does support other fields too. Check out the [Terrafo
 
 Once you have created the `main.tf` file with your chosen options, you can run `terraform plan` to see what's going to be created:
 
-```console
-$ terraform plan
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
-  + create
-
-Terraform will perform the following actions:
-
-  # civo_instance.foo will be created
-  + resource "civo_instance" "foo" {
-      + cpu_cores          = (known after apply)
-      + created_at         = (known after apply)
-      + disk_gb            = (known after apply)
-      + disk_image         = "a4204155-a876-43fa-b4d6-ea2af8774560"
-      + firewall_id        = (known after apply)
-      + hostname           = "foo.com"
-      + id                 = (known after apply)
-      + initial_password   = (sensitive value)
-      + initial_user       = "civo"
-      + network_id         = (known after apply)
-      + private_ip         = (known after apply)
-      + pseudo_ip          = (known after apply)
-      + public_ip          = (known after apply)
-      + public_ip_required = "create"
-      + ram_mb             = (known after apply)
-      + region             = "LON1"
-      + size               = "g3.small"
-      + source_id          = (known after apply)
-      + source_type        = (known after apply)
-      + status             = (known after apply)
-      + template           = (known after apply)
-    }
-
-Plan: 1 to add, 0 to change, 0 to destroy.
-
-──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-
-Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
-```
+[CODE BLOCK REMOVED]
 
 As you can see, Terraform will create an instance with size set to `g3.small` and disk image set to `a42...560`. That means the data source queries are working.
 
@@ -267,57 +190,7 @@ As you can see, Terraform will create an instance with size set to `g3.small` an
 
 You can now execute the command to create the actual compute instance. Run `terraform apply` and when prompted, type `yes`:
 
-```console
-$ terraform apply
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
-  + create
-
-Terraform will perform the following actions:
-
-  # civo_instance.foo will be created
-  + resource "civo_instance" "foo" {
-      + cpu_cores          = (known after apply)
-      + created_at         = (known after apply)
-      + disk_gb            = (known after apply)
-      + disk_image         = "a4204155-a876-43fa-b4d6-ea2af8774560"
-      + firewall_id        = (known after apply)
-      + hostname           = "foo.com"
-      + id                 = (known after apply)
-      + initial_password   = (sensitive value)
-      + initial_user       = "civo"
-      + network_id         = (known after apply)
-      + private_ip         = (known after apply)
-      + pseudo_ip          = (known after apply)
-      + public_ip          = (known after apply)
-      + public_ip_required = "create"
-      + ram_mb             = (known after apply)
-      + region             = "LON1"
-      + size               = "g3.small"
-      + source_id          = (known after apply)
-      + source_type        = (known after apply)
-      + status             = (known after apply)
-      + template           = (known after apply)
-    }
-
-Plan: 1 to add, 0 to change, 0 to destroy.
-
-Do you want to perform these actions?
-  Terraform will perform the actions described above.
-  Only 'yes' will be accepted to approve.
-
-  Enter a value: yes
-
-civo_instance.foo: Creating...
-civo_instance.foo: Still creating... [10s elapsed]
-civo_instance.foo: Still creating... [20s elapsed]
-civo_instance.foo: Still creating... [30s elapsed]
-civo_instance.foo: Still creating... [40s elapsed]
-civo_instance.foo: Still creating... [50s elapsed]
-civo_instance.foo: Still creating... [1m0s elapsed]
-civo_instance.foo: Creation complete after 1m7s [id=689e385b-9b0a-4128-92b9-dae3b2ff95d3]
-
-Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
-```
+[CODE BLOCK REMOVED]
 
 When the creation completes, refresh your [Civo dashboard](https://dashboard.civo.com/instances) and you will see there's a new compute instance that has been created. Click it to see more details. It will look something like this:
 
@@ -327,144 +200,7 @@ When the creation completes, refresh your [Civo dashboard](https://dashboard.civ
 
 There will be a new file named `terraform.tfstate` in your local project directory. If you print its contents, it will look something like:
 
-```console
-$ cat terraform.tfstate
-
-{
-  "version": 4,
-  "terraform_version": "1.1.7",
-  "serial": 1,
-  "lineage": "c59a555f-fbe1-857c-7a43-eee99902c716",
-  "outputs": {},
-  "resources": [
-    {
-      "mode": "data",
-      "type": "civo_disk_image",
-      "name": "debian",
-      "provider": "provider[\"registry.terraform.io/civo/civo\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "diskimages": [
-              {
-                "id": "a4204155-a876-43fa-b4d6-ea2af8774560",
-                "label": "buster",
-                "name": "debian-10",
-                "version": "10"
-              }
-            ],
-            "filter": [
-              {
-                "all": false,
-                "key": "name",
-                "match_by": "exact",
-                "values": [
-                  "debian-10"
-                ]
-              }
-            ],
-            "id": "terraform-20220405065821786700000002",
-            "region": "LON1",
-            "sort": null
-          },
-          "sensitive_attributes": []
-        }
-      ]
-    },
-    {
-      "mode": "data",
-      "type": "civo_size",
-      "name": "small",
-      "provider": "provider[\"registry.terraform.io/civo/civo\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "filter": [
-              {
-                "all": false,
-                "key": "name",
-                "match_by": "re",
-                "values": [
-                  "g3.small"
-                ]
-              },
-              {
-                "all": false,
-                "key": "type",
-                "match_by": "exact",
-                "values": [
-                  "instance"
-                ]
-              }
-            ],
-            "id": "terraform-20220405065821738300000001",
-            "sizes": [
-              {
-                "cpu": 1,
-                "description": "Small",
-                "disk": 25,
-                "name": "g3.small",
-                "ram": 2048,
-                "selectable": true,
-                "type": "instance"
-              }
-            ],
-            "sort": null
-          },
-          "sensitive_attributes": []
-        }
-      ]
-    },
-    {
-      "mode": "managed",
-      "type": "civo_instance",
-      "name": "foo",
-      "provider": "provider[\"registry.terraform.io/civo/civo\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "cpu_cores": 1,
-            "created_at": "2022-04-05 06:58:26 +0000 UTC",
-            "disk_gb": 25,
-            "disk_image": "a4204155-a876-43fa-b4d6-ea2af8774560",
-            "firewall_id": "c9e14ae8-b8eb-4bae-a687-9da4637233da",
-            "hostname": "foo.com",
-            "id": "3ee28533-4914-491f-89ba-66b0c8fdbf8c",
-            "initial_password": "2nXfV8M5FV",
-            "initial_user": "civo",
-            "network_id": "28244c7d-b1b9-48cf-9727-aebb3493aaac",
-            "notes": "",
-            "private_ip": "192.168.1.6",
-            "public_ip": "74.220.16.89",
-            "public_ip_required": "create",
-            "ram_mb": 2048,
-            "region": "LON1",
-            "reverse_dns": "",
-            "script": "",
-            "size": "g3.small",
-            "source_id": "debian-10",
-            "source_type": "diskimage",
-            "sshkey_id": "",
-            "status": "ACTIVE",
-            "tags": null,
-            "template": null,
-            "timeouts": null
-          },
-          "sensitive_attributes": [],
-          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwfX0=",
-          "dependencies": [
-            "data.civo_disk_image.debian",
-            "data.civo_size.small"
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
+[CODE BLOCK REMOVED]
 
 This is the [Terraform State File](https://developer.hashicorp.com/terraform/language/state) which is created when the configuration is applied.
 

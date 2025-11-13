@@ -62,88 +62,21 @@ You will then be able to use the uploaded SSH key in any [instances you create](
 
 ### Preparing the configuration file
 
-Once you have configured the [Civo Terraform provider](../overview/terraform.md), you can define a an SSH key in Terraform.
+Once you have configured the [Civo Terraform provider](../overview/terraform.md), you can define an SSH key in Terraform.
 
-Create a file such as `main.tf` with the following contents:
-
-```terraform
-# Create SSH key
-resource "civo_ssh_key" "main"{
-  name = "my-public-key"
-  public_key = file("~/.ssh/id_rsa.pub")
-}
-```
-
-You will need to edit the file path to point to the public key location of the key you want to add, as well as the "name" field to your choice of reference.
+Create a file such as `main.tf` with the terraform configuration. You will need to specify the file path to point to the public key location of the key you want to add, as well as the "name" field to your choice of reference.
 
 ### Plan
 
-Now, you can run `terraform plan` command to see what's going to be created:
-
-```console
-$ terraform plan
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
-  + create
-
-Terraform will perform the following actions:
-
-  # civo_ssh_key.main will be created
-  + resource "civo_ssh_key" "main" {
-      + fingerprint = (known after apply)
-      + id          = (known after apply)
-      + name        = "my-public-key"
-      + public_key  = <<-EOT
-            (ssh key details)
-        EOT
-    }
-
-Plan: 1 to add, 0 to change, 0 to destroy.
-
-──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-
-Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
-```
-
-According to the output above, Terraform will add a SSH key in the defined Civo account, set the name to "my-public-key" with content pulled from the public key located at the `~/.ssh/id_rsa.pub` path.
+You can run the `terraform plan` command to see what's going to be created. Terraform will show that it will add an SSH key in the defined Civo account with the specified name and public key content.
 
 For more details about the `civo_ssh_key` resource, check out the [docs](https://registry.terraform.io/providers/civo/civo/latest/docs/resources/ssh_key) on the Terraform Registry site.
 
 ### Apply the configuration
 
-When you are ready to add the key to your account using Terraform, this is accomplished by running the `terraform apply` command. When Terraform asks for confirmation, type yes and hit the Enter key:
+When you are ready to add the key to your account using Terraform, run the `terraform apply` command. When Terraform asks for confirmation, type yes and hit the Enter key.
 
-```console
-$ terraform apply
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
-  + create
-
-Terraform will perform the following actions:
-
-  # civo_ssh_key.main will be created
-  + resource "civo_ssh_key" "main" {
-      + fingerprint = (known after apply)
-      + id          = (known after apply)
-      + name        = "my-public-key"
-      + public_key  = <<-EOT
-            (ssh key details)
-        EOT
-    }
-
-Plan: 1 to add, 0 to change, 0 to destroy.
-
-Do you want to perform these actions?
-  Terraform will perform the actions described above.
-  Only 'yes' will be accepted to approve.
-
-  Enter a value: yes
-
-civo_ssh_key.main: Creating...
-civo_ssh_key.main: Creation complete after 2s [id=958000bf-2014-491a-9cdd-b568ee4b8788]
-
-Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
-```
-
-Once the configuration gets successfully applied, you will be able to see the new SSH Key in your [Civo account's dashboard](https://dashboard.civo.com/ssh_keys).
+Once the configuration is successfully applied, you will be able to see the new SSH Key in your [Civo account's dashboard](https://dashboard.civo.com/ssh_keys).
 </TabItem >
 
 </Tabs>

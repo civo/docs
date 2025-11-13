@@ -27,34 +27,13 @@ The file should contain the provider information from the [Civo Terraform Provid
 
 In your editor, replace the `# Configuration options` line with `token = "<YOUR_CIVO_API_KEY>"`. The `<YOUR_CIVO_API_KEY>` block should be the [API key](../account/api-keys.md) for the account you wish to manage using Terraform.
 
-As an example, the file may look like the following
-
-```hcl
-terraform {
-  required_providers {
-    civo = {
-      source = "civo/civo"
-      version = "1.0.19"
-    }
-  }
-}
-
-provider "civo" {
-  token = "RE4wnvq3oEHD4rdjkidaBdKJRHau1ToYyGPTTgXyD90Va3nFyq"
-}
-```
-
 For the latest feature set, make sure your `version` line matches the latest version on the [Terraform Provider page](https://registry.terraform.io/providers/civo/civo/latest).
 
 Once you save the file, you can proceed to initialize a new Terraform project.
 
 ### Initialize a Terraform Project using the Civo provider
 
-In order to initialize our Terraform project, run the command below to download the Civo Terraform provider and set it up it with required files and folders:
-
-```bash
-terraform init
-```
+In order to initialize our Terraform project, run the `terraform init` command to download the Civo Terraform provider and set it up it with required files and folders.
 
 This should output a success message:
 
@@ -78,10 +57,6 @@ First, update the `version` line of the `provider.tf` file for your project to m
 
 ### Upgrade the Terraform project
 
-Second, use the Terraform CLI to initialize an upgrade to your project:
-
-```bash
-terraform init --upgrade
-```
+Second, use the Terraform CLI to initialize an upgrade to your project with the `terraform init --upgrade` command.
 
 You should see an update message confirming the provider version has changed.

@@ -34,16 +34,6 @@ Each region will have a `Default` network created automatically. When creating r
 
 You can list your currently-configured networks by calling `civo network list`. This will show the network ID, name label, region and status:
 
-```console
-$ civo network list
-+--------------------------------------+--------------+--------+---------+--------+
-| ID                                   | Label        | Region | Default | Status |
-+--------------------------------------+--------------+--------+---------+--------+
-| 95a515ea-37a1-4fca-ad03-7c7c32f59f5a | Default      | FRA1   | true    | Active |
-| ac9db91c-9689-4023-a44b-a5b562c3aa6a | demo-network | FRA1   | false   | Active |
-+--------------------------------------+--------------+--------+---------+--------+
-```
-
 </TabItem>
 </Tabs>
 
@@ -69,11 +59,6 @@ After the network is created you can create resources that share the network, an
 
 You can create a new private network using the command `civo network create network_label`:
 
-```console
-civo network create cli-demo
-Created a network called cli-demo with ID 1c93d0ca-d733-4ffe-8a31-2c0bcd565885
-```
-
 After the network is created you can create resources that share the network, and can route to each other internally. You will be able to choose the network in the [instance creation](../compute/create-an-instance.md) or [cluster creation](../kubernetes/create-a-cluster.md) process.
 
 </TabItem>
@@ -86,15 +71,6 @@ Once you have configured the [Civo Terraform provider](../overview/terraform.md)
 
 The configuration for creating a new network in Terraform is defined by
 
-```terraform
-# Create a network
-resource "civo_network" "custom_net" {
-    region = "LON1"
-    label = "my-network"
-}
-```
-
-
 This uses the [civo_network](https://registry.terraform.io/providers/civo/civo/latest/docs/resources/network) resource to create a new network, in this case with the label `my-network` which will be visible in your account dashboard. This network can then be referred to as `civo_network.custom_net` in other Terraform resources, if needed. For example, you can [create an instance](../compute/create-an-instance.md) or [create a new firewall](../networking/firewalls.md) in a particular network.
 
 If you save the above configuration in a file called `main.tf`, you will be able to apply this configuration to your account.
@@ -102,49 +78,9 @@ If you save the above configuration in a file called `main.tf`, you will be able
 
 With the above configuration saved, you can run `terraform plan` to see the resources to be created:
 
-```console
-$ terraform plan
-Terraform used the selected providers to generate the following execution plan. Resource actions
-are indicated with the following symbols:
-  + create
-
-Terraform will perform the following actions:
-
-  # civo_network.custom_net will be created
-  + resource "civo_network" "my-network" {
-      + region               = "LON1"
-      + id                   = (known after apply)
-      + name                 = "my-network"
-      + network_id           = (known after apply)
-    }
-```
-
 ### Apply the configuration
 
 To apply the configuration and allow Terraform to create the resources, run `terraform apply` and type `yes` when asked for confirmation:
-
-```console
-$ terraform apply
-Terraform used the selected providers to generate the following execution plan. Resource actions
-are indicated with the following symbols:
-  + create
-
-  # civo_network.custom_net will be created
-  + resource "civo_network" "custom_net" {
-      + default = (known after apply)
-      + id      = (known after apply)
-      + label   = "my-network"
-      + name    = (known after apply)
-    }
-Plan: 1 to add, 0 to change, 0 to destroy.
-
-Do you want to perform these actions?
-  Terraform will perform the actions described above.
-  Only 'yes' will be accepted to approve.
-
-  Enter a value: yes
-(...)
-```
 
 When the creation completes, refresh your Civo web dashboard. You should see the new network on the [Networks page](https://dashboard.civo.com/networks).
 </TabItem>
@@ -174,12 +110,6 @@ You will need to input the name of the network to delete as a confirmation. Once
 <TabItem value="cli" label="Civo CLI">
 
 Network deletion is done by calling `civo network remove network_label` or `civo network remove network_id`:
-
-```console
-$ civo network rm cli-demo
-Warning: Are you sure you want to delete the cli-demo network (y/N) ? y
-The network (cli-demo) has been deleted
-```
 
 :::tip
 For scripting use, you can add a `-y` flag to Civo CLI commands which usually require confirmation. This will assume you will answer "yes" to any prompt.

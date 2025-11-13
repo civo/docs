@@ -9,7 +9,6 @@ We do all the heavy lifting as our database service significantly lowers the adm
 
 Launching a database on Civo has a few specific requirements. The documentation below covers the main options available for database launch. We currently support Postgres 17.
 
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -120,89 +119,16 @@ Once your database is created, see the following link for connecting to your dat
 To securely store your database credentials, create a Kubernetes secret.
 
 Create a YAML file for the secret:
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: db-credentials
-type: Opaque
-data:
-  username: <base64_encoded_username>
-  password: <base64_encoded_password>
-  hostname: <base64_encoded_hostname>
-  port: <base64_encoded_port>
-  dbname: <base64_encoded_dbname>
-```
-
 > NOTE: Replace the placeholders with your actual credentials encoded in base64. You can encode your credentials using `echo -n 'your_value' | base64`
 
 Apply the secret to your cluster:
-```bash
-kubectl apply -f db-credentials.yaml
-```
-
 **Configure Your Application to Use the Database**
 Now, you need to update your Kubernetes deployment or pod configuration to use the database credentials stored in the secret.
 
 Modify your deployment YAML file to include the environment variables:
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: your-app
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: your-app
-  template:
-    metadata:
-      labels:
-        app: your-app
-    spec:
-      containers:
-        - name: your-container
-          image: your-image
-          env:
-            - name: DB_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: db-credentials
-                  key: username
-            - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: db-credentials
-                  key: password
-            - name: DB_HOSTNAME
-              valueFrom:
-                secretKeyRef:
-                  name: db-credentials
-                  key: hostname
-            - name: DB_PORT
-              valueFrom:
-                secretKeyRef:
-                  name: db-credentials
-                  key: port
-            - name: DB_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: db-credentials
-                  key: dbname
-```
-
 Apply the updated deployment to your cluster:
-```bash
-kubectl apply -f your-deployment.yaml
-```
-
 After deploying your application, ensure that it can connect to the managed database. You can check the logs of your application pods to verify the connection.
-```bash
-kubectl logs -l app=your-app
-```
-
 Look for any error messages related to database connectivity. If everything is configured correctly, your application should be able to communicate with the managed database.
-
 
 </TabItem>
 
@@ -220,20 +146,13 @@ If you run `civo database create <DATABASE-NAME>` with no options,  it will crea
 
 The CLI allows you to specify a number of options, from the size of the cluster to the firewall rules, version , type of database and more. A full list of options can be found by running `civo database create --help`. 
 
-
 As an example, the following command will create a one node PostgreSQL database cluster called "civo-db" of size `g3.db.medium` , with a custom firewall rule allowing access through 5432, in the LON1 region. 
 
 `civo database create civo-db --firewall-rules "5432" --region LON1 --size g3.db.medium` 
 
 ```console 
 Database (civo-db) with ID 02d46ed0-f1eb-437c-9751-bbf9c1f32f91 has been created
-```
-
-### Retrieving your Connection Details from the command line 
-
-Once running, you can can retrieve your database connection details through the CLI by running `civo database credential [database_name]`.
-
-```console
+console
 civo db credential civo-db
 
       ID : 02d46ed0-f1eb-437c-9751-bbf9c1f32f91
@@ -241,13 +160,7 @@ civo db credential civo-db
     Host : 74.220.17.158:0
     Username : civo
     Password : <password>
-```
-
-### Viewing Database information on Civo CLI 
-
-You can get a nicely-formatted information about your database by running the `civo database show [database_name]`.
-
-```bash
+bash
 civo database show civo-db
               ID : 02d46ed0-f1eb-437c-9751-bbf9c1f32f91
             Name : civo-db
@@ -257,21 +170,7 @@ civo database show civo-db
         Software : PostgreSQL
         Software Version : 17
             Host : 74.220.17.158:0
-```
-
-:::note
-You will need to have set the correct [Civo region](../overview/regions.md) for where the database was created when you [set up Civo CLI](../overview/civo-cli.md), or specify it in the command with `--region` to be able to view the cluster information.
-:::
-
-### (OPTIONAL) Connecting your Database to Kubernetes
-
-> PREREQUISITE: In order to proceed, you must have your Database connection details in order to proceed (e.g. hostname, port, database name, username, password)
-
-**Create a Secret in Kubernetes for Database Credentials:**
-To securely store your database credentials, create a Kubernetes secret.
-
-Create a YAML file for the secret:
-```yaml
+yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -283,20 +182,9 @@ data:
   hostname: <base64_encoded_hostname>
   port: <base64_encoded_port>
   dbname: <base64_encoded_dbname>
-```
-
-> NOTE: Replace the placeholders with your actual credentials encoded in base64. You can encode your credentials using `echo -n 'your_value' | base64`
-
-Apply the secret to your cluster:
-```bash
+bash
 kubectl apply -f db-credentials.yaml
-```
-
-**Configure Your Application to Use the Database**
-Now, you need to update your Kubernetes deployment or pod configuration to use the database credentials stored in the secret.
-
-Modify your deployment YAML file to include the environment variables:
-```yaml
+yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -340,32 +228,11 @@ spec:
                 secretKeyRef:
                   name: db-credentials
                   key: dbname
-```
-
-Apply the updated deployment to your cluster:
-```bash
+bash
 kubectl apply -f your-deployment.yaml
-```
-
-After deploying your application, ensure that it can connect to the managed database. You can check the logs of your application pods to verify the connection.
-```bash
+bash
 kubectl logs -l app=your-app
-```
-
-Look for any error messages related to database connectivity. If everything is configured correctly, your application should be able to communicate with the managed database.
-
-</TabItem>
-
-
-<TabItem value="terraform" label="Terraform">
-
-## Creating a Database using Terraform 
-
-To create an instance using Terraform, you will first need to have an initialized Terraform project. Refer to the [Civo Terraform setup documentation](../overview/terraform.md) before proceeding.
-
-First, create a file called `main.tf`, and add the following Terraform code to it:
-
-```terraform 
+terraform 
 # Query small instance size
 data "civo_size" "small" {
   filter {
@@ -395,27 +262,7 @@ resource "civo_database" "postgresql_db" {
   engine  = element(data.civo_database_version.postgresql.versions, 0).engine
   version = element(data.civo_database_version.postgresql.versions, 0).version
 }
-```
-
-In the code above we:
-use the data source `civo_size`  "small" block to retrieve details about the `db.small` size option. The filters ensure we target the correct size by searching for a name matching `db.small` using regex and specifying the `database` type.
-
-Similarly, the data source `civo_database_version` "postgresql" block gathers information about available PostgreSQL versions. The filter here focuses on versions with the `postgresql` engine.
-
-Finally, with the desired size and version readily available, we define the `civo_database` resource. With three nodes and the engine and version, we extracted from the data source.
-
-At the time of writing Civo currently supports PostgreSQL.
-
-:::note
-when creating a database cluster you should always choose an odd number of nodes. This is because an even number doesn't guarantee stability during the leader election.
-:::
-
-### Running Terraform plan 
-
-Once you have created the `main.tf` file with your chosen options, you can run `terraform plan` to see what's going to be created: 
-
-
-```console 
+console 
 terraform plan
 data.civo_database_version.postgresql: Reading...
 data.civo_size.small: Reading...
@@ -447,13 +294,7 @@ Terraform will perform the following actions:
     }
 
 Plan: 1 to add, 0 to change, 0 to destroy.
-```
-
-### Applying the configuration 
-
-Once satisfied with the proposed change, run `terraform apply` and when prompted, type `yes`:
-
-```console
+console
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
@@ -511,18 +352,7 @@ civo_database.postgresql_db: Still creating... [3m30s elapsed]
 civo_database.postgresql_db: Creation complete after 3m40s [id=97de98fb-62dd-4fd1-a147-82a9c8f8804d]
 
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
-```
-When the creation completes, refresh your [Civo dashboard](https://dashboard.civo.com/databases) and you will see there's a new database that has been created. Click it to see more details.
-
-### (OPTIONAL) Connecting your Database to Kubernetes
-
-> PREREQUISITE: In order to proceed, you must have your Database connection details in order to proceed (e.g. hostname, port, database name, username, password)
-
-**Create a Secret in Kubernetes for Database Credentials:**
-To securely store your database credentials, create a Kubernetes secret.
-
-Create a YAML file for the secret:
-```yaml
+yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -534,20 +364,9 @@ data:
   hostname: <base64_encoded_hostname>
   port: <base64_encoded_port>
   dbname: <base64_encoded_dbname>
-```
-
-> NOTE: Replace the placeholders with your actual credentials encoded in base64. You can encode your credentials using `echo -n 'your_value' | base64`
-
-Apply the secret to your cluster:
-```bash
+bash
 kubectl apply -f db-credentials.yaml
-```
-
-**Configure Your Application to Use the Database**
-Now, you need to update your Kubernetes deployment or pod configuration to use the database credentials stored in the secret.
-
-Modify your deployment YAML file to include the environment variables:
-```yaml
+yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -591,21 +410,13 @@ spec:
                 secretKeyRef:
                   name: db-credentials
                   key: dbname
-```
-
-Apply the updated deployment to your cluster:
-```bash
+bash
 kubectl apply -f your-deployment.yaml
-```
-
-After deploying your application, ensure that it can connect to the managed database. You can check the logs of your application pods to verify the connection.
-```bash
+bash
 kubectl logs -l app=your-app
 ```
 
 Look for any error messages related to database connectivity. If everything is configured correctly, your application should be able to communicate with the managed database.
-
-
 
 </TabItem>
 
