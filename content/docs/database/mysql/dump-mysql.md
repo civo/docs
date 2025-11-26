@@ -20,6 +20,18 @@ This guide shows how to create a complete dump of your Civo managed MySQL databa
 - **Development copies** – Create snapshots for development or testing environments.  
 - **Data analysis** – Export data for analysis or reporting purposes.  
 
+## Important: MySQL 8.0 Deprecation Notice
+
+**MySQL 8.0 managed databases are being deprecated on Civo.** While you can still create MySQL dumps from existing MySQL 8.0 instances, consider these alternatives for future deployments:
+
+### Alternative Options:
+- **Self-managed MySQL on Civo Instances** – Install and manage MySQL 8.0 yourself on a Civo compute instance
+
+:::tip
+If you need to continue using MySQL 8.0 after the managed service deprecation, you can deploy it on Civo infrastructure using:
+- [Civo Compute Instances](../../compute/create-an-instance.md) with manual MySQL installation
+:::
+
 ## Prerequisites
 
 | Requirement | Details |
@@ -125,6 +137,16 @@ Once you have your MySQL dump file, you can:
   grep "CREATE TABLE" db.sql
   grep "INSERT INTO" db.sql | wc -l
   ```
+
+## Next Steps After Creating Your Dump
+
+With MySQL 8.0 managed databases being deprecated, consider these options for your data:
+
+### Option 1: Self-managed MySQL on Civo Instance
+1. Create a new [Civo compute instance](../../compute/create-an-instance.md)
+2. Install MySQL 8.0 manually
+3. Restore your dump to the new instance
+4. Configure security and backups yourself
 
 ## Need Help?
 
