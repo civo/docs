@@ -29,6 +29,7 @@ This guide shows how to create a complete dump of your Civo managed MySQL databa
 
 :::tip
 If you need to continue using MySQL 8.0 after the managed service deprecation, you can deploy it on Civo infrastructure using:
+- [Create a MySQL server on a Civo Compute Instance](create-mysql-instance.md) - Step-by-step guide for self-hosting MySQL
 - [Civo Compute Instances](../../compute/create-an-instance.md) with manual MySQL installation
 :::
 
@@ -143,10 +144,9 @@ Once you have your MySQL dump file, you can:
 With MySQL 8.0 managed databases being deprecated, consider these options for your data:
 
 ### Option 1: Self-managed MySQL on Civo Instance
-1. Create a new [Civo compute instance](../../compute/create-an-instance.md)
-2. Install MySQL 8.0 manually
-3. Restore your dump to the new instance
-4. Configure security and backups yourself
+1. Follow our [Create a MySQL server on a Civo Compute Instance](create-mysql-instance.md) guide
+2. Restore your dump to the new MySQL instance
+3. Configure security and backups as needed
 
 ## Need Help?
 
