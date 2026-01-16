@@ -18,6 +18,53 @@ You can group a cluster's worker nodes into *node pools*. The nodes in each pool
 When creating nodes for GPU workloads, you will need to select the "GPU Optimized" Tab when selecting the size of the node.
 :::
 
+## Worker Node Allocatable Resources
+
+Civo Kubernetes uses an intelligent resource allocation system to determine how much CPU and memory are available for your workloads on each worker node. This system reserves resources for essential system processes while maximizing the resources available for your applications.
+
+### How Resource Allocation Works
+
+When you create worker nodes, not all of the node's CPU and memory are available for your pods. The system reserves resources for:
+
+- **System daemons**: Essential Kubernetes components like kubelet, container runtime, and system processes
+- **Pod eviction**: Buffer space to handle pod evictions gracefully
+- **Kernel and OS**: Operating system overhead
+
+### Memory Reservation Algorithm
+
+The memory reservation follows a progressive, tiered approach that scales with the total memory of the node:
+
+| Memory Range | Reservation Rate |
+|--------------|------------------|
+| Less than 1 GiB | Fixed 255 MiB |
+| First 4 GiB | 25% of memory in this range |
+| Next 4 GiB (4-8 GiB total) | 20% of memory in this range |
+| Next 8 GiB (8-16 GiB total) | 10% of memory in this range |
+| Next 112 GiB (16-128 GiB total) | 6% of memory in this range |
+| Above 128 GiB | 2% of memory in this range |
+
+**Additional fixed reservations:**
+- 100 MiB per node for pod eviction management
+- 200 MiB per node for system resource management
+
+### CPU Reservation Algorithm
+
+CPU reservations also follow a progressive model:
+
+| CPU Cores | Reservation Rate |
+|-----------|------------------|
+| First core | 6% of the core |
+| Second core | 1% of the core |
+| Next 2 cores (cores 3-4) | 0.5% per core |
+| Above 4 cores | 0.25% per core |
+
+### Benefits of This Approach
+
+- **Predictable Performance**: Ensures system stability by reserving adequate resources for essential processes
+- **Optimized Resource Usage**: Progressive scaling means larger nodes have higher allocation efficiency
+- **Industry Best Practices**: Uses proven resource allocation methodologies for optimal cluster performance
+- **Workload Protection**: Reserved buffer prevents resource starvation of critical system components
+
 ### Adding a new node pool
 
 <Tabs groupId="add-nodepools">
