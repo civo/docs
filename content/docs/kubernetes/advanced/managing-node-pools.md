@@ -20,7 +20,7 @@ When creating nodes for GPU workloads, you will need to select the "GPU Optimize
 
 ## Worker Node Allocatable Resources
 
-Civo Kubernetes uses an intelligent resource allocation system inspired by [Google Kubernetes Engine (GKE)'s algorithm](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/plan-node-sizes?#memory_reservations) to determine how much CPU and memory are available for your workloads on each worker node. This system reserves resources for essential system processes while maximizing the resources available for your applications.
+Civo Kubernetes uses an intelligent resource allocation system to determine how much CPU and memory are available for your workloads on each worker node. This system reserves resources for essential system processes while maximizing the resources available for your applications.
 
 ### How Resource Allocation Works
 
@@ -62,7 +62,7 @@ CPU reservations also follow a progressive model:
 
 - **Predictable Performance**: Ensures system stability by reserving adequate resources for essential processes
 - **Optimized Resource Usage**: Progressive scaling means larger nodes have higher allocation efficiency
-- **Industry Standard**: Based on proven algorithms used by major cloud providers
+- **Industry Best Practices**: Uses proven resource allocation methodologies for optimal cluster performance
 - **Workload Protection**: Reserved buffer prevents resource starvation of critical system components
 
 ### Adding a new node pool
