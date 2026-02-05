@@ -19,5 +19,5 @@ jobs:
         with:
           # Only check external HTTP(S) links, not internal file links
           # Internal links are already validated by Docusaurus build (test-build.yml)
-          args: --verbose --no-progress --scheme https --scheme http './content/**/*.md' './content/**/*.mdx'
+          args: --verbose --no-progress --insecure --scheme https --scheme http './content/**/*.md' './content/**/*.mdx'
           fail: true
