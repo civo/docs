@@ -11,13 +11,13 @@ description: Learn how to create and configure load balancers to distribute traf
 
 Load balancers distribute incoming traffic across multiple instances, improving the performance and availability of your applications. You can create and configure load balancers through the Civo dashboard to route traffic to your instances with various distribution algorithms and health checking options.
 
-Load balancers are billed hourly according to the [current pricing](https://www.civo.com/pricing). Additional costs apply for each subsequent 10,000 concurrent requests you configure the load balancer to handle. Usage is tracked as part of your [billing](../../account/billing.md) and [quota](../../account/quota.md).
+Load balancers are billed hourly according to the [current pricing](https://www.civo.com/pricing). Additional costs apply for each subsequent 10,000 concurrent requests you configure the load balancer to handle. Usage is tracked as part of your [billing](../account/billing.md) and [quota](../account/quota.md).
 
 ## Creating a Load Balancer
 
 You can create a load balancer from the dashboard to distribute traffic across your instances. Load balancers can be configured with various options detailed below.
 
-![Kubernetes load balancer as displayed on the Civo dashboard](../images/loadbalancers-list.png)
+![Kubernetes load balancer as displayed on the Civo dashboard](images/loadbalancers-list.png)
 
 ## Load Balancer Configuration Options
 
