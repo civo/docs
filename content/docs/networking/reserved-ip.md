@@ -172,4 +172,4 @@ IP called docs-demo with ID 4828b05a-3ee2-4e3f-bb5d-108345ac6ba5 was deleted
 
 ## Reserved IP addresses and Kubernetes load balancers
 
-IP addresses that have been reserved in your account can be assigned to Kubernetes load balancers by means of an annotation on the cluster itself. See the [load balancer documentation](./load-balancers.md#reserved-ip-address) for more details.
+IP addresses that have been reserved in your account can be assigned to Kubernetes load balancers by means of an annotation on the Service. Use the `civo.com/reserved-ip` annotation to specify the reserved IP address. See the [load balancer Kubernetes integration documentation](./load-balancers.md#common-annotations) for more details.
