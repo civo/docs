@@ -108,11 +108,11 @@ const config = {
             items: [
               {
                 label: 'Kubernetes',
-                to: 'https://www.civo.com/kubernetes',
+                to: 'https://www.civo.com/public-cloud/kubernetes',
               },
               {
                 label: 'Compute',
-                to: 'https://www.civo.com/compute',
+                to: 'https://www.civo.com/public-cloud/compute',
               },
               {
                 label: 'Databases',
@@ -180,10 +180,6 @@ const config = {
                 label: 'relaxAI',
                 to: 'https://www.relax.ai/',
               },
-              {
-                label: 'Green GPU',
-                to: 'https://www.civo.com/carbon-neutral-gpu',
-              },
             ],
           },
           {
@@ -244,10 +240,6 @@ const config = {
               },
               {
                 label: 'Status',
-                to: 'https://status.civo.com',
-              },
-              {
-                label: 'Bug Bounty',
                 to: 'https://status.civo.com',
               },
             ],
