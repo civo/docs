@@ -1,4 +1,5 @@
 ---
+sidebar_position: 1
 title: GPU Clusters on Civo Kubernetes
 description: Learn more about what GPU Types are supported on Civo Kubernetes. When using GPU workloads on Civo Kubernetes clusters, you may wish to install the GPU operator in your cluster.
 ---
