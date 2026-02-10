@@ -9,9 +9,9 @@ const footerColumns = [
       { label: 'Pricing', href: 'https://www.civo.com/pricing' },
       { label: 'Case studies', href: 'https://www.civo.com/case-studies' },
       { label: 'Navigate Events', href: 'https://www.civo.com/navigate' },
-      { label: 'White papers', href: 'https://www.civo.com/white-papers' },
+      { label: 'White Papers', href: 'https://www.civo.com/white-papers' },
       { label: 'Newsroom', href: 'https://www.civo.com/newsroom' },
-      { label: 'Brand assets', href: 'https://www.civo.com/brand-assets' },
+      { label: 'Brand Assets', href: 'https://www.civo.com/brand-assets' },
       { label: 'Careers', href: 'https://careers.civo.com/' },
       { label: 'Tech Junction', href: 'https://www.civo.com/tech-junction' },
       { label: 'Partners', href: 'https://www.civo.com/partners' },
@@ -52,11 +52,11 @@ const footerColumns = [
   {
     title: 'Solutions',
     links: [
-      { label: 'Research', href: 'https://www.civo.com/solutions/research' },
-      { label: 'Blockchain', href: 'https://www.civo.com/solutions/blockchain' },
-      { label: 'Financial services', href: 'https://www.civo.com/solutions/financial-services' },
-      { label: 'Government', href: 'https://www.civo.com/solutions/government' },
-      { label: 'SaaS', href: 'https://www.civo.com/solutions/saas' },
+      { label: 'Research', href: 'https://www.civo.com/research' },
+      { label: 'Blockchain', href: 'https://www.civo.com/blockchain' },
+      { label: 'Financial services', href: 'https://www.civo.com/finance' },
+      { label: 'Government', href: 'https://www.civo.com/government' },
+      { label: 'SaaS', href: 'https://www.civo.com/saas' },
     ],
   },
   {
