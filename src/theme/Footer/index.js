@@ -132,7 +132,7 @@ function FooterLinkList({ links }) {
     <ul className="custom-footer__items">
       {links.map((link) => (
         <li key={link.label} className="custom-footer__item">
-          <a href={link.href} target="_blank" rel="noopener noreferrer" className="footer__link-item">
+          <a href={link.href} target="_blank" className="footer__link-item">
             {link.label}
           </a>
         </li>
@@ -174,14 +174,14 @@ export default function FooterWrapper() {
       <div className="container container-fluid">
         {/* Header: Logo + Social Icons */}
         <div className="custom-footer__header">
-          <a href="https://www.civo.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.civo.com/" target="_blank">
             <div className="navbar__logo">
               <img src={logoSrc} alt={logoAlt} />
             </div>
           </a>
           <div className="custom-footer__social">
             {socialLinks.map((social) => (
-              <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
+              <a key={social.label} href={social.href} target="_blank" aria-label={social.label}>
                 <div className="footer-circle">
                   {socialIcons[social.label]}
                 </div>
@@ -211,7 +211,7 @@ export default function FooterWrapper() {
           {legalLinks.map((link) => (
             <React.Fragment key={link.label}>
               {' | '}
-              <a href={link.href} className="copyright-link">{link.label}</a>
+              <a href={link.href} target="_blank" className="copyright-link">{link.label}</a>
             </React.Fragment>
           ))}
         </div>
@@ -222,7 +222,7 @@ export default function FooterWrapper() {
             <div className="custom-footer__mobile-bottom-title">Legal</div>
             <span>{`Copyright \u00A9 ${currentYear}`}</span>
             {legalLinks.map((link) => (
-              <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="footer__link-item">
+              <a key={link.label} href={link.href} target="_blank" className="footer__link-item">
                 {link.label}
               </a>
             ))}
@@ -230,7 +230,7 @@ export default function FooterWrapper() {
           <div className="custom-footer__mobile-social">
             <div className="custom-footer__mobile-bottom-title">Social</div>
             {socialLinks.map((social) => (
-              <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="footer__link-item">
+              <a key={social.label} href={social.href} target="_blank" className="footer__link-item">
                 {social.label}
               </a>
             ))}
