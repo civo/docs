@@ -51,7 +51,7 @@ The sections on this page give you options for the cluster you are about to crea
 
 - **Name** 
 
-    Provide a name for your cluster. _No spaces allowed._
+    Provide a name for your cluster. _No spaces allowed._ If you leave the name blank, a random one will be assigned.
 
 - **Kubernetes version** 
 
