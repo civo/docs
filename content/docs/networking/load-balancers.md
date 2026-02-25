@@ -152,7 +152,7 @@ You can customize Kubernetes-managed load balancers using annotations:
 |------------|-------------|
 | `kubernetes.civo.com/firewall-id` | Attach a specific firewall by name or ID |
 | `kubernetes.civo.com/loadbalancer-algorithm` | Set the algorithm (`round-robin` or `least-connections`) |
-| `civo.com/reserved-ip` | Use a reserved IP address |
+| `kubernetes.civo.com/ipv4-address`         | Use a reserved IP address                            |
 
 Example with annotations:
 
