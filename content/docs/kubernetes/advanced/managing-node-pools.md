@@ -32,24 +32,62 @@ When you create worker nodes, not all of the node's CPU and memory are available
 
 ### Memory Reservation Algorithm
 
-The memory reservation follows a progressive, tiered approach that scales with the total memory of the node:
+Civo Kubernetes uses different memory reservation strategies depending on the node's total RAM.
+
+#### Small nodes (RAM ≤ 2 GiB)
+
+For nodes with 2 GiB or less of RAM (Extra Small and Small Standard sizes), the system uses **fixed reservation values** optimized to leave enough allocatable memory for workloads:
+
+| Component | Extra Small (1 GiB) | Small (2 GiB) |
+|-----------|---------------------|---------------|
+| kube-reserved (memory) | 256 MiB | 512 MiB |
+| system-reserved (memory) | 100 MiB | 100 MiB |
+| eviction-hard (memory threshold) | 75 MiB | 100 MiB |
+| **Total reserved** | **431 MiB (47%)** | **712 MiB (35%)** |
+| **Allocatable** | **~487 MiB (53%)** | **~1336 MiB (65%)** |
+
+:::note
+These fixed values were introduced to prevent memory pressure on small nodes. With the standard progressive algorithm, an Extra Small node would have 71% of its memory reserved, leaving insufficient room for even basic system pods to schedule.
+:::
+
+#### Standard nodes (RAM > 2 GiB)
+
+For nodes with more than 2 GiB of RAM, the **kube-reserved** memory is calculated using a progressive, tiered approach that scales with the total memory of the node:
 
 | Memory Range | Reservation Rate |
 |--------------|------------------|
-| Less than 1 GiB | Fixed 255 MiB |
 | First 4 GiB | 25% of memory in this range |
 | Next 4 GiB (4-8 GiB total) | 20% of memory in this range |
 | Next 8 GiB (8-16 GiB total) | 10% of memory in this range |
 | Next 112 GiB (16-128 GiB total) | 6% of memory in this range |
 | Above 128 GiB | 2% of memory in this range |
 
-**Additional fixed reservations:**
-- 100 MiB per node for pod eviction management
-- 200 MiB per node for system resource management
+In addition to the calculated kube-reserved value, the following fixed reservations apply to standard nodes:
+
+| Component | Value |
+|-----------|-------|
+| kube-reserved (additional buffer) | +100 MiB added to the calculated value |
+| system-reserved (memory) | 200 MiB |
+| eviction-hard (memory threshold) | 100 MiB |
+
+### Allocatable Resources by Node Size
+
+The following table shows the actual reserved and allocatable memory for each Standard (g4s.kube.\*) node size:
+
+| Size | RAM | kube-reserved | system-reserved | eviction-hard | Total Reserved | Allocatable | Reserved % |
+|------|-----|---------------|-----------------|---------------|----------------|-------------|------------|
+| Extra Small | 1 GiB | 256 MiB | 100 MiB | 75 MiB | 431 MiB | ~487 MiB | 47% |
+| Small | 2 GiB | 512 MiB | 100 MiB | 100 MiB | 712 MiB | ~1336 MiB | 35% |
+| Medium | 4 GiB | 1124 MiB | 200 MiB | 100 MiB | 1424 MiB | ~2672 MiB | 35% |
+| Large | 8 GiB | 1943 MiB | 200 MiB | 100 MiB | 2243 MiB | ~5949 MiB | 27% |
+
+:::tip
+Performance (g4p.kube.\*), CPU Optimized (g4c.kube.\*), and RAM Optimized (g4m.kube.\*) node types use the same reservation algorithm. Larger nodes have higher allocation efficiency — for example, a 128 GiB node reserves only about 8% of its memory.
+:::
 
 ### CPU Reservation Algorithm
 
-CPU reservations also follow a progressive model:
+CPU reservations follow a progressive model across all node sizes:
 
 | CPU Cores | Reservation Rate |
 |-----------|------------------|
@@ -61,7 +99,7 @@ CPU reservations also follow a progressive model:
 ### Benefits of This Approach
 
 - **Predictable Performance**: Ensures system stability by reserving adequate resources for essential processes
-- **Optimized Resource Usage**: Progressive scaling means larger nodes have higher allocation efficiency
+- **Optimized for All Sizes**: Small nodes use fixed reservations tuned to avoid memory pressure, while larger nodes benefit from progressive scaling for higher allocation efficiency
 - **Industry Best Practices**: Uses proven resource allocation methodologies for optimal cluster performance
 - **Workload Protection**: Reserved buffer prevents resource starvation of critical system components
 
