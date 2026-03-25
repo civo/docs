@@ -31,8 +31,8 @@ const footerColumns = [
   {
     title: 'Private Cloud',
     links: [
-      { label: 'CivoStack Enterprise', href: 'https://www.civo.com/civostack-enterprise' },
-      { label: 'FlexCore', href: 'https://www.civo.com/flexcore' },
+      { label: 'CivoStack Enterprise', href: 'https://www.civo.com/private-cloud/civostack-enterprise' },
+      { label: 'FlexCore', href: 'https://www.civo.com/private-cloud/flexcore' },
       { label: 'VMware for service providers', href: 'https://www.civo.com/vmware-service-providers' },
       { label: 'VMware alternative', href: 'https://www.civo.com/vmware-alternative' },
       { label: 'VMware migration', href: 'https://www.civo.com/vmware-migration-tool' },
@@ -69,7 +69,7 @@ const footerColumns = [
       { label: 'Civo Academy', href: 'https://www.civo.com/academy' },
       { label: 'Civo GitHub repo', href: 'https://github.com/civo' },
       { label: 'Civo marketplace', href: 'https://www.civo.com/marketplace' },
-      { label: 'Meetups', href: 'https://www.civo.com/meetups' },
+      { label: 'Webinars', href: 'https://www.civo.com/webinars' },
       { label: 'Tutorials', href: 'https://www.civo.com/learn' },
     ],
   },
