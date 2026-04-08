@@ -1,7 +1,7 @@
 ---
 title: Internal Load Balancers
 description: Learn how to create internal load balancers on Civo that are only accessible within your private network, not from the public internet.
-sidebar_position: 4
+sidebar_position: 2
 ---
 
 <head>
