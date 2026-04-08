@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 10
 title: Compute instance placement rules
 description: Learn how to manage compute instance placement rules on CivoStack Enterprise regions
 ---
