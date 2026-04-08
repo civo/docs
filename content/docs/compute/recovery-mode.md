@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 title: Recovery mode
 description: Learn how to use recovery mode for debugging your instances become inaccessible
 ---
