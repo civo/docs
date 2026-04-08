@@ -138,7 +138,7 @@ Remember that starting up a cluster with no Ingress Controller means you will ma
 
 ### Do all nodes on Kubernetes clusters have public IP addresses?
 
-Your cluster has one public IP address. It receives traffic to your cluster and routes it to your worker nodes. This is part of the control plane functionality managed by Civo. You can also configure additional [Kubernetes load balancers](https://www.civo.com/docs/kubernetes/load-balancers) that will get their own public IP addresses.
+Your cluster has one public IP address. It receives traffic to your cluster and routes it to your worker nodes. This is part of the control plane functionality managed by Civo. You can also configure additional [Kubernetes load balancers](https://www.civo.com/docs/networking/load-balancers) that will get their own public IP addresses.
 
 ### Can I change the underlying operating system running Kubernetes?
 
