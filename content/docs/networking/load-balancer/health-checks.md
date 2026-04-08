@@ -1,7 +1,7 @@
 ---
 title: Load Balancer Health Checks
 description: Learn how to configure and troubleshoot health checks for Civo load balancers to ensure traffic is routed only to healthy backend instances.
-sidebar_position: 5
+sidebar_position: 3
 ---
 
 <head>
