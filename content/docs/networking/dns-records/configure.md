@@ -10,6 +10,8 @@ With our DNS hosting feature, you can host your DNS records on our nameservers a
 
 The first step is to click on "DNS" in the left menu to load the DNS section. Then click on the "Add domain name" button.
 
+![DNS record dashboard](.images/dns_records.png)
+
 This will popup a simple form that lets you type in the domain name. We only allow one customer to host each domain name. If you try to host a domain name and it says that another customer is already hosting it, please get in touch so we can resolve who the real owner is.
 
 ## Adding domain records
