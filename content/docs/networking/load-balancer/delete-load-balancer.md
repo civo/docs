@@ -1,7 +1,7 @@
 ---
 title: Deleting a Load Balancer
 description: Learn how to delete load balancers on Civo using the Civo Dashboard or Civo CLI to manage billing and free up resources.
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 import Tabs from '@theme/Tabs';
