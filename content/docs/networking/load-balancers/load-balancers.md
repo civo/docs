@@ -1,7 +1,7 @@
 ---
 title: Load Balancers
 description: Learn how to create and configure load balancers to distribute traffic across your instances and improve application performance and scalability.
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 <head>
