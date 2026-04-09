@@ -1,7 +1,7 @@
 ---
 title: Internal Load Balancers
 description: Learn how to create internal load balancers on Civo that are only accessible within your private network, not from the public internet.
-sidebar_position: 4
+sidebar_position: 2
 ---
 
 <head>
@@ -124,6 +124,6 @@ This connection should time out, confirming that external access is blocked.
 
 ## Related Documentation
 
-- [Firewalls](firewalls.md) - Learn more about configuring firewall rules
-- [Private Networks](private-networks.md) - Set up private networks for your instances
+- [Firewalls](../firewalls.md) - Learn more about configuring firewall rules
+- [Private Networks](../private-networks.md) - Set up private networks for your instances
 - [Load Balancers](load-balancers.md) - General load balancer configuration

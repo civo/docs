@@ -1,0 +1,8 @@
+{
+  "label": "Load Balancers",
+  "link": {
+    "type": "generated-index",
+    "slug": "docs/networking/load-balancers",
+    "description": "Review the pages in this section to walk through additional configuration information for Civo Load Balancers."
+  }
+}

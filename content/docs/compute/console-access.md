@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 9
 title: Console access
 description: Learn how to access the console of a Civo Compute instance using the Civo CLI to recover from issues.
 ---

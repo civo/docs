@@ -35,7 +35,8 @@
     "@docusaurus/module-type-aliases": "^3.7.0"
   },
   "resolutions": {
-    "path-to-regexp": "^3.3.0"
+    "path-to-regexp": "^3.3.0",
+    "webpack": "5.97.1"
   },
   "overrides": {
     "webpack-dev-server": "^5.2.1",

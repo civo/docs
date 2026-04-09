@@ -23,7 +23,7 @@ const footerColumns = [
       { label: 'Kubernetes', href: 'https://www.civo.com/public-cloud/kubernetes' },
       { label: 'Compute', href: 'https://www.civo.com/public-cloud/compute' },
       { label: 'Pricing', href: 'https://www.civo.com/pricing' },
-      { label: 'Databases', href: 'https://www.civo.com/databases' },
+      { label: 'Databases', href: 'https://www.civo.com/public-cloud/databases' },
       { label: 'Load balancers', href: 'https://www.civo.com/load-balancers' },
       { label: 'Block storage', href: 'https://www.civo.com/features/block-storage' },
     ],

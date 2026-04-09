@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 title: Custom disk images
 description: Learn how to upload and manage your own custom disk images for CivoStack Enterprise private region instances using the Civo CLI.
 ---

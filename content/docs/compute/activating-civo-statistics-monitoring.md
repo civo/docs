@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 title: Activating Civo statistics monitoring
 description: Learn how to configure statistics monitoring for virtual machine instances. 
 ---

@@ -1,0 +1,8 @@
+{
+  "label": "DNS records",
+  "link": {
+    "type": "generated-index",
+    "slug": "docs/networking/dns-records",
+    "description": "Review the pages in this section to walk through additional configuration information for Civo DNS records."
+  }
+}

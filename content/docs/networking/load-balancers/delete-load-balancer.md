@@ -1,7 +1,7 @@
 ---
 title: Deleting a Load Balancer
 description: Learn how to delete load balancers on Civo using the Civo Dashboard or Civo CLI to manage billing and free up resources.
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-Load balancers on Civo remain in your account until you delete them. Load balancers in your account are [billed hourly](../account/billing.md) based on the configured maximum concurrent requests and count towards your [account quota](../account/quota.md). If you no longer need a load balancer, you can delete it using the methods below.
+Load balancers on Civo remain in your account until you delete them. Load balancers in your account are [billed hourly](../../account/billing.md) based on the configured maximum concurrent requests and count towards your [account quota](../../account/quota.md). If you no longer need a load balancer, you can delete it using the methods below.
 
 :::danger
 
