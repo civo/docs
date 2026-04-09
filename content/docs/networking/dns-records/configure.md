@@ -4,6 +4,9 @@ title: DNS Records
 description: Learn how host your DNS records on our nameservers and update them using the same great API and control panel that you're used to.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Introduction
 
 A domain name is an identification string that maps to an IP address. It's a text that the end user will type in their browser's URL bar in order to access a specific resource on internet. For example, when a user wants to access Civo's website, the domain name that they need to use is civo.com.
@@ -25,7 +28,7 @@ With our DNS hosting feature, you can host your DNS records on our nameservers a
 
 The first step is to click on "DNS" in the left menu to load the DNS section. Then click on the "Add domain name" button.
 
-![DNS record dashboard](.images/dns_records.png)
+![DNS record dashboard](../images/dns_records.png)
 
 This will popup a simple form that lets you type in the domain name. We only allow one customer to host each domain name. If you try to host a domain name and it says that another customer is already hosting it, please get in touch so we can resolve who the real owner is.
 
@@ -43,7 +46,7 @@ At any time you can click through from the "DNS" option in the side menu, to the
 
 </TabItem>
 
-<TabItem value="dashboard" label="Terraform">
+<TabItem value="terraform" label="Terraform">
 
 We will explore the Civo Terraform provider method; with the following assumptions:
 
@@ -267,3 +270,4 @@ If there's no change in your `main.tf` file and you rerun `terraform apply`, it 
 
 So now you know how to create domain and DNS record using Terraform. Good job! Let's move on to the next guide to see what else can be done using Civo Terraform provider.
 </TabItem>
+</Tabs>

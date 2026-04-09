@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-Load balancers on Civo remain in your account until you delete them. Load balancers in your account are [billed hourly](../account/billing.md) based on the configured maximum concurrent requests and count towards your [account quota](../account/quota.md). If you no longer need a load balancer, you can delete it using the methods below.
+Load balancers on Civo remain in your account until you delete them. Load balancers in your account are [billed hourly](../../account/billing.md) based on the configured maximum concurrent requests and count towards your [account quota](../../account/quota.md). If you no longer need a load balancer, you can delete it using the methods below.
 
 :::danger
 

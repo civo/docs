@@ -48,27 +48,27 @@ Block Storage is not a specialised resource, which sounds bad but that's what ma
 
 Creating a new volume is nice and easy through the Civo control panel. You can create a volume by clicking on the `Volumes` section your dashboard and then select `Create Volume` :
 
-![Civo-dashboard-view](*images/new_volumes_menu.png)
+![Civo-dashboard-view](images/new_volumes_menu.png)
 
 Once done, it will take you to the next section where you can decide what size you want your volume to be and to give it a name of your choice. Once you have selected a name and size of your volume , simply click on the `Create` button to setup your first volume:
 
-![Civo-create-vol-step-2.png](*images/create_new_volumes.png)
+![Civo-create-vol-step-2.png](images/create_new_volumes.png)
 
 We now have the volume created and we can attach it to any instance of your choice. To do this simply click on the `Actions` menu to the right of your volume name, followed by the  `Attach` menu item, then select the instance from the drop down menu provided:
 
-![Civo-vol-after-creation](*images/attach_menu_item.png)
+![Civo-vol-after-creation](images/attach_menu_item.png)
 
-![Civo-vol-action-menu-ONLY](*images/attach_action.png)
+![Civo-vol-action-menu-ONLY](images/attach_action.png)
 
-![Civo-attach-volume-popup](*images/attach_your_volume.png)
+![Civo-attach-volume-popup](images/attach_your_volume.png)
 
 Click `Attach` and you will now have your volume attached to your instance:
 
-![Civo-volume-after-attached-to-instance](*images/click_attach.png)
+![Civo-volume-after-attached-to-instance](images/click_attach.png)
 
 You can also see how it looks from your instance page as well:
 
-![Civo-dashboard-instance-view-with-vol-attached](*images/how_it_looks_from_instance_page.png)
+![Civo-dashboard-instance-view-with-vol-attached](images/how_it_looks_from_instance_page.png)
 
 ### Getting the Volume ready for Use in Linux
 
@@ -90,7 +90,7 @@ Before running the commands, make sure you are logged in with a user that as `su
 
 First we need to get back the volume ID. To do this, simply click on the `Volumes` link on your Civo dashboard which will display the ID of the volume for you:
 
-![Civo-volume-display-volume-ID](*images/preparing_newly_reated_volume.png)
+![Civo-volume-display-volume-ID](images/preparing_newly_reated_volume.png)
 
 As we can see the ID is `/dev/sda`.
 
@@ -372,8 +372,8 @@ Ensure that when removing any entry from the fstab, you only remove any mount po
 
 Now we have done all of the steps on the instance, the final step is to delete the volume from the Civo dashboard.  Simply click on the volumes link and then select the `Actions` menu, followed by `delete`. Delete the volume by entering the name of the volume followed by clicking on the `Delete` button.
 
-![Civo-volumes-actions-menu-delete](*images/delete_volume.png)
+![Civo-volumes-actions-menu-delete](images/delete_volume.png)
 
-![Civo-volumes-delete-confirmation-popup](*images/cant_be_undone.png)
+![Civo-volumes-delete-confirmation-popup](images/cant_be_undone.png)
 
 Excellent! The volume has now been deleted.

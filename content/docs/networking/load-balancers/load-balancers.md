@@ -2,6 +2,7 @@
 title: Load Balancers
 description: Learn how to create and configure load balancers to distribute traffic across your instances and improve application performance and scalability.
 sidebar_position: 1
+slug: creating-load-balancers
 ---
 
 <head>
@@ -12,7 +13,7 @@ sidebar_position: 1
 
 Load balancers distribute incoming traffic across multiple instances, improving the performance and availability of your applications. You can create and configure load balancers through the Civo dashboard to route traffic to your instances with various distribution algorithms and health checking options.
 
-Load balancers are billed hourly according to the [current pricing](https://www.civo.com/pricing). Additional costs apply for each subsequent 10,000 concurrent requests you configure the load balancer to handle. Usage is tracked as part of your [billing](../account/billing.md) and [quota](../account/quota.md).
+Load balancers are billed hourly according to the [current pricing](https://www.civo.com/pricing). Additional costs apply for each subsequent 10,000 concurrent requests you configure the load balancer to handle. Usage is tracked as part of your [billing](../../account/billing.md) and [quota](../../account/quota.md).
 
 ## Creating a Load Balancer
 
@@ -50,7 +51,7 @@ By default, load balancers handle 10,000 concurrent requests. Increase this limi
 
 Click **Create Load Balancer** to provision your load balancer. The load balancer will be assigned a public IP address once ready.
 
-![Kubernetes load balancer as displayed on the Civo dashboard](images/loadbalancers-list.png)
+![Kubernetes load balancer as displayed on the Civo dashboard](../images/loadbalancers-list.png)
 
 ## Instance Pools
 
@@ -77,7 +78,7 @@ Configure health check settings to ensure traffic is only sent to healthy instan
 - **Health Check Port**: The port on your instances to monitor for health status
 - **Health Check Path**: The path to check for HTTP health checks (e.g., `/healthz`)
 
-For detailed health check configuration including intervals, timeouts, and troubleshooting, see [Load Balancer Health Checks](load-balancer-health-checks.md).
+For detailed health check configuration including intervals, timeouts, and troubleshooting, see [Load Balancer Health Checks](health-checks.md).
 
 ## Load Balancer Configuration Options
 
@@ -97,7 +98,7 @@ You can select which network the load balancer should use to communicate with yo
 
 Select which firewall rules to apply to your load balancer. You can choose from existing firewalls in your account or create a new one. If no firewall is specified, the load balancer will use the default firewall configuration.
 
-To create a load balancer that is only accessible within your private network, see [Internal Load Balancers](internal-load-balancer.md).
+To create a load balancer that is only accessible within your private network, see [Internal Load Balancers](internal.md).
 
 ### Maximum Concurrent Requests
 
@@ -186,12 +187,12 @@ spec:
 For Kubernetes workloads, let Kubernetes manage your load balancers. This ensures the load balancer stays in sync with your pods and is automatically cleaned up when the Service is deleted.
 :::
 
-For internal-only load balancers in Kubernetes, see [Internal Load Balancers](internal-load-balancer.md).
+For internal-only load balancers in Kubernetes, see [Internal Load Balancers](internal.md).
 
 ## Related Documentation
 
 - [Deleting a Load Balancer](delete-load-balancer.md) - Remove load balancers from your account
-- [Internal Load Balancers](internal-load-balancer.md) - Create load balancers accessible only within your private network
-- [Load Balancer Health Checks](load-balancer-health-checks.md) - Configure and troubleshoot health checks
-- [Firewalls](firewalls.md) - Control access to your load balancers
-- [Reserved IPs](reserved-ip.md) - Use static IP addresses with your load balancers
+- [Internal Load Balancers](internal.md) - Create load balancers accessible only within your private network
+- [Load Balancer Health Checks](health-checks.md) - Configure and troubleshoot health checks
+- [Firewalls](../firewalls.md) - Control access to your load balancers
+- [Reserved IPs](../reserved-ip.md) - Use static IP addresses with your load balancers

@@ -7,7 +7,7 @@ Civo accounts support multiple users having access to various resources and acce
 
 We will begin with an overview of terminology, and then demonstrate the various changes Teams introduces, along with how you can control access to features and privileges on an organisational level. This will allow you to get to grips with various scenarios even up to the level of managing a multi-account system like demonstrated in this organisation chart:
 
-![Civo teams](*images/teams_administration_civo.png)
+![Civo teams](images/teams_administration_civo.png)
 
 In the above chart, the multiple teams that govern multiple users' access privileges, under multiple accounts, all under the Acme Jetpacks, Inc umbrella, is composed of the elements we are going to discuss next.
 
@@ -47,38 +47,38 @@ In this scenario, you are the CTO of Acme Jetpacks, Inc, an exciting new startup
 
 You would begin with navigating to the Teams menu on your Civo dashboard:
 
-![Teams menu in the Civo sidebar](*images/teams_administration_civo_dashboard.png)
+![Teams menu in the Civo sidebar](images/teams_administration_civo_dashboard.png)
 
 You should see a team called Owners, with your account listed as a member, and an option to manage the team:
 
-![Civo Team Management main screen](*images/option_manage_team.png)
+![Civo Team Management main screen](images/option_manage_team.png)
 
 When you go to manage the team members, you'll see your own membership, and an option to add team members:
 
-![Viewing the "owners" team with current members and an option to add more](*images/add_team_members.png)
+![Viewing the "owners" team with current members and an option to add more](images/add_team_members.png)
 
 Through the "Add team members" button in the top right of the screen, we can add people into our team. Crucially, these new members do not yet have to be active Civo users. The system checks whether an email account has been registered at Civo, and will invite anyone who is not yet a user:
 
-![Adding a new team member](*images/system_checks.png)
+![Adding a new team member](images/system_checks.png)
 
 You would need to check the appropriate permissions for the account you are inviting to join your team. In this case, I will check the "Technical Administrator" box which will grant the invitee access to manage Kubernetes clusters and other cloud resources, but no visibility to billing details.
 
 The resulting view shows that I've invited someone, and the invite is "pending acceptance" until they complete the joining process through the email the person receives.
 
 
-![Team membership for Eva Engineer showing pending acceptance](*images/pending_acceptance.png)
+![Team membership for Eva Engineer showing pending acceptance](images/pending_acceptance.png)
 
 As there isn't yet a Civo account with the email I specified, the recipient is prompted to sign up. This will have sent the email address you specified an email with details on how to sign up and join the team. A user will have to follow the link provided and use the invitation code generated in order to successfully join:
 
-![Civo team invitation email screenshot showing a button to accept the invitation](*images/invitation_code_generated.png)
+![Civo team invitation email screenshot showing a button to accept the invitation](images/invitation_code_generated.png)
   
 Once they do, they'll have the option to set up their own password and user details for Civo:
 
-![Signup screen for an invited user](*images/accept_invation.png)
+![Signup screen for an invited user](images/accept_invation.png)
 
 In this case, I invited a user called Eva Engineer to join the team of owners of Acme Jetpacks. When Eva logs in, she will be able to see the running cluster (and start her own if need be) but won't have to worry about account administration or billing. In this image, you can see that Eva has access to the Jetpacks-cluster and other cloud resource screens, but the Settings menu does not have the Billing section; that's not part of the team permissions granted to her.
 
-![The view when logged in as a user without access to the billing information through permissions](*images/jetpacks_cluster.png)
+![The view when logged in as a user without access to the billing information through permissions](images/jetpacks_cluster.png)
 
 ### Scenario 2: Grouping team members into a Development Team
 
@@ -86,11 +86,11 @@ In this scenario, Acme Jetpacks Incorporated is growing fast, and we are adding 
 
 Logging in as our administrator/owner account, let's navigate to our teams management page:
 
-![Civo teams administration page showing the Create new team button in the top right](*images/option_manage_team.png)
+![Civo teams administration page showing the Create new team button in the top right](images/option_manage_team.png)
 
 We will create a new team called "Site Reliability" by entering it as a name in the Create new team section. Next, we'll start with adding Eva's account into that team as a Technical Administrator. This kind of role gives administrative access to all cloud resources (Kubernetes, Instances, firewalls, etc) that an engineering team may require:
 
-![Site Reliability team screen](*images/technical_administrator.png)
+![Site Reliability team screen](images/technical_administrator.png)
 
 Having a dedicated team for various roles gives you flexibility to add people into them, or remove them as required.
 
@@ -100,11 +100,11 @@ If you needed more granularity than the pre-defined Roles that we just assigned,
 
 Say you have a new starter joining the team at Acme Jetpacks. You may want them to be a part of the Site Reliability team, but perhaps not have full administrative access to your Kubernetes clusters. This new starter, Nigel Newbie, should still be able to view the configuration of the Kubernetes clusters you are running to get familiar with them, but you don't want them to worry about any instances you have running. What we would need is a custom set of permissions for this one user. This can be achieved through the "create a new role" option of the Manage Roles screen:
 
-![Teams administration page header showing "Manage roles" button next to "Create new team"](*images/creating_new_role.png)
+![Teams administration page header showing "Manage roles" button next to "Create new team"](images/creating_new_role.png)
 
 You will be able to name the type of role you are creating, and select the permissions desired.
 
-![Creating a "developer" role](*images/select_the_permissions.png)
+![Creating a "developer" role](images/select_the_permissions.png)
 
 Bear in mind that you will need to select _all_ required privileges for the role you are creating - these are not automatically cascaded downwards. Above is an example Developer role that includes view permissions to Kubernetes resources, but no privileges to create, update or change them, and no privileges to manage team roles themselves or other aspects of an account.
 
@@ -120,7 +120,7 @@ Under an Organization, you may have separate but related accounts. Using our Acm
 
 In order to start an Organization, you would need to migrate an existing account into the Organization structure, which will give you the option to then have other accounts join the organization provided they have the correct information. You can access this migration process through the main Teams administration page. Once you do, you will see the following screen:
 
-![Migrating an account into an Organization](*images/creating_organization.png)
+![Migrating an account into an Organization](images/creating_organization.png)
 
 The two options for migrating your account into an Organisation are to create a new Organisation, or to join an existing one. The second option to join an existing organisation will be relevant to you if are already a Civo user, and an organisation owner has sent you an Organisation ID as well as a joining token. If you are creating a new organisation, such as we will create below, give your Organization a name, such as "Acme Jetpacks, Inc".
 
@@ -138,7 +138,7 @@ In the Organization menu, you have the option to create a new account to separat
 
 In the Organization screen, find the "New account" button:
 
-![New Account creation through the Accounts administration screen](*images/new_account_organization.png)
+![New Account creation through the Accounts administration screen](images/new_account_organization.png)
 
 You will be prompted to enter an Account name. We'll call ours Acme Jetpacks-staging as mentioned above.
 
@@ -148,7 +148,7 @@ It may be helpful to rename our old Account to reflect its nature as the Product
 
 Once you have done this, any user with permissions to the Account will be able to switch to managing it, and the cloud resources within, by selecting it from the sidebar drop-down:
 
-![Selecting the current account context through the sidebar dropdown of an Organization](*images/sidebar_drop_down.png)
+![Selecting the current account context through the sidebar dropdown of an Organization](images/sidebar_drop_down.png)
 
 This way, you can create accounts for all the needs of your organisation: Production and Staging are the two most obvious points of difference, but wherever you need separation of billing and resources having separate accounts can be useful.
 

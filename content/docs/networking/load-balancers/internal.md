@@ -124,6 +124,6 @@ This connection should time out, confirming that external access is blocked.
 
 ## Related Documentation
 
-- [Firewalls](firewalls.md) - Learn more about configuring firewall rules
-- [Private Networks](private-networks.md) - Set up private networks for your instances
+- [Firewalls](../firewalls.md) - Learn more about configuring firewall rules
+- [Private Networks](../private-networks.md) - Set up private networks for your instances
 - [Load Balancers](load-balancers.md) - General load balancer configuration
