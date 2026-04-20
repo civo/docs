@@ -82,7 +82,7 @@ The sections on this page give you options for the cluster you are about to crea
 
   :::note
 
-  Flannel and Talos Linux support are being deprecated.
+  Talos Linux support is being deprecated.
 
   :::
 

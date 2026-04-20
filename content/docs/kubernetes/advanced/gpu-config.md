@@ -1,4 +1,5 @@
 ---
+sidebar_position: 1
 title: GPU Clusters on Civo Kubernetes
 description: Learn which GPU types are supported on Civo Kubernetes, how to install the NVIDIA GPU Operator with the right settings for Civo's image, and the extra step needed for single-GPU H100 nodes.
 ---
