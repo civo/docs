@@ -44,8 +44,8 @@ const footerColumns = [
     title: 'Civo AI',
     links: [
       { label: 'Cloud GPU', href: 'https://www.civo.com/ai/cloud-gpu' },
-      { label: 'Kubernetes GPU', href: 'https://www.civo.com/ai/kubernetes' },
-      { label: 'Compute GPU', href: 'https://www.civo.com/ai/compute' },
+      { label: 'Kubernetes GPU', href: 'https://www.civo.com/ai/kubernetes-gpu' },
+      { label: 'Compute GPU', href: 'https://www.civo.com/ai/gpu-compute' },
       { label: 'relaxAI', href: 'https://www.relax.ai/' },
     ],
   },
