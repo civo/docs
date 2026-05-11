@@ -29,6 +29,8 @@ Civo provides the following GPU Types:
 
 To deploy GPU workloads on Civo Instances, [select a GPU optimized image](#4-select-image) from within the [instance creation page](https://dashboard.civo.com/instances/new).
 
+For an end-to-end walkthrough — including the Civo CUDA disk images and the single-GPU NVLink behaviour — see [GPU instances](./gpu-instances.md).
+
 <Tabs groupId="create-instance">
 
 <TabItem value="dashboard" label="Dashboard">

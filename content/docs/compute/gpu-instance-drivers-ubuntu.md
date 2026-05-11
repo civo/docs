@@ -10,6 +10,10 @@ description: Learn how to customize the Nvidia drivers on Civo GPU instances run
 
 ## Overview
 
+:::note
+Consider using a [Civo CUDA disk image](./gpu-instances.md) instead — it ships with NVIDIA drivers and CUDA preinstalled, and handles the single-H100 GPU NVLink workaround for you.
+:::
+
 To take advantage of the Nvidia GPU in Civo GPU instances, you may wish to install a specific version of Nvidia GPU drivers on an instance running Ubuntu. This document will detail the following:
 
 Preparation:
@@ -101,6 +105,28 @@ sudo apt install nvidia-driver-535
 ```
 
 If there is a different version of the driver you wish to install, substitute its name in the above command.
+
+## Single-GPU H100 instances: disable NVLink
+
+If your instance has a **single H100 GPU**, you need an extra step before the driver will load cleanly. The NVIDIA driver tries to bring up the NVLink fabric at load time, fails because there is no peer GPU on the host, and the driver never becomes ready. The symptom is `nvidia-smi` hanging or erroring out after the reboot below.
+
+The fix is to set the `NVreg_NvLinkDisable=1` module option for the `nvidia` kernel module via a file in `/etc/modprobe.d/`:
+
+```bash
+echo "options nvidia NVreg_NvLinkDisable=1" | sudo tee /etc/modprobe.d/nvidia-disable-nvlink.conf
+```
+
+The option is only read when the `nvidia` kernel module is loaded, so the change does not take effect until the module is reloaded. The simplest reliable way to do this is a reboot — which is the next step of this guide anyway.
+
+:::warning
+**Do not** apply this on multi-GPU instances. NVLink is how the GPUs talk to each other on those hosts — disabling it cuts peer-to-peer bandwidth and degrades multi-GPU workloads.
+:::
+
+After the reboot, you can confirm the option is active with:
+
+```bash
+cat /proc/driver/nvidia/params | grep NvLinkDisable
+```
 
 ## Testing the installation
 
