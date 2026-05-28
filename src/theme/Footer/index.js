@@ -26,6 +26,7 @@ const footerColumns = [
       { label: 'Databases', href: 'https://www.civo.com/public-cloud/databases' },
       { label: 'Load balancers', href: 'https://www.civo.com/load-balancers' },
       { label: 'Block storage', href: 'https://www.civo.com/features/block-storage' },
+      { label: 'Konstruct IDP', href: 'https://www.civo.com/konstruct' },
     ],
   },
   {
@@ -33,9 +34,9 @@ const footerColumns = [
     links: [
       { label: 'CivoStack Enterprise', href: 'https://www.civo.com/private-cloud/civostack-enterprise' },
       { label: 'FlexCore', href: 'https://www.civo.com/private-cloud/flexcore' },
-      { label: 'VMware for service providers', href: 'https://www.civo.com/vmware-service-providers' },
-      { label: 'VMware alternative', href: 'https://www.civo.com/vmware-alternative' },
-      { label: 'VMware migration', href: 'https://www.civo.com/vmware-migration-tool' },
+      { label: 'VMware for service providers', href: 'https://www.civo.com/private-cloud/vmware-service-providers' },
+      { label: 'VMware alternative', href: 'https://www.civo.com/private-cloud/vmware-alternative' },
+      { label: 'VMware migration', href: 'https://www.civo.com/private-cloud/vmware-migration-tool' },
       { label: 'UK Sovereign Cloud', href: 'https://www.civo.com/uk-sovereign-cloud' },
       { label: 'India Sovereign Cloud', href: 'https://www.civo.com/india' },
     ],
@@ -46,7 +47,9 @@ const footerColumns = [
       { label: 'Cloud GPU', href: 'https://www.civo.com/ai/cloud-gpu' },
       { label: 'Kubernetes GPU', href: 'https://www.civo.com/ai/kubernetes-gpu' },
       { label: 'Compute GPU', href: 'https://www.civo.com/ai/gpu-compute' },
+      { label: 'Sovereign AI', href: 'https://www.civo.com/ai/sovereign' },      
       { label: 'relaxAI', href: 'https://www.relax.ai/' },
+      { label: 'Private AI', href: 'https://www.civo.com/ai/private' }, 
     ],
   },
   {
@@ -57,6 +60,7 @@ const footerColumns = [
       { label: 'Financial services', href: 'https://www.civo.com/finance' },
       { label: 'Government', href: 'https://www.civo.com/government' },
       { label: 'SaaS', href: 'https://www.civo.com/saas' },
+      { label: 'Startups', href: 'https://www.civo.com/startups' },
     ],
   },
   {
