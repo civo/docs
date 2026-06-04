@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 <head>
   <title>Managing a Civo Kubernetes Cluster's Node Pools | Civo Documentation</title>
-</head> 
+</head>
 
 ## Overview
 
@@ -938,7 +938,7 @@ The node pool (5b21796e-13df-4127-abc2-e18afde09ea4) has been deleted from the c
 
 ### Recycling nodes
 
-If you need to rebuild nodes for whatever reason, you can use the **recycle** method to rebuild a single node. 
+If you need to rebuild nodes for whatever reason, you can use the **recycle** method to rebuild a single node.
 
 :::note
 Recycling a node will delete it entirely, rebuild a new node to match it, and attach that to your cluster. When a node is recycled, it is fully deleted. The recycle command does not drain a node, it simply deletes it before building a new node and attaching it to a cluster. It is intended for scenarios where the node itself develops an issue and must be replaced with a new one.
@@ -974,3 +974,33 @@ If you were to look at the output of `civo kubernetes show (cluster_name)` you w
 </TabItem>
 
 </Tabs>
+
+### Deleting a specific node
+
+You may want to remove one particular node from a cluster, for example to retire a node that is misbehaving.
+
+:::caution Deleting a node with `kubectl` does not delete the VM
+Running `kubectl delete node <node-name>` removes the node object from the Kubernetes API — the node disappears from `kubectl get nodes` and appears to be deleted — but the underlying Civo instance (VM) keeps running and remains billable. The node is not actually torn down. This is expected behavior and is consistent with other managed Kubernetes providers.
+
+To remove the VM itself, scale down the node pool as described below.
+:::
+
+To delete a specific node and its underlying VM, cordon and drain the node so its workloads are rescheduled elsewhere, then scale the node pool down. Cordoned nodes are [prioritized for removal when scaling down](./scaling-nodes.md#overview), so the node you cordoned is the one that gets removed.
+
+1. **Cordon the node** to stop new pods from being scheduled onto it:
+
+   ```bash
+   kubectl cordon <node-name>
+   ```
+
+2. **Drain the node** to gracefully evict its running workloads so they reschedule onto other nodes:
+
+   ```bash
+   kubectl drain <node-name> --ignore-daemonsets --delete-emptydir-data
+   ```
+
+3. **Scale the node pool down by one node** using the [Dashboard, Civo CLI, or Terraform](./scaling-nodes.md#scaling-nodes-manually). Because the node you cordoned is prioritized for removal, it is the node that gets deleted, and its VM is torn down.
+
+:::tip Difference from recycling
+This differs from [recycling a node](#recycling-nodes), which deletes a node and immediately rebuilds a replacement to keep the pool at the same size. Scaling down after cordoning removes the node without replacing it, reducing the pool size by one.
+:::
