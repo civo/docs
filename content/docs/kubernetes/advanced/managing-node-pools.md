@@ -980,7 +980,7 @@ If you were to look at the output of `civo kubernetes show (cluster_name)` you w
 You may want to remove one particular node from a cluster, for example to retire a node that is misbehaving.
 
 :::caution Deleting a node with `kubectl` does not delete the VM
-Running `kubectl delete node <node-name>` removes the node object from the Kubernetes API — the node disappears from `kubectl get nodes` and appears to be deleted — but the underlying Civo instance (VM) keeps running and remains billable. The node is not actually torn down. This is expected behavior and is consistent with other managed Kubernetes providers.
+Running `kubectl delete node <node-name>` removes the node object from the Kubernetes API — the node disappears from `kubectl get nodes` and appears to be deleted — but the underlying Civo instance (VM) keeps running and remains billable. The node is not actually torn down.
 
 To remove the VM itself, scale down the node pool as described below.
 :::
