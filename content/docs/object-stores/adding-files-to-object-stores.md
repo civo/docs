@@ -82,7 +82,7 @@ In this command, the structure is as follows:
 - The `--host` argument specifies the object store host, i.e. the Civo region where the store was created,
 - The `--host-bucket` argument names the object store in the host region as an S3 URI, in this case "demo-store",
 - The `put` command tells s3cmd to upload file(s) to be specified,
-- The `--aci-public` argument makes the permissions on this uploaded file public,
+- The `--acl-public` argument makes the permissions on this uploaded file public,
 - `cli_upload_demo.txt` is the file to be uploaded,
 - `s3://demo-store/cli` is the path in the object store to upload the file to.
 
