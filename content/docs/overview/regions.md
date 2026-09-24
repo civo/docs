@@ -39,12 +39,12 @@ You can also pass a `--region <CODE>` parameter to any CLI command to execute it
 
 ## What products are available per region?
 
-| Products | LON1 | FRA1 | NYC1 | PHX1 | MUM1 |
-|----------|------|------|------|------|------|
-| CPU Kubernetes | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available |
-| GPU Kubernetes | 🟢 Available | 🔴 Unavailable | 🔴 Unavailable | 🔴 Unavailable | 🔴 Unavailable |
-| CPU Compute | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available |
-| GPU Compute | 🟢 Available | 🔴 Unavailable | 🔴 Unavailable | 🔴 Unavailable | 🔴 Unavailable |
-| Object Stores | 🟢 Available | 🟢 Available | 🟢 Available | 🔴 Unavailable | 🟢 Available |
-| Volumes | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available |
-| Databases | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available | 🟢 Available |
+| Products       | LON1         | FRA1           | NYC1           | MUM1           |
+|----------------|--------------|----------------|----------------|----------------|
+| CPU Kubernetes | 🟢 Available | 🟢 Available   | 🟢 Available   | 🟢 Available   |
+| GPU Kubernetes | 🟢 Available | 🔴 Unavailable | 🔴 Unavailable | 🔴 Unavailable |
+| CPU Compute    | 🟢 Available | 🟢 Available   | 🟢 Available   | 🟢 Available   |
+| GPU Compute    | 🟢 Available | 🔴 Unavailable | 🔴 Unavailable | 🔴 Unavailable |
+| Object Stores  | 🟢 Available | 🟢 Available   | 🟢 Available   | 🟢 Available   |
+| Volumes        | 🟢 Available | 🟢 Available   | 🟢 Available   | 🟢 Available   |
+| Databases      | 🟢 Available | 🟢 Available   | 🟢 Available   | 🟢 Available   |
