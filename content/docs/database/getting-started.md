@@ -267,7 +267,7 @@ You will need to have set the correct [Civo region](../overview/regions.md) for 
 
 With Civo CLI v1.6.0 or later you can also back up, restore, fork, configure and upgrade PostgreSQL databases from the command line:
 
-- [Backing up and restoring](postgresql/backup-and-restore.md), including backups to another region or an S3-compatible bucket and point-in-time restore
+- [Backing up and restoring](postgresql/backup-and-restore.md), including backups to another region and point-in-time restore
 - [Forking](postgresql/fork.md) a database into a new, independent one
 - [Storage, extensions and parameters](postgresql/storage-extensions-parameters.md)
 - [Upgrading](postgresql/upgrades.md) the engine release or the PostgreSQL major version

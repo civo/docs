@@ -1,6 +1,6 @@
 ---
 title: Backing up and restoring a Civo PostgreSQL Database
-description: Learn how to create scheduled and manual backups of a Civo PostgreSQL database, send backups to another region or an S3-compatible bucket, and restore from a backup or to a point in time with the Civo CLI.
+description: Learn how to create scheduled and manual backups of a Civo PostgreSQL database, send backups to another region, and restore from a backup or to a point in time with the Civo CLI.
 ---
 
 <head>
@@ -12,7 +12,7 @@ description: Learn how to create scheduled and manual backups of a Civo PostgreS
 Civo PostgreSQL databases support scheduled and manual backups, restores from a backup, and point-in-time restores. This guide covers each of them with the [Civo CLI](../../overview/civo-cli.md).
 
 :::note
-Backup destinations and point-in-time restore need Civo CLI v1.6.0 or later. Run `civo update` to upgrade.
+Backups to another region and point-in-time restore need Civo CLI v1.6.0 or later. Run `civo update` to upgrade.
 :::
 
 ## Scheduled backups
@@ -29,24 +29,13 @@ Change the name or schedule of the scheduled backup with `civo database backup u
 civo database backup update postgres-demo --name nightly --schedule "30 2 * * *"
 ```
 
-### Backup destinations
+### Backup destination region
 
-Scheduled backups are stored in the Civo Object Store of the database's region unless you give a destination. Both `backup create` and `backup update` accept one:
-
-- `--destination-region` stores the backups in the Civo Object Store of another region, which keeps a copy away from the database.
-- The `--s3-*` flags store them in any S3-compatible bucket.
+Scheduled backups are stored in the Civo Object Store of the database's region. To keep them away from the database, store them in another region with `--destination-region`, on `backup create` or `backup update`:
 
 ```console
 civo database backup create postgres-demo --name offsite --schedule "0 3 * * *" --destination-region FRA1
 ```
-
-```console
-civo database backup create postgres-demo --name external --schedule "0 3 * * *" \
-  --s3-endpoint https://s3.example.com --s3-bucket my-backups --s3-region eu-1 \
-  --s3-access-key <ACCESS-KEY> --s3-secret-key <SECRET-KEY> --s3-path-prefix postgres-demo/
-```
-
-When updating an S3 destination, leave `--s3-secret-key` out to keep the current secret.
 
 ## Manual backups
 
@@ -56,7 +45,7 @@ A manual backup is taken once, on demand. It is useful before a risky change suc
 civo database backup create postgres-demo --name before-migration --type manual
 ```
 
-Manual backups always stay in the database's region and cannot take a destination.
+Manual backups always stay in the database's region.
 
 ## Listing backups
 
