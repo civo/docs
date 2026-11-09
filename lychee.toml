@@ -1,1 +1,5 @@
-exclude = ['https://dev\.mysql\.com/doc/*']
+exclude = [
+  'https://dev\.mysql\.com/doc/*',
+  # Slack returns 403 to non-browser clients, so the link always fails in CI
+  'https://civo-community\.slack\.com/*',
+]
